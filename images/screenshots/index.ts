@@ -3,6 +3,7 @@ import Badges from "./badges.png"
 import Buttons from "./buttons.png"
 import ButtonGroups from "./button-groups.png"
 import CTA from "./cta.png"
+import Checkboxes from "./checkboxes.png"
 import Hero from "./hero.png"
 import Inputs from "./inputs.png"
 import KPI from "./kpi.png"
@@ -18,6 +19,7 @@ const images = {
   Badges,
   Buttons,
   ButtonGroups,
+  Checkboxes,
   CTA,
   Hero,
   Inputs,

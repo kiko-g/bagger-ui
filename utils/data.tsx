@@ -70,6 +70,7 @@ type SectionNav = {
   icon?: any
   image?: StaticImageData
   shown?: boolean
+  new?: boolean
 }
 
 export const applicationUiNav: SectionNav[] = [
@@ -108,6 +109,16 @@ export const applicationUiNav: SectionNav[] = [
     icon: SwatchIcon,
     image: Footage.ButtonGroups,
     shown: true,
+  },
+  {
+    name: "Checkboxes",
+    href: "/application-ui/checkboxes",
+    count: 2,
+    description: "Checkboxes for selecting one or multiple options.",
+    icon: SwatchIcon,
+    image: Footage.Checkboxes,
+    shown: true,
+    new: true,
   },
   {
     name: "Loading",
