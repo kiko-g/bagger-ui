@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // production
   if (process.env.NODE_ENV === "production") {
     try {
-      const fileUrl = `https://api.github.com/repos/kiko-g/bagr-ui/contents/components/${encodeURIComponent(
+      const fileUrl = `https://api.github.com/repos/kiko-g/bagger-ui/contents/components/${encodeURIComponent(
         filepathStr,
       )}`
       const response = await axios.get(fileUrl)

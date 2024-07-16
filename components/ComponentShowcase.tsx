@@ -156,7 +156,7 @@ function ChangeViewModeButton({
 
 function LinkToGithubButton({ path }: { path: string }) {
   const branchName = "main"
-  const href = `https://github.com/kiko-g/bagr-ui/blob/${branchName}/components/${path}`
+  const href = `https://github.com/kiko-g/bagger-ui/blob/${branchName}/components/${path}`
 
   return (
     <Link

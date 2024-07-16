@@ -1,7 +1,7 @@
 import Head from "next/head"
 
 export function Seo({ title }: { title: string }) {
-  const siteTitle = `BagrUI`
+  const siteTitle = `BaggerUI`
   const author = `kikogoncalves`
   const description = `Reusable UI Components with React, Typescript, and TailwindCSS.`
 

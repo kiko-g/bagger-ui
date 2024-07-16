@@ -7,6 +7,7 @@ import { Header } from "./layout/Header"
 import { Footer } from "./layout/Footer"
 import { Sidebar } from "./layout/Sidebar"
 import { QuickNavSidebar } from "./layout/QuickNavSidebar"
+import { SupportBanner } from "./layout/SupportBanner"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -23,6 +24,7 @@ export function Layout({ children, location = "Unknown", sidebar = false, quickN
       <Seo title={location} />
       <main className={clsx(inter.className, "mx-auto flex min-h-screen max-w-[100vw] flex-col")}>
         <Header />
+        <SupportBanner />
         <div className="flex flex-1">
           {sidebar && <Sidebar location={location} />}
           <article className="flex max-w-full flex-1 flex-col items-start justify-start px-6 xl:px-10">

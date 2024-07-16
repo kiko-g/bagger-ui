@@ -7,7 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // production
   if (process.env.NODE_ENV === "production") {
     try {
-      const fileUrl = `https://api.github.com/repos/kiko-g/bagr-ui/contents/tailwind.config.js`
+      const fileUrl = `https://api.github.com/repos/kiko-g/bagger-ui/contents/tailwind.config.js`
       const response = await axios.get(fileUrl)
       const content = Buffer.from(response.data.content, "base64").toString("utf8") // decode base64 content
       return res.status(200).send(content) // return the code from the file

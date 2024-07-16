@@ -23,7 +23,7 @@ export const links = [
   },
   {
     label: "Github Repository",
-    href: "https://github.com/kiko-g/bagr-ui",
+    href: "https://github.com/kiko-g/bagger-ui",
     content: <GithubIcon className="h-5 w-5" />,
     shown: true,
   },
