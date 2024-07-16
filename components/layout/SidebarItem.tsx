@@ -23,11 +23,11 @@ export function SidebarItem({
         "flex cursor-pointer items-center justify-start gap-2 py-1 pl-3 text-sm transition ease-in-out",
       )}
     >
-      <div className="hidden w-full items-center justify-between gap-2 pr-1 lg:flex">
-        <span className="pr-3 lg:pr-10">{name}</span>
+      <div className="hidden w-full items-center gap-1.5 pr-3 lg:flex lg:pr-10">
+        <span>{name}</span>
         {isNew && (
-          <span className="inline-flex items-center rounded-sm bg-green-100 px-1 py-1 text-green-950">
-            <span className="text-xs font-semibold leading-none tracking-tight">New</span>
+          <span className="inline-flex items-center rounded-full bg-teal-700 px-[5px] py-[3px] text-white">
+            <span className="text-3xs font-semibold leading-none tracking-tight">New</span>
           </span>
         )}
       </div>

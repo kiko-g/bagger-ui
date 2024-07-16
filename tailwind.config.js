@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        "2xs": "0.625rem",
+        "3xs": "0.55rem",
+      },
       colors: {
         slate: {
           150: "#eaeef4",
