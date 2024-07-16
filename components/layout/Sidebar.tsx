@@ -11,12 +11,7 @@ export function Sidebar({ location }: { location: string }) {
             const isActive = location.toLowerCase() === item.name.toLowerCase()
             return (
               <li key={`nav-${itemIdx}`}>
-                <SidebarItem
-                  name={item.name}
-                  href={item.href}
-                  isActive={isActive}
-                  icon={<item.icon className="h-5 w-5" />}
-                />
+                <SidebarItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
               </li>
             )
           })}
@@ -31,12 +26,7 @@ export function Sidebar({ location }: { location: string }) {
               const isActive = location.toLowerCase() === item.name.toLowerCase()
               return (
                 <li key={`nav-${itemIdx}`}>
-                  <SidebarItem
-                    name={item.name}
-                    href={item.href}
-                    isActive={isActive}
-                    icon={<item.icon className="h-5 w-5" />}
-                  />
+                  <SidebarItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
                 </li>
               )
             })}
@@ -52,12 +42,7 @@ export function Sidebar({ location }: { location: string }) {
               const isActive = location.toLowerCase() === item.name.toLowerCase()
               return (
                 <li key={`nav-${itemIdx}`}>
-                  <SidebarItem
-                    name={item.name}
-                    href={item.href}
-                    isActive={isActive}
-                    icon={<item.icon className="h-5 w-5" />}
-                  />
+                  <SidebarItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
                 </li>
               )
             })}
@@ -73,12 +58,7 @@ export function Sidebar({ location }: { location: string }) {
               const isActive = location.toLowerCase() === item.name.toLowerCase()
               return (
                 <li key={`nav-${itemIdx}`}>
-                  <SidebarItem
-                    name={item.name}
-                    href={item.href}
-                    isActive={isActive}
-                    icon={<item.icon className="h-5 w-5" />}
-                  />
+                  <SidebarItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
                 </li>
               )
             })}

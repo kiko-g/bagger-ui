@@ -33,6 +33,7 @@ type BaseNav = {
   name: string
   href: string
   shown?: boolean
+  new?: boolean
   icon: React.ForwardRefExoticComponent<
     Omit<React.SVGProps<SVGSVGElement>, "ref"> & {
       title?: string | undefined
