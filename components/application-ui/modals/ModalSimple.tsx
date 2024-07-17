@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react"
-import { Dialog, Transition } from "@headlessui/react"
 import { XMarkIcon, KeyIcon } from "@heroicons/react/24/outline"
+import { Button, Dialog, DialogPanel, DialogTitle } from "@headlessui/react"
 
 type Props = {
   startOpen?: boolean
@@ -19,80 +19,58 @@ export function ModalSimple({ startOpen }: Props) {
 
   return (
     <>
-      <button
+      <Button
         onClick={openModal}
-        title="Open modal"
-        className="inline-flex items-center justify-center gap-x-2 self-stretch rounded border border-blue-500 bg-blue-600/70 px-3 py-2 text-center text-sm text-white transition hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 dark:border-blue-500 dark:bg-blue-500/50"
+        className="h:bg-black/70 flex items-center gap-1 rounded-md bg-black/40 px-3 py-2 text-sm font-medium text-white transition data-[focus]:outline-1 focus:outline-none dark:bg-white/30 dark:data-[hover]:bg-white/50"
       >
-        <span>Show</span>
-        <KeyIcon className="h-4 w-4 lg:h-5 lg:w-5" />
-      </button>
+        <span>Open dialog</span>
+        <KeyIcon className="h-4 w-4" />
+      </Button>
 
-      <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative" onClose={closeModal}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm dark:bg-white/5" />
-          </Transition.Child>
+      <Dialog open={isOpen} as="div" className="relative z-[100000] focus:outline-none" onClose={closeModal}>
+        <div className="fixed inset-0 w-screen overflow-y-auto bg-black/50">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <DialogPanel
+              transition
+              className="data-[closed]:transform-[scale(95%)] w-full max-w-lg rounded-xl bg-white p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:opacity-0 dark:bg-white/10"
+            >
+              <div className="flex items-center justify-between gap-1">
+                <DialogTitle as="h3" className="text-base/7 font-semibold">
+                  Successful Action
+                </DialogTitle>
+                <button
+                  onClick={closeModal}
+                  className="flex items-center gap-x-1 rounded bg-black/10 px-1 py-1 text-sm transition hover:bg-black/30 dark:bg-black/20 dark:text-white dark:hover:bg-black/40"
+                >
+                  <XMarkIcon className="h-4 w-4" />{" "}
+                </button>
+              </div>
 
-          <div className="fixed inset-0 z-50 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="w-full max-w-xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle text-gray-600 shadow-xl transition-all dark:bg-gray-800 dark:text-white">
-                  <div className="flex items-center justify-between">
-                    <Dialog.Title as="h3" className="text-xl font-semibold leading-6 text-primary dark:text-white">
-                      Modal Title
-                    </Dialog.Title>
-                    <button
-                      onClick={closeModal}
-                      className="flex items-center gap-x-1 rounded border border-rose-600/30 bg-rose-600/10 px-1 py-1 text-sm text-rose-800 transition hover:bg-rose-600 hover:text-white dark:bg-rose-600/20 dark:text-white dark:hover:bg-rose-600"
-                    >
-                      <XMarkIcon className="h-4 w-4" />{" "}
-                    </button>
-                  </div>
+              <div className="text-sm/6 font-normal">
+                <p className="mt-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor. Lorem ipsum dolor sit
+                  amet consectetur adipisicing elit sed do eiusmod tempor.
+                </p>
 
-                  <div className="mt-3">
-                    <div className="text-sm font-normal lg:text-base">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <ul className="ml-3 mt-4 flex list-disc flex-col gap-y-0.5 lg:ml-4">
+                  <li>Apples and oranges.</li>
+                  <li>Bananas and mangos.</li>
+                  <li>Strawberries and blueberries.</li>
+                </ul>
+              </div>
 
-                      <ul className="ml-3 mt-2 flex list-disc flex-col gap-y-0.5 lg:ml-4 lg:mt-1">
-                        <li>Apples and oranges.</li>
-                        <li>Bananas and mangos.</li>
-                        <li>Strawberries and blueberries.</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="mt-8">
-                    <button
-                      type="button"
-                      onClick={closeModal}
-                      className="w-full rounded bg-teal-600 p-2 text-sm text-white transition hover:opacity-80 dark:bg-teal-600"
-                    >
-                      Cool, thanks!
-                    </button>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
+              <div className="mt-8 flex justify-end">
+                <Button
+                  className="inline-flex items-center gap-2 rounded-md bg-gray-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white focus:outline-none"
+                  onClick={closeModal}
+                >
+                  Got it, thanks!
+                </Button>
+              </div>
+            </DialogPanel>
           </div>
-        </Dialog>
-      </Transition>
+        </div>
+      </Dialog>
     </>
   )
 }
