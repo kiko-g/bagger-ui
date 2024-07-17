@@ -44,9 +44,6 @@ export default function Badges() {
               <BadgeOutline noBubble>
                 <span className="text-sm">No Bubble</span>
               </BadgeOutline>
-              <BadgeOutline>
-                <span className="text-sm">Default</span>
-              </BadgeOutline>
               <BadgeOutline type="info">
                 <span className="text-sm">Info</span>
               </BadgeOutline>
@@ -63,20 +60,12 @@ export default function Badges() {
           ),
         },
         {
-          name: "Beta",
-          path: `${base}/BadgeBeta.tsx`,
-          component: (
-            <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
-              <BadgeBeta />
-            </div>
-          ),
-        },
-        {
           name: "Success",
           path: `${base}/BadgeSuccess.tsx`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
               <BadgeSuccess />
+              <BadgeSuccess outline />
             </div>
           ),
         },
@@ -86,6 +75,16 @@ export default function Badges() {
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
               <BadgeError />
+              <BadgeError outline />
+            </div>
+          ),
+        },
+        {
+          name: "Beta",
+          path: `${base}/BadgeBeta.tsx`,
+          component: (
+            <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
+              <BadgeBeta />
             </div>
           ),
         },

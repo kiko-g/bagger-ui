@@ -1,9 +1,8 @@
 import Link from "next/link"
-import { SidebarItem } from "./SidebarItem"
 
 export function QuickNavSidebar({ navigation }: { navigation?: { name: string; href: string }[] }) {
   return (
-    <aside className="mt-8 hidden shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 p-3 xl:flex xl:w-72">
+    <aside className="sticky mt-8 hidden shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 p-3 xl:flex xl:w-72">
       <h4 className="mb-4 text-xl font-semibold">Quick Nav</h4>
       <ul className="flex w-full flex-col gap-2">
         {navigation &&

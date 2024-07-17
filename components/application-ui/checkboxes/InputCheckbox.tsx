@@ -25,7 +25,7 @@ export function InputCheckbox({ labelText, checked, isIntermediate = false, onCh
         {...(checked !== undefined && { checked })}
         {...(onChange && { onChange })}
       />
-      <span className="-mt-px ml-2 text-sm">{labelText || "Label"}</span>
+      <span className="ml-2 max-w-sm text-sm leading-[18px]">{labelText || "Label"}</span>
     </label>
   )
 }

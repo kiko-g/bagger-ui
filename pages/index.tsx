@@ -65,7 +65,7 @@ function Sections() {
 
       <div className="border-dimmed mt-8 border-t pt-4">
         <h3 className="mb-3 text-xl font-bold">Application UI Components</h3>
-        <ul className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4 xl:grid-cols-3 xl:gap-3">
+        <ul className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4 xl:grid-cols-5 xl:gap-3">
           {applicationUiNav.map(({ name, count, description, image, href }) => (
             <li key={`showcase-application-ui-${name}`} className="group flex w-full flex-col gap-1">
               <SectionCard title={name} count={count} description={description} image={image} link={href} />
@@ -76,7 +76,7 @@ function Sections() {
 
       <div className="border-dimmed mt-16 border-t pt-4">
         <h3 className="mb-3 text-xl font-bold">Marketing Components</h3>
-        <ul className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4 xl:grid-cols-3 xl:gap-3">
+        <ul className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4 xl:grid-cols-5 xl:gap-3">
           {marketingNav.map(({ name, count, description, image, href }) => (
             <li key={`showcase-marketing-${name}`} className="group flex w-full flex-col gap-1">
               <SectionCard title={name} count={count} description={description} image={image} link={href} />
@@ -87,7 +87,7 @@ function Sections() {
 
       <div className="border-dimmed mt-16 border-t pt-4">
         <h3 className="mb-3 text-xl font-bold">Ecommerce Components</h3>
-        <ul className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4 xl:grid-cols-3 xl:gap-3">
+        <ul className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4 xl:grid-cols-5 xl:gap-3">
           {eCommerceNav.map(({ name, count, description, image, href }) => (
             <li key={`showcase-ecommerce-${name}`} className="group flex w-full flex-col gap-1">
               <SectionCard title={name} count={count} description={description} image={image} link={href} />
@@ -111,7 +111,7 @@ function SectionCard({ title, count, description, link, image }: SectionCardProp
   return (
     <Link
       href={link}
-      className="flex flex-1 flex-col border border-slate-300/80 bg-white px-4 py-4 text-white transition-all group-hover:bg-primary-50 hover:border-primary dark:border-slate-100/10 dark:bg-primary/5 dark:group-hover:bg-primary/20 dark:hover:border-primary"
+      className="flex flex-1 flex-col border border-slate-300/80 bg-white px-4 py-4 text-white transition-all group-hover:bg-primary-50 hover:border-primary dark:border-slate-100/20 dark:bg-primary/20 dark:group-hover:bg-primary/40 dark:hover:border-primary"
     >
       {image ? (
         <Image
