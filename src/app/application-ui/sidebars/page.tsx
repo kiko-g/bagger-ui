@@ -8,11 +8,6 @@ export default function Sidebars() {
   return (
     <ComponentTypePage
       title="Sidebars"
-      description={
-        <p className="max-w-4xl mb-3 text-sm">
-          Click the <strong>code</strong> tab buttons to see demos for every entry.
-        </p>
-      }
       components={[
         { name: "Simple", path: `${base}/SidebarSimple.tsx`, component: <SidebarSimple location="Home" /> },
         {

@@ -13,11 +13,6 @@ export default function ButtonGroups() {
   return (
     <ComponentTypePage
       title="Button Groups"
-      description={
-        <p className="max-w-4xl mb-3 text-sm">
-          Click the <strong>code</strong> tab buttons to see demos for every entry.
-        </p>
-      }
       components={[
         { name: "Simple", path: `${base}/ButtonGroupSimple.tsx`, component: <ButtonGroupSimple /> },
         { name: "Joined", path: `${base}/ButtonGroupJoined.tsx`, component: <ButtonGroupJoined /> },

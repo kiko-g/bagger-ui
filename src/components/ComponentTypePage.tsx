@@ -37,7 +37,13 @@ export function ComponentTypePage({ title, components, description }: Props) {
     <Layout location={title} sidebar quickNav={quickNav}>
       <section className="mb-36 w-full py-6 lg:py-8 xl:py-12">
         <h2 className="mb-4 text-2xl font-semibold tracking-tighter lg:text-4xl">{title}</h2>
-        {description}
+        {description ? (
+          description
+        ) : (
+          <p className="max-w-4xl mb-3 text-sm">
+            Click the <strong>code</strong> tab buttons to see demos for every entry.
+          </p>
+        )}
         <div className="mb-4">
           <input
             type="search"
