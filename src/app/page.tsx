@@ -108,7 +108,7 @@ function SectionCard({ title, count, description, link, image }: SectionCardProp
   return (
     <Link
       href={link}
-      className="flex flex-1 flex-col border border-slate-300/80 bg-white px-4 py-4 text-white transition-all group-hover:bg-primary-50 hover:border-primary dark:border-slate-100/20 dark:bg-primary/20 dark:group-hover:bg-primary/40 dark:hover:border-primary"
+      className="flex flex-1 flex-col border border-slate-300/80 bg-white px-4 py-4 xl:px-3 xl:py-3 text-white transition-all group-hover:bg-primary-50 hover:border-primary dark:border-slate-100/20 dark:bg-primary/20 dark:group-hover:bg-primary/40 dark:hover:border-primary"
     >
       {image ? (
         <Image
@@ -116,7 +116,7 @@ function SectionCard({ title, count, description, link, image }: SectionCardProp
           alt={title}
           height={1600}
           width={900}
-          className="aspect-[8/5] bg-slate-100 object-cover"
+          className="w-full aspect-[8/5] bg-slate-100 object-cover"
         ></Image>
       ) : (
         <div className="aspect-[8/5] w-full border border-primary-600 bg-primary-400 transition group-hover:border-primary-700 group-hover:bg-primary-500 dark:border-white/5 dark:bg-primary-900/50 dark:group-hover:border-primary-800 dark:group-hover:bg-primary-900" />

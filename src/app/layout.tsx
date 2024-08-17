@@ -1,12 +1,63 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "../styles/globals.css"
+import "@/styles/globals.css"
+import type { Metadata, Viewport } from "next"
 
-const inter = Inter({ subsets: ["latin"] })
+import clsx from "clsx"
+import { siteConfig } from "@/utils/config"
+import { fontSans } from "@/lib/fonts"
+import { Analytics } from "@/components/Analytics"
+import { Providers } from "./providers"
 
 export const metadata: Metadata = {
-  title: "BaggerUI",
-  description: "Reusable UI Components with React, Typescript, and TailwindCSS",
+  title: {
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
+  },
+  metadataBase: new URL(siteConfig.url),
+  description: siteConfig.description,
+  keywords: ["Next.js", "React", "Typescript", "Tailwind CSS", "Headless UI"],
+  authors: [
+    {
+      name: "Francisco Gonçalves",
+      url: "https://kikogoncalves.com",
+    },
+  ],
+  creator: "Francisco Gonçalves",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        width: 3008,
+        height: 1912,
+        alt: siteConfig.name,
+        url: siteConfig.ogImage,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: "@kikogoncalves_",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: `${siteConfig.url}/site.webmanifest`,
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
 }
 
 export default function RootLayout({
@@ -15,8 +66,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body className={clsx("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
+          <Providers>
+            <Analytics />
+            {children}
+          </Providers>
+        </body>
+      </html>
+    </>
   )
 }
