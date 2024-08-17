@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*::selection {
+  @apply bg-gray-800 text-white dark:bg-lime-500/50;
+}
+
+pre *::selection {
+  @apply bg-lime-500/50 text-white;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-slate-50 text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100;
+}
+
+code {
+  letter-spacing: -0.025em;
+  font-size: smaller !important;
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    Liberation Mono,
+    Courier New,
+    monospace !important;
+}
+
+.border-dimmed {
+  @apply border-gray-300 dark:border-white/10;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.rotate-out {
+  animation: rotate 0.5s backwards;
+}
+
+.rotate-in {
+  animation: rotate 0.5s forwards;
+}

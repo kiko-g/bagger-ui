@@ -1,113 +1,130 @@
-import Image from "next/image";
+import React from "react"
+import clsx from "clsx"
+import Link from "next/link"
+import Image, { StaticImageData } from "next/image"
+import { Lexend } from "next/font/google"
+import { Layout } from "@/components/Layout"
+import { ReactIcon, TailwindIcon, TypescriptIcon } from "@/components/icons"
+import { applicationUiNav, eCommerceNav, marketingNav } from "@/utils/data"
+
+const lexend = Lexend({ subsets: ["latin"] })
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <Layout location="Home" sidebar>
+      <Hero />
+      <Sections />
+    </Layout>
+  )
+}
+
+function Hero() {
+  return (
+    <div className="my-1 max-w-full py-4 md:max-w-xl lg:max-w-2xl lg:py-6 xl:max-w-3xl">
+      <h2
+        className={clsx(
+          lexend.className,
+          "flex flex-wrap items-center text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl"
+        )}
+      >
+        Reusable UI Components with
+        <span>
+          <ReactIcon className="ml-2 mr-1 inline-flex h-5 w-5 align-middle text-[#149eca] lg:h-7 lg:w-7" />
+          <span className="text-[#149eca]">React</span>
+          {", "}
+        </span>
+        <span>
+          <TypescriptIcon className="ml-2.5 mr-1.5 inline-flex h-5 w-5 align-middle text-[#3178c6] lg:h-7 lg:w-7" />
+          <span className="text-[#3178c6]">Typescript</span>
+          {", and "}
+        </span>
+        <span>
+          <TailwindIcon className="ml-2 mr-1.5 inline-flex h-5 w-5 align-middle text-[#38bdf8] lg:h-7 lg:w-7" />
+          <span className="text-[#38bdf8]">TailwindCSS</span>
+          <span>.</span>
+        </span>
+      </h2>
+    </div>
+  )
+}
+
+function Sections() {
+  return (
+    <div className="mb-24 w-full">
+      <p className="mb-4 max-w-4xl">
+        Start exploring the types of components we have available and visit their individual pages where you can find
+        the web components and their source code. Make sure you have checked out the{" "}
+        <Link href="/setup" className="font-bold underline hover:text-primary hover:opacity-80 dark:hover:text-primary">
+          <code>configuration</code>
+        </Link>{" "}
+        page. Your setup should be similar, otherwise some components might not work as expected in your project.
+      </p>
+
+      <div className="border-dimmed mt-8 border-t pt-4">
+        <h3 className="mb-3 text-xl font-bold">Application UI Components</h3>
+        <ul className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4 xl:grid-cols-5 xl:gap-3">
+          {applicationUiNav.map(({ name, count, description, image, href }) => (
+            <li key={`showcase-application-ui-${name}`} className="group flex w-full flex-col gap-1">
+              <SectionCard title={name} count={count} description={description} image={image} link={href} />
+            </li>
+          ))}
+        </ul>
       </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+      <div className="border-dimmed mt-16 border-t pt-4">
+        <h3 className="mb-3 text-xl font-bold">Marketing Components</h3>
+        <ul className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4 xl:grid-cols-5 xl:gap-3">
+          {marketingNav.map(({ name, count, description, image, href }) => (
+            <li key={`showcase-marketing-${name}`} className="group flex w-full flex-col gap-1">
+              <SectionCard title={name} count={count} description={description} image={image} link={href} />
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="border-dimmed mt-16 border-t pt-4">
+        <h3 className="mb-3 text-xl font-bold">Ecommerce Components</h3>
+        <ul className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-4 xl:grid-cols-5 xl:gap-3">
+          {eCommerceNav.map(({ name, count, description, image, href }) => (
+            <li key={`showcase-ecommerce-${name}`} className="group flex w-full flex-col gap-1">
+              <SectionCard title={name} count={count} description={description} image={image} link={href} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )
+}
+
+type SectionCardProps = {
+  title: string
+  count: number
+  link: string
+  description: string
+  image?: StaticImageData
+}
+
+function SectionCard({ title, count, description, link, image }: SectionCardProps) {
+  return (
+    <Link
+      href={link}
+      className="flex flex-1 flex-col border border-slate-300/80 bg-white px-4 py-4 text-white transition-all group-hover:bg-primary-50 hover:border-primary dark:border-slate-100/20 dark:bg-primary/20 dark:group-hover:bg-primary/40 dark:hover:border-primary"
+    >
+      {image ? (
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+          src={image}
+          alt={title}
+          height={1600}
+          width={900}
+          className="aspect-[8/5] bg-slate-100 object-cover"
+        ></Image>
+      ) : (
+        <div className="aspect-[8/5] w-full border border-primary-600 bg-primary-400 transition group-hover:border-primary-700 group-hover:bg-primary-500 dark:border-white/5 dark:bg-primary-900/50 dark:group-hover:border-primary-800 dark:group-hover:bg-primary-900" />
+      )}
+      <h4 className="mt-3 text-sm font-semibold text-slate-900 transition dark:text-white">{title}</h4>
+      <p className="-mt-[2px] text-[0.7rem] font-normal text-slate-600 dark:text-gray-300 lg:text-xs">
+        {count} component{count === 1 ? "" : "s"}
+      </p>
+    </Link>
+  )
 }
