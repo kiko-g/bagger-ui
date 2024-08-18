@@ -11,7 +11,6 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ isError: true, message: "Folder parameter is missing", count: -1 }, { status: 400 })
   }
 
-  // production
   if (process.env.NODE_ENV === "production") {
     try {
       const fileUrl = `https://api.github.com/repos/kiko-g/bagger-ui/contents/components/${encodeURIComponent(folder)}`
@@ -21,9 +20,7 @@ export async function GET(req: NextRequest) {
     } catch (error: any) {
       return NextResponse.json({ isError: true, message: error.message, count: -1 }, { status: 500 })
     }
-  }
-  // development
-  else {
+  } else {
     const filepath = `components/${folder}`
     const directoryPath = path.join(process.cwd(), filepath)
 

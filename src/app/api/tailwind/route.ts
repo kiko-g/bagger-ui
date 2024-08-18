@@ -4,10 +4,7 @@ import path from "path"
 import axios from "axios"
 
 export async function GET(req: NextRequest) {
-  // Check the environment
-  const isProduction = process.env.NODE_ENV === "production"
-
-  if (isProduction) {
+  if (process.env.NODE_ENV === "production") {
     try {
       const fileUrl = `https://api.github.com/repos/kiko-g/bagger-ui/contents/tailwind.config.ts`
       const response = await axios.get(fileUrl)
