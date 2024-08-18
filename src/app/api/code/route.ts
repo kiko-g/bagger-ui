@@ -18,8 +18,8 @@ export async function GET(req: NextRequest) {
         filepathStr
       )}`
       const response = await axios.get(fileUrl)
-      const content = Buffer.from(response.data.content, "base64").toString("utf8") // decode base64 content
-      return new NextResponse(content, { status: 200 }) // return the content of the file
+      const fileContent = Buffer.from(response.data.content, "base64").toString("utf8") // decode base64 content
+      return new NextResponse(sanitizeContent(fileContent), { status: 200 }) // return the content of the file
     } catch (e) {
       console.error(e)
       return NextResponse.json({ message: "Error reading file" }, { status: 500 })
@@ -38,15 +38,15 @@ export async function GET(req: NextRequest) {
       }
 
       const fileContent = fs.readFileSync(filePath, "utf8")
-      const fileStartKey = `"use client"\n`
-      const sanitizedContent = fileContent.startsWith(``)
-        ? fileContent.replace(fileStartKey, "").trimStart()
-        : fileContent
-
-      return new NextResponse(sanitizedContent, { status: 200 })
+      return new NextResponse(sanitizeContent(fileContent), { status: 200 })
     } catch (e) {
       console.error(e)
       return NextResponse.json({ message: "Error reading file" }, { status: 500 })
     }
   }
+}
+
+function sanitizeContent(content: string) {
+  const fileStartKey = `"use client"\n`
+  return content.startsWith(``) ? content.replace(fileStartKey, "").trimStart() : content
 }
