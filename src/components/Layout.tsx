@@ -25,7 +25,7 @@ export function Layout({ children, location = 'Unknown', sidebar = false, quickN
       <main className={clsx(inter.className, 'mx-auto flex min-h-screen max-w-[100vw] flex-col')}>
         <Header />
         <SupportBanner />
-        <div className="flex flex-1">
+        <div className="flex flex-1 pb-4">
           {sidebar && <Sidebar location={location} />}
           <article className="flex max-w-full flex-1 flex-col items-start justify-start px-6 xl:px-10">
             {children}
