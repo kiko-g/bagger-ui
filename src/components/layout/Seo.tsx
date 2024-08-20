@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import Head from "next/head"
+import Head from 'next/head'
 
 export function Seo({ title }: { title: string }) {
   const siteTitle = `BaggerUI`

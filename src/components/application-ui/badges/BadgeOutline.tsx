@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import React from "react"
-import clsx from "clsx"
+import React from 'react'
+import clsx from 'clsx'
 
 function BadgeOutlineDemo() {
   return (
@@ -26,7 +26,7 @@ function BadgeOutlineDemo() {
 }
 
 type Props = {
-  type?: undefined | "success" | "error" | "warning" | "info"
+  type?: undefined | 'success' | 'error' | 'warning' | 'info'
   noBubble?: boolean
   noBorder?: boolean
   children?: React.ReactNode
@@ -36,29 +36,29 @@ export function BadgeOutline({ type, noBubble = false, noBorder = false, childre
   return (
     <div
       className={clsx(
-        "inline-flex items-center justify-center gap-0.5 rounded-full border  px-2 py-1 lg:gap-1.5",
-        type === "info" &&
-          "border-sky-600 bg-sky-600/10 text-gray-900 dark:border-sky-500 dark:bg-sky-400/30 dark:text-white",
-        type === "error" &&
-          "border-rose-600 bg-rose-600/10 text-gray-900 dark:border-rose-500 dark:bg-rose-400/30 dark:text-white",
-        type === "warning" &&
-          "border-amber-600 bg-amber-600/10 text-gray-900 dark:border-amber-500 dark:bg-amber-400/30 dark:text-white",
-        type === "success" &&
-          "border-emerald-600 bg-emerald-600/10 text-gray-900 dark:border-emerald-500 dark:bg-emerald-400/30 dark:text-white",
+        'inline-flex items-center justify-center gap-0.5 rounded-full border px-2 py-1 lg:gap-1.5',
+        type === 'info' &&
+          'border-sky-600 bg-sky-600/10 text-gray-900 dark:border-sky-500 dark:bg-sky-400/30 dark:text-white',
+        type === 'error' &&
+          'border-rose-600 bg-rose-600/10 text-gray-900 dark:border-rose-500 dark:bg-rose-400/30 dark:text-white',
+        type === 'warning' &&
+          'border-amber-600 bg-amber-600/10 text-gray-900 dark:border-amber-500 dark:bg-amber-400/30 dark:text-white',
+        type === 'success' &&
+          'border-emerald-600 bg-emerald-600/10 text-gray-900 dark:border-emerald-500 dark:bg-emerald-400/30 dark:text-white',
         type === undefined &&
-          "border-slate-600 bg-slate-600/10 text-gray-900 dark:border-slate-500 dark:bg-slate-400/30 dark:text-white",
-        noBorder && "border-0"
+          'border-slate-600 bg-slate-600/10 text-gray-900 dark:border-slate-500 dark:bg-slate-400/30 dark:text-white',
+        noBorder && 'border-0',
       )}
     >
       {noBubble ? null : (
         <span
           className={clsx(
-            "inline-flex h-2 w-2 rounded-full",
-            type === "info" && "bg-sky-600",
-            type === "error" && "bg-rose-600",
-            type === "warning" && "bg-amber-600",
-            type === "success" && "bg-emerald-600",
-            type === undefined && "bg-slate-600"
+            'inline-flex h-2 w-2 rounded-full',
+            type === 'info' && 'bg-sky-600',
+            type === 'error' && 'bg-rose-600',
+            type === 'warning' && 'bg-amber-600',
+            type === 'success' && 'bg-emerald-600',
+            type === undefined && 'bg-slate-600',
           )}
         />
       )}

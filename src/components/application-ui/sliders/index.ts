@@ -1,3 +1,3 @@
-import { SliderSimple } from "./SliderSimple"
+import { SliderSimple } from './SliderSimple'
 
 export { SliderSimple }

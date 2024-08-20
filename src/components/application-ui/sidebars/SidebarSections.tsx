@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import React from "react"
-import clsx from "clsx"
+import React from 'react'
+import clsx from 'clsx'
 import {
   HeartIcon,
   HomeIcon,
@@ -10,24 +10,24 @@ import {
   RectangleStackIcon,
   TruckIcon,
   UserCircleIcon,
-} from "@heroicons/react/24/outline"
+} from '@heroicons/react/24/outline'
 
 const generalNavigations = [
   {
-    name: "Home",
-    href: "#",
+    name: 'Home',
+    href: '#',
     icon: HomeIcon,
     shown: true,
   },
   {
-    name: "About",
-    href: "#",
+    name: 'About',
+    href: '#',
     icon: InformationCircleIcon,
     shown: true,
   },
   {
-    name: "Help",
-    href: "#",
+    name: 'Help',
+    href: '#',
     icon: LifebuoyIcon,
     shown: true,
   },
@@ -35,20 +35,20 @@ const generalNavigations = [
 
 const componentNavigations = [
   {
-    name: "Products",
-    href: "#",
+    name: 'Products',
+    href: '#',
     icon: RectangleStackIcon,
     shown: true,
   },
   {
-    name: "Orders",
-    href: "#",
+    name: 'Orders',
+    href: '#',
     icon: TruckIcon,
     shown: true,
   },
   {
-    name: "Favorites",
-    href: "#",
+    name: 'Favorites',
+    href: '#',
     icon: HeartIcon,
     shown: true,
   },
@@ -56,8 +56,8 @@ const componentNavigations = [
 
 const userNavigations = [
   {
-    name: "Profile",
-    href: "#",
+    name: 'Profile',
+    href: '#',
     icon: UserCircleIcon,
     shown: true,
   },
@@ -140,9 +140,9 @@ function SidebarItem({
       href={href}
       className={clsx(
         isActive
-          ? "bg-blue-500 text-white hover:opacity-80 dark:bg-blue-500/80"
-          : "hover:bg-blue-500/10 dark:hover:bg-blue-500/30",
-        "flex cursor-pointer items-center justify-center gap-2 rounded py-3 pl-3 pr-3 text-sm transition ease-in-out xl:justify-start xl:pr-10"
+          ? 'bg-blue-500 text-white hover:opacity-80 dark:bg-blue-500/80'
+          : 'hover:bg-blue-500/10 dark:hover:bg-blue-500/30',
+        'flex cursor-pointer items-center justify-center gap-2 rounded py-3 pl-3 pr-3 text-sm transition ease-in-out xl:justify-start xl:pr-10',
       )}
     >
       {icon}

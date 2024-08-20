@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef } from 'react'
 
 type InputCheckboxProps = {
   labelText?: string
@@ -27,7 +27,7 @@ export function InputCheckbox({ labelText, checked, isIntermediate = false, onCh
         {...(checked !== undefined && { checked })}
         {...(onChange && { onChange })}
       />
-      <span className="ml-2 max-w-sm text-sm leading-[18px]">{labelText || "Label"}</span>
+      <span className="ml-2 max-w-sm text-sm leading-[18px]">{labelText || 'Label'}</span>
     </label>
   )
 }

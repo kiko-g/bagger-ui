@@ -1,9 +1,9 @@
-import React, { HTMLAttributes } from "react"
-import clsx from "clsx"
-import { Lexend } from "next/font/google"
-import { LinkIcon } from "@heroicons/react/24/outline"
+import React, { HTMLAttributes } from 'react'
+import clsx from 'clsx'
+import { Lexend } from 'next/font/google'
+import { LinkIcon } from '@heroicons/react/24/outline'
 
-const lexend = Lexend({ subsets: ["latin"] })
+const lexend = Lexend({ subsets: ['latin'] })
 
 type Props = HTMLAttributes<HTMLHeadingElement> & {
   children: React.ReactNode
@@ -18,9 +18,9 @@ function H1({ children, slideTo, noMargin, withDivider, ...props }: Props) {
       {...props}
       className={clsx(
         lexend.className,
-        noMargin ? "mb-0" : "mb-4",
-        withDivider && "border-dimmed border-b pb-3",
-        "flex flex-wrap items-center text-xl font-bold tracking-tighter md:text-2xl lg:text-3xl lg:tracking-tight xl:text-4xl 2xl:text-5xl",
+        noMargin ? 'mb-0' : 'mb-4',
+        withDivider && 'border-dimmed border-b pb-3',
+        'flex flex-wrap items-center text-xl font-bold tracking-tighter md:text-2xl lg:text-3xl lg:tracking-tight xl:text-4xl 2xl:text-5xl',
       )}
     >
       {children}
@@ -45,9 +45,9 @@ function H2({ children, slideTo, noMargin, withDivider, ...props }: Props) {
       {...props}
       className={clsx(
         lexend.className,
-        noMargin ? "mb-0" : "mb-3",
-        withDivider && "border-dimmed border-b pb-2.5",
-        "flex flex-wrap items-center text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl",
+        noMargin ? 'mb-0' : 'mb-3',
+        withDivider && 'border-dimmed border-b pb-2.5',
+        'flex flex-wrap items-center text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl',
       )}
     >
       {children}
@@ -72,9 +72,9 @@ function H3({ children, slideTo, noMargin, withDivider, ...props }: Props) {
       {...props}
       className={clsx(
         lexend.className,
-        noMargin ? "mb-0" : "mb-2.5",
-        withDivider && "border-dimmed border-b pb-2",
-        "flex flex-wrap items-center text-base font-bold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl",
+        noMargin ? 'mb-0' : 'mb-2.5',
+        withDivider && 'border-dimmed border-b pb-2',
+        'flex flex-wrap items-center text-base font-bold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl',
       )}
     >
       {children}
@@ -99,9 +99,9 @@ function H4({ children, slideTo, noMargin, withDivider, ...props }: Props) {
       {...props}
       className={clsx(
         lexend.className,
-        noMargin ? "mb-0" : "mb-2",
-        withDivider && "border-dimmed border-b pb-1.5",
-        "flex flex-wrap items-center text-sm font-bold tracking-tighter md:text-base lg:text-lg lg:tracking-tight xl:text-xl 2xl:text-2xl",
+        noMargin ? 'mb-0' : 'mb-2',
+        withDivider && 'border-dimmed border-b pb-1.5',
+        'flex flex-wrap items-center text-sm font-bold tracking-tighter md:text-base lg:text-lg lg:tracking-tight xl:text-xl 2xl:text-2xl',
       )}
     >
       {children}
@@ -126,9 +126,9 @@ function H5({ children, slideTo, noMargin, withDivider, ...props }: Props) {
       {...props}
       className={clsx(
         lexend.className,
-        noMargin ? "mb-0" : "mb-1.5",
-        withDivider && "border-dimmed border-b pb-1",
-        "flex flex-wrap items-center text-sm font-bold tracking-tighter md:text-sm lg:text-base lg:tracking-tight xl:text-lg 2xl:text-xl",
+        noMargin ? 'mb-0' : 'mb-1.5',
+        withDivider && 'border-dimmed border-b pb-1',
+        'flex flex-wrap items-center text-sm font-bold tracking-tighter md:text-sm lg:text-base lg:tracking-tight xl:text-lg 2xl:text-xl',
       )}
     >
       {children}
@@ -153,9 +153,9 @@ function H6({ children, slideTo, noMargin, withDivider, ...props }: Props) {
       {...props}
       className={clsx(
         lexend.className,
-        noMargin ? "mb-0" : "mb-1",
-        withDivider && "border-dimmed border-b pb-0.5",
-        "flex flex-wrap items-center text-xs font-bold tracking-tighter md:text-sm lg:text-base lg:tracking-tight xl:text-lg 2xl:text-xl",
+        noMargin ? 'mb-0' : 'mb-1',
+        withDivider && 'border-dimmed border-b pb-0.5',
+        'flex flex-wrap items-center text-xs font-bold tracking-tighter md:text-sm lg:text-base lg:tracking-tight xl:text-lg 2xl:text-xl',
       )}
     >
       {children}

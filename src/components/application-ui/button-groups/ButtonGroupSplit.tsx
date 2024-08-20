@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import React from "react"
-import clsx from "clsx"
-import { Menu } from "@headlessui/react"
-import { BuildingOfficeIcon, ChartBarIcon, ChevronDownIcon, CpuChipIcon } from "@heroicons/react/24/outline"
+import React from 'react'
+import clsx from 'clsx'
+import { Menu } from '@headlessui/react'
+import { BuildingOfficeIcon, ChartBarIcon, ChevronDownIcon, CpuChipIcon } from '@heroicons/react/24/outline'
 
 export function ButtonGroupSplit() {
   const items = [
-    { icon: BuildingOfficeIcon, text: "Option 1" },
-    { icon: ChartBarIcon, text: "Option 2" },
-    { icon: CpuChipIcon, text: "Option 3" },
+    { icon: BuildingOfficeIcon, text: 'Option 1' },
+    { icon: ChartBarIcon, text: 'Option 2' },
+    { icon: CpuChipIcon, text: 'Option 3' },
   ]
 
   function myFunction() {
@@ -35,10 +35,10 @@ export function ButtonGroupSplit() {
               {({ active }) => (
                 <button
                   className={clsx(
-                    "flex items-center gap-2 px-3 py-2.5 text-sm transition",
-                    itemIdx === 0 && "rounded-t",
-                    itemIdx === items.length - 1 && "rounded-b",
-                    active && "bg-blue-500 text-white"
+                    'flex items-center gap-2 px-3 py-2.5 text-sm transition',
+                    itemIdx === 0 && 'rounded-t',
+                    itemIdx === items.length - 1 && 'rounded-b',
+                    active && 'bg-blue-500 text-white',
                   )}
                 >
                   <item.icon className="h-4 w-4" />

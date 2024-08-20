@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import clsx from "clsx"
-import Image from "next/image"
-import React, { useState } from "react"
+import clsx from 'clsx'
+import Image from 'next/image'
+import React, { useState } from 'react'
 
 type ColorHex = `#${string}`
 type ProductType = {
@@ -28,13 +28,13 @@ type ProductType = {
 
 function ProductSimple({ product }: { product: ProductType }) {
   const [color, setColor] = useState<ColorHex>(product.info.colors[0])
-  const productId = product.info.title.replace(/\s/g, "-").toLowerCase()
+  const productId = product.info.title.replace(/\s/g, '-').toLowerCase()
   const priceWithDiscount = product.info.price - (product.info.price * product.info.sale.percent) / 100
 
   return (
     <div
       className={clsx(
-        "flex max-h-[80vh] w-full flex-col self-stretch overflow-hidden border-0 border-gray-300 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-gray-700 dark:bg-black/30 md:w-72"
+        'flex max-h-[80vh] w-full flex-col self-stretch overflow-hidden border-0 border-gray-300 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-gray-700 dark:bg-black/30 md:w-72',
       )}
     >
       <a className="relative min-h-[16rem] overflow-hidden" href="#">
@@ -60,7 +60,7 @@ function ProductSimple({ product }: { product: ProductType }) {
           alt="Product A1"
           width={800}
           height={800}
-          className={clsx("block w-full transition-all hover:scale-110", product.info.soldOut ? "sold-out" : "")}
+          className={clsx('block w-full transition-all hover:scale-110', product.info.soldOut ? 'sold-out' : '')}
           src={product.info.image}
         />
       </a>
@@ -70,7 +70,7 @@ function ProductSimple({ product }: { product: ProductType }) {
           <div className="flex items-center justify-start gap-x-1.5">
             <span className="inline-flex text-xs font-semibold uppercase tracking-tighter text-gray-600 group-hover:opacity-100 dark:text-gray-400">
               {product.info.brand}
-              {" / "}
+              {' / '}
               {product.info.sku}
             </span>
             <svg
@@ -108,8 +108,8 @@ function ProductSimple({ product }: { product: ProductType }) {
             <div className="flex items-center gap-1 text-base">
               <span
                 className={clsx(
-                  "leading-none tracking-tight",
-                  product.info.sale.active ? "font-medium line-through" : "font-bold"
+                  'leading-none tracking-tight',
+                  product.info.sale.active ? 'font-medium line-through' : 'font-bold',
                 )}
               >
                 {product.info.price.toFixed(2)}$
@@ -131,10 +131,10 @@ function ProductSimple({ product }: { product: ProductType }) {
                 onClick={() => setColor(x)}
                 style={{ backgroundColor: `${x}aa` }}
                 className={clsx(
-                  "h-6 w-6 rounded-sm border-2 border-[#00000040] transition-all duration-200 ease-in-out hover:opacity-80",
+                  'h-6 w-6 rounded-sm border-2 border-[#00000040] transition-all duration-200 ease-in-out hover:opacity-80',
                   color === x
-                    ? "ring-2 ring-gray-400 ring-offset-2 ring-offset-white dark:ring-white dark:ring-offset-gray-800"
-                    : ""
+                    ? 'ring-2 ring-gray-400 ring-offset-2 ring-offset-white dark:ring-white dark:ring-offset-gray-800'
+                    : '',
                 )}
               ></button>
             ))}
@@ -190,17 +190,17 @@ export function ProductCardsSimple() {
   const products: ProductType[] = [
     {
       info: {
-        title: "Product A",
+        title: 'Product A',
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget mattis aliquam, augue nisl ultricies nunc, nec tincidunt velit nunc quis eros.",
-        sku: "AP-12345",
-        brand: "Brand A",
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget mattis aliquam, augue nisl ultricies nunc, nec tincidunt velit nunc quis eros.',
+        sku: 'AP-12345',
+        brand: 'Brand A',
         price: 1270,
         ratingAvg: 4.82,
         ratingCount: 3275,
-        colors: ["#224455", "#33bb99", "#aa6677", "#4499ee"],
+        colors: ['#224455', '#33bb99', '#aa6677', '#4499ee'],
         image:
-          "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?h=800&w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNsb3RoZXN8ZW58MHx8MHx8fDI%3D",
+          'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?h=800&w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNsb3RoZXN8ZW58MHx8MHx8fDI%3D',
         new: true,
         soldOut: false,
         hot: false,
@@ -212,17 +212,17 @@ export function ProductCardsSimple() {
     },
     {
       info: {
-        title: "Product B",
+        title: 'Product B',
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget mattis aliquam, augue nisl ultricies nunc, nec tincidunt velit nunc quis eros.",
-        brand: "Brand B",
-        sku: "ST-56789",
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl eget mattis aliquam, augue nisl ultricies nunc, nec tincidunt velit nunc quis eros.',
+        brand: 'Brand B',
+        sku: 'ST-56789',
         price: 467,
         ratingAvg: 3.91,
         ratingCount: 455,
-        colors: ["#118844", "#AA66FF", "#003399", "#FFFFFF"],
+        colors: ['#118844', '#AA66FF', '#003399', '#FFFFFF'],
         image:
-          "https://images.unsplash.com/photo-1536992266094-82847e1fd431?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDYwMzUzODk&ixlib=rb-4.0.3&q=80&w=800",
+          'https://images.unsplash.com/photo-1536992266094-82847e1fd431?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8Y2xvdGhlc3x8fHx8fDE3MDYwMzUzODk&ixlib=rb-4.0.3&q=80&w=800',
         new: true,
         soldOut: false,
         hot: false,

@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import React, { useEffect, useState, useCallback } from "react"
-import clsx from "clsx"
-import { CheckIcon, ClipboardIcon } from "@heroicons/react/24/outline"
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
-import { Inter_Tight } from "next/font/google"
+import React, { useEffect, useState, useCallback } from 'react'
+import clsx from 'clsx'
+import { CheckIcon, ClipboardIcon } from '@heroicons/react/24/outline'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { Inter_Tight } from 'next/font/google'
 
-const inter = Inter_Tight({ subsets: ["latin"] })
+const inter = Inter_Tight({ subsets: ['latin'] })
 
 type Props = {
   route: string // api route
@@ -15,18 +15,18 @@ type Props = {
 }
 
 export function CodeShowcaseFromAPI({ route, language }: Props) {
-  const [code, setCode] = useState<string>("")
+  const [code, setCode] = useState<string>('')
 
   useEffect(() => {
     fetch(route)
       .then((response) => response.text())
       .then((data) => setCode(data))
       .catch((error) => {
-        console.error("Failed to fetch component code.")
+        console.error('Failed to fetch component code.')
       })
   }, [route])
 
-  return code === "" ? (
+  return code === '' ? (
     <div className="flex w-full items-center justify-center rounded-xl bg-[#1E2937] px-8 py-16 shadow dark:bg-black/10">
       <svg
         fill="none"
@@ -43,10 +43,10 @@ export function CodeShowcaseFromAPI({ route, language }: Props) {
       </svg>
     </div>
   ) : (
-    <div className={clsx(inter.className, "group relative max-w-7xl overflow-auto rounded-xl")}>
+    <div className={clsx(inter.className, 'group relative max-w-7xl overflow-auto rounded-xl')}>
       {/* Controls */}
       <div className="absolute right-4 top-4 flex items-center justify-end gap-2 font-sans">
-        {code === "" ? null : <CopyCodeButton text={code} />}
+        {code === '' ? null : <CopyCodeButton text={code} />}
       </div>
 
       <SyntaxHighlighter
@@ -54,11 +54,11 @@ export function CodeShowcaseFromAPI({ route, language }: Props) {
         showLineNumbers
         style={coldarkDark}
         customStyle={{
-          backgroundColor: "#0e131f",
-          borderRadius: "0",
-          minHeight: "500px",
-          maxHeight: "1000px",
-          margin: "0",
+          backgroundColor: '#0e131f',
+          borderRadius: '0',
+          minHeight: '500px',
+          maxHeight: '1000px',
+          margin: '0',
         }}
       >
         {code}
@@ -77,7 +77,7 @@ function CopyCodeButton({ text }: { text: string }) {
         setIsCopied(true)
         setTimeout(() => setIsCopied(false), 4000)
       })
-      .catch(() => console.error("Failed to copy code to clipboard."))
+      .catch(() => console.error('Failed to copy code to clipboard.'))
   }, [text])
 
   return (
@@ -85,13 +85,13 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied}
       className={clsx(
-        "flex items-center justify-start gap-1.5 rounded px-3 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed",
+        'flex items-center justify-start gap-1.5 rounded px-3 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed',
         isCopied
-          ? "bg-teal-600 text-white"
-          : "bg-white/20 text-white hover:bg-blue-600/80 hover:text-white dark:bg-white/10 dark:hover:bg-blue-500/60"
+          ? 'bg-teal-600 text-white'
+          : 'bg-white/20 text-white hover:bg-blue-600/80 hover:text-white dark:bg-white/10 dark:hover:bg-blue-500/60',
       )}
     >
-      <span className="hidden xl:flex">{isCopied ? "Copied" : "Copy"}</span>
+      <span className="hidden xl:flex">{isCopied ? 'Copied' : 'Copy'}</span>
       {isCopied ? <CheckIcon className="h-4 w-4" /> : <ClipboardIcon className="h-4 w-4" />}
     </button>
   )

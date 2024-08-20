@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import React from "react"
+import React from 'react'
 
 export function HoverDivCTA() {
-  const unsplashGenerate = "https://source.unsplash.com/random/500x500?productivity,city"
+  const unsplashGenerate = 'https://source.unsplash.com/random/500x500?productivity,city'
 
   return (
     <a href="#" className="group relative block max-w-md bg-black">

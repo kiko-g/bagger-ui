@@ -1,15 +1,15 @@
-import React from "react"
-import clsx from "clsx"
-import { Inter, Lexend } from "next/font/google"
+import React from 'react'
+import clsx from 'clsx'
+import { Inter, Lexend } from 'next/font/google'
 
-import { Seo } from "./layout/Seo"
-import { Header } from "./layout/Header"
-import { Footer } from "./layout/Footer"
-import { Sidebar } from "./layout/Sidebar"
-import { QuickNavSidebar } from "./layout/QuickNavSidebar"
-import { SupportBanner } from "./layout/SupportBanner"
+import { Seo } from './layout/Seo'
+import { Header } from './layout/Header'
+import { Footer } from './layout/Footer'
+import { Sidebar } from './layout/Sidebar'
+import { QuickNavSidebar } from './layout/QuickNavSidebar'
+import { SupportBanner } from './layout/SupportBanner'
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ['latin'] })
 
 type Props = {
   children: React.ReactNode
@@ -18,11 +18,11 @@ type Props = {
   quickNav?: { name: string; href: string }[]
 }
 
-export function Layout({ children, location = "Unknown", sidebar = false, quickNav }: Props) {
+export function Layout({ children, location = 'Unknown', sidebar = false, quickNav }: Props) {
   return (
     <>
       <Seo title={location} />
-      <main className={clsx(inter.className, "mx-auto flex min-h-screen max-w-[100vw] flex-col")}>
+      <main className={clsx(inter.className, 'mx-auto flex min-h-screen max-w-[100vw] flex-col')}>
         <Header />
         <SupportBanner />
         <div className="flex flex-1">

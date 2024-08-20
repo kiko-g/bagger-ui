@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import React, { Fragment, useEffect, useState, useCallback } from "react"
-import Link from "next/link"
-import clsx from "clsx"
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
-import { Inter_Tight } from "next/font/google"
-import { GithubIcon } from "./icons/GithubIcon"
-import { Disclosure, DisclosureButton, DisclosurePanel, Switch, Transition } from "@headlessui/react"
+import React, { Fragment, useEffect, useState, useCallback } from 'react'
+import Link from 'next/link'
+import clsx from 'clsx'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { Inter_Tight } from 'next/font/google'
+import { GithubIcon } from './icons/GithubIcon'
+import { Disclosure, DisclosureButton, DisclosurePanel, Switch, Transition } from '@headlessui/react'
 import {
   CheckIcon,
   ChevronDownIcon,
@@ -19,9 +19,9 @@ import {
   PlusIcon,
   SunIcon,
   ViewfinderCircleIcon,
-} from "@heroicons/react/24/outline"
+} from '@heroicons/react/24/outline'
 
-const inter = Inter_Tight({ subsets: ["latin"] })
+const inter = Inter_Tight({ subsets: ['latin'] })
 
 type Props = {
   name: string
@@ -30,8 +30,8 @@ type Props = {
 }
 
 export function ComponentShowcase({ name, path, Component }: Props) {
-  const sectionId = name.toLowerCase().replace(/[^a-z0-9]+/g, "-")
-  const [code, setCode] = useState<string>("")
+  const sectionId = name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+  const [code, setCode] = useState<string>('')
   const [isCodeVisible, setIsCodeVisible] = useState(false)
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export function ComponentShowcase({ name, path, Component }: Props) {
       .then((response) => response.text())
       .then((data) => setCode(data))
       .catch((error) => {
-        console.error("Failed to fetch component code.")
+        console.error('Failed to fetch component code.')
       })
   }, [path])
 
@@ -72,12 +72,12 @@ export function ComponentShowcase({ name, path, Component }: Props) {
             showLineNumbers
             style={coldarkDark}
             customStyle={{
-              margin: "0",
-              minHeight: "300px",
-              lineHeight: "1.25",
-              fontSize: "0.9rem",
-              backgroundColor: "#192030",
-              borderRadius: "0",
+              margin: '0',
+              minHeight: '300px',
+              lineHeight: '1.25',
+              fontSize: '0.9rem',
+              backgroundColor: '#192030',
+              borderRadius: '0',
             }}
           >
             {code}
@@ -102,7 +102,7 @@ function CopyCodeButton({ text }: { text: string }) {
         setIsCopied(true)
         setTimeout(() => setIsCopied(false), 3000)
       })
-      .catch(() => console.error("Failed to copy code to clipboard."))
+      .catch(() => console.error('Failed to copy code to clipboard.'))
   }, [text])
 
   if (!text) return null
@@ -112,10 +112,10 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied}
       className={clsx(
-        "flex items-center justify-start gap-1.5 rounded-full border-0 px-4 py-3 text-xs shadow-sm transition disabled:cursor-not-allowed",
+        'flex items-center justify-start gap-1.5 rounded-full border-0 px-4 py-3 text-xs shadow-sm transition disabled:cursor-not-allowed',
         isCopied
-          ? "bg-teal-600 text-white"
-          : "bg-black/70 text-white hover:bg-blue-600/80 hover:text-white dark:bg-black/50 dark:hover:bg-blue-500/60"
+          ? 'bg-teal-600 text-white'
+          : 'bg-black/70 text-white hover:bg-blue-600/80 hover:text-white dark:bg-black/50 dark:hover:bg-blue-500/60',
       )}
     >
       {isCopied ? <CheckIcon className="h-4 w-4" /> : <ClipboardIcon className="h-4 w-4" />}
@@ -137,8 +137,8 @@ function ChangeViewModeButton({
       <button
         onClick={toggleShowPreview}
         className={clsx(
-          "inline-flex rounded-full px-2.5 py-1.5 text-xs",
-          isCodeVisible ? "hover:bg-white/20 dark:hover:bg-white/10" : "bg-white/30 dark:bg-white/20"
+          'inline-flex rounded-full px-2.5 py-1.5 text-xs',
+          isCodeVisible ? 'hover:bg-white/20 dark:hover:bg-white/10' : 'bg-white/30 dark:bg-white/20',
         )}
       >
         Preview
@@ -146,8 +146,8 @@ function ChangeViewModeButton({
       <button
         onClick={toggleShowCode}
         className={clsx(
-          "inline-flex rounded-full px-2.5 py-1.5 text-xs",
-          isCodeVisible ? "bg-white/30 dark:bg-white/20" : "hover:bg-white/10"
+          'inline-flex rounded-full px-2.5 py-1.5 text-xs',
+          isCodeVisible ? 'bg-white/30 dark:bg-white/20' : 'hover:bg-white/10',
         )}
       >
         Code
@@ -157,7 +157,7 @@ function ChangeViewModeButton({
 }
 
 function LinkToGithubButton({ path }: { path: string }) {
-  const branchName = "main"
+  const branchName = 'main'
   const href = `https://github.com/kiko-g/bagger-ui/blob/${branchName}/components/${path}`
 
   return (
@@ -179,10 +179,10 @@ function ChangeBackgroundButton({ isDarkBackground, toggle }: { isDarkBackground
       <span className="sr-only">Use setting</span>
       <span
         className={clsx(
-          "flex items-center justify-start gap-1.5 rounded px-3 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed",
+          'flex items-center justify-start gap-1.5 rounded px-3 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed',
           isDarkBackground
-            ? "bg-blue-600/80 text-white hover:opacity-80 dark:bg-blue-500/60 dark:hover:opacity-80"
-            : "bg-white/90 text-gray-800 hover:opacity-80"
+            ? 'bg-blue-600/80 text-white hover:opacity-80 dark:bg-blue-500/60 dark:hover:opacity-80'
+            : 'bg-white/90 text-gray-800 hover:opacity-80',
         )}
       >
         {isDarkBackground ? (

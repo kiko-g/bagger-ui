@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { SidebarItem } from "./SidebarItem"
-import { applicationUiNav, generalNav, marketingNav, eCommerceNav } from "@/utils/data"
+import { SidebarItem } from './SidebarItem'
+import { applicationUiNav, generalNav, marketingNav, eCommerceNav } from '@/utils/data'
 
 export function Sidebar({ location }: { location: string }) {
   return (

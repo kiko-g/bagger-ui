@@ -1,22 +1,22 @@
-"use client"
+'use client'
 
-import React from "react"
-import clsx from "clsx"
+import React from 'react'
+import clsx from 'clsx'
 
 export function SwitchDarkMode() {
   function disableTransitionsTemporarily() {
-    document.documentElement.classList.add("[&_*]:!transition-none")
+    document.documentElement.classList.add('[&_*]:!transition-none')
     window.setTimeout(() => {
-      document.documentElement.classList.remove("[&_*]:!transition-none")
+      document.documentElement.classList.remove('[&_*]:!transition-none')
     }, 0)
   }
 
   function toggleMode() {
     disableTransitionsTemporarily()
 
-    let darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = document.documentElement.classList.toggle("dark")
+    let isDarkMode = document.documentElement.classList.toggle('dark')
 
     if (isDarkMode === isSystemDarkMode) {
       delete window.localStorage.isDarkMode
@@ -35,13 +35,13 @@ export function SwitchDarkMode() {
         strokeLinejoin="round"
         aria-hidden="true"
         className={clsx(
-          "h-8 w-8 transition dark:hidden",
-          "fill-white",
-          "stroke-blue-500",
-          "[@media(prefers-color-scheme:dark)]:fill-orange-400",
-          "[@media(prefers-color-scheme:dark)]:stroke-orange-400",
-          "group-hover:opacity-80",
-          "[@media(prefers-color-scheme:dark)]:group-hover:opacity-80"
+          'h-8 w-8 transition dark:hidden',
+          'fill-white',
+          'stroke-blue-500',
+          '[@media(prefers-color-scheme:dark)]:fill-orange-400',
+          '[@media(prefers-color-scheme:dark)]:stroke-orange-400',
+          'group-hover:opacity-80',
+          '[@media(prefers-color-scheme:dark)]:group-hover:opacity-80',
         )}
       >
         <path d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z"></path>
@@ -56,12 +56,12 @@ export function SwitchDarkMode() {
         viewBox="0 0 24 24"
         aria-hidden="true"
         className={clsx(
-          "hidden h-8 w-8 transition dark:block",
-          "stroke-blue-50",
-          "[@media(prefers-color-scheme:dark)]:fill-blue-400",
-          "[@media(prefers-color-scheme:dark)]:stroke-blue-400",
-          "group-hover:opacity-80",
-          "[@media(prefers-color-scheme:dark)]:group-hover:opacity-80"
+          'hidden h-8 w-8 transition dark:block',
+          'stroke-blue-50',
+          '[@media(prefers-color-scheme:dark)]:fill-blue-400',
+          '[@media(prefers-color-scheme:dark)]:stroke-blue-400',
+          'group-hover:opacity-80',
+          '[@media(prefers-color-scheme:dark)]:group-hover:opacity-80',
         )}
       >
         <path

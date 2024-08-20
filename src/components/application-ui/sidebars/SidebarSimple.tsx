@@ -1,25 +1,25 @@
-"use client"
+'use client'
 
-import React from "react"
-import clsx from "clsx"
-import { HomeIcon, InformationCircleIcon, LifebuoyIcon } from "@heroicons/react/24/outline"
+import React from 'react'
+import clsx from 'clsx'
+import { HomeIcon, InformationCircleIcon, LifebuoyIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   {
-    name: "Home",
-    href: "#",
+    name: 'Home',
+    href: '#',
     icon: HomeIcon,
     shown: true,
   },
   {
-    name: "About",
-    href: "#",
+    name: 'About',
+    href: '#',
     icon: InformationCircleIcon,
     shown: true,
   },
   {
-    name: "Help",
-    href: "#",
+    name: 'Help',
+    href: '#',
     icon: LifebuoyIcon,
     shown: true,
   },
@@ -66,9 +66,9 @@ function SidebarItem({
       href={href}
       className={clsx(
         isActive
-          ? "bg-blue-500 text-white hover:opacity-80 dark:bg-blue-500/80"
-          : "hover:bg-blue-500/10 dark:hover:bg-blue-500/30",
-        "flex cursor-pointer items-center justify-center gap-2 rounded py-3 pl-3 pr-3 text-sm transition ease-in-out xl:justify-start xl:pr-10"
+          ? 'bg-blue-500 text-white hover:opacity-80 dark:bg-blue-500/80'
+          : 'hover:bg-blue-500/10 dark:hover:bg-blue-500/30',
+        'flex cursor-pointer items-center justify-center gap-2 rounded py-3 pl-3 pr-3 text-sm transition ease-in-out xl:justify-start xl:pr-10',
       )}
     >
       {icon}

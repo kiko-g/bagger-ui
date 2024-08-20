@@ -1,17 +1,17 @@
-import React from "react"
-import { ComponentTypePage } from "@/components/ComponentTypePage"
-import { BadgeError, BadgeSimple, BadgeSuccess, BadgeOutline } from "@/components/application-ui/badges"
-import { BadgeBeta } from "@/components/application-ui/badges/BadgeBeta"
+import React from 'react'
+import { ComponentTypePage } from '@/components/ComponentTypePage'
+import { BadgeError, BadgeSimple, BadgeSuccess, BadgeOutline } from '@/components/application-ui/badges'
+import { BadgeBeta } from '@/components/application-ui/badges/BadgeBeta'
 
 export default function Badges() {
-  const base = "application-ui/badges"
+  const base = 'application-ui/badges'
 
   return (
     <ComponentTypePage
       title="Badges"
       components={[
         {
-          name: "Simple with Type",
+          name: 'Simple with Type',
           path: `${base}/BadgeSimple.tsx`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-3xl">
@@ -34,7 +34,7 @@ export default function Badges() {
           ),
         },
         {
-          name: "Outline with Type",
+          name: 'Outline with Type',
           path: `${base}/BadgeOutline.tsx`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-3xl">
@@ -60,7 +60,7 @@ export default function Badges() {
           ),
         },
         {
-          name: "Success",
+          name: 'Success',
           path: `${base}/BadgeSuccess.tsx`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
@@ -70,7 +70,7 @@ export default function Badges() {
           ),
         },
         {
-          name: "Error",
+          name: 'Error',
           path: `${base}/BadgeError.tsx`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
@@ -80,7 +80,7 @@ export default function Badges() {
           ),
         },
         {
-          name: "Beta",
+          name: 'Beta',
           path: `${base}/BadgeBeta.tsx`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">

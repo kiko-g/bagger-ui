@@ -1,19 +1,19 @@
-"use client"
+'use client'
 
-import React, { useState, useEffect } from "react"
-import clsx from "clsx"
-import { Lexend } from "next/font/google"
-import { Layout } from "@/components/Layout"
+import React, { useState, useEffect } from 'react'
+import clsx from 'clsx'
+import { Lexend } from 'next/font/google'
+import { Layout } from '@/components/Layout'
 import {
   type ColorHex,
   interpolateTailwindPalette,
   isValidHex,
   TailwindCombo,
   writeTailwindPalette,
-} from "@/utils/colors"
-import { CodeShowcaseDirect } from "@/components/CodeShowcaseDirect"
+} from '@/utils/colors'
+import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
 
-const lexend = Lexend({ subsets: ["latin"] })
+const lexend = Lexend({ subsets: ['latin'] })
 
 type TailwindPalette = {
   name: string
@@ -22,12 +22,12 @@ type TailwindPalette = {
 }
 
 export default function Generator() {
-  const [firstColor, setFirstColor] = useState<ColorHex | "">("")
-  const [secondColor, setSecondColor] = useState<ColorHex | "">("")
+  const [firstColor, setFirstColor] = useState<ColorHex | ''>('')
+  const [secondColor, setSecondColor] = useState<ColorHex | ''>('')
   const [tailwindPalette, setTailwindPalette] = useState<TailwindPalette>({
-    name: "",
+    name: '',
     combos: [],
-    config: "",
+    config: '',
   })
 
   function generateTailwindPalette() {
@@ -35,15 +35,19 @@ export default function Generator() {
     if (!isValidHex(firstColor) || !isValidHex(secondColor)) return
 
     const tailwindCombos = interpolateTailwindPalette(firstColor, secondColor)
-    const tailwindConfig = writeTailwindPalette(tailwindPalette.name || "custom", tailwindCombos)
-    setTailwindPalette({ ...tailwindPalette, combos: tailwindCombos, config: tailwindConfig })
+    const tailwindConfig = writeTailwindPalette(tailwindPalette.name || 'custom', tailwindCombos)
+    setTailwindPalette({
+      ...tailwindPalette,
+      combos: tailwindCombos,
+      config: tailwindConfig,
+    })
   }
 
   useEffect(() => {
     const trial = {
-      firstColor: "#f0f9ff" as ColorHex,
-      secondColor: "#082f49" as ColorHex,
-      name: "Custom" as string,
+      firstColor: '#f0f9ff' as ColorHex,
+      secondColor: '#082f49' as ColorHex,
+      name: 'Custom' as string,
     }
 
     setFirstColor(trial.firstColor)
@@ -51,7 +55,11 @@ export default function Generator() {
 
     const tailwindCombos = interpolateTailwindPalette(trial.firstColor, trial.secondColor)
     const tailwindConfig = writeTailwindPalette(trial.name, tailwindCombos)
-    setTailwindPalette({ name: trial.name, combos: tailwindCombos, config: tailwindConfig })
+    setTailwindPalette({
+      name: trial.name,
+      combos: tailwindCombos,
+      config: tailwindConfig,
+    })
   }, [])
 
   return (
@@ -60,7 +68,7 @@ export default function Generator() {
         <h2
           className={clsx(
             lexend.className,
-            "flex flex-wrap items-center text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl"
+            'flex flex-wrap items-center text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl',
           )}
         >
           Generator
@@ -73,7 +81,7 @@ export default function Generator() {
           <h3
             className={clsx(
               lexend.className,
-              "flex flex-wrap items-center text-base font-bold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
+              'flex flex-wrap items-center text-base font-bold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl',
             )}
           >
             TailwindCSS Palette Generator
@@ -81,7 +89,7 @@ export default function Generator() {
 
           <p className="mb-2 max-w-3xl text-sm">
             Generate a custom TailwindCSS color palette based on two colors. Enter the two colors you want to
-            interpolate and the name of your color palette. Copy the output and paste it into your{" "}
+            interpolate and the name of your color palette. Copy the output and paste it into your{' '}
             <code className="font-bold text-primary dark:text-primary">tailwind.config.js</code> 😎
           </p>
 
@@ -95,8 +103,13 @@ export default function Generator() {
                 name="tailwindColorName"
                 placeholder="Type the name of your color palette"
                 value={tailwindPalette.name}
-                onChange={(e) => setTailwindPalette({ ...tailwindPalette, name: e.target.value })}
-                className="w-full border border-gray-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-gray-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-gray-200/10 dark:bg-gray-100/5  dark:placeholder:text-gray-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                onChange={(e) =>
+                  setTailwindPalette({
+                    ...tailwindPalette,
+                    name: e.target.value,
+                  })
+                }
+                className="w-full border border-gray-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-gray-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-gray-200/10 dark:bg-gray-100/5 dark:placeholder:text-gray-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
               />
 
               {/* First Color Picker */}
@@ -114,7 +127,7 @@ export default function Generator() {
                   value={firstColor}
                   onChange={(e) => setFirstColor(e.target.value as ColorHex)}
                   placeholder="First Color"
-                  className="h-12 w-full border border-gray-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-gray-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-gray-200/10 dark:bg-gray-100/5  dark:placeholder:text-gray-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                  className="h-12 w-full border border-gray-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-gray-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-gray-200/10 dark:bg-gray-100/5 dark:placeholder:text-gray-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
                 />
               </div>
 
@@ -133,7 +146,7 @@ export default function Generator() {
                   value={secondColor}
                   onChange={(e) => setSecondColor(e.target.value as ColorHex)}
                   placeholder="Second Color"
-                  className="h-12 w-full border border-gray-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-gray-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-gray-200/10 dark:bg-gray-100/5  dark:placeholder:text-gray-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                  className="h-12 w-full border border-gray-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-gray-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-gray-200/10 dark:bg-gray-100/5 dark:placeholder:text-gray-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
                 />
               </div>
 
@@ -173,7 +186,7 @@ export default function Generator() {
                 <CodeShowcaseDirect
                   language="js"
                   code={tailwindPalette.config.trim()}
-                  options={{ maxHeight: "600px" }}
+                  options={{ maxHeight: '600px' }}
                 ></CodeShowcaseDirect>
               </div>
             )}

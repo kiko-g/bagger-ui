@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import React from "react"
-import clsx from "clsx"
+import React from 'react'
+import clsx from 'clsx'
 
 function BadgeSimpleDemo() {
   return (
@@ -26,7 +26,7 @@ function BadgeSimpleDemo() {
 }
 
 type Props = {
-  type?: undefined | "success" | "error" | "warning" | "info"
+  type?: undefined | 'success' | 'error' | 'warning' | 'info'
   children?: React.ReactNode
 }
 
@@ -34,12 +34,12 @@ export function BadgeSimple({ type, children }: Props) {
   return (
     <div
       className={clsx(
-        "inline-flex items-center justify-center gap-0.5 rounded px-2 py-1 lg:gap-1.5",
-        type === "info" && "bg-sky-600 text-white",
-        type === "error" && "bg-rose-600 text-white",
-        type === "warning" && "bg-amber-600 text-white",
-        type === "success" && "bg-emerald-600 text-white",
-        type === undefined && "bg-slate-600 text-white"
+        'inline-flex items-center justify-center gap-0.5 rounded px-2 py-1 lg:gap-1.5',
+        type === 'info' && 'bg-sky-600 text-white',
+        type === 'error' && 'bg-rose-600 text-white',
+        type === 'warning' && 'bg-amber-600 text-white',
+        type === 'success' && 'bg-emerald-600 text-white',
+        type === undefined && 'bg-slate-600 text-white',
       )}
     >
       {children ? children : <div className="text-sm">Simple Badge</div>}

@@ -1,3 +1,3 @@
-import { ProductOverviewSimple } from "./ProductOverviewSimple"
+import { ProductOverviewSimple } from './ProductOverviewSimple'
 
 export { ProductOverviewSimple }

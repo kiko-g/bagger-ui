@@ -1,11 +1,11 @@
-import "@/styles/globals.css"
-import type { Metadata, Viewport } from "next"
+import '@/styles/globals.css'
+import type { Metadata, Viewport } from 'next'
 
-import clsx from "clsx"
-import { siteConfig } from "@/utils/config"
-import { fontSans } from "@/lib/fonts"
-import { Analytics } from "@/components/Analytics"
-import { Providers } from "./providers"
+import clsx from 'clsx'
+import { siteConfig } from '@/utils/config'
+import { fontSans } from '@/lib/fonts'
+import { Analytics } from '@/components/Analytics'
+import { Providers } from './providers'
 
 export const metadata: Metadata = {
   title: {
@@ -14,17 +14,17 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
-  keywords: ["Next.js", "React", "Typescript", "Tailwind CSS", "Headless UI"],
+  keywords: ['Next.js', 'React', 'Typescript', 'Tailwind CSS', 'Headless UI'],
   authors: [
     {
-      name: "Francisco Gonçalves",
-      url: "https://kikogoncalves.com",
+      name: 'Francisco Gonçalves',
+      url: 'https://kikogoncalves.com',
     },
   ],
-  creator: "Francisco Gonçalves",
+  creator: 'Francisco Gonçalves',
   openGraph: {
-    type: "website",
-    locale: "en_US",
+    type: 'website',
+    locale: 'en_US',
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -39,24 +39,24 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@kikogoncalves_",
+    creator: '@kikogoncalves_',
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
 }
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
 }
 
@@ -69,7 +69,7 @@ export default function RootLayout({
     <>
       <html lang="en" suppressHydrationWarning>
         <head />
-        <body className={clsx("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
+        <body className={clsx('bg-background min-h-screen font-sans antialiased', fontSans.variable)}>
           <Providers>
             <Analytics />
             {children}

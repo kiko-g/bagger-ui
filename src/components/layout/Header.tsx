@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import Link from "next/link"
-import Image from "next/image"
-import clsx from "clsx"
-import { Lexend } from "next/font/google"
-import { DarkModeSwitch } from "./DarkModeSwitch"
-import { links } from "@/utils/data"
+import Link from 'next/link'
+import Image from 'next/image'
+import clsx from 'clsx'
+import { Lexend } from 'next/font/google'
+import { DarkModeSwitch } from './DarkModeSwitch'
+import { links } from '@/utils/data'
 
-const lexend = Lexend({ subsets: ["latin"] })
+const lexend = Lexend({ subsets: ['latin'] })
 
 export function Header() {
   return (
@@ -20,7 +20,7 @@ export function Header() {
             <h1
               className={clsx(
                 lexend.className,
-                "inline-flex text-xl font-bold text-gray-800 dark:bg-transparent dark:text-white"
+                'inline-flex text-xl font-bold text-gray-800 dark:bg-transparent dark:text-white',
               )}
             >
               BaggerUI

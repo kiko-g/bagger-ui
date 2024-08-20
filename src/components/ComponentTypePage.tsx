@@ -1,10 +1,10 @@
-"use client"
+'use client'
 
-import React, { useState, useMemo } from "react"
-import { Layout } from "@/components/Layout"
-import { ComponentShowcase } from "@/components/ComponentShowcase"
-import { strIncludes } from "@/utils"
-import clsx from "clsx"
+import React, { useState, useMemo } from 'react'
+import { Layout } from '@/components/Layout'
+import { ComponentShowcase } from '@/components/ComponentShowcase'
+import { strIncludes } from '@/utils'
+import clsx from 'clsx'
 
 type ComponentCardType = {
   name: string
@@ -19,18 +19,18 @@ type Props = {
 }
 
 export function ComponentTypePage({ title, components, description }: Props) {
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState('')
   const filteredComponents = useMemo(
     () => components.filter((item) => strIncludes(item.name, search)),
-    [components, search]
+    [components, search],
   )
   const quickNav = useMemo(
     () =>
       filteredComponents.map((item) => ({
         name: item.name,
-        href: `#${item.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+        href: `#${item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
       })),
-    [filteredComponents]
+    [filteredComponents],
   )
 
   return (
@@ -40,7 +40,7 @@ export function ComponentTypePage({ title, components, description }: Props) {
         {description ? (
           description
         ) : (
-          <p className="max-w-4xl mb-3 text-sm">
+          <p className="mb-3 max-w-4xl text-sm">
             Click the <strong>code</strong> tab buttons to see demos for every entry.
           </p>
         )}
@@ -52,11 +52,11 @@ export function ComponentTypePage({ title, components, description }: Props) {
             placeholder="Search by component name"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full border border-gray-300 bg-gray-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-gray-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-gray-200/10 dark:bg-gray-100/5  dark:placeholder:text-gray-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+            className="w-full border border-gray-300 bg-gray-50 px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-gray-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-gray-200/10 dark:bg-gray-100/5 dark:placeholder:text-gray-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
           />
         </div>
 
-        <ul className={clsx("grid grid-cols-1")}>
+        <ul className={clsx('grid grid-cols-1')}>
           {filteredComponents?.length > 0 ? (
             filteredComponents.map((button, buttonIx) => (
               <ComponentShowcase

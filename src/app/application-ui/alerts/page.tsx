@@ -1,22 +1,22 @@
-import React from "react"
-import { ComponentTypePage } from "@/components/ComponentTypePage"
-import { AlertCustom } from "@/components/application-ui/alerts/AlertCustom"
+import React from 'react'
+import { ComponentTypePage } from '@/components/ComponentTypePage'
+import { AlertCustom } from '@/components/application-ui/alerts/AlertCustom'
 
 export default function Alerts() {
-  const base = "application-ui/alerts"
+  const base = 'application-ui/alerts'
 
   return (
     <ComponentTypePage
       title="Alerts"
       description={
-        <p className="max-w-4xl mb-3 text-sm">
-          Customizable alerts to send information to the user with different icons, colors, and actions. Click the{" "}
+        <p className="mb-3 max-w-4xl text-sm">
+          Customizable alerts to send information to the user with different icons, colors, and actions. Click the{' '}
           <strong className="underline decoration-primary-500">code</strong> tab buttons to see demos for every entry.
         </p>
       }
       components={[
         {
-          name: "With Accent and Dismissible",
+          name: 'With Accent and Dismissible',
           path: `${base}/AlertCustom.tsx`,
           component: (
             <div className="w-full space-y-16">
@@ -41,7 +41,7 @@ export default function Alerts() {
           ),
         },
         {
-          name: "Rounded with Border",
+          name: 'Rounded with Border',
           path: `${base}/AlertCustom.tsx`,
           component: (
             <div className="w-full space-y-16">
@@ -66,7 +66,7 @@ export default function Alerts() {
           ),
         },
         {
-          name: "Filled, Rounded and dismissible",
+          name: 'Filled, Rounded and dismissible',
           path: `${base}/AlertCustom.tsx`,
           component: (
             <div className="w-full space-y-16">
@@ -91,7 +91,7 @@ export default function Alerts() {
           ),
         },
         {
-          name: "Accent, dismissible with Long Children",
+          name: 'Accent, dismissible with Long Children',
           path: `${base}/AlertCustom.tsx`,
           component: (
             <div className="w-full space-y-16">
@@ -156,7 +156,7 @@ export default function Alerts() {
           ),
         },
         {
-          name: "Accent and no Icon",
+          name: 'Accent and no Icon',
           path: `${base}/AlertCustom.tsx`,
           component: (
             <div className="w-full space-y-16">

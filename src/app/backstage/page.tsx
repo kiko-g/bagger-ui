@@ -1,20 +1,20 @@
-"use client"
+'use client'
 
-import React, { useState } from "react"
-import clsx from "clsx"
+import React, { useState } from 'react'
+import clsx from 'clsx'
 
-import { Lexend } from "next/font/google"
-import { Layout } from "@/components/Layout"
-import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react"
+import { Lexend } from 'next/font/google'
+import { Layout } from '@/components/Layout'
+import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from '@headlessui/react'
 
-import { AlertCustom } from "@/components/application-ui/alerts/AlertCustom"
-import { CameraIcon, CheckIcon, ChevronDownIcon } from "@heroicons/react/24/outline"
+import { AlertCustom } from '@/components/application-ui/alerts/AlertCustom'
+import { CameraIcon, CheckIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 
-const lexend = Lexend({ subsets: ["latin"] })
+const lexend = Lexend({ subsets: ['latin'] })
 
 const components = [
   {
-    name: "Alerts",
+    name: 'Alerts',
     node: (
       <div className="flex w-full flex-col items-center gap-3">
         <AlertCustom accent dismissible type="info">
@@ -46,7 +46,7 @@ export default function Backstage() {
         <h2
           className={clsx(
             lexend.className,
-            "flex flex-wrap items-center gap-2 text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl"
+            'flex flex-wrap items-center gap-2 text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl',
           )}
         >
           <span>Backstage</span>

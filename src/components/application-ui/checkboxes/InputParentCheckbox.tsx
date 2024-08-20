@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import React, { useState, useEffect } from "react"
-import { InputCheckbox } from "./InputCheckbox"
+import React, { useState, useEffect } from 'react'
+import { InputCheckbox } from './InputCheckbox'
 
 export function InputParentCheckbox() {
   const [childCheckboxes, setChildCheckboxes] = useState([
