@@ -54,7 +54,7 @@ function Sections() {
       <p className="mb-4 max-w-4xl">
         Start exploring the types of components we have available and visit their individual pages where you can find
         the web components and their source code. Make sure you have checked out the{' '}
-        <Link href="/setup" className="font-bold underline hover:text-primary hover:opacity-80 dark:hover:text-primary">
+        <Link href="/setup" className="font-bold underline transition hover:opacity-70">
           <code>configuration</code>
         </Link>{' '}
         page. Your setup should be similar, otherwise some components might not work as expected in your project.

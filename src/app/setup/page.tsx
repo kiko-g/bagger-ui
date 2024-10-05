@@ -52,7 +52,7 @@ export default function Config() {
           <Link
             target="_blank"
             href="https://nextjs.org/docs"
-            className="font-bold underline hover:text-primary hover:opacity-80 dark:hover:text-primary"
+            className="font-bold underline transition hover:opacity-70"
           >
             get started with the framework here
           </Link>

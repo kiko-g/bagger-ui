@@ -15,6 +15,8 @@ import {
 } from '@heroicons/react/24/outline'
 import { GithubIcon, ButtonIcon, LoadingIcon, SidebarIcon, SwitchIcon } from '@/components/icons'
 
+const isDev = process.env.NODE_ENV === 'development'
+
 export const links = [
   {
     label: 'Francisco Gonçalves',
@@ -56,17 +58,33 @@ export const generalNav: BaseNav[] = [
     shown: true,
     icon: WrenchIcon,
   },
-  {
-    name: 'Generator',
-    href: '/generator',
-    shown: true,
-    icon: Cog8ToothIcon,
-  },
+]
+
+type GeneratorNav = {
+  name: string
+  href: string
+  shown?: boolean
+  new?: boolean
+  icon: React.ForwardRefExoticComponent<
+    Omit<React.SVGProps<SVGSVGElement>, 'ref'> & {
+      title?: string | undefined
+      titleId?: string | undefined
+    } & React.RefAttributes<SVGSVGElement>
+  >
+}
+
+export const generatorNav: GeneratorNav[] = [
   {
     name: 'Backstage',
     href: '/backstage',
-    shown: true,
+    shown: isDev,
     icon: BuildingOffice2Icon,
+  },
+  {
+    name: 'Palette',
+    href: '/generator/palette',
+    shown: true,
+    icon: Cog8ToothIcon,
   },
 ]
 
