@@ -5,7 +5,7 @@ import { Lexend } from 'next/font/google'
 import { Layout } from '@/components/Layout'
 import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
 import { CodeShowcaseFromAPI } from '@/components/CodeShowcaseFromAPI'
-import { H3, H4 } from '@/components/utils/Headings'
+import { H3, H4 } from '@/components/common/Headings'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 
 const lexend = Lexend({ subsets: ['latin'] })
