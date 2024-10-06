@@ -57,7 +57,7 @@ export function HeroGridNav() {
   ]
 
   return (
-    <div className="flex flex-col divide-y divide-transparent overflow-hidden rounded-lg border border-transparent bg-gray-200 dark:border-blue-500/40 dark:bg-blue-500/10 md:grid md:grid-cols-2 md:gap-px md:divide-y-0">
+    <div className="flex flex-col divide-y divide-transparent overflow-hidden rounded-lg border border-transparent bg-zinc-200 dark:border-blue-500/40 dark:bg-blue-500/10 md:grid md:grid-cols-2 md:gap-px md:divide-y-0">
       {actions.map((action, actionIdx) => (
         <Link
           href={action.href}
@@ -67,18 +67,18 @@ export function HeroGridNav() {
             actionIdx === 1 ? 'sm:rounded-tr-lg' : '',
             actionIdx === actions.length - 2 ? 'sm:rounded-bl-lg' : '',
             actionIdx === actions.length - 1 ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none' : '',
-            'group relative bg-white p-6 transition focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary hover:bg-gray-100 dark:bg-blue-500/5 dark:hover:opacity-90',
+            'group relative bg-white p-6 transition focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary hover:bg-zinc-100 dark:bg-blue-500/5 dark:hover:opacity-90',
           )}
         >
           <span className={clsx(action.iconClasses, 'inline-flex rounded-lg p-4 transition')}>
             <action.icon className="h-6 w-6" aria-hidden="true" />
           </span>
-          <span className="font-lexend mt-3 block text-base font-semibold leading-6 text-gray-900 dark:text-white">
+          <span className="font-lexend mt-3 block text-base font-semibold leading-6 text-zinc-900 dark:text-white">
             {action.title}
           </span>
-          <span className="mt-2 text-sm tracking-tight text-gray-500 dark:text-gray-200">{action.text}</span>
+          <span className="mt-2 text-sm tracking-tight text-zinc-500 dark:text-zinc-200">{action.text}</span>
           <span
-            className="pointer-events-none absolute right-6 top-6 text-gray-300 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-white"
+            className="pointer-events-none absolute right-6 top-6 text-zinc-300 group-hover:text-zinc-500 dark:text-zinc-400 dark:group-hover:text-white"
             aria-hidden="true"
           >
             <ArrowLongRightIcon className="h-5 w-5 transition group-hover:-rotate-45 md:h-6 md:w-6" />

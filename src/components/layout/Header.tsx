@@ -11,7 +11,7 @@ const lexend = Lexend({ subsets: ['latin'] })
 
 export function Header() {
   return (
-    <header className="max-w-8xl sticky top-0 z-30 mx-auto h-[60px] w-full border-b border-gray-200 bg-gray-50 bg-opacity-40 backdrop-blur-sm backdrop-filter dark:border-gray-700 dark:bg-gray-900 dark:bg-opacity-40 xl:px-6">
+    <header className="max-w-8xl sticky top-0 z-50 mx-auto h-[60px] w-full border-b border-zinc-200 bg-zinc-100 bg-opacity-60 backdrop-blur-sm backdrop-filter dark:border-zinc-700 dark:bg-zinc-950 dark:bg-opacity-40 xl:px-6">
       <div className="flex items-center justify-between px-3 py-3 sm:px-4 lg:px-6 xl:px-0">
         {/* Logo */}
         <div className="flex items-center gap-3">
@@ -20,7 +20,7 @@ export function Header() {
             <h1
               className={clsx(
                 lexend.className,
-                'inline-flex text-xl font-bold text-gray-800 dark:bg-transparent dark:text-white',
+                'inline-flex text-xl font-bold text-zinc-800 dark:bg-transparent dark:text-white',
               )}
             >
               BaggerUI
@@ -38,7 +38,7 @@ export function Header() {
             .map(({ href, label, content }) => (
               <li
                 key={`${href}${label}`}
-                className="text-gray-800 opacity-50 transition hover:opacity-100 dark:text-gray-300"
+                className="text-zinc-800 opacity-50 transition hover:opacity-100 dark:text-zinc-300"
               >
                 <span className="sr-only">{label}</span>
                 <Link href={href} target="_blank">

@@ -165,7 +165,7 @@ function LinkToGithubButton({ path }: { path: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-start gap-2 rounded bg-white px-2 py-2 text-gray-900 shadow-sm transition hover:opacity-80 disabled:cursor-not-allowed"
+      className="flex items-center justify-start gap-2 rounded bg-white px-2 py-2 text-zinc-900 shadow-sm transition hover:opacity-80 disabled:cursor-not-allowed"
     >
       <GithubIcon className="h-4 w-4" />
       <span className="text-xs">View on Github</span>
@@ -182,7 +182,7 @@ function ChangeBackgroundButton({ isDarkBackground, toggle }: { isDarkBackground
           'flex items-center justify-start gap-1.5 rounded px-3 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed',
           isDarkBackground
             ? 'bg-blue-600/80 text-white hover:opacity-80 dark:bg-blue-500/60 dark:hover:opacity-80'
-            : 'bg-white/90 text-gray-800 hover:opacity-80',
+            : 'bg-white/90 text-zinc-800 hover:opacity-80',
         )}
       >
         {isDarkBackground ? (

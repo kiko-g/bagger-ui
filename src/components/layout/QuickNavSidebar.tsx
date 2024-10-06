@@ -12,7 +12,7 @@ export function QuickNavSidebar({ navigation }: { navigation?: { name: string; h
             <li key={`nav-${itemIdx}`}>
               <Link
                 href={item.href}
-                className="text-sm font-normal tracking-tight text-gray-800 hover:underline dark:text-white"
+                className="text-sm font-normal tracking-tight text-zinc-800 hover:underline dark:text-white"
               >
                 <span>{item.name}</span>
               </Link>

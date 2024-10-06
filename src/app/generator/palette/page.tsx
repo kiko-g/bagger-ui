@@ -133,7 +133,7 @@ export default function Generator() {
                       name: e.target.value,
                     })
                   }
-                  className="w-full border border-gray-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-gray-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-gray-200/10 dark:bg-gray-100/5 dark:placeholder:text-gray-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                  className="w-full border border-zinc-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
                 />
 
                 {/* First Color Picker */}
@@ -146,7 +146,7 @@ export default function Generator() {
                     value={firstColor}
                     onChange={(e) => setFirstColor(e.target.value as ColorHex)}
                     placeholder="First Color"
-                    className="h-12 w-full border border-gray-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-gray-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-gray-200/10 dark:bg-gray-100/5 dark:placeholder:text-gray-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                    className="h-12 w-full border border-zinc-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
                   />
                 </div>
 
@@ -160,7 +160,7 @@ export default function Generator() {
                     value={secondColor}
                     onChange={(e) => setSecondColor(e.target.value as ColorHex)}
                     placeholder="Second Color"
-                    className="h-12 w-full border border-gray-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-gray-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-gray-200/10 dark:bg-gray-100/5 dark:placeholder:text-gray-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                    className="h-12 w-full border border-zinc-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
                   />
                 </div>
 
@@ -193,7 +193,7 @@ export default function Generator() {
                                     'rounded-full border border-transparent p-[2px] text-center text-2xs font-medium text-white shadow-xl transition-all',
                                     active
                                       ? 'bg-emerald-800/90 dark:bg-emerald-600/80'
-                                      : 'bg-gray-800/90 dark:bg-black/80',
+                                      : 'bg-zinc-800/90 dark:bg-black/80',
                                   )}
                                 >
                                   <svg
@@ -221,8 +221,8 @@ export default function Generator() {
                                 className="mb-2 flex h-10 w-14 rounded shadow"
                                 style={{ backgroundColor: combo.color }}
                               ></span>
-                              <span className="text-xs font-semibold text-gray-800 dark:text-gray-200">{combo.id}</span>
-                              <span className="text-xs font-normal text-gray-600 dark:text-gray-400">
+                              <span className="text-xs font-semibold text-zinc-800 dark:text-zinc-200">{combo.id}</span>
+                              <span className="text-xs font-normal text-zinc-600 dark:text-zinc-400">
                                 {combo.color}
                               </span>
                             </button>
@@ -259,20 +259,20 @@ function PaletteSkeleton() {
   return (
     <div className="mt-4 grid h-full grid-cols-1 gap-4 lg:grid-cols-3">
       <div className="col-span-1 flex flex-col items-end gap-4 lg:col-span-2">
-        <div className="h-12 w-full animate-pulse rounded bg-gray-300 dark:bg-black/40"></div>
-        <div className="h-12 w-full animate-pulse rounded bg-gray-300 dark:bg-black/40"></div>
-        <div className="h-12 w-full animate-pulse rounded bg-gray-300 dark:bg-black/40"></div>
-        <div className="mt-1 h-10 w-32 animate-pulse rounded bg-gray-300 dark:bg-black/40"></div>
+        <div className="h-12 w-full animate-pulse rounded bg-zinc-300 dark:bg-black/40"></div>
+        <div className="h-12 w-full animate-pulse rounded bg-zinc-300 dark:bg-black/40"></div>
+        <div className="h-12 w-full animate-pulse rounded bg-zinc-300 dark:bg-black/40"></div>
+        <div className="mt-1 h-10 w-32 animate-pulse rounded bg-zinc-300 dark:bg-black/40"></div>
 
         <div className="grid w-full grid-cols-10 gap-2">
           {Array.from({ length: 10 }).map((_, index) => (
-            <div key={index} className="h-10 w-full animate-pulse rounded bg-gray-300 dark:bg-black/40"></div>
+            <div key={index} className="h-10 w-full animate-pulse rounded bg-zinc-300 dark:bg-black/40"></div>
           ))}
         </div>
       </div>
 
       <div className="col-span-1 h-full lg:col-span-1">
-        <div className="h-96 w-full animate-pulse rounded bg-gray-300 dark:bg-black/40"></div>
+        <div className="h-96 w-full animate-pulse rounded bg-zinc-300 dark:bg-black/40"></div>
       </div>
     </div>
   )

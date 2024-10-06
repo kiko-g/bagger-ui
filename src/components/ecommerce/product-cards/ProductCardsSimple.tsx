@@ -34,7 +34,7 @@ function ProductSimple({ product }: { product: ProductType }) {
   return (
     <div
       className={clsx(
-        'flex max-h-[80vh] w-full flex-col self-stretch overflow-hidden border-0 border-gray-300 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-gray-700 dark:bg-black/30 md:w-72',
+        'flex max-h-[80vh] w-full flex-col self-stretch overflow-hidden border-0 border-zinc-300 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-zinc-700 dark:bg-black/30 md:w-72',
       )}
     >
       <a className="relative min-h-[16rem] overflow-hidden" href="#">
@@ -70,7 +70,7 @@ function ProductSimple({ product }: { product: ProductType }) {
       <div className="group relative flex flex-1 flex-col justify-between">
         <section className="px-3 pt-3">
           <div className="flex items-center justify-start gap-x-1.5">
-            <span className="inline-flex text-xs font-semibold uppercase tracking-tighter text-gray-600 group-hover:opacity-100 dark:text-gray-400">
+            <span className="inline-flex text-xs font-semibold uppercase tracking-tighter text-zinc-600 group-hover:opacity-100 dark:text-zinc-400">
               {product.info.brand}
               {' / '}
               {product.info.sku}
@@ -79,7 +79,7 @@ function ProductSimple({ product }: { product: ProductType }) {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="h-5 w-5 -rotate-45 stroke-gray-500 opacity-0 transition-opacity duration-200 ease-in-out dark:stroke-gray-400"
+              className="h-5 w-5 -rotate-45 stroke-zinc-500 opacity-0 transition-opacity duration-200 ease-in-out dark:stroke-zinc-400"
               strokeWidth={1.5}
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
@@ -102,8 +102,8 @@ function ProductSimple({ product }: { product: ProductType }) {
                 >
                   <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                 </svg>
-                <span className="font-semibold text-gray-900 dark:text-white">{product.info.ratingAvg.toFixed(2)}</span>
-                <span className="font-semibold text-gray-900 dark:text-white">({product.info.ratingCount})</span>
+                <span className="font-semibold text-zinc-900 dark:text-white">{product.info.ratingAvg.toFixed(2)}</span>
+                <span className="font-semibold text-zinc-900 dark:text-white">({product.info.ratingCount})</span>
               </a>
             </div>
 
@@ -135,7 +135,7 @@ function ProductSimple({ product }: { product: ProductType }) {
                 className={clsx(
                   'h-6 w-6 rounded-sm border-2 border-[#00000040] transition-all duration-200 ease-in-out hover:opacity-80',
                   color === x
-                    ? 'ring-2 ring-gray-400 ring-offset-2 ring-offset-white dark:ring-white dark:ring-offset-gray-800'
+                    ? 'ring-2 ring-zinc-400 ring-offset-2 ring-offset-white dark:ring-white dark:ring-offset-zinc-800'
                     : '',
                 )}
               ></button>
@@ -164,7 +164,7 @@ function ProductSimple({ product }: { product: ProductType }) {
               <span>Add to cart</span>
             </button>
 
-            <button className="flex items-center justify-center gap-x-1 rounded bg-gray-500 px-3 py-2 text-sm font-medium tracking-tighter text-white transition-all duration-200 ease-in-out enabled:hover:bg-gray-600 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-white/20 enabled:hover:dark:bg-white/30">
+            <button className="flex items-center justify-center gap-x-1 rounded bg-zinc-500 px-3 py-2 text-sm font-medium tracking-tighter text-white transition-all duration-200 ease-in-out enabled:hover:bg-zinc-600 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-white/20 enabled:hover:dark:bg-white/30">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

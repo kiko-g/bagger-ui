@@ -122,7 +122,7 @@ function SectionCard({ title, count, description, link, image }: SectionCardProp
         <div className="aspect-[8/5] w-full border border-primary-800 bg-primary-800 transition group-hover:border-primary-700 group-hover:bg-primary-700 dark:border-white/5 dark:bg-primary-900/50 dark:group-hover:border-primary-800 dark:group-hover:bg-primary-900" />
       )}
       <h4 className="mt-3 text-sm font-semibold text-slate-900 transition dark:text-white">{title}</h4>
-      <p className="-mt-[2px] text-[0.7rem] font-normal text-slate-600 dark:text-gray-300 lg:text-xs">
+      <p className="-mt-[2px] text-[0.7rem] font-normal text-slate-600 dark:text-zinc-300 lg:text-xs">
         {count} component{count === 1 ? '' : 's'}
       </p>
     </Link>

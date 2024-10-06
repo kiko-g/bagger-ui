@@ -28,7 +28,6 @@ export function CodeShowcaseDirect({ code, language, options }: Props) {
         language={language}
         style={coldarkDark}
         customStyle={{
-          backgroundColor: '#0e131f',
           borderRadius: options?.borderRadius || '0',
           maxHeight: options?.maxHeight || '200px',
           margin: options?.margin || '0',
@@ -60,7 +59,7 @@ function CopyCodeButton({ text }: { text: string }) {
       disabled={isCopied}
       className={clsx(
         'flex items-center justify-start gap-1.5 rounded bg-[#0e131f] px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed',
-        isCopied ? '' : 'hover:bg-gray-700',
+        isCopied ? '' : 'hover:bg-zinc-700',
       )}
     >
       {isCopied ? <CheckIcon className="h-4 w-4" /> : <ClipboardIcon className="h-4 w-4" />}

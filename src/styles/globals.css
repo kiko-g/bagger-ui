@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *::selection {
-  @apply bg-gray-800 text-white dark:bg-lime-500/50;
+  @apply bg-zinc-800 text-white dark:bg-lime-500/50;
 }
 
 pre *::selection {
@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  @apply bg-slate-50 text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100;
+  @apply bg-slate-50 text-zinc-900 antialiased dark:bg-zinc-900 dark:text-zinc-100;
 }
 
 code {
@@ -32,8 +32,12 @@ code {
     monospace !important;
 }
 
+pre {
+  @apply bg-zinc-900 text-white dark:bg-zinc-800;
+}
+
 .border-dimmed {
-  @apply border-gray-300 dark:border-white/10;
+  @apply border-zinc-300 dark:border-white/10;
 }
 
 @keyframes rotate {
