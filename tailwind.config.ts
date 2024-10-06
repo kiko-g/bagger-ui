@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  darkMode: ['class', 'class'],
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -29,21 +29,7 @@ const config: Config = {
           800: '#155e75',
           900: '#164e63',
           950: '#083344',
-          DEFAULT: '#0e7490',
-        },
-        secondary: {
-          '50': '#f0f9ff',
-          '100': '#dde8f1',
-          '200': '#cbd8e4',
-          '300': '#b8c7d6',
-          '400': '#a5b7c8',
-          '500': '#93a6bb',
-          '600': '#8095ad',
-          '700': '#6d859f',
-          '800': '#5a7491',
-          '900': '#486484',
-          '950': '#355376',
-          DEFAULT: '#6d859f',
+          DEFAULT: '#155e75',
         },
       },
       borderRadius: {
