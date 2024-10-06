@@ -9,8 +9,6 @@ import { Sidebar } from './layout/Sidebar'
 import { QuickNavSidebar } from './layout/QuickNavSidebar'
 import { SupportBanner } from './layout/SupportBanner'
 
-const inter = Inter({ subsets: ['latin'] })
-
 type Props = {
   children: React.ReactNode
   location?: string
@@ -22,7 +20,7 @@ export function Layout({ children, location = 'Unknown', sidebar = false, quickN
   return (
     <>
       <Seo title={location} />
-      <main className={clsx(inter.className, 'mx-auto flex min-h-screen max-w-[100vw] flex-col')}>
+      <main className={clsx('mx-auto flex min-h-screen max-w-[100vw] flex-col')}>
         <Header />
         <SupportBanner />
         <div className="flex flex-1 pb-4">

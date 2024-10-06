@@ -60,6 +60,8 @@ function ProductSimple({ product }: { product: ProductType }) {
           alt="Product A1"
           width={800}
           height={800}
+          placeholder="blur"
+          blurDataURL={product.info.image}
           className={clsx('block w-full transition-all hover:scale-110', product.info.soldOut ? 'sold-out' : '')}
           src={product.info.image}
         />

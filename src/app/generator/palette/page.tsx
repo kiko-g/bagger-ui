@@ -12,6 +12,7 @@ import {
   writeTailwindPalette,
 } from '@/utils/colors'
 import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
+import { ColorPicker } from '@/components/common/ColorPicker'
 
 const lexend = Lexend({ subsets: ['latin'] })
 
@@ -22,8 +23,8 @@ type TailwindPalette = {
 }
 
 export default function Generator() {
-  const [firstColor, setFirstColor] = useState<ColorHex | ''>('')
-  const [secondColor, setSecondColor] = useState<ColorHex | ''>('')
+  const [firstColor, setFirstColor] = useState<string | ''>('')
+  const [secondColor, setSecondColor] = useState<string | ''>('')
   const [tailwindPalette, setTailwindPalette] = useState<TailwindPalette>({
     name: '',
     combos: [],
@@ -39,11 +40,11 @@ export default function Generator() {
 
   function generateTailwindPalette() {
     if (!firstColor || !secondColor) return
-    if (!isValidHex(firstColor) || !isValidHex(secondColor)) return
+    if (!isValidHex(firstColor as ColorHex) || !isValidHex(secondColor as ColorHex)) return
 
     setLoading(true)
 
-    const tailwindCombos = interpolateTailwindPalette(firstColor, secondColor)
+    const tailwindCombos = interpolateTailwindPalette(firstColor as ColorHex, secondColor as ColorHex)
     const tailwindConfig = writeTailwindPalette(tailwindPalette.name || 'custom', tailwindCombos)
     setTailwindPalette({
       ...tailwindPalette,
@@ -61,8 +62,8 @@ export default function Generator() {
       name: 'Custom' as string,
     }
 
-    setFirstColor(trial.firstColor)
-    setSecondColor(trial.secondColor)
+    setFirstColor(trial.firstColor as string)
+    setSecondColor(trial.secondColor as string)
 
     const tailwindCombos = interpolateTailwindPalette(trial.firstColor, trial.secondColor)
     const tailwindConfig = writeTailwindPalette(trial.name, tailwindCombos)
@@ -114,7 +115,7 @@ export default function Generator() {
           </p>
 
           {isLoading ? (
-            <Loading />
+            <PaletteSkeleton />
           ) : (
             <section className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
               {/* Color Pickers */}
@@ -137,12 +138,7 @@ export default function Generator() {
 
                 {/* First Color Picker */}
                 <div className="flex w-full items-center gap-3">
-                  <input
-                    type="color"
-                    value={firstColor}
-                    onChange={(e) => setFirstColor(e.target.value as ColorHex)}
-                    className="h-12 cursor-pointer transition hover:opacity-80"
-                  />
+                  <ColorPicker onChange={(c) => setFirstColor(c as string)} value={firstColor as string} />
                   <input
                     type="text"
                     id="firstColor"
@@ -156,12 +152,7 @@ export default function Generator() {
 
                 {/* Second Color Picker */}
                 <div className="flex w-full items-center gap-3">
-                  <input
-                    type="color"
-                    value={secondColor}
-                    onChange={(e) => setSecondColor(e.target.value as ColorHex)}
-                    className="h-12 cursor-pointer transition hover:opacity-80"
-                  />
+                  <ColorPicker onChange={(c) => setSecondColor(c as string)} value={secondColor as string} />
                   <input
                     type="text"
                     id="secondColor"
@@ -249,7 +240,10 @@ export default function Generator() {
                   <CodeShowcaseDirect
                     language="js"
                     code={tailwindPalette.config.trim()}
-                    options={{ maxHeight: '600px' }}
+                    options={{
+                      maxHeight: '100%',
+                      fontSize: '14px',
+                    }}
                   ></CodeShowcaseDirect>
                 </div>
               )}
@@ -261,7 +255,7 @@ export default function Generator() {
   )
 }
 
-function Loading() {
+function PaletteSkeleton() {
   return (
     <div className="mt-4 grid h-full grid-cols-1 gap-4 lg:grid-cols-3">
       <div className="col-span-1 flex flex-col items-end gap-4 lg:col-span-2">
@@ -270,9 +264,9 @@ function Loading() {
         <div className="h-12 w-full animate-pulse rounded bg-gray-300 dark:bg-black/40"></div>
         <div className="mt-1 h-10 w-32 animate-pulse rounded bg-gray-300 dark:bg-black/40"></div>
 
-        <div className="flex flex-wrap items-center gap-2">
-          {Array.from({ length: 18 }).map((_, index) => (
-            <div key={index} className="h-10 w-14 animate-pulse rounded bg-gray-300 dark:bg-black/40"></div>
+        <div className="grid w-full grid-cols-10 gap-2">
+          {Array.from({ length: 10 }).map((_, index) => (
+            <div key={index} className="h-10 w-full animate-pulse rounded bg-gray-300 dark:bg-black/40"></div>
           ))}
         </div>
       </div>

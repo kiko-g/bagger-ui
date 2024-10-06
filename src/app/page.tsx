@@ -119,7 +119,7 @@ function SectionCard({ title, count, description, link, image }: SectionCardProp
           className="aspect-[8/5] w-full bg-slate-100 object-cover"
         ></Image>
       ) : (
-        <div className="aspect-[8/5] w-full border border-primary-600 bg-primary-400 transition group-hover:border-primary-700 group-hover:bg-primary-500 dark:border-white/5 dark:bg-primary-900/50 dark:group-hover:border-primary-800 dark:group-hover:bg-primary-900" />
+        <div className="aspect-[8/5] w-full border border-primary-800 bg-primary-800 transition group-hover:border-primary-700 group-hover:bg-primary-700 dark:border-white/5 dark:bg-primary-900/50 dark:group-hover:border-primary-800 dark:group-hover:bg-primary-900" />
       )}
       <h4 className="mt-3 text-sm font-semibold text-slate-900 transition dark:text-white">{title}</h4>
       <p className="-mt-[2px] text-[0.7rem] font-normal text-slate-600 dark:text-gray-300 lg:text-xs">

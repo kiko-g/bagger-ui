@@ -6,6 +6,7 @@ import { CheckIcon, ClipboardIcon } from '@heroicons/react/24/outline'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import { Inter_Tight } from 'next/font/google'
+import { fontMono } from '@/lib/fonts'
 
 const inter = Inter_Tight({ subsets: ['latin'] })
 
@@ -17,9 +18,9 @@ type Props = {
 
 export function CodeShowcaseDirect({ code, language, options }: Props) {
   return (
-    <div className={clsx(inter.className, 'group relative mb-4 max-w-7xl overflow-auto rounded-xl')}>
+    <div className={clsx(fontMono.variable, 'group relative mb-4 max-w-7xl overflow-auto rounded-xl')}>
       {/* Controls */}
-      <div className="absolute right-3 top-3 z-20 flex items-center justify-end gap-2 font-sans">
+      <div className="absolute right-3 top-3 z-20 flex items-center justify-end gap-2">
         {code === '' ? null : <CopyCodeButton text={code} />}
       </div>
 
@@ -28,9 +29,10 @@ export function CodeShowcaseDirect({ code, language, options }: Props) {
         style={coldarkDark}
         customStyle={{
           backgroundColor: '#0e131f',
-          borderRadius: '0',
+          borderRadius: options?.borderRadius || '0',
           maxHeight: options?.maxHeight || '200px',
-          margin: '0',
+          margin: options?.margin || '0',
+          ...options,
         }}
       >
         {code}
@@ -57,13 +59,10 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied}
       className={clsx(
-        'flex items-center justify-start gap-1.5 rounded px-3 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed',
-        isCopied
-          ? 'bg-teal-600 text-white'
-          : 'bg-[#3e424c] text-white hover:bg-blue-600/80 hover:text-white dark:bg-white/10 dark:hover:bg-blue-500/60',
+        'flex items-center justify-start gap-1.5 rounded bg-[#0e131f] px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed',
+        isCopied ? '' : 'hover:bg-gray-700',
       )}
     >
-      <span className="hidden xl:flex">{isCopied ? 'Copied' : 'Copy'}</span>
       {isCopied ? <CheckIcon className="h-4 w-4" /> : <ClipboardIcon className="h-4 w-4" />}
     </button>
   )

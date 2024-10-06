@@ -45,7 +45,7 @@ export function CodeShowcaseFromAPI({ route, language }: Props) {
   ) : (
     <div className={clsx(inter.className, 'group relative max-w-7xl overflow-auto rounded-xl')}>
       {/* Controls */}
-      <div className="absolute right-4 top-4 flex items-center justify-end gap-2 font-sans">
+      <div className="absolute right-4 top-4 flex items-center justify-end gap-2">
         {code === '' ? null : <CopyCodeButton text={code} />}
       </div>
 

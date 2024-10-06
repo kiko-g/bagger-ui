@@ -66,16 +66,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <>
-      <html lang="en" suppressHydrationWarning>
-        <head />
-        <body className={clsx('bg-background min-h-screen font-sans antialiased', fontSans.variable)}>
-          <Providers>
-            <Analytics />
-            {children}
-          </Providers>
-        </body>
-      </html>
-    </>
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body className={clsx('bg-background min-h-screen antialiased', fontSans.variable)}>
+        <Providers>
+          <Analytics />
+          {children}
+        </Providers>
+      </body>
+    </html>
   )
 }
