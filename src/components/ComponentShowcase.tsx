@@ -76,7 +76,6 @@ export function ComponentShowcase({ name, path, Component }: Props) {
               minHeight: '300px',
               lineHeight: '1.25',
               fontSize: '0.9rem',
-              backgroundColor: '#192030',
               borderRadius: '0',
             }}
           >

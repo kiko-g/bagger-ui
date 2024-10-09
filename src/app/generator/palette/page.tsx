@@ -13,6 +13,7 @@ import {
 } from '@/utils/colors'
 import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
 import { ColorPicker } from '@/components/common/ColorPicker'
+import { DropzoneArea } from '@/components/common/Dropzone'
 
 const lexend = Lexend({ subsets: ['latin'] })
 
@@ -118,52 +119,56 @@ export default function Generator() {
             <PaletteSkeleton />
           ) : (
             <section className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
-              {/* Color Pickers */}
               <div className="col-span-1 flex flex-col gap-4 lg:col-span-2">
-                {/* Color Name */}
-                <input
-                  type="text"
-                  id="tailwindColorName"
-                  name="tailwindColorName"
-                  placeholder="Type the name of your color palette"
-                  value={tailwindPalette.name}
-                  onChange={(e) =>
-                    setTailwindPalette({
-                      ...tailwindPalette,
-                      name: e.target.value,
-                    })
-                  }
-                  className="w-full border border-zinc-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
-                />
+                <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+                  {/* Inputs */}
+                  <div className="flex flex-col gap-3">
+                    <input
+                      type="text"
+                      id="tailwindColorName"
+                      name="tailwindColorName"
+                      placeholder="Type the name of your color palette"
+                      value={tailwindPalette.name}
+                      onChange={(e) => setTailwindPalette((x) => ({ ...x, name: e.target.value }))}
+                      className="w-full border border-zinc-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                    />
 
-                {/* First Color Picker */}
-                <div className="flex w-full items-center gap-3">
-                  <ColorPicker onChange={(c) => setFirstColor(c as string)} value={firstColor as string} />
-                  <input
-                    type="text"
-                    id="firstColor"
-                    name="firstColor"
-                    value={firstColor}
-                    onChange={(e) => setFirstColor(e.target.value as ColorHex)}
-                    placeholder="First Color"
-                    className="h-12 w-full border border-zinc-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                    <div className="flex w-full items-center gap-3">
+                      <ColorPicker onChange={(c) => setFirstColor(c as string)} value={firstColor as string} />
+                      <input
+                        type="text"
+                        id="firstColor"
+                        name="firstColor"
+                        value={firstColor}
+                        onChange={(e) => setFirstColor(e.target.value as ColorHex)}
+                        placeholder="First Color"
+                        className="h-12 w-full border border-zinc-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                      />
+                    </div>
+
+                    <div className="flex w-full items-center gap-3">
+                      <ColorPicker onChange={(c) => setSecondColor(c as string)} value={secondColor as string} />
+                      <input
+                        type="text"
+                        id="secondColor"
+                        name="secondColor"
+                        value={secondColor}
+                        onChange={(e) => setSecondColor(e.target.value as ColorHex)}
+                        placeholder="Second Color"
+                        className="h-12 w-full border border-zinc-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Dropzone */}
+                  <DropzoneArea
+                    onDrop={() => {
+                      console.debug('dropped')
+                    }}
                   />
                 </div>
 
-                {/* Second Color Picker */}
-                <div className="flex w-full items-center gap-3">
-                  <ColorPicker onChange={(c) => setSecondColor(c as string)} value={secondColor as string} />
-                  <input
-                    type="text"
-                    id="secondColor"
-                    name="secondColor"
-                    value={secondColor}
-                    onChange={(e) => setSecondColor(e.target.value as ColorHex)}
-                    placeholder="Second Color"
-                    className="h-12 w-full border border-zinc-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
-                  />
-                </div>
-
+                {/* Submit */}
                 <div className="flex w-full items-center justify-end">
                   <button
                     type="button"

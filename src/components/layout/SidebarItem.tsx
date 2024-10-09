@@ -25,7 +25,7 @@ export function SidebarItem({
         'flex cursor-pointer items-center justify-start gap-2 py-1 pl-3 text-sm transition ease-in-out',
       )}
     >
-      <div className="hidden w-full items-center gap-1.5 pr-4 lg:flex lg:pr-12">
+      <div className="hidden w-full items-center gap-1.5 pr-4 md:flex lg:pr-12">
         <span>{name}</span>
         {isNew && (
           <span className="inline-flex items-center rounded-full bg-teal-700 px-[5px] py-[3px] text-white">

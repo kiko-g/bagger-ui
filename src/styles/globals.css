@@ -33,7 +33,13 @@ code {
 }
 
 pre {
-  @apply bg-zinc-900 text-white dark:bg-zinc-800;
+  color: white;
+  background-color: theme('colors.gray.900') !important;
+}
+
+.dark pre {
+  color: white;
+  background-color: theme('colors.gray.800') !important;
 }
 
 .border-dimmed {

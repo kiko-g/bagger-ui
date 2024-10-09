@@ -54,7 +54,6 @@ export function CodeShowcaseFromAPI({ route, language }: Props) {
         showLineNumbers
         style={coldarkDark}
         customStyle={{
-          backgroundColor: '#0e131f',
           borderRadius: '0',
           minHeight: '500px',
           maxHeight: '1000px',
