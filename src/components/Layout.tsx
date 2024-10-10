@@ -7,7 +7,8 @@ import { Header } from './layout/Header'
 import { Footer } from './layout/Footer'
 import { Sidebar } from './layout/Sidebar'
 import { QuickNavSidebar } from './layout/QuickNavSidebar'
-import { SupportBanner } from './layout/SupportBanner'
+import { SupportBadge } from './layout/support/Badge'
+import { HeroPattern } from './layout/HeroPattern'
 
 type Props = {
   children: React.ReactNode
@@ -22,10 +23,13 @@ export function Layout({ children, location = 'Unknown', sidebar = false, quickN
       <Seo title={location} />
       <main className={clsx('mx-auto flex min-h-screen max-w-[100vw] flex-col')}>
         <Header />
-        <SupportBanner />
+        <HeroPattern />
         <div className="flex flex-1 pb-4">
           {sidebar && <Sidebar location={location} />}
           <article className="flex max-w-full flex-1 flex-col items-start justify-start px-6 xl:px-10">
+            <div className="mt-4 flex w-full justify-end">
+              <SupportBadge />
+            </div>
             {children}
           </article>
           {quickNav && <QuickNavSidebar navigation={quickNav} />}
