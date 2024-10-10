@@ -58,8 +58,8 @@ export default function Generator() {
 
   useEffect(() => {
     const trial = {
-      firstColor: '#f0f9ff' as ColorHex,
-      secondColor: '#082f49' as ColorHex,
+      firstColor: '#f5fffb' as ColorHex,
+      secondColor: '#006b48' as ColorHex,
       name: 'Custom' as string,
     }
 
@@ -97,7 +97,7 @@ export default function Generator() {
   }, [loading, firstColor, secondColor, tailwindPalette.combos])
 
   return (
-    <Layout location="Generator" sidebar>
+    <Layout location="Palette" sidebar>
       <ul className="flex w-full flex-col gap-4 pt-8">
         <li id="tailwindcss-palette">
           <h3
