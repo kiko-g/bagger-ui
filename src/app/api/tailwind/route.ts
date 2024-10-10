@@ -17,8 +17,6 @@ export async function GET(req: NextRequest) {
   } else {
     try {
       const filePath = path.join(process.cwd(), 'tailwind.config.ts')
-      console.log(filePath)
-      console.log(fs.existsSync(filePath))
 
       if (!fs.existsSync(filePath)) {
         return NextResponse.json({ message: 'File not found' }, { status: 404 })

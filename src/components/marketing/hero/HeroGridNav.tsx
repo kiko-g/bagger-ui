@@ -31,7 +31,7 @@ export function HeroGridNav() {
       text: 'Moscow is the capital and most populous city of Russia. Moscow is a major political, economic, cultural, and scientific centre of Russia and Eastern Europe, as well as the largest city (by area) on the European continent.',
       href: '#',
       icon: ViewfinderCircleIcon,
-      iconClasses: 'bg-teal-50 group-hover:bg-teal-600 group-hover:text-white text-teal-600',
+      iconClasses: 'bg-primary-50 group-hover:bg-primary-600 group-hover:text-white text-primary-600',
     },
     {
       title: 'Prague',
@@ -67,7 +67,7 @@ export function HeroGridNav() {
             actionIdx === 1 ? 'sm:rounded-tr-lg' : '',
             actionIdx === actions.length - 2 ? 'sm:rounded-bl-lg' : '',
             actionIdx === actions.length - 1 ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none' : '',
-            'group relative bg-white p-6 transition focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary hover:bg-zinc-100 dark:bg-blue-500/5 dark:hover:opacity-90',
+            'group relative bg-white p-6 transition focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary-600 hover:bg-zinc-100 dark:bg-blue-500/5 dark:hover:opacity-90',
           )}
         >
           <span className={clsx(action.iconClasses, 'inline-flex rounded-lg p-4 transition')}>

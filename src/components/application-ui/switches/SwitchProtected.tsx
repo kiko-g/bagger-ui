@@ -25,8 +25,8 @@ export function SwitchProtected() {
       checked={isEnabled}
       onChange={toggle}
       className={clsx(
-        isEnabled ? 'bg-teal-600' : 'bg-slate-600',
-        'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-40 dark:focus:ring-primary',
+        isEnabled ? 'bg-primary-600' : 'bg-slate-600',
+        'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-40 dark:focus:ring-primary-600/80',
       )}
     >
       <span className="sr-only">Toggle switch</span>

@@ -58,8 +58,8 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied}
       className={clsx(
-        'flex items-center justify-start gap-1.5 rounded bg-[#0e131f] px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed',
-        isCopied ? '' : 'hover:bg-zinc-700',
+        'flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900',
+        isCopied ? '' : 'hover:bg-zinc-600 dark:hover:bg-zinc-700',
       )}
     >
       {isCopied ? <CheckIcon className="h-4 w-4" /> : <ClipboardIcon className="h-4 w-4" />}

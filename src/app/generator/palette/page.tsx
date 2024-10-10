@@ -112,7 +112,7 @@ export default function Generator() {
           <p className="mb-2 max-w-3xl text-sm">
             Generate a custom TailwindCSS color palette based on two colors. Enter the two colors you want to
             interpolate and the name of your color palette. Copy the output and paste it into your{' '}
-            <code className="font-bold text-primary dark:text-primary">tailwind.config.js</code> 😎
+            <code className="font-bold text-primary-600 dark:text-primary-500">tailwind.config.js</code> 😎
           </p>
 
           {isLoading ? (
@@ -130,11 +130,15 @@ export default function Generator() {
                       placeholder="Type the name of your color palette"
                       value={tailwindPalette.name}
                       onChange={(e) => setTailwindPalette((x) => ({ ...x, name: e.target.value }))}
-                      className="w-full border border-zinc-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                      className="h-10 w-full border border-zinc-300 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3 lg:py-2 lg:text-sm"
                     />
 
                     <div className="flex w-full items-center gap-3">
-                      <ColorPicker onChange={(c) => setFirstColor(c as string)} value={firstColor as string} />
+                      <ColorPicker
+                        value={firstColor as string}
+                        onChange={(c) => setFirstColor(c as string)}
+                        className="block h-10 w-24 cursor-pointer rounded-none border border-zinc-300 transition"
+                      />
                       <input
                         type="text"
                         id="firstColor"
@@ -142,12 +146,16 @@ export default function Generator() {
                         value={firstColor}
                         onChange={(e) => setFirstColor(e.target.value as ColorHex)}
                         placeholder="First Color"
-                        className="h-12 w-full border border-zinc-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                        className="h-10 w-full border border-zinc-300 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3 lg:py-2 lg:text-sm"
                       />
                     </div>
 
                     <div className="flex w-full items-center gap-3">
-                      <ColorPicker onChange={(c) => setSecondColor(c as string)} value={secondColor as string} />
+                      <ColorPicker
+                        value={secondColor as string}
+                        onChange={(c) => setSecondColor(c as string)}
+                        className="block h-10 w-24 cursor-pointer rounded-none border border-zinc-300 transition"
+                      />
                       <input
                         type="text"
                         id="secondColor"
@@ -155,7 +163,7 @@ export default function Generator() {
                         value={secondColor}
                         onChange={(e) => setSecondColor(e.target.value as ColorHex)}
                         placeholder="Second Color"
-                        className="h-12 w-full border border-zinc-300 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary/80 hover:bg-primary/5 focus:border-primary focus:accent-primary focus:ring-0 focus:ring-primary focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary/70 dark:hover:bg-primary/5 dark:focus:border-primary/80 dark:focus:ring-0 dark:focus:ring-primary lg:px-3.5 lg:py-2.5 lg:text-sm"
+                        className="h-10 w-full border border-zinc-300 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3 lg:py-2 lg:text-sm"
                       />
                     </div>
                   </div>
@@ -173,7 +181,7 @@ export default function Generator() {
                   <button
                     type="button"
                     onClick={generateTailwindPalette}
-                    className="rounded bg-primary px-4 py-2 text-sm font-medium text-white shadow transition hover:opacity-80 dark:bg-primary"
+                    className="rounded-sm bg-primary-600 px-4 py-2 text-sm font-normal text-white shadow transition hover:opacity-80 dark:bg-primary-600/80"
                   >
                     Generate Palette
                   </button>
@@ -181,16 +189,16 @@ export default function Generator() {
 
                 {/* Color Palette Demonstration */}
                 {tailwindPalette.combos.length > 0 && (
-                  <div className="border-dimmed border-t pt-4">
-                    <span className="mb-2 block font-semibold capitalize">{tailwindPalette.name}</span>
-                    <ul className="-ml-1 flex flex-wrap items-center gap-2">
+                  <div className="border-dimmed border-t pt-3">
+                    <span className="mb-1.5 block font-semibold capitalize">{tailwindPalette.name}</span>
+                    <ul className="-ml-1 flex flex-wrap items-center gap-1.5">
                       {tailwindPalette.combos.map((combo) => {
                         const active = copied.active && copied.color === combo.color
                         return (
                           <li key={combo.id}>
                             <button
                               onClick={() => handleCopy(combo.color)}
-                              className="group relative flex flex-col items-start justify-center rounded-md p-1 transition hover:bg-black/5 dark:hover:bg-white/10"
+                              className="group relative flex flex-col items-start justify-center rounded-sm p-1 transition hover:bg-black/5 dark:hover:bg-white/10"
                             >
                               <span className="absolute -right-1 -top-1 flex w-full items-center justify-end opacity-0 group-hover:opacity-100">
                                 <span
@@ -223,7 +231,7 @@ export default function Generator() {
                               </span>
 
                               <span
-                                className="mb-2 flex h-10 w-14 rounded shadow"
+                                className="mb-2 flex h-10 w-14 rounded-sm shadow"
                                 style={{ backgroundColor: combo.color }}
                               ></span>
                               <span className="text-xs font-semibold text-zinc-800 dark:text-zinc-200">{combo.id}</span>

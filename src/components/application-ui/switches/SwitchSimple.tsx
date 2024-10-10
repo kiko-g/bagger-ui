@@ -18,7 +18,7 @@ export function SwitchSimple() {
       <span
         className={clsx(
           'flex items-center justify-start gap-1.5 rounded px-3 py-2 text-sm text-white shadow-sm transition hover:opacity-80 disabled:cursor-not-allowed',
-          isOn ? 'bg-rose-600 dark:bg-rose-600/50' : 'bg-teal-600 dark:bg-teal-500/60',
+          isOn ? 'bg-rose-600 dark:bg-rose-600/50' : 'bg-primary-600 dark:bg-primary-500/60',
         )}
       >
         {isOn ? (

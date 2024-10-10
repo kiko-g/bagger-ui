@@ -107,8 +107,8 @@ export default function Config() {
         </h2>
         <p className="mb-3 max-w-5xl">
           This site uses a custom Tailwind config that extends the default Tailwind config. Copy our config to your{' '}
-          <code className="font-bold text-primary dark:text-primary">tailwind.config.js</code> file that should be in
-          the root of your project.
+          <code className="font-bold text-primary-600 dark:text-primary-500">tailwind.config.js</code> file that should
+          be in the root of your project.
         </p>
         <div className="w-full rounded-xl">
           <CodeShowcaseFromAPI route="api/tailwind" language="javascript" />
