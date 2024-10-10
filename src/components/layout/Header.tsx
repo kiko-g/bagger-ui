@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { Lexend } from 'next/font/google'
-import { DarkModeSwitch } from './DarkModeSwitch'
+import { ThemeToggle } from './ThemeToggle'
 import { links } from '@/utils/data'
 
 const lexend = Lexend({ subsets: ['latin'] })
@@ -46,7 +46,7 @@ export function Header() {
                 </Link>
               </li>
             ))}
-          <DarkModeSwitch />
+          <ThemeToggle />
         </ul>
       </div>
     </header>
