@@ -14,6 +14,7 @@ import {
   WrenchIcon,
 } from '@heroicons/react/24/outline'
 import { GithubIcon, ButtonIcon, LoadingIcon, SidebarIcon, SwitchIcon } from '@/components/icons'
+import { GridPattern } from '@/components/layout/GridPattern'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -93,6 +94,7 @@ type SectionNav = {
   href: string
   count: number
   description: string
+  pattern?: any
   icon?: any
   image?: StaticImageData | undefined
   shown?: boolean
@@ -105,6 +107,13 @@ export const applicationUiNav: SectionNav[] = [
     href: '/application-ui/alerts',
     count: 5,
     description: 'Customizable alerts to send information to the user with different icons, colors, and actions.',
+    pattern: {
+      y: 16,
+      squares: [
+        [0, 1],
+        [1, 3],
+      ],
+    },
     icon: MegaphoneIcon,
     image: Footage.Alerts,
     shown: true,
@@ -114,6 +123,13 @@ export const applicationUiNav: SectionNav[] = [
     href: '/application-ui/badges',
     count: 5,
     description: 'Small badges for signaling short pieces of information.',
+    pattern: {
+      y: -6,
+      squares: [
+        [-1, 2],
+        [1, 3],
+      ],
+    },
     icon: FlagIcon,
     image: Footage.Badges,
     shown: true,
@@ -123,6 +139,13 @@ export const applicationUiNav: SectionNav[] = [
     href: '/application-ui/buttons',
     count: 9,
     description: 'Button components with different styles, animations and purposes.',
+    pattern: {
+      y: 32,
+      squares: [
+        [0, 2],
+        [1, 4],
+      ],
+    },
     icon: ButtonIcon,
     image: Footage.Buttons,
     shown: true,
@@ -132,6 +155,10 @@ export const applicationUiNav: SectionNav[] = [
     href: '/application-ui/button-groups',
     count: 4,
     description: 'Sections with multiple buttons with different layouts and functionalities.',
+    pattern: {
+      y: 22,
+      squares: [[0, 1]],
+    },
     icon: SwatchIcon,
     image: Footage.ButtonGroups,
     shown: true,

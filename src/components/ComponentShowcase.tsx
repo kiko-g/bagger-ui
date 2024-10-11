@@ -136,7 +136,7 @@ function ChangeViewModeButton({
       <button
         onClick={toggleShowPreview}
         className={clsx(
-          'inline-flex rounded-full px-2.5 py-1 text-xs',
+          'inline-flex rounded-full px-2.5 py-0.5 text-2xs',
           isCodeVisible ? 'hover:bg-white/20 dark:hover:bg-white/10' : 'bg-white/30 dark:bg-white/20',
         )}
       >
@@ -145,7 +145,7 @@ function ChangeViewModeButton({
       <button
         onClick={toggleShowCode}
         className={clsx(
-          'inline-flex rounded-full px-2.5 py-1 text-xs',
+          'inline-flex rounded-full px-2.5 py-0.5 text-2xs',
           isCodeVisible ? 'bg-white/30 dark:bg-white/20' : 'hover:bg-white/10',
         )}
       >
