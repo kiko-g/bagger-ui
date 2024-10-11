@@ -203,10 +203,7 @@ export default function Generator() {
                               <span className="absolute -right-1 -top-1 flex w-full items-center justify-end opacity-0 group-hover:opacity-100">
                                 <span
                                   className={clsx(
-                                    'rounded-full border border-transparent p-[2px] text-center text-2xs font-medium text-white shadow-xl transition-all',
-                                    active
-                                      ? 'bg-emerald-800/90 dark:bg-emerald-600/80'
-                                      : 'bg-zinc-800/90 dark:bg-black/80',
+                                    'rounded-full border border-transparent bg-zinc-800/90 p-[2px] text-center text-2xs font-medium text-white shadow-xl transition-all dark:bg-pink-400',
                                   )}
                                 >
                                   <svg

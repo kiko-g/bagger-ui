@@ -88,9 +88,7 @@ export function AlertCustom({
             ? 'bg-emerald-600'
             : 'border-emerald-600 bg-emerald-50 text-emerald-700 dark:bg-emerald-600/20 dark:text-emerald-200'),
         type === undefined &&
-          (filled
-            ? 'bg-slate-600'
-            : 'border-slate-600 bg-slate-50 text-slate-700 dark:bg-slate-600/20 dark:text-slate-200'),
+          (filled ? 'bg-zinc-600' : 'border-zinc-600 bg-zinc-50 text-zinc-700 dark:bg-zinc-600/20 dark:text-zinc-200'),
       )}
     >
       {noIcon !== true && (

@@ -46,7 +46,7 @@ export function BadgeOutline({ type, noBubble = false, noBorder = false, childre
         type === 'success' &&
           'border-emerald-600 bg-emerald-600/10 text-zinc-900 dark:border-emerald-500 dark:bg-emerald-400/30 dark:text-white',
         type === undefined &&
-          'border-slate-600 bg-slate-600/10 text-zinc-900 dark:border-slate-500 dark:bg-slate-400/30 dark:text-white',
+          'border-zinc-600 bg-zinc-600/10 text-zinc-900 dark:border-zinc-500 dark:bg-zinc-400/30 dark:text-white',
         noBorder && 'border-0',
       )}
     >
@@ -58,7 +58,7 @@ export function BadgeOutline({ type, noBubble = false, noBorder = false, childre
             type === 'error' && 'bg-rose-600',
             type === 'warning' && 'bg-amber-600',
             type === 'success' && 'bg-emerald-600',
-            type === undefined && 'bg-slate-600',
+            type === undefined && 'bg-zinc-600',
           )}
         />
       )}

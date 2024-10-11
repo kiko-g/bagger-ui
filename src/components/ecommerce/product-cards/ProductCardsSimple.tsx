@@ -50,7 +50,7 @@ function ProductSimple({ product }: { product: ProductType }) {
             </span>
           )}
           {product.info.soldOut && (
-            <span className="z-10 h-full w-full border border-[#00000040] bg-slate-600/80 px-1 py-1 text-center text-xs font-medium tracking-tighter text-white">
+            <span className="z-10 h-full w-full border border-[#00000040] bg-zinc-600/80 px-1 py-1 text-center text-xs font-medium tracking-tighter text-white">
               Sold Out
             </span>
           )}

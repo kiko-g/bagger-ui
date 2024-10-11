@@ -39,7 +39,7 @@ export function BadgeSimple({ type, children }: Props) {
         type === 'error' && 'bg-rose-600 text-white',
         type === 'warning' && 'bg-amber-600 text-white',
         type === 'success' && 'bg-emerald-600 text-white',
-        type === undefined && 'bg-slate-600 text-white',
+        type === undefined && 'bg-zinc-600 text-white',
       )}
     >
       {children ? children : <div className="text-sm">Simple Badge</div>}

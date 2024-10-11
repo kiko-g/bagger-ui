@@ -82,7 +82,7 @@ export function ComponentShowcase({ name, path, Component }: Props) {
             {code}
           </SyntaxHighlighter>
         ) : (
-          <div className="flex w-full items-center justify-center rounded-b bg-slate-100 px-8 py-32 dark:bg-black/20">
+          <div className="flex w-full items-center justify-center rounded-b bg-zinc-100 px-8 py-32 dark:bg-black/20">
             {Component}
           </div>
         )}

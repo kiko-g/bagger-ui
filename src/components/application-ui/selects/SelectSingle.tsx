@@ -49,7 +49,7 @@ export function SelectSingle({ className }: Props) {
             className={clsx(
               'inline-flex w-full items-center justify-center gap-x-0.5 rounded border py-1.5 pl-2 pr-1.5 text-center text-xs text-white transition hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 lg:py-1.5 lg:pl-2.5 lg:pr-1.5 lg:text-xs',
               nothingSelected
-                ? 'border-slate-500 bg-slate-500/70 dark:border-slate-500 dark:bg-slate-500/50'
+                ? 'border-zinc-500 bg-zinc-500/70 dark:border-zinc-500 dark:bg-zinc-500/50'
                 : 'border-primary-600 bg-primary-600/70 dark:border-primary-600 dark:bg-primary-600/50',
             )}
           >
@@ -86,7 +86,7 @@ export function SelectSingle({ className }: Props) {
                     className={({ active }) =>
                       clsx(
                         'relative cursor-default select-none py-1.5 pl-3 pr-3',
-                        active ? 'bg-slate-200 dark:bg-slate-600' : '',
+                        active ? 'bg-zinc-200 dark:bg-zinc-600' : '',
                       )
                     }
                   >

@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import { Layout } from '@/components/Layout'
@@ -22,14 +24,8 @@ export default function Home() {
         <div className="border-dimmed mt-8 border-t pt-4">
           <h3 className="mb-3 text-xl font-bold">Application UI Components</h3>
           <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 xl:gap-5">
-            {applicationUiNav.map(({ name, count, description, image, href, pattern }) => (
-              <SectionCard
-                key={`showcase-application-ui-${name}`}
-                title={name}
-                href={href}
-                description={description}
-                pattern={pattern}
-              />
+            {applicationUiNav.map((section) => (
+              <SectionCard key={`showcase-application-ui-${section.href}`} section={section} />
             ))}
           </div>
         </div>
@@ -37,14 +33,8 @@ export default function Home() {
         <div className="border-dimmed mt-16 border-t pt-4">
           <h3 className="mb-3 text-xl font-bold">Marketing Components</h3>
           <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 xl:gap-5">
-            {marketingNav.map(({ name, count, description, image, href, pattern }) => (
-              <SectionCard
-                key={`showcase-marketing-${name}`}
-                title={name}
-                description={description}
-                pattern={pattern}
-                href={href}
-              />
+            {marketingNav.map((section) => (
+              <SectionCard key={`showcase-marketing-${section.href}`} section={section} />
             ))}
           </div>
         </div>
@@ -52,14 +42,8 @@ export default function Home() {
         <div className="border-dimmed mt-16 border-t pt-4">
           <h3 className="mb-3 text-xl font-bold">Ecommerce Components</h3>
           <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 xl:gap-5">
-            {eCommerceNav.map(({ name, count, description, image, href, pattern }) => (
-              <SectionCard
-                key={`showcase-ecommerce-${name}`}
-                title={name}
-                description={description}
-                pattern={pattern}
-                href={href}
-              />
+            {eCommerceNav.map((section) => (
+              <SectionCard key={`showcase-ecommerce-${section.href}`} section={section} />
             ))}
           </div>
         </div>

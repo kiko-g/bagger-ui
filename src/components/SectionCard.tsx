@@ -3,15 +3,9 @@
 import Link from 'next/link'
 import { GridPattern } from '@/components/layout/GridPattern'
 import { type MotionValue, motion, useMotionTemplate, useMotionValue } from 'framer-motion'
+import { Section } from '@/utils/data'
 
-interface SectionCard {
-  title: string
-  href: string
-  description: string
-  pattern?: Omit<React.ComponentPropsWithoutRef<typeof GridPattern>, 'width' | 'height' | 'x'>
-}
-
-export function SectionCard({ title, href, description, pattern }: SectionCard) {
+export function SectionCard({ section }: { section: Section }) {
   let mouseX = useMotionValue(0)
   let mouseY = useMotionValue(0)
 
@@ -23,20 +17,20 @@ export function SectionCard({ title, href, description, pattern }: SectionCard) 
 
   return (
     <div
-      key={href}
+      key={section.href}
       onMouseMove={onMouseMove}
       className="dark:bg-white/2.5 group relative flex rounded-2xl bg-zinc-50 transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:hover:shadow-black/5"
     >
-      {pattern && <Pattern {...pattern} mouseX={mouseX} mouseY={mouseY} />}
+      {section.pattern && <Pattern {...section.pattern} mouseX={mouseX} mouseY={mouseY} />}
       <div className="ring-zinc-900/7.5 absolute inset-0 rounded-2xl ring-1 ring-inset group-hover:ring-zinc-900/10 dark:ring-white/10 dark:group-hover:ring-white/20" />
       <div className="relative rounded-2xl px-4 pb-4 pt-16">
         <h3 className="mt-4 text-sm font-semibold leading-7 text-zinc-900 dark:text-white">
-          <Link href={href}>
+          <Link href={section.href}>
             <span className="absolute inset-0 rounded-2xl" />
-            {title}
+            {section.name}
           </Link>
         </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{description}</p>
+        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{section.description}</p>
       </div>
     </div>
   )
@@ -46,7 +40,7 @@ function Pattern({
   mouseX,
   mouseY,
   ...gridProps
-}: SectionCard['pattern'] & {
+}: Section['pattern'] & {
   mouseX: MotionValue<number>
   mouseY: MotionValue<number>
 }) {
@@ -60,12 +54,12 @@ function Pattern({
           width={72}
           height={56}
           x="50%"
-          className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/[0.05] stroke-black/5 dark:fill-white/5 dark:stroke-white/10"
+          className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/[0.02] stroke-black/[0.05] dark:fill-white/[0.03] dark:stroke-white/[0.06]"
           {...gridProps}
         />
       </div>
       <motion.div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#bbd8dd] to-[#f2c9ff] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#2f4c4e] dark:to-[#4c3d34]"
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#8dfdff] to-[#6c7dff] opacity-0 transition duration-300 group-hover:opacity-20 dark:from-[#36b2b4]/0 dark:to-[#a375ff]/0"
         style={style}
       />
       <motion.div

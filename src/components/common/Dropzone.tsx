@@ -39,7 +39,8 @@ export function DropzoneArea({ accept = {}, multiple = true, onDrop, className =
       <div className="flex flex-col items-center justify-center text-zinc-700 group-hover:text-primary-950 dark:text-zinc-300 dark:group-hover:text-primary-50">
         <ArrowUpTrayIcon className="h-8 w-8 transition" />
         <p className="mt-2 text-sm transition">
-          <span className="font-bold">Click to upload</span> or drag and drop
+          <span className="font-bold">Click to upload</span> or drag and drop. Colors within the image will be used to
+          generate the palette.
         </p>
       </div>
       {/* {src ? (

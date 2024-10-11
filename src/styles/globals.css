@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 *::selection {
-  @apply bg-zinc-800 text-white dark:bg-lime-500/50;
+  @apply bg-primary-700/50 text-white dark:bg-emerald-500/50;
 }
 
 pre *::selection {
-  @apply bg-lime-500/50 text-white;
+  @apply bg-emerald-500/40 text-white;
 }
 
 html {
@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  @apply bg-slate-50 text-zinc-900 antialiased dark:bg-zinc-900 dark:text-zinc-100;
+  @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-900 dark:text-zinc-100;
 }
 
 code {
