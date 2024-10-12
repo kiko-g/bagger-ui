@@ -50,7 +50,7 @@ export function SelectMultiple({ className }: Props) {
               'inline-flex w-full items-center justify-center gap-x-0.5 rounded border py-1.5 pl-2 pr-1.5 text-center text-xs text-white transition hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 lg:py-1.5 lg:pl-2.5 lg:pr-1.5 lg:text-xs',
               nothingSelected
                 ? 'border-zinc-500 bg-zinc-500/70 dark:border-zinc-500 dark:bg-zinc-500/50'
-                : 'border-primary-600 bg-primary-600/70 dark:border-primary-600 dark:bg-primary-600/50',
+                : 'border-blue-600 bg-blue-600/70 dark:border-blue-600 dark:bg-blue-600/50',
             )}
           >
             <span className={clsx('max-w-[12rem] truncate whitespace-nowrap font-normal tracking-tighter')}>
@@ -95,7 +95,7 @@ export function SelectMultiple({ className }: Props) {
                       return (
                         <span className="flex items-center gap-2">
                           {highlight ? (
-                            <CheckCircleIcon className="h-5 w-5 text-primary-500" aria-hidden="true" />
+                            <CheckCircleIcon className="h-5 w-5 text-blue-500" aria-hidden="true" />
                           ) : (
                             <span className="h-5 w-5" />
                           )}

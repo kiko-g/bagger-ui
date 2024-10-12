@@ -34,7 +34,7 @@ export default function Config() {
 
   return (
     <Layout location="Setup" sidebar>
-      <section className="border-dimmed w-full border-b pb-2 pt-4 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10">
+      <section className="w-full border-b border-zinc-900/10 pb-2 pt-4 dark:border-white/10 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10">
         <h2 className={clsx(lexend.className, 'mb-3 text-xl font-semibold tracking-tighter lg:text-4xl')}>Setup</h2>
         <p className="max-w-3xl">
           This page covers the configuration of the tech stack, packages and tools used so that you can use our
@@ -42,7 +42,7 @@ export default function Config() {
         </p>
       </section>
 
-      <section className="border-dimmed w-full border-b pb-2 pt-4 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10">
+      <section className="w-full border-b border-zinc-900/10 pb-2 pt-4 dark:border-white/10 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10">
         <h2 className={clsx(lexend.className, 'mb-3 text-lg font-semibold tracking-tighter lg:text-3xl')}>
           Getting Started
         </h2>
@@ -64,7 +64,7 @@ export default function Config() {
         </div>
       </section>
 
-      <section className="border-dimmed w-full border-b pb-2 pt-4 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10">
+      <section className="w-full border-b border-zinc-900/10 pb-2 pt-4 dark:border-white/10 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10">
         <h2 className={clsx(lexend.className, 'mb-3 text-lg font-semibold tracking-tighter lg:text-3xl')}>
           Package Installation
         </h2>

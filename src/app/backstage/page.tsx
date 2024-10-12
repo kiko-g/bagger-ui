@@ -84,7 +84,7 @@ export default function Backstage() {
           </button>
         </div>
 
-        <article className="relative flex aspect-[8/5] w-full max-w-full items-center border border-zinc-300 bg-zinc-200 p-16 dark:border-black/30 dark:bg-black/20 lg:max-w-4xl">
+        <article className="relative flex aspect-[8/5] w-full max-w-full items-center border border-zinc-900/10 bg-zinc-200 p-16 dark:border-black/30 dark:bg-black/20 lg:max-w-4xl">
           <section id="screenshot" className="w-full">
             {component.node}
           </section>

@@ -11,8 +11,8 @@ export function Sidebar({ location }: { location: string }) {
   const eCommerceNavFiltered = eCommerceNav.filter((item) => item.shown)
 
   return (
-    <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] shrink-0 flex-col space-y-4 self-stretch overflow-hidden bg-opacity-80 p-5 hover:overflow-auto md:sticky md:block lg:flex lg:min-w-min">
-      <ul className="border-dimmed flex w-full flex-col border-b pb-4">
+    <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] shrink-0 flex-col space-y-4 self-stretch overflow-hidden bg-opacity-80 p-5 hover:overflow-auto md:sticky md:block lg:flex lg:min-w-min lg:border-r lg:border-zinc-900/10 dark:lg:border-white/10">
+      <ul className="flex w-full flex-col border-b border-zinc-900/10 pb-4 dark:border-white/10">
         {generalNavFiltered.map((item, itemIdx) => {
           const isActive = location.toLowerCase() === item.name.toLowerCase()
           return (

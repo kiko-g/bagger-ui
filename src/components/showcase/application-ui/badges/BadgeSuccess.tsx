@@ -14,8 +14,8 @@ export function BadgeSuccess({ outline }: Props) {
       className={clsx(
         'inline-flex items-center justify-center gap-0.5 rounded border px-2 py-1 lg:gap-1',
         outline
-          ? 'border-primary-600 bg-primary-600/10 text-primary-900 dark:border-primary-500 dark:bg-primary-400/30 dark:text-white'
-          : 'border-primary-700 bg-primary-600 text-white dark:border-primary-600 dark:bg-primary-600 dark:text-white',
+          ? 'border-blue-600 bg-blue-600/10 text-blue-900 dark:border-blue-500 dark:bg-blue-400/30 dark:text-white'
+          : 'border-blue-700 bg-blue-600 text-white dark:border-blue-600 dark:bg-blue-600 dark:text-white',
       )}
     >
       <div className="text-sm">Success</div>

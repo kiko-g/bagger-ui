@@ -8,20 +8,8 @@ import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import { Inter_Tight } from 'next/font/google'
 import { GithubIcon } from './icons/GithubIcon'
 import { Disclosure, DisclosureButton, DisclosurePanel, Switch, Transition } from '@headlessui/react'
-import {
-  CheckIcon,
-  ChevronDownIcon,
-  ClipboardIcon,
-  CodeBracketIcon,
-  LinkIcon,
-  MinusIcon,
-  MoonIcon,
-  PlusIcon,
-  SunIcon,
-  ViewfinderCircleIcon,
-} from '@heroicons/react/24/outline'
-
-const inter = Inter_Tight({ subsets: ['latin'] })
+import { CheckIcon, ClipboardIcon, LinkIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline'
+import { SpinnerIcon } from './icons/SpinnerIcon'
 
 type Props = {
   name: string
@@ -104,20 +92,26 @@ function CopyCodeButton({ text }: { text: string }) {
       .catch(() => console.error('Failed to copy code to clipboard.'))
   }, [text])
 
-  if (!text) return null
-
   return (
     <button
       onClick={copyToClipboard}
-      disabled={isCopied}
+      disabled={isCopied || !text}
       className={clsx(
-        'flex items-center justify-start gap-1 rounded-full border-0 px-2 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed',
+        'flex items-center justify-start gap-1 rounded-full border-0 px-2 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed disabled:opacity-50',
         isCopied
           ? 'bg-primary-600 text-white'
           : 'bg-black/70 text-white hover:bg-zinc-700/80 hover:text-white dark:bg-black/50 dark:hover:bg-zinc-500/60',
       )}
     >
-      {isCopied ? <CheckIcon className="h-4 w-4" /> : <ClipboardIcon className="h-4 w-4" />}
+      {text ? (
+        isCopied ? (
+          <CheckIcon className="h-4 w-4" />
+        ) : (
+          <ClipboardIcon className="h-4 w-4" />
+        )
+      ) : (
+        <SpinnerIcon className="size-4 animate-spin" />
+      )}
     </button>
   )
 }
@@ -156,8 +150,8 @@ function ChangeViewModeButton({
 }
 
 function LinkToGithubButton({ path }: { path: string }) {
-  const branchName = 'main'
-  const href = `https://github.com/kiko-g/bagger-ui/blob/${branchName}/components/${path}`
+  const githubBlobWebUrl = 'https://github.com/kiko-g/bagger-ui/blob/main'
+  const href = `${githubBlobWebUrl}/src/components/showcase/${path}`
 
   return (
     <Link

@@ -6,6 +6,7 @@ import axios from 'axios'
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const filepath = searchParams.get('filepath')
+  const folderPath = 'src/components/showcase'
   const githubApiFileUrl = process.env.GITHUB_API_FILE_URL
 
   if (!filepath) {
@@ -15,7 +16,7 @@ export async function GET(req: NextRequest) {
   const filepathStr = filepath as string
   if (process.env.NODE_ENV === 'production') {
     try {
-      const fileUrl = `${githubApiFileUrl}/src/components/showcase/${encodeURIComponent(filepathStr)}`
+      const fileUrl = `${githubApiFileUrl}/${folderPath}/${encodeURIComponent(filepathStr)}`
       const response = await axios.get(fileUrl)
       const fileContent = Buffer.from(response.data.content, 'base64').toString('utf8') // decode base64 content
       return new NextResponse(sanitizeContent(fileContent), { status: 200 }) // return the content of the file
@@ -29,7 +30,7 @@ export async function GET(req: NextRequest) {
         return new NextResponse('Invalid filepath', { status: 400 }) // prevent accessing files outside of the 'components' directory
       }
 
-      const basePath = path.join(process.cwd(), 'src/components')
+      const basePath = path.join(process.cwd(), folderPath)
       const filePath = path.join(basePath, filepathStr)
 
       if (!fs.existsSync(filePath)) {
@@ -46,6 +47,6 @@ export async function GET(req: NextRequest) {
 }
 
 function sanitizeContent(content: string) {
-  const fileStartKey = `"use client"\n`
-  return content.startsWith(``) ? content.replace(fileStartKey, '').trimStart() : content
+  const clientServerRegex = /^(['"]use (client|server)['"]\s*;?\s*\n?)/i
+  return content.replace(clientServerRegex, '').trimStart()
 }

@@ -130,14 +130,14 @@ export default function Generator() {
                       placeholder="Type the name of your color palette"
                       value={tailwindPalette.name}
                       onChange={(e) => setTailwindPalette((x) => ({ ...x, name: e.target.value }))}
-                      className="h-10 w-full border border-zinc-300 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3 lg:py-2 lg:text-sm"
+                      className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3 lg:py-2 lg:text-sm"
                     />
 
                     <div className="flex w-full items-center gap-3">
                       <ColorPicker
                         value={firstColor as string}
                         onChange={(c) => setFirstColor(c as string)}
-                        className="block h-10 w-24 cursor-pointer rounded-none border border-zinc-300 transition"
+                        className="block h-10 w-24 cursor-pointer rounded-none border border-zinc-900/10 transition"
                       />
                       <input
                         type="text"
@@ -146,7 +146,7 @@ export default function Generator() {
                         value={firstColor}
                         onChange={(e) => setFirstColor(e.target.value as ColorHex)}
                         placeholder="First Color"
-                        className="h-10 w-full border border-zinc-300 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3 lg:py-2 lg:text-sm"
+                        className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3 lg:py-2 lg:text-sm"
                       />
                     </div>
 
@@ -154,7 +154,7 @@ export default function Generator() {
                       <ColorPicker
                         value={secondColor as string}
                         onChange={(c) => setSecondColor(c as string)}
-                        className="block h-10 w-24 cursor-pointer rounded-none border border-zinc-300 transition"
+                        className="block h-10 w-24 cursor-pointer rounded-none border border-zinc-900/10 transition"
                       />
                       <input
                         type="text"
@@ -163,7 +163,7 @@ export default function Generator() {
                         value={secondColor}
                         onChange={(e) => setSecondColor(e.target.value as ColorHex)}
                         placeholder="Second Color"
-                        className="h-10 w-full border border-zinc-300 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3 lg:py-2 lg:text-sm"
+                        className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3 lg:py-2 lg:text-sm"
                       />
                     </div>
                   </div>
@@ -189,7 +189,7 @@ export default function Generator() {
 
                 {/* Color Palette Demonstration */}
                 {tailwindPalette.combos.length > 0 && (
-                  <div className="border-dimmed border-t pt-3">
+                  <div className="border-t border-zinc-900/10 pt-3 dark:border-white/10">
                     <span className="mb-1.5 block font-semibold capitalize">{tailwindPalette.name}</span>
                     <ul className="-ml-1 flex flex-wrap items-center gap-1.5">
                       {tailwindPalette.combos.map((combo) => {

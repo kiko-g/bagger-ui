@@ -31,7 +31,7 @@ export function DropzoneArea({ accept = {}, multiple = true, onDrop, className =
     <div
       {...getRootProps()}
       className={cn(
-        'group flex h-48 w-full cursor-pointer flex-col items-center justify-center rounded border border-dashed border-zinc-300 bg-white p-4 text-center transition hover:border-primary-600/80 hover:bg-primary-600/5 dark:border-zinc-200/30 dark:bg-zinc-100/5 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5',
+        'group flex h-48 w-full cursor-pointer flex-col items-center justify-center rounded border border-dashed border-zinc-900/10 bg-white p-4 text-center transition hover:border-primary-600/80 hover:bg-primary-600/5 dark:border-zinc-200/30 dark:bg-zinc-100/5 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5',
         className,
       )}
     >

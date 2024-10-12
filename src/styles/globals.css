@@ -42,10 +42,6 @@ pre {
   background-color: theme('colors.zinc.800') !important;
 }
 
-.border-dimmed {
-  @apply border-zinc-300 dark:border-white/10;
-}
-
 @keyframes rotate {
   from {
     transform: rotateY(-90deg);

@@ -34,7 +34,7 @@ function ProductSimple({ product }: { product: ProductType }) {
   return (
     <div
       className={clsx(
-        'flex max-h-[80vh] w-full flex-col self-stretch overflow-hidden border-0 border-zinc-300 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-zinc-700 dark:bg-black/30 md:w-72',
+        'flex max-h-[80vh] w-full flex-col self-stretch overflow-hidden border-0 border-zinc-900/10 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-zinc-700 dark:bg-black/30 md:w-72',
       )}
     >
       <a className="relative min-h-[16rem] overflow-hidden" href="#">

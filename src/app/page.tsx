@@ -21,7 +21,7 @@ export default function Home() {
           page. Your setup should be similar, otherwise some components might not work as expected in your project.
         </p>
 
-        <div className="border-dimmed mt-8 border-t pt-4">
+        <div className="mt-8 border-t border-zinc-900/10 pt-4 dark:border-white/10">
           <h3 className="mb-3 text-xl font-bold">Application UI Components</h3>
           <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 xl:gap-5">
             {applicationUiNav.map((section) => (
@@ -30,7 +30,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="border-dimmed mt-16 border-t pt-4">
+        <div className="mt-16 border-t border-zinc-900/10 pt-4 dark:border-white/10">
           <h3 className="mb-3 text-xl font-bold">Marketing Components</h3>
           <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 xl:gap-5">
             {marketingNav.map((section) => (
@@ -39,7 +39,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="border-dimmed mt-16 border-t pt-4">
+        <div className="mt-16 border-t border-zinc-900/10 pt-4 dark:border-white/10">
           <h3 className="mb-3 text-xl font-bold">Ecommerce Components</h3>
           <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 xl:gap-5">
             {eCommerceNav.map((section) => (
