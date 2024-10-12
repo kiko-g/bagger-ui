@@ -7,7 +7,7 @@ import { Lexend } from 'next/font/google'
 import { Layout } from '@/components/Layout'
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from '@headlessui/react'
 
-import { AlertCustom } from '@/components/application-ui/alerts/AlertCustom'
+import { AlertCustom } from '@/components/showcase/application-ui/alerts/AlertCustom'
 import { CameraIcon, CheckIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 
 const lexend = Lexend({ subsets: ['latin'] })

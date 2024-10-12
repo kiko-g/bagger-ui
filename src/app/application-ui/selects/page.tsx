@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { SelectSingle, SelectMultiple } from '@/components/application-ui/selects'
+import { SelectSingle, SelectMultiple } from '@/components/showcase/application-ui/selects'
 
 export default function Selects() {
   const base = 'application-ui/selects'

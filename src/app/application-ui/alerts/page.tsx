@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { AlertCustom } from '@/components/application-ui/alerts/AlertCustom'
+import { AlertCustom } from '@/components/showcase/application-ui/alerts/AlertCustom'
 
 export default function Alerts() {
   const base = 'application-ui/alerts'

@@ -26,7 +26,7 @@ export function Header() {
               BaggerUI
             </h1>
           </Link>
-          <span className="inline-flex items-center rounded-sm border border-amber-400 bg-amber-400 px-1 py-0.5 text-xs font-bold uppercase text-amber-950">
+          <span className="inline-flex items-center rounded-sm border border-amber-400 bg-amber-400 px-1 py-0.5 text-xs/4 font-bold uppercase text-amber-950">
             Beta
           </span>
         </div>

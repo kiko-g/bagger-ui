@@ -10,7 +10,7 @@ import {
   ButtonOutline,
   ButtonSimpleIcon,
   ButtonDisabled,
-} from '@/components/application-ui/buttons'
+} from '@/components/showcase/application-ui/buttons'
 
 export default function Buttons() {
   const base = 'application-ui/buttons'

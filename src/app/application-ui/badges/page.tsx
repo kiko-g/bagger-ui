@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { BadgeError, BadgeSimple, BadgeSuccess, BadgeOutline } from '@/components/application-ui/badges'
-import { BadgeBeta } from '@/components/application-ui/badges/BadgeBeta'
+import { BadgeError, BadgeSimple, BadgeSuccess, BadgeOutline } from '@/components/showcase/application-ui/badges'
+import { BadgeBeta } from '@/components/showcase/application-ui/badges/BadgeBeta'
 
 export default function Badges() {
   const base = 'application-ui/badges'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { HeroGridNav } from '@/components/marketing/hero'
+import { HeroGridNav } from '@/components/showcase/marketing/hero'
 
 export default function Hero() {
   const base = 'marketing/hero'

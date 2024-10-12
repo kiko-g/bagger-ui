@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { InputCheckbox, InputParentCheckbox } from '@/components/application-ui/checkboxes'
+import { InputCheckbox, InputParentCheckbox } from '@/components/showcase/application-ui/checkboxes'
 
 export default function Inputs() {
   const base = 'application-ui/checkboxes'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { CircularProgressCard } from '@/components/marketing/kpi'
+import { CircularProgressCard } from '@/components/showcase/marketing/kpi'
 
 export default function KPIs() {
   const base = 'marketing/kpi'

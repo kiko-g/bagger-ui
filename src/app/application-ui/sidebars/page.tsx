@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { SidebarSections, SidebarSimple } from '@/components/application-ui/sidebars'
+import { SidebarSections, SidebarSimple } from '@/components/showcase/application-ui/sidebars'
 
 export default function Sidebars() {
   const base = 'application-ui/sidebars'

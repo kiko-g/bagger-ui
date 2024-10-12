@@ -5,7 +5,7 @@ import {
   ButtonGroupJoinedVertical,
   ButtonGroupSimple,
   ButtonGroupSplit,
-} from '@/components/application-ui/button-groups'
+} from '@/components/showcase/application-ui/button-groups'
 
 export default function ButtonGroups() {
   const base = 'application-ui/button-groups'

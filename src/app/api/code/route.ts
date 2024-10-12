@@ -6,6 +6,7 @@ import axios from 'axios'
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url)
   const filepath = searchParams.get('filepath')
+  const githubApiFileUrl = process.env.GITHUB_API_FILE_URL
 
   if (!filepath) {
     return NextResponse.json({ message: 'Filepath parameter is missing' }, { status: 400 })
@@ -14,9 +15,7 @@ export async function GET(req: NextRequest) {
   const filepathStr = filepath as string
   if (process.env.NODE_ENV === 'production') {
     try {
-      const fileUrl = `https://api.github.com/repos/kiko-g/bagger-ui/contents/src/components/${encodeURIComponent(
-        filepathStr,
-      )}`
+      const fileUrl = `${githubApiFileUrl}/src/components/showcase/${encodeURIComponent(filepathStr)}`
       const response = await axios.get(fileUrl)
       const fileContent = Buffer.from(response.data.content, 'base64').toString('utf8') // decode base64 content
       return new NextResponse(sanitizeContent(fileContent), { status: 200 }) // return the content of the file

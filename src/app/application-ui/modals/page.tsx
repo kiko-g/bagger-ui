@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { ModalSimple } from '@/components/application-ui/modals'
+import { ModalSimple } from '@/components/showcase/application-ui/modals'
 
 export default function Modals() {
   const base = 'application-ui/modals'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { NavbarSimple } from '@/components/application-ui/navbars'
+import { NavbarSimple } from '@/components/showcase/application-ui/navbars'
 
 export default function Navbars() {
   const base = 'application-ui/navbars'

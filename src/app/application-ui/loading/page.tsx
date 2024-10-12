@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { SkeletonCard, Spinner } from '@/components/application-ui/loading'
+import { SkeletonCard, Spinner } from '@/components/showcase/application-ui/loading'
 
 export default function Loading() {
   const base = 'application-ui/loading'

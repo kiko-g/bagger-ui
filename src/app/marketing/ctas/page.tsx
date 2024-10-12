@@ -1,6 +1,6 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { BlurredCTA, HoverDivCTA } from '@/components/marketing/ctas'
+import { BlurredCTA, HoverDivCTA } from '@/components/showcase/marketing/ctas'
 
 export default function CTA() {
   const base = 'marketing/ctas'

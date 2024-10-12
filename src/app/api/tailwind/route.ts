@@ -4,9 +4,11 @@ import path from 'path'
 import axios from 'axios'
 
 export async function GET(req: NextRequest) {
+  const githubApiFileUrl = process.env.GITHUB_API_FILE_URL
+
   if (process.env.NODE_ENV === 'production') {
     try {
-      const fileUrl = `https://api.github.com/repos/kiko-g/bagger-ui/contents/tailwind.config.ts`
+      const fileUrl = `${githubApiFileUrl}/tailwind.config.ts`
       const response = await axios.get(fileUrl)
       const content = Buffer.from(response.data.content, 'base64').toString('utf8') // decode base64 content
       return new NextResponse(content, { status: 200 }) // return the code from the file
