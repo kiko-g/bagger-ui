@@ -1,14 +1,16 @@
+'use client'
+
 import React from 'react'
 import clsx from 'clsx'
-import { Inter, Lexend } from 'next/font/google'
 
-import { Seo } from './layout/Seo'
-import { Header } from './layout/Header'
-import { Footer } from './layout/Footer'
-import { Sidebar } from './layout/Sidebar'
-import { QuickNavSidebar } from './layout/QuickNavSidebar'
-import { SupportBadge } from './layout/support/Badge'
-import { HeroPattern } from './layout/HeroPattern'
+import { Seo } from '@/components/layout/Seo'
+import { Header } from '@/components/layout/Header'
+import { Footer } from '@/components/layout/Footer'
+import { Sidebar } from '@/components/layout/Sidebar'
+import { QuickNavSidebar } from '@/components/layout/QuickNavSidebar'
+import { SupportBadge } from '@/components/layout/support/Badge'
+import { HeroPattern } from '@/components/layout/HeroPattern'
+import { ThemeSupportNotification } from '@/components/layout/support/ThemeSupportNotification'
 
 type Props = {
   children: React.ReactNode
@@ -34,6 +36,8 @@ export function Layout({ children, location = 'Unknown', sidebar = false, quickN
           </article>
           {quickNav && <QuickNavSidebar navigation={quickNav} />}
         </div>
+
+        <ThemeSupportNotification />
         <Footer />
       </main>
     </>
