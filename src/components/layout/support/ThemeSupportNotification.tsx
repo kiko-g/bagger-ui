@@ -7,6 +7,7 @@ import { useMemo, useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { BaggerFlowIcon } from '@/components/icons/BaggerFlowIcon'
 import { VSCodeIcon } from '@/components/icons/VSCodeIcon'
+import Image from 'next/image'
 
 export function ThemeSupportNotification() {
   const pathname = usePathname()
@@ -61,7 +62,13 @@ export function ThemeSupportNotification() {
               <div className="p-3">
                 <div className="flex items-start">
                   <div className="ml-1 mt-1 flex-shrink-0">
-                    <BaggerFlowIcon className="h-6 w-6" />
+                    <Image
+                      src="/bagger-flow.svg"
+                      alt="Bagger Flow"
+                      width={32}
+                      height={32}
+                      className="-ml-[1px] -mt-[1px]"
+                    />
                   </div>
                   <div className="ml-2.5 w-0 flex-1 pt-0.5">
                     <p className="text-sm font-medium text-zinc-800 dark:text-white">Check out Bagger Flow</p>
@@ -69,7 +76,6 @@ export function ThemeSupportNotification() {
                       Bagger Flow is a{' '}
                       <a
                         href="vscode:extension/kikogoncalves.bagger-flow"
-                        target="_blank"
                         className="inline-flex items-center gap-1 font-semibold hover:underline"
                       >
                         <VSCodeIcon className="size-2.5 fill-blue-500" />

@@ -59,7 +59,7 @@ function Pattern({
         />
       </div>
       <motion.div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#8dfdff] to-[#6c7dff] opacity-0 transition duration-300 group-hover:opacity-20 dark:from-[#36b2b4]/0 dark:to-[#a375ff]/0"
+        className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-200 to-primary-300 opacity-5 transition-all duration-300 group-hover:from-[#8dfdff] group-hover:to-[#6c7dff] group-hover:opacity-20 dark:group-hover:from-[#b1f1f2]/50 dark:group-hover:to-[#c4a7ff]/50 dark:group-hover:opacity-20"
         style={style}
       />
       <motion.div
