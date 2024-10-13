@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import { Seo } from '@/components/layout/Seo'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { Sidebar } from '@/components/layout/Sidebar'
+import { Navigation } from '@/components/layout/Navigation'
 import { QuickNavSidebar } from '@/components/layout/QuickNavSidebar'
 import { SupportBadge } from '@/components/layout/support/Badge'
 import { HeroPattern } from '@/components/layout/HeroPattern'
@@ -27,9 +27,9 @@ export function Layout({ children, location = 'Unknown', sidebar = false, quickN
         <Header />
         <HeroPattern />
         <div className="flex flex-1 pb-4">
-          {sidebar && <Sidebar location={location} />}
+          {sidebar && <Navigation location={location} />}
           <article className="flex max-w-full flex-1 flex-col items-start justify-start px-6 xl:px-10">
-            <div className="mt-4 flex w-full justify-end">
+            <div className="mt-4 flex w-full justify-start">
               <SupportBadge />
             </div>
             {children}

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Layout } from '@/components/Layout'
 import { Hero } from '@/components/layout/Hero'
 import { SectionCard } from '@/components/SectionCard'
-import { applicationUiNav, eCommerceNav, marketingNav } from '@/utils/data'
+import { applicationUiNav, eCommerceNav, marketingNav, Section } from '@/utils/data'
 
 export default function Home() {
   return (
@@ -21,33 +21,23 @@ export default function Home() {
           page. Your setup should be similar, otherwise some components might not work as expected in your project.
         </p>
 
-        <div className="mt-8 border-t border-zinc-900/10 pt-4 dark:border-white/10">
-          <h3 className="mb-3 text-xl font-bold">Application UI Components</h3>
-          <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 xl:gap-5">
-            {applicationUiNav.map((section) => (
-              <SectionCard key={`showcase-application-ui-${section.href}`} section={section} />
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-16 border-t border-zinc-900/10 pt-4 dark:border-white/10">
-          <h3 className="mb-3 text-xl font-bold">Marketing Components</h3>
-          <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 xl:gap-5">
-            {marketingNav.map((section) => (
-              <SectionCard key={`showcase-marketing-${section.href}`} section={section} />
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-16 border-t border-zinc-900/10 pt-4 dark:border-white/10">
-          <h3 className="mb-3 text-xl font-bold">Ecommerce Components</h3>
-          <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 xl:gap-5">
-            {eCommerceNav.map((section) => (
-              <SectionCard key={`showcase-ecommerce-${section.href}`} section={section} />
-            ))}
-          </div>
-        </div>
+        <ComponentsSection items={applicationUiNav} title="Application UI" />
+        <ComponentsSection items={eCommerceNav} title="eCommerce" />
+        <ComponentsSection items={marketingNav} title="Marketing" />
       </div>
     </Layout>
+  )
+}
+
+function ComponentsSection({ items, title }: { items: Section[]; title: string }) {
+  return (
+    <div className="mt-16 border-t border-zinc-900/10 pt-4 dark:border-white/10">
+      <h3 className="mb-3 text-xl font-bold">{title} Components</h3>
+      <div className="grid w-full grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 xl:gap-5">
+        {items.map((section) => (
+          <SectionCard key={`showcase-${title}-${section.href}`} section={section} />
+        ))}
+      </div>
+    </div>
   )
 }

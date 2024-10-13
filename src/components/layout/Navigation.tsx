@@ -3,7 +3,7 @@
 import { SidebarItem } from './SidebarItem'
 import { applicationUiNav, generalNav, generatorNav, marketingNav, eCommerceNav } from '@/utils/data'
 
-export function Sidebar({ location }: { location: string }) {
+export function Navigation({ location }: { location: string }) {
   const generalNavFiltered = generalNav.filter((item) => item.shown)
   const generatorNavFiltered = generatorNav.filter((item) => item.shown)
   const applicationUiNavFiltered = applicationUiNav.filter((item) => item.shown)

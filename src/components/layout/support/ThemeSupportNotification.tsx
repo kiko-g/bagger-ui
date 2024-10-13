@@ -6,6 +6,7 @@ import { XMarkIcon } from '@heroicons/react/20/solid'
 import { useMemo, useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { BaggerFlowIcon } from '@/components/icons/BaggerFlowIcon'
+import { VSCodeIcon } from '@/components/icons/VSCodeIcon'
 
 export function ThemeSupportNotification() {
   const pathname = usePathname()
@@ -63,15 +64,16 @@ export function ThemeSupportNotification() {
                     <BaggerFlowIcon className="h-6 w-6" />
                   </div>
                   <div className="ml-2.5 w-0 flex-1 pt-0.5">
-                    <p className="text-sm font-medium text-zinc-900 dark:text-white">Check out Bagger Flow</p>
-                    <p className="mt-1 text-sm/5 text-zinc-500 dark:text-zinc-300">
+                    <p className="text-sm font-medium text-zinc-800 dark:text-white">Check out Bagger Flow</p>
+                    <p className="mt-1 text-sm/5 font-normal text-zinc-500 dark:text-zinc-300">
                       Bagger Flow is a{' '}
                       <a
                         href="vscode:extension/kikogoncalves.bagger-flow"
                         target="_blank"
-                        className="font-semibold hover:underline"
+                        className="inline-flex items-center gap-1 font-semibold hover:underline"
                       >
-                        VS Code theme
+                        <VSCodeIcon className="size-2.5 fill-blue-500" />
+                        <span>VS Code theme</span>
                       </a>{' '}
                       with a modern and slick look, tailored for many languages.
                     </p>
@@ -79,7 +81,7 @@ export function ThemeSupportNotification() {
                       <a
                         href="https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow"
                         target="_blank"
-                        className="flex items-center gap-1 rounded-md text-sm font-medium text-primary-600 hover:text-primary-500 focus:underline focus:outline-none dark:text-primary-500 dark:hover:text-primary-400"
+                        className="flex items-center gap-1 rounded-md text-sm font-medium text-primary-600 focus:underline focus:outline-none dark:text-primary-500 dark:hover:text-primary-400"
                       >
                         <span>Take me there</span>
                       </a>
@@ -97,7 +99,7 @@ export function ThemeSupportNotification() {
                     <button
                       type="button"
                       onClick={handleClose}
-                      className="inline-flex rounded-md text-zinc-400 hover:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:text-zinc-100 dark:hover:text-zinc-200"
+                      className="inline-flex rounded-md p-0.5 text-zinc-400 hover:bg-zinc-900/10 focus:outline-none dark:text-zinc-100 dark:hover:bg-white/10 dark:hover:text-zinc-200"
                     >
                       <span className="sr-only">Close</span>
                       <XMarkIcon aria-hidden="true" className="h-5 w-5" />
