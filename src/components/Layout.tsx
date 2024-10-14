@@ -29,7 +29,7 @@ export function Layout({ children, location = 'Unknown', sidebar = false, quickN
         <div className="flex flex-1 pb-4">
           {sidebar && <Navigation location={location} />}
           <article className="flex max-w-full flex-1 flex-col items-start justify-start px-6 xl:px-10">
-            <div className="mt-4 flex w-full justify-start">
+            <div className="my-4 flex w-full justify-start">
               <SupportBadge />
             </div>
             {children}

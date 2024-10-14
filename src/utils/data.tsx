@@ -64,13 +64,19 @@ export const generalNav: Section[] = [
 export const generatorNav: Section[] = [
   {
     name: 'Backstage',
-    href: '/backstage',
+    href: '/generator/backstage',
     shown: isDev,
     icon: BuildingOffice2Icon,
   },
   {
     name: 'Palette',
     href: '/generator/palette',
+    shown: true,
+    icon: Cog8ToothIcon,
+  },
+  {
+    name: 'Onboarding',
+    href: '/generator/onboarding',
     shown: true,
     icon: Cog8ToothIcon,
   },
