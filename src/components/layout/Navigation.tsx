@@ -2,6 +2,7 @@
 
 import { SidebarItem } from './SidebarItem'
 import { applicationUiNav, generalNav, generatorNav, marketingNav, eCommerceNav } from '@/utils/data'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 
 export function Navigation({ location }: { location: string }) {
   const generalNavFiltered = generalNav.filter((item) => item.shown)
@@ -23,61 +24,85 @@ export function Navigation({ location }: { location: string }) {
         })}
       </ul>
 
-      <div>
-        <p className="mb-2 text-sm font-bold">Generator</p>
-        <ul className="flex w-full flex-col pb-4 pl-0">
-          {generatorNavFiltered.map((item, itemIdx) => {
-            const isActive = location.toLowerCase() === item.name.toLowerCase()
-            return (
-              <li key={`nav-${itemIdx}`}>
-                <SidebarItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
-              </li>
-            )
-          })}
-        </ul>
-      </div>
+      <Accordion type="single" collapsible defaultValue="item-1">
+        <AccordionItem value="item-1">
+          <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
+            <span className="pr-20">Generator</span>
+          </AccordionTrigger>
+          <AccordionContent>
+            <ul className="flex w-full flex-col pl-0">
+              {generatorNavFiltered.map((item, itemIdx) => {
+                const isActive = location.toLowerCase() === item.name.toLowerCase()
+                return (
+                  <li key={`nav-${itemIdx}`}>
+                    <SidebarItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                  </li>
+                )
+              })}
+            </ul>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
 
-      <div>
-        <p className="mb-2 text-sm font-bold">Application UI ({applicationUiNavFiltered.length})</p>
-        <ul className="flex w-full flex-col pb-4 pl-0">
-          {applicationUiNavFiltered.map((item, itemIdx) => {
-            const isActive = location.toLowerCase() === item.name.toLowerCase()
-            return (
-              <li key={`nav-${itemIdx}`}>
-                <SidebarItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
-              </li>
-            )
-          })}
-        </ul>
-      </div>
+      <Accordion type="single" collapsible defaultValue="item-2">
+        <AccordionItem value="item-2">
+          <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
+            <span className="pr-20">Application UI ({applicationUiNavFiltered.length})</span>
+          </AccordionTrigger>
+          <AccordionContent>
+            <ul className="flex w-full flex-col pl-0">
+              {applicationUiNavFiltered.map((item, itemIdx) => {
+                const isActive = location.toLowerCase() === item.name.toLowerCase()
+                return (
+                  <li key={`nav-${itemIdx}`}>
+                    <SidebarItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                  </li>
+                )
+              })}
+            </ul>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
 
-      <div>
-        <p className="mb-2 text-sm font-bold">Marketing ({marketingNavFiltered.length})</p>
-        <ul className="flex w-full flex-col pb-4 pl-0">
-          {marketingNavFiltered.map((item, itemIdx) => {
-            const isActive = location.toLowerCase() === item.name.toLowerCase()
-            return (
-              <li key={`nav-${itemIdx}`}>
-                <SidebarItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
-              </li>
-            )
-          })}
-        </ul>
-      </div>
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-3">
+          <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
+            <span className="pr-20">Marketing ({marketingNavFiltered.length})</span>
+          </AccordionTrigger>
+          <AccordionContent>
+            <ul className="flex w-full flex-col pl-0">
+              {marketingNavFiltered.map((item, itemIdx) => {
+                const isActive = location.toLowerCase() === item.name.toLowerCase()
+                return (
+                  <li key={`nav-${itemIdx}`}>
+                    <SidebarItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                  </li>
+                )
+              })}
+            </ul>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
 
-      <div>
-        <p className="mb-2 text-sm font-bold">Ecommerce ({eCommerceNavFiltered.length})</p>
-        <ul className="flex w-full flex-col pb-4 pl-0">
-          {eCommerceNavFiltered.map((item, itemIdx) => {
-            const isActive = location.toLowerCase() === item.name.toLowerCase()
-            return (
-              <li key={`nav-${itemIdx}`}>
-                <SidebarItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
-              </li>
-            )
-          })}
-        </ul>
-      </div>
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-4">
+          <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
+            <span className="pr-20">Ecommerce ({eCommerceNavFiltered.length})</span>
+          </AccordionTrigger>
+          <AccordionContent>
+            <ul className="flex w-full flex-col pl-0">
+              {eCommerceNavFiltered.map((item, itemIdx) => {
+                const isActive = location.toLowerCase() === item.name.toLowerCase()
+                return (
+                  <li key={`nav-${itemIdx}`}>
+                    <SidebarItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                  </li>
+                )
+              })}
+            </ul>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </aside>
   )
 }
