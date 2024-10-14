@@ -25,7 +25,7 @@ export function Navigation({ location }: { location: string }) {
       </ul>
 
       <Accordion type="single" collapsible defaultValue="item-1">
-        <AccordionItem value="item-1">
+        <AccordionItem value="item-1" className="border-zinc-900/10 dark:border-white/10">
           <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
             <span className="pr-20">Generator</span>
           </AccordionTrigger>
@@ -45,7 +45,7 @@ export function Navigation({ location }: { location: string }) {
       </Accordion>
 
       <Accordion type="single" collapsible defaultValue="item-2">
-        <AccordionItem value="item-2">
+        <AccordionItem value="item-2" className="border-zinc-900/10 dark:border-white/10">
           <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
             <span className="pr-20">Application UI</span>
           </AccordionTrigger>
@@ -65,7 +65,7 @@ export function Navigation({ location }: { location: string }) {
       </Accordion>
 
       <Accordion type="single" collapsible>
-        <AccordionItem value="item-3">
+        <AccordionItem value="item-3" className="border-zinc-900/10 dark:border-white/10">
           <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
             <span className="pr-20">Marketing</span>
           </AccordionTrigger>
@@ -85,7 +85,7 @@ export function Navigation({ location }: { location: string }) {
       </Accordion>
 
       <Accordion type="single" collapsible>
-        <AccordionItem value="item-4" className="">
+        <AccordionItem value="item-4" className="border-zinc-900/10 dark:border-white/10">
           <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
             <span className="pr-20">Ecommerce</span>
           </AccordionTrigger>
