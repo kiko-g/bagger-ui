@@ -75,8 +75,8 @@ export const generatorNav: Section[] = [
     icon: Cog8ToothIcon,
   },
   {
-    name: 'Onboarding',
-    href: '/generator/onboarding',
+    name: 'Identity',
+    href: '/generator/identity',
     shown: true,
     icon: Cog8ToothIcon,
   },

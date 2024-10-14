@@ -12,7 +12,7 @@ import { Button } from '@/components/ui/button'
 const inter = Inter({ subsets: ['latin'] })
 const lexend = Lexend({ subsets: ['latin'] })
 
-export default function Generator() {
+export default function JumpsellerStoreIdentity() {
   const [form, setForm] = useState<Record<string, string[]>>({})
   const [isInitialized, setIsInitialized] = useState(false)
 
@@ -29,7 +29,7 @@ export default function Generator() {
   return (
     <Layout location="Onboarding" sidebar>
       <h2 className={clsx(lexend.className, 'mb-4 text-2xl font-semibold tracking-tighter lg:text-4xl')}>
-        Identity Form
+        Jumpseller Store Identity
       </h2>
 
       <p className="mb-2 max-w-3xl text-base">
@@ -74,9 +74,8 @@ export default function Generator() {
 
           {Object.keys(form).length > 0 && (
             <div className="col-span-1 h-full lg:col-span-1">
-              <h4 className={clsx(inter.className, 'mb-1 text-lg font-semibold')}>Store Identity JSON</h4>
-              <div className="mb-1 flex items-center justify-end gap-2">
-                <Button variant="link" size="sm" onClick={() => setForm({})}>
+              <div className="flex items-center justify-end gap-2">
+                <Button variant="link" size="sm" onClick={() => setForm({})} className="px-2">
                   Reset
                 </Button>
               </div>
@@ -87,7 +86,7 @@ export default function Generator() {
                 options={{
                   height: '100%',
                   maxHeight: '100%',
-                  fontSize: '12px',
+                  fontSize: '14px',
                   lineHeight: '1.25',
                 }}
               />
