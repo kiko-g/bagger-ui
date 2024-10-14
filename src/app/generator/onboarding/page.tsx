@@ -1,13 +1,12 @@
 'use client'
 
-import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
+import React, { useState } from 'react'
 import clsx from 'clsx'
 import { Lexend } from 'next/font/google'
 
 import { Layout } from '@/components/Layout'
 import { possible } from '@/utils/jumpseller'
 import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
-import { SparklesIcon } from '@heroicons/react/24/outline'
 
 const lexend = Lexend({ subsets: ['latin'] })
 
@@ -20,11 +19,10 @@ export default function Generator() {
         Identity Form
       </h2>
 
-      <p className="mb-2 max-w-3xl text-sm">
-        Fill out your identity form to get started with{' '}
-        <span className="inline-flex items-center gap-0.5 font-semibold text-lime-600">
+      <p className="mb-2 max-w-3xl text-base">
+        Fill out your store identity form to get started with{' '}
+        <span className="inline-flex items-center gap-0.5 bg-gradient-to-r from-pink-600 via-indigo-600 to-sky-600 bg-clip-text font-semibold text-transparent">
           AI suggestions
-          <SparklesIcon className="h-3 w-3" />
         </span>{' '}
         in your platform.
       </p>
