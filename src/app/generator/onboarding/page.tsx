@@ -104,23 +104,15 @@ function RadioBubble({
   checked: boolean
   callback: (label: string, checked: boolean) => void
 }) {
-  const [isChecked, setIsChecked] = useState(checked)
-
-  useEffect(() => {
-    setIsChecked(checked)
-  }, [checked])
-
   function handleClick() {
-    const newChecked = !isChecked
-    setIsChecked(newChecked)
-    callback(label, newChecked)
+    callback(label, !checked)
   }
 
   return (
     <button
       onClick={handleClick}
       className={clsx(
-        isChecked
+        checked
           ? 'border-primary-500 bg-primary-500/10 dark:border-transparent dark:bg-primary-500/20'
           : 'border-zinc-900/20 bg-white hover:border-primary-500/50 hover:bg-primary-500/5 dark:bg-white/5 dark:hover:border-white/0 dark:hover:bg-white/10',
         'group flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-sm transition-all duration-200',
@@ -128,7 +120,7 @@ function RadioBubble({
     >
       <span
         className={clsx(
-          isChecked
+          checked
             ? 'bg-primary-500 group-hover:bg-primary-500/80'
             : 'bg-zinc-300 group-hover:bg-primary-500/80 dark:bg-zinc-200/20 dark:group-hover:bg-white',
           'h-2 w-2 rounded-full transition-all duration-200',
