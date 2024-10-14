@@ -58,7 +58,7 @@ export function ThemeSupportNotification() {
         <div className="flex w-full flex-col items-center space-y-4 sm:items-end">
           {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
           <Transition show={show}>
-            <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white/80 shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur transition data-[closed]:data-[enter]:translate-y-2 data-[enter]:transform data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-100 data-[enter]:ease-out data-[leave]:ease-in dark:bg-zinc-950/70 data-[closed]:data-[enter]:sm:translate-x-2 data-[closed]:data-[enter]:sm:translate-y-0">
+            <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white/70 shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur transition data-[closed]:data-[enter]:translate-y-2 data-[enter]:transform data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-100 data-[enter]:ease-out data-[leave]:ease-in dark:bg-zinc-950/60 data-[closed]:data-[enter]:sm:translate-x-2 data-[closed]:data-[enter]:sm:translate-y-0">
               <div className="p-3">
                 <div className="flex items-start">
                   <div className="ml-1 mt-1 flex-shrink-0">
@@ -105,7 +105,7 @@ export function ThemeSupportNotification() {
                     <button
                       type="button"
                       onClick={handleClose}
-                      className="inline-flex rounded-md p-0.5 text-zinc-400 hover:bg-zinc-900/10 focus:outline-none dark:text-zinc-100 dark:hover:bg-white/10 dark:hover:text-zinc-200"
+                      className="inline-flex rounded-md text-zinc-500 transition hover:bg-zinc-900/5 focus:outline-none dark:text-zinc-100 dark:hover:bg-white/10"
                     >
                       <span className="sr-only">Close</span>
                       <XMarkIcon aria-hidden="true" className="h-5 w-5" />

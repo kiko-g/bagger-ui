@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { GridPattern } from '@/components/layout/GridPattern'
 import { type MotionValue, motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import { Section } from '@/utils/data'
+import clsx from 'clsx'
 
 export function SectionCard({ section }: { section: Section }) {
   let mouseX = useMotionValue(0)
@@ -51,19 +52,24 @@ function Pattern({
     <div className="pointer-events-none">
       <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
         <GridPattern
-          width={72}
-          height={56}
           x="50%"
+          width={100}
+          height={100}
           className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/[0.02] stroke-black/[0.05] dark:fill-white/[0.03] dark:stroke-white/[0.06]"
           {...gridProps}
         />
       </div>
       <motion.div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-200 to-primary-300 opacity-5 transition-all duration-300 group-hover:from-[#8dfdff] group-hover:to-[#6c7dff] group-hover:opacity-20 dark:group-hover:from-[#b1f1f2]/50 dark:group-hover:to-[#c4a7ff]/50 dark:group-hover:opacity-20"
+        className={clsx(
+          'absolute inset-0 rounded-2xl bg-gradient-to-br transition-all duration-300',
+          'from-sky-200 to-purple-200 opacity-10 dark:from-purple-200 dark:to-sky-200 dark:opacity-0',
+          'group-hover:from-sky-200 group-hover:to-purple-200 group-hover:opacity-20',
+          'dark:group-hover:from-sky-200/30 dark:group-hover:to-purple-200/30 dark:group-hover:opacity-20',
+        )}
         style={style}
       />
       <motion.div
-        className="absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay transition duration-300 group-hover:opacity-100"
+        className="absolute inset-0 rounded-2xl opacity-80 mix-blend-overlay transition duration-300 group-hover:opacity-100"
         style={style}
       >
         <GridPattern

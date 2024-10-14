@@ -4,7 +4,7 @@ import React from 'react'
 
 export function LogoIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" {...props} viewBox="16 16 42 42">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="16 16 42 42" {...props}>
       <path fill="url(#a)" d="M18.5 36c0-9.941 8.059-18 18-18s18 8.059 18 18-8.059 18-18 18-18-8.059-18-18Z" />
       <g opacity={0.8}>
         <rect
@@ -43,8 +43,8 @@ export function LogoIcon(props: React.SVGProps<SVGSVGElement>) {
       <rect width={9} height={9} x={22.444} y={36} fill="#fff" opacity={0.8} rx={2} transform="rotate(-45 22.444 36)" />
       <defs>
         <linearGradient id="a" x1={18.5} x2={54.5} y1={18} y2={54} gradientUnits="userSpaceOnUse">
-          <stop offset={0.014} stopColor="#34D39B" />
-          <stop offset={1} stopColor="#047859" />
+          <stop offset={0.014} stopColor="#2393f8" />
+          <stop offset={1} stopColor="#115ea4" />
         </linearGradient>
       </defs>
     </svg>

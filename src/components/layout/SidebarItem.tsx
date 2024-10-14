@@ -20,7 +20,7 @@ export function SidebarItem({
       href={href}
       className={clsx(
         isActive
-          ? 'border-primary-500 bg-zinc-500/10 dark:bg-primary-300/5'
+          ? 'border-primary-600 bg-zinc-500/10 dark:bg-primary-300/5'
           : 'border-zinc-900/10 hover:bg-zinc-500/5 dark:border-white/10 dark:hover:bg-zinc-50/10',
         'flex cursor-pointer items-center justify-start gap-2 border-l py-0.5 pl-3 text-sm transition ease-in-out',
       )}

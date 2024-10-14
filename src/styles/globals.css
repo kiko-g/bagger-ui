@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 *::selection {
-  @apply bg-primary-700/50 text-white dark:bg-emerald-500/50;
+  @apply bg-primary-600/50 text-white dark:bg-secondary-500/50;
 }
 
 pre *::selection {
-  @apply bg-emerald-500/40 text-white;
+  @apply bg-secondary-500/40 text-white;
 }
 
 html {

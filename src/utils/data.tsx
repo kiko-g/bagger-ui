@@ -16,6 +16,7 @@ import {
   WrenchIcon,
 } from '@heroicons/react/24/outline'
 import { GithubIcon, ButtonIcon, LoadingIcon, SidebarIcon, SwitchIcon } from '@/components/icons'
+import type { ColorHex, TailwindPalette } from '@/types'
 
 const isDev = process.env.NODE_ENV === 'development'
 
@@ -343,3 +344,59 @@ export const eCommerceNav: Section[] = [
     shown: true,
   },
 ].sort((a, b) => a.name.localeCompare(b.name))
+
+const tailwindConfigToCombo = (config: { [key: string]: string }) => {
+  return Object.entries(config).map(([id, color]) => {
+    return { id: parseInt(id), color: color as ColorHex }
+  })
+}
+
+const writeTailwindConfig = (config: { [key: string]: string }) => {
+  return Object.entries(config)
+    .map(([id, color]) => {
+      return `${id}: ${color}`
+    })
+    .join('\n')
+}
+
+const palettes = {
+  primary: {
+    50: '#f0f8ff',
+    100: '#dff1fe',
+    200: '#bce0fd',
+    300: '#85cafe',
+    400: '#4db0f9',
+    500: '#3393f8',
+    600: '#1474d6',
+    700: '#115ea4',
+    800: '#114a97',
+    900: '#132f78',
+    950: '#0d2a4d',
+  },
+  secondary: {
+    50: '#f5fffb',
+    100: '#ddf0e9',
+    200: '#c4e1d7',
+    300: '#acd3c5',
+    400: '#93c4b3',
+    500: '#7bb5a2',
+    600: '#62a690',
+    700: '#4a977e',
+    800: '#31896c',
+    900: '#197a5a',
+    950: '#005649',
+  },
+}
+
+export const suggestedPalettes: TailwindPalette[] = [
+  {
+    name: 'Primary',
+    combos: tailwindConfigToCombo(palettes.primary),
+    config: writeTailwindConfig(palettes.primary),
+  },
+  {
+    name: 'Secondary',
+    combos: tailwindConfigToCombo(palettes.secondary),
+    config: writeTailwindConfig(palettes.secondary),
+  },
+]

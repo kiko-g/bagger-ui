@@ -7,11 +7,11 @@ import { GithubIcon } from '../icons'
 
 export function Header() {
   return (
-    <header className="max-w-8xl sticky top-0 z-50 mx-auto h-[60px] w-full border-b border-zinc-900/10 bg-zinc-100 bg-opacity-60 backdrop-blur-sm backdrop-filter dark:border-white/10 dark:bg-zinc-950 dark:bg-opacity-50 xl:px-6">
+    <header className="sticky top-0 z-50 mx-auto w-full border-b border-zinc-900/10 bg-zinc-100 bg-opacity-60 backdrop-blur-sm backdrop-filter dark:border-white/10 dark:bg-zinc-950 dark:bg-opacity-50 xl:px-6">
       <div className="flex items-center justify-between px-3 py-3 sm:px-4 lg:px-6 xl:px-0">
         <div className="flex items-center gap-3">
           <LogoLink />
-          <span className="inline-flex items-center rounded-full border border-primary-600 bg-primary-600/70 px-1.5 py-0.5 text-xs/4 font-bold uppercase tracking-tight text-white dark:border-primary-500 dark:bg-primary-500/70">
+          <span className="inline-flex items-center rounded-full border border-orange-600 bg-orange-600/70 px-1.5 py-0.5 text-xs/4 font-bold uppercase tracking-tight text-white dark:border-orange-500 dark:bg-orange-500/70">
             Beta
           </span>
         </div>

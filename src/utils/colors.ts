@@ -1,7 +1,4 @@
-export type ColorRgb = { r: number; g: number; b: number }
-export type ColorHex = `#${string}`
-export type ColorHsl = { h: number; s: number; l: number }
-export type TailwindCombo = { id: number; color: ColorHex }
+import type { ColorHex, ColorHsl, ColorRgb, TailwindCombo } from '@/types'
 
 export function isValidHex(hex: ColorHex): boolean {
   return /^#[0-9A-F]{6}$/i.test(hex)

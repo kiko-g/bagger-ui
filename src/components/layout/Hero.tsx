@@ -16,18 +16,17 @@ export function Hero() {
         Reusable UI Components with
         <span>
           <ReactIcon className="ml-2 mr-1 inline-flex h-5 w-5 align-middle text-[#149eca] lg:h-7 lg:w-7" />
-          <span className="text-[#149eca]">React</span>
+          <span>React</span>
           {', '}
         </span>
         <span>
           <TypescriptIcon className="ml-2.5 mr-1.5 inline-flex h-5 w-5 align-middle text-[#3178c6] lg:h-7 lg:w-7" />
-          <span className="text-[#3178c6]">Typescript</span>
+          <span>Typescript</span>
           {', and '}
         </span>
         <span>
           <TailwindIcon className="ml-2 mr-1.5 inline-flex h-5 w-5 align-middle text-[#38bdf8] lg:h-7 lg:w-7" />
-          <span className="text-[#38bdf8]">TailwindCSS</span>
-          <span>.</span>
+          <span>TailwindCSS</span>
         </span>
       </h2>
     </div>
