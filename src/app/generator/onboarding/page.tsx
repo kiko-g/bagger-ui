@@ -7,6 +7,7 @@ import { Lexend, Inter } from 'next/font/google'
 import { Layout } from '@/components/Layout'
 import { possible } from '@/utils/jumpseller'
 import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
+import { Button } from '@/components/ui/button'
 
 const inter = Inter({ subsets: ['latin'] })
 const lexend = Lexend({ subsets: ['latin'] })
@@ -73,7 +74,12 @@ export default function Generator() {
 
           {Object.keys(form).length > 0 && (
             <div className="col-span-1 h-full lg:col-span-1">
-              <h4 className={clsx(inter.className, 'mb-2 text-lg font-semibold')}>Store Identity JSON</h4>
+              <h4 className={clsx(inter.className, 'mb-1 text-lg font-semibold')}>Store Identity JSON</h4>
+              <div className="mb-1 flex items-center justify-end gap-2">
+                <Button variant="link" size="sm" onClick={() => setForm({})}>
+                  Reset
+                </Button>
+              </div>
               <CodeShowcaseDirect
                 allowDownload
                 language="json"
