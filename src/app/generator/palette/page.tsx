@@ -105,7 +105,7 @@ export default function Generator() {
         <span className="font-semibold text-primary-600 dark:text-primary-500">tailwind.config.js</span> 😎
       </p>
 
-      {!isLoading ? (
+      {isLoading ? (
         <PaletteSkeleton />
       ) : (
         <section id="tailwindcss-palette" className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-3">
@@ -248,7 +248,7 @@ export default function Generator() {
         </section>
       )}
 
-      <section id="tailwindcss-palette-suggestions" className="mt-4 w-full pt-4">
+      <section id="tailwindcss-palette-suggestions" className="mb-24 mt-4 w-full pt-4">
         <h2
           className={clsx(
             lexend.className,
@@ -272,7 +272,7 @@ export default function Generator() {
 
 function PaletteSkeleton() {
   return (
-    <div className="mt-4 grid h-full grid-cols-1 gap-4 lg:grid-cols-3">
+    <div className="mt-4 grid h-full w-full grid-cols-1 gap-4 lg:grid-cols-3">
       <div className="col-span-1 flex flex-col items-end gap-4 lg:col-span-2">
         <div className="h-12 w-full animate-pulse rounded bg-zinc-300 dark:bg-black/40"></div>
         <div className="h-12 w-full animate-pulse rounded bg-zinc-300 dark:bg-black/40"></div>

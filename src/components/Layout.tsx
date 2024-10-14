@@ -11,6 +11,7 @@ import { QuickNavSidebar } from '@/components/layout/QuickNavSidebar'
 import { SupportBadge } from '@/components/layout/support/Badge'
 import { HeroPattern } from '@/components/layout/HeroPattern'
 import { ThemeSupportNotification } from '@/components/layout/support/ThemeSupportNotification'
+import { WorkInProgressBadge } from './layout/WorkInProgressBadge'
 
 type Props = {
   children: React.ReactNode
@@ -28,9 +29,10 @@ export function Layout({ children, location = 'Unknown', sidebar = false, quickN
         <HeroPattern />
         <div className="flex flex-1">
           {sidebar && <Navigation location={location} />}
-          <article className="flex max-w-full flex-1 flex-col items-start justify-start px-6 xl:px-10">
-            <div className="my-4 flex w-full justify-start">
+          <article className="relative flex max-w-full flex-1 flex-col items-start justify-start px-6 xl:px-10">
+            <div className="my-4 flex w-full items-center justify-between">
               <SupportBadge />
+              <WorkInProgressBadge />
             </div>
             {children}
           </article>
