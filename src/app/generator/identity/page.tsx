@@ -17,13 +17,13 @@ export default function JumpsellerStoreIdentity() {
   const [isInitialized, setIsInitialized] = useState(false)
 
   useEffect(() => {
-    const storedForm = localStorage.getItem('form')
+    const storedForm = localStorage.getItem('jumpseller-store-identity-form')
     if (storedForm) setForm(JSON.parse(storedForm))
     setIsInitialized(true)
   }, [])
 
   useEffect(() => {
-    if (isInitialized) localStorage.setItem('form', JSON.stringify(form))
+    if (isInitialized) localStorage.setItem('jumpseller-store-identity-form', JSON.stringify(form))
   }, [form, isInitialized])
 
   return (
