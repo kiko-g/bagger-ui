@@ -22,9 +22,9 @@ export default function Generator() {
 
       <p className="mb-2 max-w-3xl text-sm">
         Fill out your identity form to get started with{' '}
-        <span className="inline-flex items-center gap-0.5">
-          <SparklesIcon className="h-3 w-3" />
+        <span className="inline-flex items-center gap-0.5 font-semibold text-lime-600">
           AI suggestions
+          <SparklesIcon className="h-3 w-3" />
         </span>{' '}
         in your platform.
       </p>
@@ -33,18 +33,23 @@ export default function Generator() {
         <div className="col-span-1 flex flex-col gap-8 lg:col-span-2">
           {Object.entries(possible).map(([key, values]) => (
             <div key={`possible-${key}`} className="flex flex-col gap-2">
-              <h4 className="text-2xl font-medium">{key.charAt(0).toUpperCase() + key.slice(1)}</h4>
+              <h4 className={clsx(lexend.className, 'text-xl font-semibold')}>{key}</h4>
               <ul className="flex max-w-7xl flex-wrap gap-2">
                 {values.map((value, valueIdx) => (
-                  <FormBubble
+                  <RadioBubble
                     key={`value-${key}-${valueIdx}`}
                     label={value}
                     callback={(label, checked) =>
-                      setForm((prevForm) => {
-                        const updatedList = checked
-                          ? [...(prevForm[key] || []), label]
-                          : (prevForm[key] || []).filter((l) => l !== label)
-                        return { ...prevForm, [key]: updatedList }
+                      setForm((prev) => {
+                        if (checked) return { ...prev, [key]: [...(prev[key] || []), label] }
+                        else {
+                          const updatedList = (prev[key] || []).filter((l) => l !== label)
+                          if (updatedList.length === 0) {
+                            const { [key]: _, ...rest } = prev
+                            return rest
+                          }
+                          return { ...prev, [key]: updatedList }
+                        }
                       })
                     }
                   />
@@ -54,9 +59,13 @@ export default function Generator() {
           ))}
         </div>
 
-        <div className="col-span-1 h-full lg:col-span-1">
-          {Object.keys(form).length > 0 && (
+        {Object.keys(form).length > 0 && (
+          <div className="col-span-1 h-full lg:col-span-1">
+            <h4 className={clsx(lexend.className, 'mb-2 text-lg font-semibold tracking-tighter')}>
+              Store Identity JSON
+            </h4>
             <CodeShowcaseDirect
+              allowDownload
               language="json"
               code={JSON.stringify(form, null, 2)}
               options={{
@@ -66,14 +75,14 @@ export default function Generator() {
                 lineHeight: '1.25',
               }}
             />
-          )}
-        </div>
+          </div>
+        )}
       </article>
     </Layout>
   )
 }
 
-function FormBubble({ label, callback }: { label: string; callback: (label: string, checked: boolean) => void }) {
+function RadioBubble({ label, callback }: { label: string; callback: (label: string, checked: boolean) => void }) {
   const [checked, setChecked] = useState(false)
 
   function handleClick() {
@@ -87,8 +96,8 @@ function FormBubble({ label, callback }: { label: string; callback: (label: stri
       onClick={handleClick}
       className={clsx(
         checked
-          ? 'border-lime-500 bg-lime-500/10 hover:opacity-80 dark:border-transparent dark:bg-lime-500/10'
-          : 'border-zinc-900/20 bg-white hover:border-lime-500/50 hover:bg-lime-500/10 dark:bg-white/5 dark:hover:border-white/0 dark:hover:bg-white/10',
+          ? 'border-lime-500 bg-lime-500/10 dark:border-transparent dark:bg-lime-500/20'
+          : 'border-zinc-900/20 bg-white hover:border-lime-500/50 hover:bg-lime-500/5 dark:bg-white/5 dark:hover:border-white/0 dark:hover:bg-white/10',
         'group flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-sm transition-all duration-200',
       )}
     >
