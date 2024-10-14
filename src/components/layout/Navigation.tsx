@@ -12,7 +12,7 @@ export function Navigation({ location }: { location: string }) {
   const eCommerceNavFiltered = eCommerceNav.filter((item) => item.shown)
 
   return (
-    <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] shrink-0 flex-col space-y-4 self-stretch overflow-hidden bg-opacity-80 p-5 hover:overflow-auto md:sticky md:block lg:flex lg:min-w-min lg:border-r lg:border-zinc-900/10 dark:lg:border-white/10">
+    <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] shrink-0 flex-col space-y-4 self-stretch overflow-hidden bg-opacity-80 p-5 pb-8 hover:overflow-auto md:sticky md:block lg:flex lg:min-w-min lg:border-r lg:border-zinc-900/10 dark:lg:border-white/10">
       <ul className="flex w-full flex-col border-b border-zinc-900/10 pb-4 dark:border-white/10">
         {generalNavFiltered.map((item, itemIdx) => {
           const isActive = location.toLowerCase() === item.name.toLowerCase()
@@ -47,7 +47,7 @@ export function Navigation({ location }: { location: string }) {
       <Accordion type="single" collapsible defaultValue="item-2">
         <AccordionItem value="item-2">
           <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
-            <span className="pr-20">Application UI ({applicationUiNavFiltered.length})</span>
+            <span className="pr-20">Application UI</span>
           </AccordionTrigger>
           <AccordionContent>
             <ul className="flex w-full flex-col pl-0">
@@ -67,7 +67,7 @@ export function Navigation({ location }: { location: string }) {
       <Accordion type="single" collapsible>
         <AccordionItem value="item-3">
           <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
-            <span className="pr-20">Marketing ({marketingNavFiltered.length})</span>
+            <span className="pr-20">Marketing</span>
           </AccordionTrigger>
           <AccordionContent>
             <ul className="flex w-full flex-col pl-0">
@@ -85,9 +85,9 @@ export function Navigation({ location }: { location: string }) {
       </Accordion>
 
       <Accordion type="single" collapsible>
-        <AccordionItem value="item-4">
+        <AccordionItem value="item-4" className="">
           <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
-            <span className="pr-20">Ecommerce ({eCommerceNavFiltered.length})</span>
+            <span className="pr-20">Ecommerce</span>
           </AccordionTrigger>
           <AccordionContent>
             <ul className="flex w-full flex-col pl-0">

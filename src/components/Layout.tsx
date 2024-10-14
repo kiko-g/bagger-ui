@@ -26,7 +26,7 @@ export function Layout({ children, location = 'Unknown', sidebar = false, quickN
       <main className={clsx('mx-auto flex min-h-screen max-w-[100vw] flex-col')}>
         <Header />
         <HeroPattern />
-        <div className="flex flex-1 pb-4">
+        <div className="flex flex-1">
           {sidebar && <Navigation location={location} />}
           <article className="flex max-w-full flex-1 flex-col items-start justify-start px-6 xl:px-10">
             <div className="my-4 flex w-full justify-start">
