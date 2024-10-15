@@ -27,7 +27,7 @@ export default function JumpsellerStoreIdentity() {
   }, [form, isInitialized])
 
   return (
-    <Layout location="Onboarding" sidebar>
+    <Layout location="Identity" sidebar>
       <h2 className={clsx(lexend.className, 'mb-4 text-2xl font-semibold tracking-tighter lg:text-4xl')}>
         Jumpseller Store Identity
       </h2>
