@@ -2,10 +2,15 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { Layout } from '@/components/Layout'
-import { Hero } from '@/components/layout/Hero'
-import { SectionCard } from '@/components/SectionCard'
+import clsx from 'clsx'
+import { Lexend } from 'next/font/google'
+import { ReactIcon, TailwindIcon, TypescriptIcon, ShadCnIcon } from '@/components/icons'
 import { applicationUiNav, eCommerceNav, marketingNav, Section } from '@/utils/data'
+
+import { Layout } from '@/components/Layout'
+import { SectionCard } from '@/components/SectionCard'
+
+const lexend = Lexend({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -38,6 +43,40 @@ function ComponentsSection({ items, title }: { items: Section[]; title: string }
           <SectionCard key={`showcase-${title}-${section.href}`} section={section} />
         ))}
       </div>
+    </div>
+  )
+}
+
+function Hero() {
+  return (
+    <div className="my-1 max-w-full py-4 md:max-w-xl lg:max-w-2xl lg:py-6 xl:max-w-[44rem]">
+      <h2
+        className={clsx(
+          lexend.className,
+          'flex flex-wrap items-center text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl',
+        )}
+      >
+        Reusable UI Components with
+        <span>
+          <ReactIcon className="ml-2 mr-1 inline-flex h-5 w-5 align-middle text-[#149eca] lg:h-7 lg:w-7" />
+          <span>React</span>
+          {', '}
+        </span>
+        <span>
+          <TypescriptIcon className="-mt[1px] ml-2.5 mr-1.5 inline-flex h-5 w-5 rounded-sm align-middle text-[#3178c6] lg:h-7 lg:w-7" />
+          <span>Typescript</span>
+          {','}
+        </span>
+        <span>
+          <TailwindIcon className="ml-2 mr-1.5 inline-flex h-5 w-5 align-middle text-[#38bdf8] lg:h-7 lg:w-7" />
+          <span>TailwindCSS</span>
+          {', and '}
+        </span>
+        <span>
+          <ShadCnIcon className="-mt-1 ml-2 mr-1.5 inline-flex h-5 w-5 rounded-sm bg-[#08171d] align-middle text-white lg:h-7 lg:w-7" />
+          <span>Shadcn</span>
+        </span>
+      </h2>
     </div>
   )
 }
