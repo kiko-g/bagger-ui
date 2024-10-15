@@ -1,8 +1,8 @@
 'use client'
 
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState, useCallback, useMemo } from 'react'
 import clsx from 'clsx'
-import { CheckIcon, ClipboardIcon } from '@heroicons/react/24/outline'
+import { ArrowDownTrayIcon, CheckIcon, ClipboardIcon } from '@heroicons/react/24/outline'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import { Inter_Tight } from 'next/font/google'
@@ -10,12 +10,16 @@ import { Inter_Tight } from 'next/font/google'
 const inter = Inter_Tight({ subsets: ['latin'] })
 
 type Props = {
-  route: string // api route
+  route: string
   language: string
+  options?: any
+  allowDownload?: boolean
 }
 
-export function CodeShowcaseFromAPI({ route, language }: Props) {
+export function CodeShowcaseFromAPI({ route, language, options, allowDownload }: Props) {
   const [code, setCode] = useState<string>('')
+  const canCopy = useMemo(() => code !== '', [code])
+  const canDownload = useMemo(() => allowDownload && code !== '', [allowDownload, code])
 
   useEffect(() => {
     fetch(route)
@@ -26,8 +30,8 @@ export function CodeShowcaseFromAPI({ route, language }: Props) {
       })
   }, [route])
 
-  return code === '' ? (
-    <div className="flex w-full items-center justify-center rounded-xl bg-[#1E2937] px-8 py-16 shadow dark:bg-black/10">
+  if (!code) {
+    ;<div className="flex w-full items-center justify-center rounded-xl bg-[#1E2937] px-8 py-16 shadow dark:bg-black/10">
       <svg
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -42,11 +46,14 @@ export function CodeShowcaseFromAPI({ route, language }: Props) {
         ></path>
       </svg>
     </div>
-  ) : (
+  }
+
+  return (
     <div className={clsx(inter.className, 'group relative max-w-7xl overflow-auto rounded-xl')}>
       {/* Controls */}
       <div className="absolute right-4 top-4 flex items-center justify-end gap-2">
-        {code === '' ? null : <CopyCodeButton text={code} />}
+        {canDownload ? <DownloadButton text={code} filename={`code.${language}`} /> : null}
+        {canCopy ? <CopyCodeButton text={code} /> : null}
       </div>
 
       <SyntaxHighlighter
@@ -58,6 +65,7 @@ export function CodeShowcaseFromAPI({ route, language }: Props) {
           minHeight: '500px',
           maxHeight: '1000px',
           margin: '0',
+          ...options,
         }}
       >
         {code}
@@ -84,14 +92,49 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied}
       className={clsx(
-        'flex items-center justify-start gap-1.5 rounded px-3 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed',
-        isCopied
-          ? 'bg-primary-600 text-white'
-          : 'bg-white/20 text-white hover:bg-blue-600/80 hover:text-white dark:bg-white/10 dark:hover:bg-blue-500/60',
+        'flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2.5 py-1 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900',
+        isCopied ? '' : 'hover:bg-zinc-600 dark:hover:bg-zinc-700',
       )}
     >
       <span className="hidden xl:flex">{isCopied ? 'Copied' : 'Copy'}</span>
       {isCopied ? <CheckIcon className="h-4 w-4" /> : <ClipboardIcon className="h-4 w-4" />}
+    </button>
+  )
+}
+
+function DownloadButton({ text, filename }: { text: string; filename: string }) {
+  const [isDownloading, setIsDownloading] = useState(false)
+
+  const download = () => {
+    setIsDownloading(true)
+    try {
+      const blob = new Blob([text], { type: 'text/plain' })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = filename
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+      URL.revokeObjectURL(url)
+    } catch (error) {
+      console.error('Failed to download code.')
+    } finally {
+      setIsDownloading(false)
+    }
+  }
+
+  return (
+    <button
+      onClick={download}
+      disabled={isDownloading}
+      className={clsx(
+        'flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900',
+        isDownloading ? '' : 'hover:bg-zinc-600 dark:hover:bg-zinc-700',
+      )}
+    >
+      <span className="hidden xl:flex">Download</span>
+      {isDownloading ? <CheckIcon className="h-4 w-4" /> : <ArrowDownTrayIcon className="h-4 w-4" />}
     </button>
   )
 }

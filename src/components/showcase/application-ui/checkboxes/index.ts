@@ -1,4 +1,4 @@
-import { InputCheckbox } from './InputCheckbox'
-import { InputParentCheckbox } from './InputParentCheckbox'
+import { Checkbox } from './Checkbox'
+import { ParentCheckbox } from './ParentCheckbox'
 
-export { InputCheckbox, InputParentCheckbox }
+export { Checkbox, ParentCheckbox }

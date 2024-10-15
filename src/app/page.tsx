@@ -48,6 +48,13 @@ function ComponentsSection({ items, title }: { items: Section[]; title: string }
 }
 
 function Hero() {
+  const technologies = [
+    { TechIcon: ReactIcon, name: 'React', color: 'text-[#149eca]', bgColor: '' },
+    { TechIcon: TypescriptIcon, name: 'Typescript', color: 'text-[#3178c6]', bgColor: '' },
+    { TechIcon: TailwindIcon, name: 'TailwindCSS', color: 'text-[#38bdf8]', bgColor: '' },
+    // { TechIcon: ShadCnIcon, name: 'Shadcn', color: 'text-white', bgColor: 'bg-[#08171d]' },
+  ]
+
   return (
     <div className="my-1 max-w-full py-4 md:max-w-xl lg:max-w-2xl lg:py-6 xl:max-w-[44rem]">
       <h2
@@ -57,25 +64,15 @@ function Hero() {
         )}
       >
         Reusable UI Components with
-        <span>
-          <ReactIcon className="ml-2 mr-1 inline-flex h-5 w-5 align-middle text-[#149eca] lg:h-7 lg:w-7" />
-          <span>React</span>
-          {', '}
-        </span>
-        <span>
-          <TypescriptIcon className="-mt[1px] ml-2.5 mr-1.5 inline-flex h-5 w-5 rounded-sm align-middle text-[#3178c6] lg:h-7 lg:w-7" />
-          <span>Typescript</span>
-          {','}
-        </span>
-        <span>
-          <TailwindIcon className="ml-2 mr-1.5 inline-flex h-5 w-5 align-middle text-[#38bdf8] lg:h-7 lg:w-7" />
-          <span>TailwindCSS</span>
-          {', and '}
-        </span>
-        <span>
-          <ShadCnIcon className="-mt-1 ml-2 mr-1.5 inline-flex h-5 w-5 rounded-sm bg-[#08171d] align-middle text-white lg:h-7 lg:w-7" />
-          <span>Shadcn</span>
-        </span>
+        {technologies.map(({ TechIcon, name, color, bgColor }, index) => (
+          <span key={name}>
+            <TechIcon
+              className={`ml-2 mr-1.5 inline-flex h-5 w-5 align-middle ${color} ${bgColor} lg:h-7 lg:w-7 ${index === 1 ? '-mt-[1px]' : index === 3 ? '-mt-1' : ''} ${index === 1 ? 'rounded-sm' : ''}`}
+            />
+            <span>{name}</span>
+            {index < technologies.length - 1 && (index === technologies.length - 2 ? ', and ' : ', ')}
+          </span>
+        ))}
       </h2>
     </div>
   )

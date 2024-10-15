@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Spinner() {
   return (
-    <div className="flex h-64 w-full max-w-lg items-center justify-center rounded border border-blue-500/50 bg-blue-500/10 dark:border-blue-500/50 dark:bg-blue-500/10">
+    <div className="flex h-64 w-full max-w-lg items-center justify-center rounded border border-blue-500/50 bg-slate-700/10 dark:border-blue-500/50 dark:bg-slate-500/10">
       <svg
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -12,7 +12,7 @@ export function ButtonFill() {
       onClick={myFunction}
       className="group relative flex items-center justify-center gap-x-2 rounded-sm border-2 border-blue-500 px-8 py-3 text-blue-500 disabled:cursor-not-allowed disabled:opacity-25 dark:border-blue-600 dark:text-white"
     >
-      <span className="absolute inset-y-0 left-0 w-[4px] bg-blue-500/60 transition-all group-hover:w-full dark:bg-blue-500/40"></span>
+      <span className="absolute inset-y-0 left-0 w-[4px] bg-slate-700/60 transition-all group-hover:w-full dark:bg-slate-500/40"></span>
       <span className="relative text-sm font-medium group-hover:text-white">Button</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"

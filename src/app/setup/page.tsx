@@ -111,7 +111,18 @@ export default function Config() {
           should be in the root of your project.
         </p>
         <div className="w-full rounded-xl">
-          <CodeShowcaseFromAPI route="api/tailwind" language="javascript" />
+          <CodeShowcaseFromAPI route="api/code/tailwind" language="typescript" />
+        </div>
+      </section>
+
+      <section className="mb-24 w-full pb-2 pt-4 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10">
+        <h2 className={clsx(lexend.className, 'mb-3 text-lg font-semibold tracking-tighter lg:text-3xl')}>Types</h2>
+        <p className="mb-3 max-w-5xl">
+          In order to make our components highly customizable, we use TypeScript types. These types are defined in the{' '}
+          <span className="font-semibold text-primary-600 dark:text-primary-500">@/types</span> folder.
+        </p>
+        <div className="w-full rounded-xl">
+          <CodeShowcaseFromAPI route="api/code/types" language="typescript" />
         </div>
       </section>
     </Layout>

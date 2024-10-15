@@ -25,7 +25,7 @@ export function CodeShowcaseDirect({ code, language, options, allowDownload }: P
     <div className={clsx(fontMono.variable, 'group relative mb-4 max-w-7xl overflow-auto rounded-xl')}>
       {/* Controls */}
       <div className="absolute right-3 top-3 z-20 flex items-center justify-end gap-2">
-        {canDownload ? <DownloadButton text={code} filename={`store-identity.${language}`} /> : null}
+        {canDownload ? <DownloadButton text={code} filename={`code.${language}`} /> : null}
         {canCopy ? <CopyCodeButton text={code} /> : null}
       </div>
 

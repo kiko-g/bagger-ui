@@ -140,8 +140,8 @@ function SidebarItem({
       href={href}
       className={clsx(
         isActive
-          ? 'bg-blue-500 text-white hover:opacity-80 dark:bg-blue-500/80'
-          : 'hover:bg-blue-500/10 dark:hover:bg-blue-500/30',
+          ? 'bg-slate-700 text-white hover:opacity-80 dark:bg-slate-500/80'
+          : 'hover:bg-slate-700/10 dark:hover:bg-slate-700/30',
         'flex cursor-pointer items-center justify-center gap-2 rounded py-3 pl-3 pr-3 text-sm transition ease-in-out xl:justify-start xl:pr-10',
       )}
     >

@@ -18,7 +18,7 @@ export function BadgeError({ outline }: Props) {
           : 'border-rose-700 bg-rose-700 text-white dark:border-rose-600 dark:bg-rose-600 dark:text-white',
       )}
     >
-      <div className="text-sm">Success</div>
+      <div className="text-sm">Error</div>
       <CheckIcon className="h-4 w-4" />
     </div>
   )

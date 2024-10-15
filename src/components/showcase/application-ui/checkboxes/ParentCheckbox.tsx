@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import { InputCheckbox } from './InputCheckbox'
+import { Checkbox } from './Checkbox'
 
-export function InputParentCheckbox() {
+export function ParentCheckbox() {
   const [childCheckboxes, setChildCheckboxes] = useState([
     { id: 1, checked: false },
     { id: 2, checked: false },
@@ -39,15 +39,15 @@ export function InputParentCheckbox() {
 
   return (
     <div>
-      <InputCheckbox
+      <Checkbox
         labelText="Parent Checkbox"
         checked={parentChecked}
         isIntermediate={isIntermediate}
         onChange={handleParentChange}
       />
-      <div className="ml-4 mt-2 flex flex-col gap-y-2">
+      <div className="ml-5 mt-2 flex flex-col gap-y-2">
         {childCheckboxes.map((box) => (
-          <InputCheckbox
+          <Checkbox
             key={box.id}
             labelText={`Child Checkbox ${box.id}`}
             checked={box.checked}

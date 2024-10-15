@@ -36,7 +36,7 @@ export function NavbarSimple({ location }: Props) {
               className={clsx(
                 'rounded-md px-3 py-2 text-sm font-medium transition',
                 location === item.name
-                  ? 'bg-blue-500 text-white'
+                  ? 'bg-slate-700 text-white'
                   : 'text-zinc-500 hover:bg-zinc-200 dark:hover:bg-zinc-800',
               )}
             >

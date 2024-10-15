@@ -2,6 +2,7 @@ import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
 import { BadgeError, BadgeSimple, BadgeSuccess, BadgeOutline } from '@/components/showcase/application-ui/badges'
 import { BadgeBeta } from '@/components/showcase/application-ui/badges/BadgeBeta'
+import { Badge } from '@/components/showcase/application-ui/badges/Badge'
 
 export default function Badges() {
   const base = 'application-ui/badges'
@@ -11,25 +12,13 @@ export default function Badges() {
       title="Badges"
       components={[
         {
-          name: 'Simple with Type',
-          path: `${base}/BadgeSimple.tsx`,
+          name: 'Badge',
+          path: `${base}/Badge.tsx`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-3xl">
-              <BadgeSimple>
-                <span className="text-sm">Simple</span>
-              </BadgeSimple>
-              <BadgeSimple type="info">
-                <span className="text-sm">Info</span>
-              </BadgeSimple>
-              <BadgeSimple type="success">
-                <span className="text-sm">Success</span>
-              </BadgeSimple>
-              <BadgeSimple type="warning">
-                <span className="text-sm">Warning</span>
-              </BadgeSimple>
-              <BadgeSimple type="error">
-                <span className="text-sm">Error</span>
-              </BadgeSimple>
+              <Badge outline size="sm" rounded="md" variant="pink">
+                New
+              </Badge>
             </div>
           ),
         },

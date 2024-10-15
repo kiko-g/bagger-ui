@@ -158,7 +158,7 @@ function LinkToGithubButton({ path }: { path: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-start gap-2 rounded bg-white px-2 py-2 text-zinc-900 shadow-sm transition hover:opacity-80 disabled:cursor-not-allowed"
+      className="flex items-center justify-start gap-2 rounded bg-white px-3 py-1.5 text-zinc-900 shadow-sm transition hover:opacity-80 disabled:cursor-not-allowed"
     >
       <GithubIcon className="h-4 w-4" />
       <span className="text-xs">View on Github</span>

@@ -31,7 +31,7 @@ export function HeroGridNav() {
       text: 'Moscow is the capital and most populous city of Russia. Moscow is a major political, economic, cultural, and scientific centre of Russia and Eastern Europe, as well as the largest city (by area) on the European continent.',
       href: '#',
       icon: ViewfinderCircleIcon,
-      iconClasses: 'bg-blue-50 group-hover:bg-blue-600 group-hover:text-white text-blue-600',
+      iconClasses: 'bg-blue-50 group-hover:bg-slate-700 group-hover:text-white text-blue-600',
     },
     {
       title: 'Prague',
@@ -57,7 +57,7 @@ export function HeroGridNav() {
   ]
 
   return (
-    <div className="flex flex-col divide-y divide-transparent overflow-hidden rounded-lg border border-transparent bg-zinc-200 dark:border-blue-500/40 dark:bg-blue-500/10 md:grid md:grid-cols-2 md:gap-px md:divide-y-0">
+    <div className="flex flex-col divide-y divide-transparent overflow-hidden rounded-lg border border-transparent bg-zinc-200 dark:border-blue-500/40 dark:bg-slate-500/10 md:grid md:grid-cols-2 md:gap-px md:divide-y-0">
       {actions.map((action, actionIdx) => (
         <Link
           href={action.href}
@@ -67,7 +67,7 @@ export function HeroGridNav() {
             actionIdx === 1 ? 'sm:rounded-tr-lg' : '',
             actionIdx === actions.length - 2 ? 'sm:rounded-bl-lg' : '',
             actionIdx === actions.length - 1 ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none' : '',
-            'group relative bg-white p-6 transition focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 hover:bg-zinc-100 dark:bg-blue-500/5 dark:hover:opacity-90',
+            'group relative bg-white p-6 transition focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 hover:bg-zinc-100 dark:bg-slate-500/5 dark:hover:opacity-90',
           )}
         >
           <span className={clsx(action.iconClasses, 'inline-flex rounded-lg p-4 transition')}>
