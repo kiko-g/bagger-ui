@@ -16,12 +16,6 @@ import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
 const lexend = Lexend({ subsets: ['latin'] })
 
 export default function Generator() {
-  const trial = {
-    firstColor: '#f4eaeb' as ColorHex,
-    secondColor: '#892844' as ColorHex,
-    name: 'Wine' as string,
-  }
-
   const [firstColor, setFirstColor] = useState<string | ''>('')
   const [secondColor, setSecondColor] = useState<string | ''>('')
   const [tailwindPalette, setTailwindPalette] = useState<TailwindPalette>({
@@ -55,6 +49,12 @@ export default function Generator() {
   }
 
   useEffect(() => {
+    const trial = {
+      firstColor: '#f4eaeb' as ColorHex,
+      secondColor: '#892844' as ColorHex,
+      name: 'Wine' as string,
+    }
+
     setFirstColor(trial.firstColor as string)
     setSecondColor(trial.secondColor as string)
 
