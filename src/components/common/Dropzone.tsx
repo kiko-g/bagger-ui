@@ -42,6 +42,7 @@ export function DropzoneArea({ accept = {}, multiple = true, onDrop, className =
           <span className="font-bold">Click to upload</span> or drag and drop. Colors within the image will be used to
           generate the palette.
         </p>
+        <span className="d-block font-semibold text-amber-600">⚠️ Work in progress ⚠️</span>
       </div>
       {/* {src ? (
         <Image src={src} alt="Preview" className="max-h-40 w-auto" />
