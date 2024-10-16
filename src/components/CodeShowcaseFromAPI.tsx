@@ -61,7 +61,7 @@ export function CodeShowcaseFromAPI({ route, language, options, allowDownload }:
         showLineNumbers
         style={coldarkDark}
         customStyle={{
-          borderRadius: '0',
+          borderRadius: '0.75rem',
           minHeight: '500px',
           maxHeight: '1000px',
           margin: '0',

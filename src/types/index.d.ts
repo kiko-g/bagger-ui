@@ -1,3 +1,10 @@
+export interface ComponentCardType {
+  name: string
+  path: string | null
+  component: React.ReactNode
+  usage?: string
+}
+
 export type ColorRgb = {
   r: number
   g: number
@@ -27,7 +34,7 @@ export type ColorVariant =
   | 'info'
   | 'success'
   | 'error'
-  | 'warn'
+  | 'warning'
   | 'slate'
   | 'gray'
   | 'zinc'

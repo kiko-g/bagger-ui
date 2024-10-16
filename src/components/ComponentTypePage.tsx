@@ -1,16 +1,11 @@
 'use client'
 
 import React, { useState, useMemo } from 'react'
-import { Layout } from '@/components/Layout'
-import { ComponentShowcase } from '@/components/ComponentShowcase'
-import { strIncludes } from '@/utils'
 import clsx from 'clsx'
-
-type ComponentCardType = {
-  name: string
-  path: string
-  component: React.ReactNode
-}
+import { Layout } from '@/components/Layout'
+import { strIncludes } from '@/utils'
+import type { ComponentCardType } from '@/types'
+import { ComponentShowcase } from '@/components/ComponentShowcase'
 
 type Props = {
   title: string
@@ -58,12 +53,13 @@ export function ComponentTypePage({ title, components, description }: Props) {
 
         <ul className={clsx('grid grid-cols-1')}>
           {filteredComponents?.length > 0 ? (
-            filteredComponents.map((button, buttonIx) => (
+            filteredComponents.map((item, itemIdx) => (
               <ComponentShowcase
-                name={button.name}
-                path={button.path}
-                Component={button.component}
-                key={`button-${buttonIx}-${button.name}`}
+                name={item.name}
+                path={item.path}
+                usage={item.usage}
+                component={item.component}
+                key={`button-${itemIdx}-${item.name}`}
               />
             ))
           ) : (

@@ -34,6 +34,9 @@ const config: Config = {
         slate: {
           '150': '#eaeef4',
         },
+        zinc: {
+          '150': '#f0f0f1',
+        },
         primary: {
           '50': '#f0f8ff',
           '100': '#dff1fe',

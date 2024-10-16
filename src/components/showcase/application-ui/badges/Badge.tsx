@@ -74,7 +74,7 @@ const sizes = {
   lg: 'text-lg px-4 py-2',
 }
 
-export function Badge({ children, variant, outline, rounded, size, className }: Props) {
+const Badge = ({ children, variant, outline, rounded, size, className }: Props) => {
   return (
     <div
       className={clsx(
@@ -90,3 +90,7 @@ export function Badge({ children, variant, outline, rounded, size, className }: 
     </div>
   )
 }
+
+Badge.displayName = 'Badge'
+
+export { Badge }

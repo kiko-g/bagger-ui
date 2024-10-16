@@ -1,7 +1,5 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { BadgeError, BadgeSimple, BadgeSuccess, BadgeOutline } from '@/components/showcase/application-ui/badges'
-import { BadgeBeta } from '@/components/showcase/application-ui/badges/BadgeBeta'
 import { Badge } from '@/components/showcase/application-ui/badges/Badge'
 
 export default function Badges() {
@@ -24,56 +22,51 @@ export default function Badges() {
         },
         {
           name: 'Outline with Type',
-          path: `${base}/BadgeOutline.tsx`,
+          path: null,
+          usage: `<Badge variant="error">Error</Badge>`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-3xl">
-              <BadgeOutline noBorder>
-                <span className="text-sm">No Border</span>
-              </BadgeOutline>
-              <BadgeOutline noBubble>
-                <span className="text-sm">No Bubble</span>
-              </BadgeOutline>
-              <BadgeOutline type="info">
-                <span className="text-sm">Info</span>
-              </BadgeOutline>
-              <BadgeOutline type="success">
-                <span className="text-sm">Success</span>
-              </BadgeOutline>
-              <BadgeOutline type="warning">
-                <span className="text-sm">Warning</span>
-              </BadgeOutline>
-              <BadgeOutline type="error">
-                <span className="text-sm">Error</span>
-              </BadgeOutline>
+              <Badge variant="error">Error</Badge>
+              <Badge variant="warning">Warning</Badge>
             </div>
           ),
         },
         {
           name: 'Success',
-          path: `${base}/BadgeSuccess.tsx`,
+          path: null,
+          usage: `<Badge variant="success">Success</Badge>`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
-              <BadgeSuccess />
-              <BadgeSuccess outline />
+              <Badge variant="success">Success</Badge>
+              <Badge variant="success" outline>
+                Success
+              </Badge>
             </div>
           ),
         },
         {
           name: 'Error',
-          path: `${base}/BadgeError.tsx`,
+          path: null,
+          usage: `<Badge variant="error">Error</Badge>`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
-              <BadgeError />
-              <BadgeError outline />
+              <Badge variant="error">Error</Badge>
+              <Badge variant="error" outline>
+                Error
+              </Badge>
             </div>
           ),
         },
         {
           name: 'Beta',
-          path: `${base}/BadgeBeta.tsx`,
+          path: null,
+          usage: `<Badge size="sm">Beta</Badge>`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
-              <BadgeBeta />
+              <Badge size="sm">Beta</Badge>
+              <Badge size="sm" rounded="full">
+                Beta
+              </Badge>
             </div>
           ),
         },

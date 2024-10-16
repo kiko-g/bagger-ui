@@ -1,35 +1,35 @@
 'use client'
 
-import React, { Fragment, useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { Switch } from '@headlessui/react'
+import type { ComponentCardType } from '@/types'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
-import { Inter_Tight } from 'next/font/google'
 import { GithubIcon } from './icons/GithubIcon'
-import { Disclosure, DisclosureButton, DisclosurePanel, Switch, Transition } from '@headlessui/react'
-import { CheckIcon, ClipboardIcon, LinkIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 import { SpinnerIcon } from './icons/SpinnerIcon'
+import { CheckIcon, ClipboardIcon, LinkIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 
-type Props = {
-  name: string
-  path: string
-  Component: React.ReactNode
-}
-
-export function ComponentShowcase({ name, path, Component }: Props) {
+export function ComponentShowcase({ name, path, usage, component }: ComponentCardType) {
   const sectionId = name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
   const [code, setCode] = useState<string>('')
   const [isCodeVisible, setIsCodeVisible] = useState(false)
 
   useEffect(() => {
-    fetch(`/api/code?filepath=${encodeURIComponent(path)}`)
-      .then((response) => response.text())
-      .then((data) => setCode(data))
-      .catch((error) => {
-        console.error('Failed to fetch component code.')
-      })
-  }, [path])
+    if (path) {
+      fetch(`/api/code?filepath=${encodeURIComponent(path)}`)
+        .then((response) => response.text())
+        .then((data) => setCode(data))
+        .catch((error) => {
+          console.error('Failed to fetch component code.')
+        })
+    } else {
+      if (usage) {
+        setCode(usage)
+      }
+    }
+  }, [path, usage])
 
   return (
     <li className="flex flex-col" id={sectionId}>
@@ -40,7 +40,7 @@ export function ComponentShowcase({ name, path, Component }: Props) {
         </a>
       </h4>
 
-      <section className="relative mb-8">
+      <section className="relative mb-8 rounded-xl">
         <div className="absolute right-4 top-4 z-10 flex items-center justify-end gap-2">
           <CopyCodeButton text={code} />
           <ChangeViewModeButton
@@ -50,9 +50,11 @@ export function ComponentShowcase({ name, path, Component }: Props) {
           />
         </div>
 
-        <div className="absolute bottom-4 left-4 z-10 flex items-center justify-end gap-2">
-          <LinkToGithubButton path={path} />
-        </div>
+        {path && (
+          <div className="absolute bottom-4 left-4 z-10 flex items-center justify-end gap-2">
+            <LinkToGithubButton path={path} />
+          </div>
+        )}
 
         {isCodeVisible ? (
           <SyntaxHighlighter
@@ -64,14 +66,14 @@ export function ComponentShowcase({ name, path, Component }: Props) {
               minHeight: '300px',
               lineHeight: '1.25',
               fontSize: '0.9rem',
-              borderRadius: '0',
+              borderRadius: '0.75rem',
             }}
           >
             {code}
           </SyntaxHighlighter>
         ) : (
-          <div className="flex w-full items-center justify-center rounded-b bg-zinc-100 px-8 py-32 dark:bg-black/20">
-            {Component}
+          <div className="flex w-full items-center justify-center rounded-md border border-zinc-200 bg-zinc-100 px-8 py-32 dark:border-white/[15%] dark:bg-white/[8%]">
+            {component}
           </div>
         )}
       </section>

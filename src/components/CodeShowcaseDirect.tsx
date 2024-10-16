@@ -33,7 +33,7 @@ export function CodeShowcaseDirect({ code, language, options, allowDownload }: P
         language={language}
         style={coldarkDark}
         customStyle={{
-          borderRadius: options?.borderRadius || '0',
+          borderRadius: options?.borderRadius || '0.75rem',
           maxHeight: options?.maxHeight || '200px',
           margin: options?.margin || '0',
           ...options,
