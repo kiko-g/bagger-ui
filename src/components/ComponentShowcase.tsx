@@ -40,14 +40,17 @@ export function ComponentShowcase({ name, path, usage, component }: ComponentCar
         </a>
       </h4>
 
-      <section className="relative mb-8 rounded-xl">
-        <div className="absolute right-4 top-4 z-10 flex items-center justify-end gap-2">
-          <CopyCodeButton text={code} />
-          <ChangeViewModeButton
+      <section className="relative mb-8 overflow-hidden rounded-xl border border-zinc-200 dark:border-white/20">
+        <div className="border-b border-zinc-200 bg-white dark:border-transparent dark:bg-zinc-900">
+          <ChangeViewModeTabs
             isCodeVisible={isCodeVisible}
             toggleShowCode={() => setIsCodeVisible(true)}
             toggleShowPreview={() => setIsCodeVisible(false)}
           />
+        </div>
+
+        <div className="absolute right-3 top-14 z-10 flex items-center justify-end gap-2">
+          <CopyCodeButton text={code} />
         </div>
 
         {path && (
@@ -59,20 +62,19 @@ export function ComponentShowcase({ name, path, usage, component }: ComponentCar
         {isCodeVisible ? (
           <SyntaxHighlighter
             language="tsx"
-            showLineNumbers
             style={coldarkDark}
             customStyle={{
               margin: '0',
-              minHeight: '300px',
+              minHeight: '60px',
               lineHeight: '1.25',
-              fontSize: '0.9rem',
-              borderRadius: '0.75rem',
+              fontSize: '18px',
+              borderRadius: '0 0 0.75rem 0.75rem',
             }}
           >
             {code}
           </SyntaxHighlighter>
         ) : (
-          <div className="flex w-full items-center justify-center rounded-md border border-zinc-200 bg-zinc-100 px-8 py-32 dark:border-white/[15%] dark:bg-white/[8%]">
+          <div className="flex w-full items-center justify-center bg-zinc-100 px-8 py-32 dark:bg-white/5">
             {component}
           </div>
         )}
@@ -99,7 +101,7 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied || !text}
       className={clsx(
-        'flex items-center justify-start gap-1 rounded-full border-0 px-2 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed disabled:opacity-50',
+        'flex items-center justify-start gap-1 rounded-md border-0 px-2 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed disabled:opacity-50',
         isCopied
           ? 'bg-primary-600 text-white'
           : 'bg-black/70 text-white hover:bg-zinc-700/80 hover:text-white dark:bg-black/50 dark:hover:bg-zinc-500/60',
@@ -118,7 +120,7 @@ function CopyCodeButton({ text }: { text: string }) {
   )
 }
 
-function ChangeViewModeButton({
+function ChangeViewModeTabs({
   isCodeVisible,
   toggleShowCode,
   toggleShowPreview,
@@ -128,12 +130,12 @@ function ChangeViewModeButton({
   toggleShowPreview: () => void
 }) {
   return (
-    <div className="flex items-center justify-start gap-1 rounded-full border-0 bg-black/70 px-1 py-1 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-black/50">
+    <div className="flex items-center justify-start gap-1 border-0 transition">
       <button
         onClick={toggleShowPreview}
         className={clsx(
-          'inline-flex rounded-full px-2.5 py-0.5 text-2xs',
-          isCodeVisible ? 'hover:bg-white/20 dark:hover:bg-white/10' : 'bg-white/30 dark:bg-white/20',
+          'inline-flex border-b-2 px-4 py-2 text-sm',
+          isCodeVisible ? 'border-transparent' : 'border-zinc-900 bg-zinc-100 dark:border-zinc-100 dark:bg-white/10',
         )}
       >
         Preview
@@ -141,8 +143,8 @@ function ChangeViewModeButton({
       <button
         onClick={toggleShowCode}
         className={clsx(
-          'inline-flex rounded-full px-2.5 py-0.5 text-2xs',
-          isCodeVisible ? 'bg-white/30 dark:bg-white/20' : 'hover:bg-white/10',
+          'inline-flex border-b-2 px-4 py-2 text-sm',
+          isCodeVisible ? 'border-zinc-900 bg-zinc-100 dark:border-zinc-100 dark:bg-white/10' : 'border-transparent',
         )}
       >
         Code
@@ -193,5 +195,38 @@ function ChangeBackgroundButton({ isDarkBackground, toggle }: { isDarkBackground
         )}
       </span>
     </Switch>
+  )
+}
+
+function ChangeViewModeButtons({
+  isCodeVisible,
+  toggleShowCode,
+  toggleShowPreview,
+}: {
+  isCodeVisible: boolean
+  toggleShowCode: () => void
+  toggleShowPreview: () => void
+}) {
+  return (
+    <div className="flex items-center justify-start gap-1 rounded-full border-0 bg-black/70 px-1 py-1 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-black/50">
+      <button
+        onClick={toggleShowPreview}
+        className={clsx(
+          'inline-flex rounded-full px-2.5 py-0.5 text-2xs',
+          isCodeVisible ? 'hover:bg-white/20 dark:hover:bg-white/10' : 'bg-white/30 dark:bg-white/20',
+        )}
+      >
+        Preview
+      </button>
+      <button
+        onClick={toggleShowCode}
+        className={clsx(
+          'inline-flex rounded-full px-2.5 py-0.5 text-2xs',
+          isCodeVisible ? 'bg-white/30 dark:bg-white/20' : 'hover:bg-white/10',
+        )}
+      >
+        Code
+      </button>
+    </div>
   )
 }

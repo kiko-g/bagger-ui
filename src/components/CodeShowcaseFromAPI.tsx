@@ -49,7 +49,12 @@ export function CodeShowcaseFromAPI({ route, language, options, allowDownload }:
   }
 
   return (
-    <div className={clsx(inter.className, 'group relative max-w-7xl overflow-auto rounded-xl')}>
+    <div
+      className={clsx(
+        inter.className,
+        'group relative max-w-7xl overflow-auto rounded-xl border border-zinc-200 dark:border-white/20',
+      )}
+    >
       {/* Controls */}
       <div className="absolute right-4 top-4 flex items-center justify-end gap-2">
         {canDownload ? <DownloadButton text={code} filename={`code.${language}`} /> : null}
@@ -58,7 +63,6 @@ export function CodeShowcaseFromAPI({ route, language, options, allowDownload }:
 
       <SyntaxHighlighter
         language={language}
-        showLineNumbers
         style={coldarkDark}
         customStyle={{
           borderRadius: '0.75rem',
