@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { ArrowUturnLeftIcon, ArrowUturnRightIcon } from '@heroicons/react/24/solid'
 import { BuildingLibraryIcon, EllipsisHorizontalIcon, SwatchIcon } from '@heroicons/react/24/outline'
 
 import { Button } from '@/components/ui/button'
@@ -25,68 +26,29 @@ const HeaderEditor = ({}: Props) => {
   return (
     <header className="flex w-full bg-white px-3 py-2 text-sm dark:bg-zinc-950">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-1.5">
-          <button className="group rounded-full p-1 transition hover:bg-zinc-100 dark:hover:bg-zinc-800">
+        <div className="flex items-center gap-1.5 border-r border-zinc-200 pr-2 dark:border-zinc-800">
+          <Button variant="minimal" size="tiny" className="group">
             <SwatchIcon className="block size-5 group-hover:hidden" />
             <BuildingLibraryIcon className="hidden size-5 group-hover:block" />
-          </button>
+          </Button>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-1 rounded-md px-1.5 py-1 text-sm font-medium leading-tight transition hover:bg-zinc-100 dark:hover:bg-white/10">
-                <span>Theme</span>
+                <span className="max-w-[120px] truncate">Theme</span>
                 <EllipsisHorizontalIcon className="mt-[1px] size-4" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuContent className="w-56" side="bottom" align="start">
+              <DropdownMenuLabel>Theme v4.3.1</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
-                <DropdownMenuItem>
-                  Profile
-                  <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  Billing
-                  <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  Settings
-                  <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  Keyboard shortcuts
-                  <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
-                </DropdownMenuItem>
+                <DropdownMenuItem>View Online</DropdownMenuItem>
+                <DropdownMenuItem>Theme Gallery</DropdownMenuItem>
+                <DropdownMenuItem>Code Editor</DropdownMenuItem>
+                <DropdownMenuItem>Edit Navigation</DropdownMenuItem>
+                <DropdownMenuItem>Documentation</DropdownMenuItem>
               </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuGroup>
-                <DropdownMenuItem>Team</DropdownMenuItem>
-                <DropdownMenuSub>
-                  <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
-                  <DropdownMenuPortal>
-                    <DropdownMenuSubContent>
-                      <DropdownMenuItem>Email</DropdownMenuItem>
-                      <DropdownMenuItem>Message</DropdownMenuItem>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem>More...</DropdownMenuItem>
-                    </DropdownMenuSubContent>
-                  </DropdownMenuPortal>
-                </DropdownMenuSub>
-                <DropdownMenuItem>
-                  New Team
-                  <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>GitHub</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuItem disabled>API</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                Log out
-                <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -95,6 +57,21 @@ const HeaderEditor = ({}: Props) => {
             <span>Current</span>
           </span>
         </div>
+      </div>
+
+      <div className="flex w-full items-center justify-end gap-4">
+        <div className="flex items-center gap-1.5">
+          <Button variant="outline" size="tiny" disabled>
+            <ArrowUturnLeftIcon className="size-4 stroke-2" />
+          </Button>
+          <Button variant="outline" size="tiny">
+            <ArrowUturnRightIcon className="size-4 hover:stroke-2" />
+          </Button>
+        </div>
+
+        <Button variant="success" size="sm">
+          Save
+        </Button>
       </div>
     </header>
   )

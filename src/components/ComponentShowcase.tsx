@@ -134,7 +134,7 @@ function ChangeViewModeTabs({
       <button
         onClick={toggleShowPreview}
         className={clsx(
-          'inline-flex w-20 items-center justify-center rounded-md px-3 py-2 text-center text-sm transition-all lg:w-24 lg:px-3',
+          'inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all lg:px-2.5 lg:py-1.5',
           isCodeVisible
             ? 'border-transparent'
             : 'border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5',
@@ -145,7 +145,7 @@ function ChangeViewModeTabs({
       <button
         onClick={toggleShowCode}
         className={clsx(
-          'inline-flex w-16 items-center justify-center rounded-md px-3 py-2 text-center text-sm transition-all hover:bg-zinc-100 dark:hover:bg-white/5 lg:w-16 lg:px-3',
+          'inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all hover:bg-zinc-100 dark:hover:bg-white/5 lg:px-2.5 lg:py-1.5',
           isCodeVisible
             ? 'border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5'
             : 'border-transparent',
