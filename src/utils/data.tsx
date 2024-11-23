@@ -77,7 +77,7 @@ export const generatorNav: Section[] = [
   {
     name: 'Identity',
     href: '/generator/identity',
-    shown: true,
+    shown: false,
     icon: Cog8ToothIcon,
   },
 ]
@@ -196,6 +196,14 @@ export const applicationUiNav: Section[] = [
     },
     icon: SwatchIcon,
     image: Footage.Modals,
+    shown: true,
+  },
+  {
+    name: 'Headers',
+    href: '/application-ui/headers',
+    description: 'Customizable and expansible top menu components.',
+    icon: SwatchIcon,
+    image: undefined,
     shown: true,
   },
   {

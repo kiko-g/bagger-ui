@@ -52,7 +52,7 @@ export function CodeShowcaseFromAPI({ route, language, options, allowDownload }:
     <div
       className={clsx(
         inter.className,
-        'group relative max-w-7xl overflow-auto rounded-xl border border-zinc-200 dark:border-white/20',
+        'group relative max-w-7xl overflow-auto rounded-xl border border-zinc-200 dark:border-white/10',
       )}
     >
       {/* Controls */}

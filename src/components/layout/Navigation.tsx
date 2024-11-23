@@ -13,8 +13,8 @@ export function Navigation({ location }: { location: string }) {
   const eCommerceNavFiltered = eCommerceNav.filter((item) => item.shown)
 
   return (
-    <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] min-w-64 shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 p-5 pb-8 hover:overflow-auto md:sticky md:block lg:flex lg:border-r lg:border-zinc-900/10 dark:lg:border-white/10">
-      <ul className="flex w-full flex-col border-b border-zinc-900/10 pb-4 dark:border-white/10">
+    <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] min-w-64 shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 px-8 py-8 pr-10 hover:overflow-auto md:sticky md:block lg:flex lg:border-r lg:border-zinc-900/10 dark:lg:border-white/10">
+      <ul className="flex w-full flex-col border-b-0 border-zinc-900/10 dark:border-white/10">
         {generalNavFiltered.map((item, itemIdx) => {
           const isActive = location.toLowerCase() === item.name.toLowerCase()
           return (
@@ -26,7 +26,7 @@ export function Navigation({ location }: { location: string }) {
       </ul>
 
       <Accordion type="single" collapsible defaultValue="item-1">
-        <AccordionItem value="item-1" className="border-zinc-900/10 dark:border-white/10">
+        <AccordionItem value="item-1" className="border-b-0 border-zinc-900/10 dark:border-white/10">
           <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
             <span className="whitespace-nowrap text-left">Generator</span>
           </AccordionTrigger>
@@ -46,7 +46,7 @@ export function Navigation({ location }: { location: string }) {
       </Accordion>
 
       <Accordion type="single" collapsible defaultValue="item-2">
-        <AccordionItem value="item-2" className="border-zinc-900/10 dark:border-white/10">
+        <AccordionItem value="item-2" className="border-b-0 border-zinc-900/10 dark:border-white/10">
           <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
             <span className="whitespace-nowrap text-left">Application UI</span>
           </AccordionTrigger>
@@ -66,7 +66,7 @@ export function Navigation({ location }: { location: string }) {
       </Accordion>
 
       <Accordion type="single" collapsible>
-        <AccordionItem value="item-3" className="border-zinc-900/10 dark:border-white/10">
+        <AccordionItem value="item-3" className="border-b-0 border-zinc-900/10 dark:border-white/10">
           <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
             <span className="whitespace-nowrap text-left">Marketing</span>
           </AccordionTrigger>
@@ -86,7 +86,7 @@ export function Navigation({ location }: { location: string }) {
       </Accordion>
 
       <Accordion type="single" collapsible>
-        <AccordionItem value="item-4" className="border-zinc-900/10 dark:border-white/10">
+        <AccordionItem value="item-4" className="border-b-0 border-zinc-900/10 dark:border-white/10">
           <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
             <span className="whitespace-nowrap text-left">Ecommerce</span>
           </AccordionTrigger>

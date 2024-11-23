@@ -40,8 +40,8 @@ export function ComponentShowcase({ name, path, usage, component }: ComponentCar
         </a>
       </h4>
 
-      <section className="relative mb-8 overflow-hidden rounded-xl border border-zinc-200 dark:border-white/20">
-        <div className="border-b border-zinc-200 bg-white dark:border-transparent dark:bg-zinc-900">
+      <section className="relative mb-8 overflow-hidden">
+        <div className="mb-3">
           <ChangeViewModeTabs
             isCodeVisible={isCodeVisible}
             toggleShowCode={() => setIsCodeVisible(true)}
@@ -49,12 +49,12 @@ export function ComponentShowcase({ name, path, usage, component }: ComponentCar
           />
         </div>
 
-        <div className="absolute right-3 top-14 z-10 flex items-center justify-end gap-2">
+        <div className="absolute right-3 top-16 z-10 flex items-center justify-end gap-2">
           <CopyCodeButton text={code} />
         </div>
 
         {path && (
-          <div className="absolute bottom-4 left-4 z-10 flex items-center justify-end gap-2">
+          <div className="absolute bottom-3 right-3 z-10 flex items-center justify-end gap-2">
             <LinkToGithubButton path={path} />
           </div>
         )}
@@ -67,14 +67,14 @@ export function ComponentShowcase({ name, path, usage, component }: ComponentCar
               margin: '0',
               minHeight: '60px',
               lineHeight: '1.25',
-              fontSize: '18px',
-              borderRadius: '0 0 0.75rem 0.75rem',
+              fontSize: '14px',
+              borderRadius: '0.75rem',
             }}
           >
             {code}
           </SyntaxHighlighter>
         ) : (
-          <div className="flex w-full items-center justify-center bg-zinc-100 px-8 py-32 dark:bg-white/5">
+          <div className="flex w-full items-center justify-center rounded-md bg-zinc-100 px-8 py-32 dark:bg-white/5">
             {component}
           </div>
         )}
@@ -130,12 +130,14 @@ function ChangeViewModeTabs({
   toggleShowPreview: () => void
 }) {
   return (
-    <div className="flex items-center justify-start gap-1 border-0 transition">
+    <div className="flex items-center justify-start gap-2 transition">
       <button
         onClick={toggleShowPreview}
         className={clsx(
-          'inline-flex border-b-2 px-4 py-2 text-sm',
-          isCodeVisible ? 'border-transparent' : 'border-zinc-900 bg-zinc-100 dark:border-zinc-100 dark:bg-white/10',
+          'inline-flex w-20 items-center justify-center rounded-md px-3 py-2 text-center text-sm transition-all lg:w-24 lg:px-3',
+          isCodeVisible
+            ? 'border-transparent'
+            : 'border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5',
         )}
       >
         Preview
@@ -143,8 +145,10 @@ function ChangeViewModeTabs({
       <button
         onClick={toggleShowCode}
         className={clsx(
-          'inline-flex border-b-2 px-4 py-2 text-sm',
-          isCodeVisible ? 'border-zinc-900 bg-zinc-100 dark:border-zinc-100 dark:bg-white/10' : 'border-transparent',
+          'inline-flex w-16 items-center justify-center rounded-md px-3 py-2 text-center text-sm transition-all hover:bg-zinc-100 dark:hover:bg-white/5 lg:w-16 lg:px-3',
+          isCodeVisible
+            ? 'border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5'
+            : 'border-transparent',
         )}
       >
         Code

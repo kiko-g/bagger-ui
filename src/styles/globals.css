@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-900 dark:text-zinc-100;
+  @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100;
 }
 
 code {
@@ -34,12 +34,12 @@ code {
 
 pre {
   color: white;
-  background-color: theme('colors.zinc.900') !important;
+  background-color: #09090b !important;
 }
 
 .dark pre {
   color: white;
-  background-color: theme('colors.zinc.800') !important;
+  background-color: #18181b !important;
 }
 
 @keyframes rotate {
