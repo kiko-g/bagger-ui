@@ -15,21 +15,12 @@ html {
 }
 
 body {
-  @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100;
+  @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100 font-sans;
 }
 
-code {
-  letter-spacing: -0.025em;
-  font-size: smaller !important;
-  font-family:
-    ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    Liberation Mono,
-    Courier New,
-    monospace !important;
+code,
+pre {
+  font-family: var(--font-geist-mono) !important;
 }
 
 pre {

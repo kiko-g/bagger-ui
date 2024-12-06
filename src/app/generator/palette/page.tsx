@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import clsx from 'clsx'
-import { Lexend } from 'next/font/google'
 
 import type { ColorHex, TailwindCombo, TailwindPalette } from '@/types'
 import { suggestedPalettes } from '@/utils/data'
@@ -12,8 +11,6 @@ import { Layout } from '@/components/Layout'
 import { ColorPicker } from '@/components/common/ColorPicker'
 import { DropzoneArea } from '@/components/common/Dropzone'
 import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
-
-const lexend = Lexend({ subsets: ['latin'] })
 
 export default function Generator() {
   const [firstColor, setFirstColor] = useState<string | ''>('')
@@ -90,12 +87,7 @@ export default function Generator() {
 
   return (
     <Layout location="Palette" sidebar>
-      <h2
-        className={clsx(
-          lexend.className,
-          'flex flex-wrap items-center pt-4 text-base font-bold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl',
-        )}
-      >
+      <h2 className="flex flex-wrap items-center pt-4 text-base font-bold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl">
         TailwindCSS Palette Generator
       </h2>
 
@@ -249,12 +241,7 @@ export default function Generator() {
       )}
 
       <section id="tailwindcss-palette-suggestions" className="mb-24 mt-4 w-full pt-4">
-        <h2
-          className={clsx(
-            lexend.className,
-            'mb-3 flex flex-wrap items-center border-b border-zinc-900/10 pb-3 pt-4 text-base font-bold tracking-tighter dark:border-white/10 md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl',
-          )}
-        >
+        <h2 className="mb-3 flex flex-wrap items-center border-b border-zinc-900/10 pb-3 pt-4 text-base font-bold tracking-tighter dark:border-white/10 md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl">
           Suggested Palettes
         </h2>
 

@@ -3,14 +3,11 @@
 import React from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { Lexend } from 'next/font/google'
 import { ReactIcon, TailwindIcon, TypescriptIcon, ShadCnIcon } from '@/components/icons'
 import { applicationUiNav, eCommerceNav, marketingNav, Section } from '@/utils/data'
 
 import { Layout } from '@/components/Layout'
 import { SectionCard } from '@/components/SectionCard'
-
-const lexend = Lexend({ subsets: ['latin'] })
 
 export default function Home() {
   return (
@@ -59,7 +56,6 @@ function Hero() {
     <div className="my-1 max-w-md py-4 md:max-w-xl lg:max-w-xl lg:py-6 xl:max-w-2xl">
       <h2
         className={clsx(
-          lexend.className,
           'flex flex-wrap items-center text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl',
         )}
       >

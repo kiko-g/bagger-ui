@@ -2,13 +2,10 @@
 
 import React from 'react'
 import clsx from 'clsx'
-import { Lexend } from 'next/font/google'
 
 type Props = {
   location: string
 }
-
-const lexend = Lexend({ subsets: ['latin'] })
 
 const navigation = [
   { name: 'Home', href: '#' },
@@ -24,7 +21,7 @@ export function NavbarSimple({ location }: Props) {
       <div>
         <a href="#" className="flex items-center gap-2 transition hover:opacity-80">
           <span className="h-5 w-5 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 lg:h-6 lg:w-6" />
-          <h1 className={clsx(lexend.className, 'text-lg font-semibold lg:text-xl')}>AppTitle</h1>
+          <h1 className="text-lg font-semibold lg:text-xl">AppTitle</h1>
         </a>
       </div>
 

@@ -5,10 +5,6 @@ import clsx from 'clsx'
 import { ArrowDownTrayIcon, CheckIcon, ClipboardIcon } from '@heroicons/react/24/outline'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
-import { Inter_Tight } from 'next/font/google'
-import { fontMono } from '@/lib/fonts'
-
-const inter = Inter_Tight({ subsets: ['latin'] })
 
 type Props = {
   code: string
@@ -22,7 +18,7 @@ export function CodeShowcaseDirect({ code, language, options, allowDownload }: P
   const canDownload = useMemo(() => allowDownload && code !== '', [allowDownload, code])
 
   return (
-    <div className={clsx(fontMono.variable, 'group relative mb-4 max-w-7xl overflow-auto rounded-xl')}>
+    <div className="group relative mb-4 max-w-7xl overflow-auto rounded-xl">
       {/* Controls */}
       <div className="absolute right-3 top-3 z-20 flex items-center justify-end gap-2">
         {canDownload ? <DownloadButton text={code} filename={`code.${language}`} /> : null}

@@ -4,6 +4,7 @@ import animatePlugin from 'tailwindcss-animate'
 import scrollbarPlugin from 'tailwind-scrollbar'
 import headlessuiPlugin from '@headlessui/tailwindcss'
 import typographyPlugin from '@tailwindcss/typography'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
 import typographyStyles from './typography'
 
@@ -27,6 +28,10 @@ const config: Config = {
       '7xl': ['4.5rem', { lineHeight: '1' }],
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
+    },
+    fontFamily: {
+      sans: ['var(--font-geist-sans)', ...fontFamily.sans],
+      mono: ['var(--font-geist-mono)', ...fontFamily.mono],
     },
     typography: 'typographyStyles',
     extend: {

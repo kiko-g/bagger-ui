@@ -3,14 +3,11 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
 
-import { Lexend } from 'next/font/google'
 import { Layout } from '@/components/Layout'
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from '@headlessui/react'
 
 import { AlertCustom } from '@/components/showcase/application-ui/alerts/AlertCustom'
 import { CameraIcon, CheckIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
-
-const lexend = Lexend({ subsets: ['latin'] })
 
 const components = [
   {
@@ -45,7 +42,6 @@ export default function Backstage() {
       <div className="my-1 w-full py-4 lg:py-6">
         <h2
           className={clsx(
-            lexend.className,
             'flex flex-wrap items-center gap-2 text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl',
           )}
         >

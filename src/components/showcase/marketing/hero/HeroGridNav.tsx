@@ -73,7 +73,7 @@ export function HeroGridNav() {
           <span className={clsx(action.iconClasses, 'inline-flex rounded-lg p-4 transition')}>
             <action.icon className="h-6 w-6" aria-hidden="true" />
           </span>
-          <span className="font-lexend mt-3 block text-base font-semibold leading-6 text-zinc-900 dark:text-white">
+          <span className="mt-3 block text-base font-semibold leading-6 text-zinc-900 dark:text-white">
             {action.title}
           </span>
           <span className="mt-2 text-sm tracking-tight text-zinc-500 dark:text-zinc-200">{action.text}</span>

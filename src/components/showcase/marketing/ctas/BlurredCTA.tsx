@@ -15,7 +15,7 @@ export function BlurredCTA() {
       />
       <div className="absolute inset-0 flex h-full w-full items-center justify-center">
         <div className="absolute h-full w-full bg-black/60 transition group-hover:bg-black/40" />
-        <div className="font-lexend z-50 flex h-full w-auto items-center justify-center gap-x-2 px-4 text-center text-lg font-normal text-white opacity-80 duration-500 group-hover:opacity-100 lg:w-full lg:text-3xl lg:opacity-50">
+        <div className="z-50 flex h-full w-auto items-center justify-center gap-x-2 px-4 text-center text-lg font-normal text-white opacity-80 duration-500 group-hover:opacity-100 lg:w-full lg:text-3xl lg:opacity-50">
           <span className="transition group-hover:translate-x-2 hover:opacity-80">Action Text</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"

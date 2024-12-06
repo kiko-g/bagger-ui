@@ -2,15 +2,11 @@
 
 import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
-import { Lexend, Inter } from 'next/font/google'
 
 import { Layout } from '@/components/Layout'
 import { possible } from '@/utils/jumpseller'
 import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
 import { Button } from '@/components/ui/button'
-
-const inter = Inter({ subsets: ['latin'] })
-const lexend = Lexend({ subsets: ['latin'] })
 
 export default function JumpsellerStoreIdentity() {
   const [form, setForm] = useState<Record<string, string[]>>({})
@@ -28,9 +24,7 @@ export default function JumpsellerStoreIdentity() {
 
   return (
     <Layout location="Identity" sidebar>
-      <h2 className={clsx(lexend.className, 'mb-4 text-2xl font-semibold tracking-tighter lg:text-4xl')}>
-        Jumpseller Store Identity
-      </h2>
+      <h2 className={clsx('mb-4 text-2xl font-semibold tracking-tighter lg:text-4xl')}>Jumpseller Store Identity</h2>
 
       <p className="mb-2 max-w-3xl text-base">
         Fill out your store identity form to get started with{' '}
@@ -45,7 +39,7 @@ export default function JumpsellerStoreIdentity() {
           <div className="col-span-1 flex flex-col gap-8 lg:col-span-2">
             {Object.entries(possible).map(([key, values]) => (
               <div key={`possible-${key}`} className="flex flex-col gap-2">
-                <h4 className={clsx(inter.className, 'text-xl font-semibold')}>{key}</h4>
+                <h4 className="text-xl font-semibold">{key}</h4>
                 <ul className="flex max-w-7xl flex-wrap gap-2">
                   {values.map((value, valueIdx) => (
                     <RadioBubble
