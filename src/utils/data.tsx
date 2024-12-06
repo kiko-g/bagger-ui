@@ -129,18 +129,6 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Button Groups',
-    href: '/application-ui/button-groups',
-    description: 'Sections with multiple buttons with different layouts and functionalities.',
-    pattern: {
-      y: 22,
-      squares: [[0, 1]],
-    },
-    icon: SwatchIcon,
-    image: Footage.ButtonGroups,
-    shown: true,
-  },
-  {
     name: 'Checkboxes',
     href: '/application-ui/checkboxes',
     description: 'Checkboxes for selecting one or multiple options.',
@@ -154,7 +142,7 @@ export const applicationUiNav: Section[] = [
     icon: SwatchIcon,
     image: Footage.Checkboxes,
     shown: true,
-    new: true,
+    new: false,
   },
   {
     name: 'Loading',
@@ -278,6 +266,21 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
 ].sort((a, b) => a.name.localeCompare(b.name))
+
+export const buildingBlocksNav: Section[] = [
+  {
+    name: 'Button Groups',
+    href: '/building-blocks/button-groups',
+    description: 'Sections with multiple buttons with different layouts and functionalities.',
+    pattern: {
+      y: 22,
+      squares: [[0, 1]],
+    },
+    icon: SwatchIcon,
+    image: Footage.ButtonGroups,
+    shown: true,
+  },
+]
 
 export const marketingNav: Section[] = [
   {

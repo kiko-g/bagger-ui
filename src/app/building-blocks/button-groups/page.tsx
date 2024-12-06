@@ -5,10 +5,10 @@ import {
   ButtonGroupJoinedVertical,
   ButtonGroupSimple,
   ButtonGroupSplit,
-} from '@/components/showcase/application-ui/button-groups'
+} from '@/components/showcase/building-blocks/button-groups'
 
 export default function ButtonGroups() {
-  const base = 'application-ui/button-groups'
+  const base = 'building-blocks/button-groups'
 
   return (
     <ComponentTypePage
