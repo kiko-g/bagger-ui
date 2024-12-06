@@ -48,7 +48,7 @@ export function Navigation({ location }: { location: string }) {
       <Accordion type="single" collapsible defaultValue="item-2">
         <AccordionItem value="item-2" className="border-b-0 border-zinc-900/10 dark:border-white/10">
           <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
-            <span className="whitespace-nowrap text-left">Application UI</span>
+            <span className="whitespace-nowrap text-left">Components</span>
           </AccordionTrigger>
           <AccordionContent>
             <ul className="flex w-full flex-col pl-0">

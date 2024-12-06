@@ -29,7 +29,7 @@ export function Layout({ children, location = 'Unknown', sidebar = false, quickN
         <HeroPattern />
         <div className="flex flex-1">
           {sidebar && <Navigation location={location} />}
-          <article className="relative mb-16 flex max-w-full flex-1 flex-col items-start justify-start px-6 pl-8 pr-8 xl:pl-10 xl:pr-4">
+          <article className="relative mb-16 flex max-w-full flex-1 flex-col items-start justify-start px-4 lg:px-6 lg:pl-8 lg:pr-8 xl:pl-10 xl:pr-4">
             <div className="my-4 flex w-full flex-row items-start justify-between gap-2 lg:flex-row lg:items-center">
               <SupportBadge />
               <WorkInProgressBadge />
