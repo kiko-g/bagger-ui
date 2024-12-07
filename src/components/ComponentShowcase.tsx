@@ -70,7 +70,7 @@ export function ComponentShowcase({ index, name, path, component }: ComponentCar
             {code}
           </SyntaxHighlighter>
         ) : (
-          <div className="dark:bg-zinc-925 flex w-full items-center justify-center rounded-xl border border-zinc-200 bg-zinc-50 px-8 py-32 dark:border-zinc-800">
+          <div className="flex w-full items-center justify-center rounded-xl border border-zinc-200 bg-zinc-50 px-8 py-32 dark:border-zinc-800 dark:bg-zinc-925">
             {component}
           </div>
         )}
