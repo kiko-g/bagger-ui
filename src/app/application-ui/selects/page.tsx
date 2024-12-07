@@ -8,7 +8,7 @@ export default function Selects() {
   return (
     <ComponentTypePage
       title="Selects"
-      components={[
+      examples={[
         {
           name: 'Single',
           path: `${base}/SelectSingle.tsx`,

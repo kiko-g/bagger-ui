@@ -1,55 +1,54 @@
 import * as React from 'react'
-import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-zinc-950 dark:focus-visible:ring-zinc-300',
+  `inline-flex items-center justify-center gap-2 whitespace-nowrap
+rounded-md text-sm font-medium border border-transparent transition-colors disabled:pointer-events-none disabled:opacity-40 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0`,
   {
     variants: {
       variant: {
-        default:
-          'bg-zinc-900 text-zinc-50 hover:bg-zinc-900/90 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-50/90',
-        destructive:
-          'bg-red-500 text-zinc-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-zinc-50 dark:hover:bg-red-900/90',
-        success:
-          'bg-lime-600 text-zinc-50 hover:bg-lime-600/90 dark:bg-lime-900 dark:text-zinc-50 dark:hover:bg-lime-900/90',
-        minimal: 'bg-trasnparent rounded-full p-1 hover:bg-zinc-100 dark:hover:bg-zinc-800',
-        outline:
-          'border border-zinc-200 bg-white hover:bg-zinc-100 hover:text-zinc-900 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-800 dark:hover:text-zinc-50',
-        secondary:
-          'bg-zinc-100 text-zinc-900 hover:bg-zinc-100/80 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-800/80',
-        ghost: 'hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-50',
-        link: 'text-zinc-900 underline-offset-4 hover:underline dark:text-zinc-50',
+        default: `bg-zinc-800 text-white shadow hover:bg-zinc-800/90 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-50`,
+        secondary: `bg-indigo-600 text-white shadow-sm hover:bg-indigo-600/90 dark:bg-indigo-700 dark:hover:bg-indigo-700/90 dark:text-white`,
+        dangerous: `bg-rose-600 text-white shadow-sm hover:bg-rose-600/90 dark:bg-rose-700 dark:hover:bg-rose-700/90 dark:text-white`,
+        success: `bg-teal-600 text-white shadow-sm hover:bg-teal-600/90 dark:bg-teal-700 dark:hover:bg-teal-700/90 dark:text-white`,
+        outline: `border-zinc-300 bg-transparent shadow-sm hover:bg-zinc-100 dark:bg-zinc-800/10 dark:border-zinc-200/10 dark:hover:bg-zinc-800`,
+        ghost: `hover:bg-zinc-200/80 dark:hover:bg-zinc-100/10`,
+        link: `text-primary underline-offset-4 hover:underline`,
       },
       size: {
-        default: 'h-10 px-4 py-2',
-        tiny: 'py-1 px-1',
-        sm: 'h-9 rounded-md px-3',
-        lg: 'h-11 rounded-md px-8',
-        icon: 'h-10 w-10',
+        default: `px-3.5 py-1.5`,
+        sm: `px-2.5 py-1.5`,
+        lg: `px-3.5 py-2`,
+        xl: `px-6 py-4`,
+        icon: `p-2`,
+        'icon-sm': `p-1.5`,
+        'icon-xs': `p-1`,
+      },
+      roundedness: {
+        default: `rounded-md`,
+        sm: `rounded-sm`,
+        md: `rounded-md`,
+        lg: `rounded-lg`,
+        xl: `rounded-xl`,
+        '2xl': `rounded-2xl`,
+        none: `rounded-none`,
       },
     },
     defaultVariants: {
-      variant: 'default',
-      size: 'default',
+      variant: `default`,
+      size: `default`,
+      roundedness: `default`,
     },
   },
 )
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean
-}
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {}
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button'
-    return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
-  },
-)
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant, size, ...props }, ref) => (
+  <button className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
+))
 Button.displayName = 'Button'
 
-export { Button, buttonVariants }
+export { Button, buttonVariants, type ButtonProps }

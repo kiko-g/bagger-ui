@@ -49,24 +49,22 @@ function Hero() {
     { TechIcon: ReactIcon, name: 'React', color: 'text-[#149eca]', bgColor: '' },
     { TechIcon: TypescriptIcon, name: 'Typescript', color: 'text-[#3178c6]', bgColor: '' },
     { TechIcon: TailwindIcon, name: 'TailwindCSS', color: 'text-[#38bdf8]', bgColor: '' },
-    { TechIcon: ShadCnIcon, name: 'Shadcn', color: 'text-white', bgColor: 'bg-[#08171d]' },
   ]
 
   return (
-    <div className="my-1 max-w-md py-4 md:max-w-xl lg:max-w-xl lg:py-6 xl:max-w-2xl">
+    <div className="max-w-xl space-y-3 py-4 lg:py-6">
+      <div className="flex flex-wrap items-center gap-3">
+        {technologies.map(({ TechIcon, name, color, bgColor }) => (
+          <TechIcon key={name} className={`inline-flex h-5 w-5 align-middle ${color} ${bgColor} lg:h-7 lg:w-7`} />
+        ))}
+      </div>
       <h2
         className={clsx(
           'flex flex-wrap items-center text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl',
         )}
       >
-        Reusable React Typescript Components with TailwindCSS and Shadcn
+        Reusable React Typescript Components with TailwindCSS
       </h2>
-
-      <div className="mt-4 flex flex-wrap items-center gap-3">
-        {technologies.map(({ TechIcon, name, color, bgColor }) => (
-          <TechIcon key={name} className={`inline-flex h-5 w-5 align-middle ${color} ${bgColor} lg:h-7 lg:w-7`} />
-        ))}
-      </div>
     </div>
   )
 }

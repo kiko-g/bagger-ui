@@ -8,7 +8,7 @@ export default function Sliders() {
   return (
     <ComponentTypePage
       title="Sliders"
-      components={[
+      examples={[
         {
           name: 'Simple',
           path: `${base}/SliderSimple.tsx`,

@@ -8,7 +8,7 @@ export default function Sidebars() {
   return (
     <ComponentTypePage
       title="Sidebars"
-      components={[
+      examples={[
         {
           name: 'Simple',
           path: `${base}/SidebarSimple.tsx`,

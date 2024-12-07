@@ -8,7 +8,7 @@ export default function CTA() {
   return (
     <ComponentTypePage
       title="CTA Sections"
-      components={[
+      examples={[
         {
           name: 'Blurred',
           path: `${base}/BlurredCTA.tsx`,

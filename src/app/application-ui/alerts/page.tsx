@@ -14,7 +14,7 @@ export default function Alerts() {
           <strong className="underline decoration-primary-500">code</strong> tab buttons to see demos for every entry.
         </p>
       }
-      components={[
+      examples={[
         {
           name: 'With Accent and Dismissible',
           path: `${base}/AlertCustom.tsx`,

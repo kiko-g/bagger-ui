@@ -11,7 +11,7 @@ import { GithubIcon } from './icons/GithubIcon'
 import { SpinnerIcon } from './icons/SpinnerIcon'
 import { CheckIcon, ClipboardIcon, LinkIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 
-export function ComponentShowcase({ name, path, usage, component }: ComponentCardType) {
+export function ComponentShowcase({ name, path, component }: ComponentCardType) {
   const sectionId = name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
   const [code, setCode] = useState<string>('')
   const [isCodeVisible, setIsCodeVisible] = useState(false)
@@ -24,12 +24,8 @@ export function ComponentShowcase({ name, path, usage, component }: ComponentCar
         .catch((error) => {
           console.error('Failed to fetch component code.')
         })
-    } else {
-      if (usage) {
-        setCode(usage)
-      }
     }
-  }, [path, usage])
+  }, [path])
 
   return (
     <li className="flex flex-col" id={sectionId}>
@@ -50,14 +46,9 @@ export function ComponentShowcase({ name, path, usage, component }: ComponentCar
         </div>
 
         <div className="absolute right-3 top-16 z-10 flex items-center justify-end gap-2">
+          {path && isCodeVisible && <LinkToGithubButton path={path} />}
           <CopyCodeButton text={code} />
         </div>
-
-        {path && (
-          <div className="absolute bottom-3 right-3 z-10 flex items-center justify-end gap-2">
-            <LinkToGithubButton path={path} />
-          </div>
-        )}
 
         {isCodeVisible ? (
           <SyntaxHighlighter
@@ -74,7 +65,7 @@ export function ComponentShowcase({ name, path, usage, component }: ComponentCar
             {code}
           </SyntaxHighlighter>
         ) : (
-          <div className="flex w-full items-center justify-center rounded-md border border-zinc-200 bg-zinc-100 px-8 py-32 dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="dark:bg-zinc-925 flex w-full items-center justify-center rounded-xl border border-zinc-200 bg-zinc-50 px-8 py-32 dark:border-zinc-800">
             {component}
           </div>
         )}
@@ -101,20 +92,20 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied || !text}
       className={clsx(
-        'flex items-center justify-start gap-1 rounded-md border-0 px-2 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed disabled:opacity-50',
+        'flex items-center justify-start gap-1 rounded border px-2 py-2 text-xs shadow-sm transition disabled:pointer-events-none',
         isCopied
-          ? 'bg-primary-600 text-white'
-          : 'bg-black/70 text-white hover:bg-zinc-700/80 hover:text-white dark:bg-black/50 dark:hover:bg-zinc-500/60',
+          ? 'border-teal-600 bg-teal-600 text-white'
+          : 'border-zinc-700 bg-zinc-700/90 text-white hover:bg-zinc-700',
       )}
     >
       {text ? (
         isCopied ? (
-          <CheckIcon className="h-4 w-4" />
+          <CheckIcon className="size-3.5 stroke-2" />
         ) : (
-          <ClipboardIcon className="h-4 w-4" />
+          <ClipboardIcon className="size-3.5 stroke-2" />
         )
       ) : (
-        <SpinnerIcon className="size-4 animate-spin" />
+        <SpinnerIcon className="size-3.5 animate-spin" />
       )}
     </button>
   )
@@ -134,7 +125,7 @@ function ChangeViewModeTabs({
       <button
         onClick={toggleShowPreview}
         className={clsx(
-          'inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all lg:px-2.5 lg:py-1.5',
+          'inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all lg:px-3 lg:py-1.5',
           isCodeVisible
             ? 'border-transparent'
             : 'border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5',
@@ -145,7 +136,7 @@ function ChangeViewModeTabs({
       <button
         onClick={toggleShowCode}
         className={clsx(
-          'inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all hover:bg-zinc-100 dark:hover:bg-white/5 lg:px-2.5 lg:py-1.5',
+          'inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all hover:bg-zinc-100 dark:hover:bg-white/5 lg:px-3 lg:py-1.5',
           isCodeVisible
             ? 'border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5'
             : 'border-transparent',
@@ -166,10 +157,10 @@ function LinkToGithubButton({ path }: { path: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-start gap-2 rounded bg-white px-3 py-1.5 text-zinc-900 shadow-sm transition hover:opacity-80 disabled:cursor-not-allowed"
+      className="flex items-center justify-start gap-2 rounded bg-white px-3 py-1.5 text-2xs text-zinc-900 shadow-sm transition hover:opacity-80 disabled:cursor-not-allowed"
     >
-      <GithubIcon className="h-4 w-4" />
-      <span className="text-xs">View on Github</span>
+      <span>Open on Github</span>
+      <GithubIcon className="size-3.5" />
     </Link>
   )
 }

@@ -8,7 +8,7 @@ export default function Modals() {
   return (
     <ComponentTypePage
       title="Modals"
-      components={[
+      examples={[
         {
           name: 'Simple',
           path: `${base}/ModalSimple.tsx`,

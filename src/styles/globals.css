@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100 font-sans;
+  @apply bg-zinc-50 font-sans text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100;
 }
 
 code,
@@ -23,14 +23,21 @@ pre {
   font-family: var(--font-geist-mono) !important;
 }
 
+code .token,
+pre .token {
+  @apply text-wrap;
+}
+
 pre {
   color: white;
-  background-color: #09090b !important;
+  background-color: theme('colors.zinc.925') !important;
+  border: 1px solid theme('colors.zinc.800');
 }
 
 .dark pre {
   color: white;
-  background-color: #18181b !important;
+  background-color: theme('colors.zinc.925') !important;
+  border: 1px solid theme('colors.zinc.800');
 }
 
 @keyframes rotate {

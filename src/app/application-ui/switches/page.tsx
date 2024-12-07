@@ -8,7 +8,7 @@ export default function Switches() {
   return (
     <ComponentTypePage
       title="Switches"
-      components={[
+      examples={[
         {
           name: 'Simple',
           path: `${base}/SwitchSimple.tsx`,

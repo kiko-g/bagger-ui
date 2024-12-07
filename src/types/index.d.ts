@@ -2,7 +2,6 @@ export interface ComponentCardType {
   name: string
   path: string | null
   component: React.ReactNode
-  usage?: string
 }
 
 export type ColorRgb = {

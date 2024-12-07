@@ -1,16 +1,15 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import {
-  ButtonSimple,
-  ButtonFill,
-  ButtonTranslate,
-  ButtonSimpleBorder,
-  ButtonScale,
-  ButtonRotate,
-  ButtonOutline,
-  ButtonSimpleIcon,
-  ButtonDisabled,
-} from '@/components/showcase/application-ui/buttons'
+
+import { ButtonDefault } from '@/components/showcase/application-ui/buttons/ButtonDefault'
+import { ButtonSecondary } from '@/components/showcase/application-ui/buttons/ButtonSecondary'
+import { ButtonOutline } from '@/components/showcase/application-ui/buttons/ButtonOutline'
+import { ButtonWithIcon } from '@/components/showcase/application-ui/buttons/ButtonWithIcon'
+import { ButtonIconAction } from '@/components/showcase/application-ui/buttons/ButtonIconAction'
+import { ButtonStatus } from '@/components/showcase/application-ui/buttons/ButtonStatus'
+import { ButtonDisabled } from '@/components/showcase/application-ui/buttons/ButtonDisabled'
+import { ButtonWithAnimation } from '@/components/showcase/application-ui/buttons/ButtonWithAnimation'
+import { ButtonFilling } from '@/components/showcase/application-ui/buttons/ButtonFilling'
 
 export default function Buttons() {
   const base = 'application-ui/buttons'
@@ -18,26 +17,16 @@ export default function Buttons() {
   return (
     <ComponentTypePage
       title="Buttons"
-      components={[
+      examples={[
         {
-          name: 'Simple',
-          path: `${base}/ButtonSimple.tsx`,
-          component: <ButtonSimple />,
+          name: 'Default',
+          path: `${base}/ButtonDefault.tsx`,
+          component: <ButtonDefault />,
         },
         {
-          name: 'Simple w/ Border',
-          path: `${base}/ButtonSimpleBorder.tsx`,
-          component: <ButtonSimpleBorder />,
-        },
-        {
-          name: 'Simple w/ Icon',
-          path: `${base}/ButtonSimpleIcon.tsx`,
-          component: <ButtonSimpleIcon />,
-        },
-        {
-          name: 'Disabled',
-          path: `${base}/ButtonDisabled.tsx`,
-          component: <ButtonDisabled />,
+          name: 'Secondary',
+          path: `${base}/ButtonSecondary.tsx`,
+          component: <ButtonSecondary />,
         },
         {
           name: 'Outline',
@@ -45,24 +34,34 @@ export default function Buttons() {
           component: <ButtonOutline />,
         },
         {
-          name: 'Fill Animation',
-          path: `${base}/ButtonFill.tsx`,
-          component: <ButtonFill />,
+          name: 'With Icon',
+          path: `${base}/ButtonWithIcon.tsx`,
+          component: <ButtonWithIcon />,
         },
         {
-          name: 'Scale Animation',
-          path: `${base}/ButtonScale.tsx`,
-          component: <ButtonScale />,
+          name: 'Icon Action',
+          path: `${base}/ButtonIconAction.tsx`,
+          component: <ButtonIconAction />,
         },
         {
-          name: 'Rotate Animation',
-          path: `${base}/ButtonRotate.tsx`,
-          component: <ButtonRotate />,
+          name: 'Status',
+          path: `${base}/ButtonStatus.tsx`,
+          component: <ButtonStatus />,
         },
         {
-          name: 'Translate Animation',
-          path: `${base}/ButtonTranslate.tsx`,
-          component: <ButtonTranslate />,
+          name: 'Disabled',
+          path: `${base}/ButtonDisabled.tsx`,
+          component: <ButtonDisabled />,
+        },
+        {
+          name: 'With Animation',
+          path: `${base}/ButtonWithAnimation.tsx`,
+          component: <ButtonWithAnimation />,
+        },
+        {
+          name: 'Filling Animation',
+          path: `${base}/ButtonFilling.tsx`,
+          component: <ButtonFilling />,
         },
       ]}
     />

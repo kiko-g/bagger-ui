@@ -8,7 +8,7 @@ export default function Inputs() {
   return (
     <ComponentTypePage
       title="Checkboxes"
-      components={[
+      examples={[
         {
           name: 'Checkbox',
           path: `${base}/Checkbox.tsx`,

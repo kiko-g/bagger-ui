@@ -8,7 +8,7 @@ export default function Loading() {
   return (
     <ComponentTypePage
       title="Loading"
-      components={[
+      examples={[
         {
           name: 'Spinner',
           path: `${base}/Spinner.tsx`,

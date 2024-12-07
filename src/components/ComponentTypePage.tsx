@@ -9,23 +9,21 @@ import { ComponentShowcase } from '@/components/ComponentShowcase'
 
 type Props = {
   title: string
-  components: ComponentCardType[]
+  component?: React.ReactNode
+  examples: ComponentCardType[]
   description?: React.ReactNode
 }
 
-export function ComponentTypePage({ title, components, description }: Props) {
+export function ComponentTypePage({ title, component, examples, description }: Props) {
   const [search, setSearch] = useState('')
-  const filteredComponents = useMemo(
-    () => components.filter((item) => strIncludes(item.name, search)),
-    [components, search],
-  )
+  const filteredExamples = useMemo(() => examples.filter((item) => strIncludes(item.name, search)), [examples, search])
   const quickNav = useMemo(
     () =>
-      filteredComponents.map((item) => ({
+      filteredExamples.map((item) => ({
         name: item.name,
         href: `#${item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
       })),
-    [filteredComponents],
+    [filteredExamples],
   )
 
   return (
@@ -47,24 +45,23 @@ export function ComponentTypePage({ title, components, description }: Props) {
             placeholder="Search by component name"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/40 dark:hover:bg-primary-600/10 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3.5 lg:py-2 lg:text-sm"
+            className="w-full rounded-sm border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:bg-primary-600/5 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/40 dark:hover:bg-primary-600/10 dark:focus:border-primary-600/80 dark:focus:bg-primary-600/10 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3.5 lg:py-2 lg:text-sm"
           />
         </div>
 
         <ul className={clsx('grid grid-cols-1')}>
-          {filteredComponents?.length > 0 ? (
-            filteredComponents.map((item, itemIdx) => (
+          {filteredExamples?.length > 0 ? (
+            filteredExamples.map((item, itemIdx) => (
               <ComponentShowcase
                 name={item.name}
                 path={item.path}
-                usage={item.usage}
                 component={item.component}
                 key={`button-${itemIdx}-${item.name}`}
               />
             ))
           ) : (
             <div>
-              <p>No components found.</p>
+              <p>No component examples found matching your search.</p>
             </div>
           )}
         </ul>

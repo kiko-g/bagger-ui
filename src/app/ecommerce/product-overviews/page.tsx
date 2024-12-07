@@ -8,7 +8,7 @@ export default function ProductOverviews() {
   return (
     <ComponentTypePage
       title="Product Overviews"
-      components={[
+      examples={[
         {
           name: 'Simple',
           path: `${base}/ProductOverviewSimple.tsx`,

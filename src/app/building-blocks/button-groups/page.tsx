@@ -13,7 +13,7 @@ export default function ButtonGroups() {
   return (
     <ComponentTypePage
       title="Button Groups"
-      components={[
+      examples={[
         {
           name: 'Simple',
           path: `${base}/ButtonGroupSimple.tsx`,

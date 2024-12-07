@@ -8,7 +8,7 @@ export default function ProductLists() {
   return (
     <ComponentTypePage
       title="Product Cards"
-      components={[
+      examples={[
         {
           name: 'Simple',
           path: `${base}/ProductCardsSimple.tsx`,

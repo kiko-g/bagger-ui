@@ -8,7 +8,7 @@ export default function Headers() {
   return (
     <ComponentTypePage
       title="Headers"
-      components={[
+      examples={[
         {
           name: 'Editor Header',
           path: `${base}/HeaderEditor.tsx`,

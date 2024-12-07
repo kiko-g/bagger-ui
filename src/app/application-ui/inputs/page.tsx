@@ -8,7 +8,7 @@ export default function Inputs() {
   return (
     <ComponentTypePage
       title="Inputs"
-      components={[
+      examples={[
         {
           name: 'Simple',
           path: `${base}/InputSimple.tsx`,

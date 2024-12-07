@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <ComponentTypePage
       title="Hero Sections"
-      components={[
+      examples={[
         {
           name: 'Navigation Grid',
           path: `${base}/HeroGridNav.tsx`,

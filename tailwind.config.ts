@@ -41,8 +41,10 @@ const config: Config = {
         },
         zinc: {
           '150': '#f0f0f1',
+          '925': '#121215',
         },
         primary: {
+          DEFAULT: '#1474d6',
           '50': '#f0f8ff',
           '100': '#dff1fe',
           '200': '#bce0fd',
@@ -56,6 +58,7 @@ const config: Config = {
           '950': '#0d2a4d',
         },
         secondary: {
+          DEFAULT: '#7bb5a2',
           '50': '#f5fffb',
           '100': '#ddf0e9',
           '200': '#c4e1d7',

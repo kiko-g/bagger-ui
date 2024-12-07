@@ -8,7 +8,7 @@ export default function KPIs() {
   return (
     <ComponentTypePage
       title="KPI Widgets"
-      components={[
+      examples={[
         {
           name: 'Circular Progress Card',
           path: `${base}/CircularProgressCard.tsx`,

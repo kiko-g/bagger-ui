@@ -8,7 +8,7 @@ export default function Badges() {
   return (
     <ComponentTypePage
       title="Badges"
-      components={[
+      examples={[
         {
           name: 'Badge',
           path: `${base}/Badge.tsx`,
@@ -23,7 +23,6 @@ export default function Badges() {
         {
           name: 'Outline with Type',
           path: null,
-          usage: `<Badge variant="error">Error</Badge>`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-3xl">
               <Badge variant="error">Error</Badge>
@@ -34,7 +33,6 @@ export default function Badges() {
         {
           name: 'Success',
           path: null,
-          usage: `<Badge variant="success">Success</Badge>`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
               <Badge variant="success">Success</Badge>
@@ -47,7 +45,6 @@ export default function Badges() {
         {
           name: 'Error',
           path: null,
-          usage: `<Badge variant="error">Error</Badge>`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
               <Badge variant="error">Error</Badge>
@@ -60,7 +57,6 @@ export default function Badges() {
         {
           name: 'Beta',
           path: null,
-          usage: `<Badge size="sm">Beta</Badge>`,
           component: (
             <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
               <Badge size="sm">Beta</Badge>

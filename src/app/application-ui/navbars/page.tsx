@@ -8,7 +8,7 @@ export default function Navbars() {
   return (
     <ComponentTypePage
       title="Navbars"
-      components={[
+      examples={[
         {
           name: 'Simple',
           path: `${base}/NavbarSimple.tsx`,
