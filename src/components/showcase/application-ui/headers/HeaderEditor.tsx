@@ -27,7 +27,7 @@ const HeaderEditor = ({}: Props) => {
     <header className="flex w-full bg-white px-3 py-2 text-sm dark:bg-zinc-950">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-1.5 border-r border-zinc-200 pr-2 dark:border-zinc-800">
-          <Button variant="minimal" size="tiny" className="group">
+          <Button variant="ghost" size="icon" className="group">
             <SwatchIcon className="block size-5 group-hover:hidden" />
             <BuildingLibraryIcon className="hidden size-5 group-hover:block" />
           </Button>
@@ -61,10 +61,10 @@ const HeaderEditor = ({}: Props) => {
 
       <div className="flex w-full items-center justify-end gap-4">
         <div className="flex items-center gap-1.5">
-          <Button variant="outline" size="tiny" disabled>
+          <Button variant="outline" size="icon" disabled>
             <ArrowUturnLeftIcon className="size-4 stroke-2" />
           </Button>
-          <Button variant="outline" size="tiny">
+          <Button variant="outline" size="icon">
             <ArrowUturnRightIcon className="size-4 hover:stroke-2" />
           </Button>
         </div>

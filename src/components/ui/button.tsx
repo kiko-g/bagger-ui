@@ -19,12 +19,12 @@ rounded-md text-sm font-medium border border-transparent transition-colors disab
       },
       size: {
         default: `px-3.5 py-1.5`,
-        sm: `px-2.5 py-1.5`,
+        sm: `px-2.5 py-1`,
+        md: `px-3 py-1.5`,
         lg: `px-3.5 py-2`,
         xl: `px-6 py-4`,
         icon: `p-2`,
         'icon-sm': `p-1.5`,
-        'icon-xs': `p-1`,
       },
       roundedness: {
         default: `rounded-md`,
