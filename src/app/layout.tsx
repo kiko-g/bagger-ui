@@ -68,7 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={clsx('bg-background min-h-screen antialiased', fontSans.variable, fontMono.variable)}>
+      <body className={clsx('min-h-screen bg-background antialiased', fontSans.variable, fontMono.variable)}>
         <Providers>
           <Analytics />
           {children}

@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    --background-color: #fafafb;
+  }
+
+  .dark {
+    --background-color: #121217;
+  }
+}
+
 *::selection {
   @apply bg-primary-600/50 text-white dark:bg-secondary-500/50;
 }
@@ -15,7 +27,7 @@ html {
 }
 
 body {
-  @apply bg-zinc-50 font-sans text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100;
+  @apply bg-background font-sans text-zinc-900 antialiased dark:bg-background dark:text-zinc-100;
 }
 
 code,
@@ -30,13 +42,13 @@ pre .token {
 
 pre {
   color: white;
-  background-color: theme('colors.zinc.925') !important;
+  background-color: theme('colors.zinc.900') !important;
   border: 1px solid theme('colors.zinc.800');
 }
 
 .dark pre {
   color: white;
-  background-color: theme('colors.zinc.925') !important;
+  background-color: theme('colors.zinc.900') !important;
   border: 1px solid theme('colors.zinc.800');
 }
 
@@ -57,10 +69,4 @@ pre {
 
 .rotate-in {
   animation: rotate 0.5s forwards;
-}
-
-@layer base {
-  :root {
-    --radius: 0.5rem;
-  }
 }

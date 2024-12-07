@@ -14,8 +14,8 @@ const config: Config = {
   theme: {
     fontSize: {
       '3xs': ['0.60rem', { lineHeight: '0.75rem' }],
-      '2xs': ['0.75rem', { lineHeight: '1.25rem' }],
-      xs: ['0.8125rem', { lineHeight: '1.5rem' }],
+      '2xs': ['0.75rem', { lineHeight: '1.2rem' }],
+      xs: ['0.8125rem', { lineHeight: '1.25rem' }],
       sm: ['0.875rem', { lineHeight: '1.5rem' }],
       base: ['1rem', { lineHeight: '1.75rem' }],
       lg: ['1.125rem', { lineHeight: '1.75rem' }],
@@ -36,6 +36,7 @@ const config: Config = {
     typography: 'typographyStyles',
     extend: {
       colors: {
+        background: 'var(--background-color)',
         slate: {
           '150': '#eaeef4',
         },

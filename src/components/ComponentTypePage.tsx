@@ -2,26 +2,28 @@
 
 import React, { useState, useMemo } from 'react'
 import clsx from 'clsx'
-import { Layout } from '@/components/Layout'
 import { strIncludes } from '@/utils'
-import type { ComponentCardType, NavigationLevel } from '@/types'
+import type { ComponentCardType, ComponentSample, QuickNavigation } from '@/types'
+
+import { Layout } from '@/components/Layout'
 import { ComponentShowcase } from '@/components/ComponentShowcase'
-import { BookDashedIcon, LinkIcon, PuzzleIcon } from 'lucide-react'
+
+import { BookDashedIcon, PuzzleIcon } from 'lucide-react'
 
 type Props = {
   title: string
   description?: React.ReactNode
-  component?: React.ReactNode
+  sample?: ComponentSample
   examples: ComponentCardType[]
   combos?: ComponentCardType[]
 }
 
-export function ComponentTypePage({ title, description, component, examples, combos }: Props) {
+export function ComponentTypePage({ title, description, sample, examples, combos }: Props) {
   const [search, setSearch] = useState('')
   const filteredExamples = useMemo(() => examples.filter((item) => strIncludes(item.name, search)), [examples, search])
   const filteredCombos = useMemo(() => combos?.filter((item) => strIncludes(item.name, search)), [combos, search])
 
-  const quickNav: NavigationLevel[] = useMemo(() => {
+  const quickNav: QuickNavigation = useMemo(() => {
     return [
       {
         name: 'Examples',
@@ -47,28 +49,12 @@ export function ComponentTypePage({ title, description, component, examples, com
     <Layout location={title} sidebar quickNav={quickNav}>
       <section className="mb-36 w-full py-6 lg:py-8 xl:py-12">
         <h2 className="mb-2 text-2xl font-semibold tracking-tighter lg:mb-4 lg:text-4xl">{title}</h2>
-        {description ? (
-          description
-        ) : (
-          <p className="mb-3 max-w-4xl text-sm">
-            Click the <strong>code</strong> tab buttons to see demos for every entry.
-          </p>
-        )}
-        <div className="mb-4">
-          <input
-            type="search"
-            id="searchComponent"
-            name="searchComponent"
-            placeholder="Search by component name"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full rounded-sm border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:bg-primary-600/5 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/40 dark:hover:bg-primary-600/10 dark:focus:border-primary-600/80 dark:focus:bg-primary-600/10 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3.5 lg:py-2 lg:text-sm"
-          />
-        </div>
+
+        {sample && <ComponentSample sample={sample} description={description} />}
 
         <h3
           id="examples"
-          className="mb-2 flex flex-wrap items-center pt-16 text-base font-semibold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
+          className="mb-2 flex flex-wrap items-center border-b border-zinc-200 pb-2 pt-16 text-base font-semibold tracking-tighter dark:border-zinc-800 md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
         >
           <a href="#examples" className="group flex w-full items-center gap-2">
             <span className="group-hover:underline">Examples</span>
@@ -76,7 +62,7 @@ export function ComponentTypePage({ title, description, component, examples, com
           </a>
         </h3>
 
-        <ul id="examples" className={clsx('grid grid-cols-1 border-b border-zinc-200 pb-16')}>
+        <ul id="examples" className="grid grid-cols-1">
           {filteredExamples?.length > 0 ? (
             filteredExamples.map((item, itemIdx) => (
               <ComponentShowcase
@@ -96,10 +82,9 @@ export function ComponentTypePage({ title, description, component, examples, com
           )}
         </ul>
 
-        {/* Combos */}
         <h3
           id="combos"
-          className="mb-2 flex flex-wrap items-center pt-16 text-base font-semibold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
+          className="mb-2 flex flex-wrap items-center border-b border-zinc-200 pb-2 pt-16 text-base font-semibold tracking-tighter dark:border-zinc-800 md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
         >
           <a href="#combos" className="group flex w-full items-center gap-2">
             <span className="group-hover:underline">Combos</span>
@@ -127,5 +112,18 @@ export function ComponentTypePage({ title, description, component, examples, com
         )}
       </section>
     </Layout>
+  )
+}
+
+function ComponentSample({ sample, description }: { sample: ComponentSample; description?: React.ReactNode }) {
+  if (!sample) return null
+
+  return (
+    <div className="mb-0 border-zinc-200 dark:border-zinc-800">
+      {description ? description : null}
+      {sample.nodes.map((node, nodeIdx) => (
+        <div key={`sample-${nodeIdx}`}>{node.component}</div>
+      ))}
+    </div>
   )
 }

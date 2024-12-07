@@ -1,3 +1,10 @@
+export interface ComponentSample {
+  nodes: {
+    item: string
+    component: React.ReactNode
+  }[]
+}
+
 export interface NavigationLevel {
   name: string
   items?: NavigationItem[]
@@ -7,6 +14,8 @@ export interface NavigationItem {
   name: string
   href: string
 }
+
+export type QuickNavigation = (NavigationItem | NavigationLevel)[]
 export interface ComponentCardType {
   name: string
   path: string | null
