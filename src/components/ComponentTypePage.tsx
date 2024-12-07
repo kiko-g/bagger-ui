@@ -4,27 +4,44 @@ import React, { useState, useMemo } from 'react'
 import clsx from 'clsx'
 import { Layout } from '@/components/Layout'
 import { strIncludes } from '@/utils'
-import type { ComponentCardType } from '@/types'
+import type { ComponentCardType, NavigationLevel } from '@/types'
 import { ComponentShowcase } from '@/components/ComponentShowcase'
+import { BookDashedIcon, LinkIcon, PuzzleIcon } from 'lucide-react'
 
 type Props = {
   title: string
+  description?: React.ReactNode
   component?: React.ReactNode
   examples: ComponentCardType[]
-  description?: React.ReactNode
+  combos?: ComponentCardType[]
 }
 
-export function ComponentTypePage({ title, component, examples, description }: Props) {
+export function ComponentTypePage({ title, description, component, examples, combos }: Props) {
   const [search, setSearch] = useState('')
   const filteredExamples = useMemo(() => examples.filter((item) => strIncludes(item.name, search)), [examples, search])
-  const quickNav = useMemo(
-    () =>
-      filteredExamples.map((item) => ({
-        name: item.name,
-        href: `#${item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
-      })),
-    [filteredExamples],
-  )
+  const filteredCombos = useMemo(() => combos?.filter((item) => strIncludes(item.name, search)), [combos, search])
+
+  const quickNav: NavigationLevel[] = useMemo(() => {
+    return [
+      {
+        name: 'Examples',
+        items: filteredExamples.map((item) => ({
+          name: item.name,
+          href: `#${item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+        })),
+      },
+      {
+        name: 'Combos',
+        items:
+          filteredCombos?.length === 0
+            ? []
+            : filteredCombos?.map((item) => ({
+                name: item.name,
+                href: `#${item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+              })),
+      },
+    ]
+  }, [filteredExamples, filteredCombos])
 
   return (
     <Layout location={title} sidebar quickNav={quickNav}>
@@ -49,10 +66,21 @@ export function ComponentTypePage({ title, component, examples, description }: P
           />
         </div>
 
-        <ul className={clsx('grid grid-cols-1')}>
+        <h3
+          id="examples"
+          className="mb-2 flex flex-wrap items-center pt-16 text-base font-semibold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
+        >
+          <a href="#examples" className="group flex w-full items-center gap-2">
+            <span className="group-hover:underline">Examples</span>
+            <BookDashedIcon className="h-5 w-5" />
+          </a>
+        </h3>
+
+        <ul id="examples" className={clsx('grid grid-cols-1 border-b border-zinc-200 pb-16')}>
           {filteredExamples?.length > 0 ? (
             filteredExamples.map((item, itemIdx) => (
               <ComponentShowcase
+                index={itemIdx}
                 name={item.name}
                 path={item.path}
                 component={item.component}
@@ -61,10 +89,42 @@ export function ComponentTypePage({ title, component, examples, description }: P
             ))
           ) : (
             <div>
-              <p>No component examples found matching your search.</p>
+              <p>
+                No component <strong>examples</strong> found matching your search.
+              </p>
             </div>
           )}
         </ul>
+
+        {/* Combos */}
+        <h3
+          id="combos"
+          className="mb-2 flex flex-wrap items-center pt-16 text-base font-semibold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
+        >
+          <a href="#combos" className="group flex w-full items-center gap-2">
+            <span className="group-hover:underline">Combos</span>
+            <PuzzleIcon className="h-5 w-5" />
+          </a>
+        </h3>
+        {filteredCombos && filteredCombos?.length > 0 ? (
+          <ul id="combos" className={clsx('grid grid-cols-1')}>
+            {filteredCombos.map((item, itemIdx) => (
+              <ComponentShowcase
+                index={itemIdx}
+                name={item.name}
+                path={item.path}
+                component={item.component}
+                key={`button-${itemIdx}-${item.name}`}
+              />
+            ))}
+          </ul>
+        ) : (
+          <div>
+            <p>
+              No component <strong>combos</strong> found matching your search.
+            </p>
+          </div>
+        )}
       </section>
     </Layout>
   )

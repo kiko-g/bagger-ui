@@ -12,12 +12,13 @@ import { SupportBadge } from '@/components/layout/support/Badge'
 import { HeroPattern } from '@/components/layout/HeroPattern'
 import { ThemeSupportNotification } from '@/components/layout/support/ThemeSupportNotification'
 import { WorkInProgressBadge } from './layout/WorkInProgressBadge'
+import { NavigationLevel } from '@/types'
 
 type Props = {
   children: React.ReactNode
   location?: string
   sidebar?: boolean
-  quickNav?: { name: string; href: string }[]
+  quickNav?: NavigationLevel[]
 }
 
 export function Layout({ children, location = 'Unknown', sidebar = false, quickNav }: Props) {

@@ -9,10 +9,10 @@ rounded-md text-sm font-medium border border-transparent transition-colors disab
   {
     variants: {
       variant: {
-        default: `bg-zinc-800 text-white shadow hover:bg-zinc-800/90 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-50`,
+        default: `bg-zinc-800 text-white shadow hover:bg-zinc-800/90 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200`,
         secondary: `bg-indigo-600 text-white shadow-sm hover:bg-indigo-600/90 dark:bg-indigo-700 dark:hover:bg-indigo-700/90 dark:text-white`,
         dangerous: `bg-rose-600 text-white shadow-sm hover:bg-rose-600/90 dark:bg-rose-700 dark:hover:bg-rose-700/90 dark:text-white`,
-        success: `bg-teal-600 text-white shadow-sm hover:bg-teal-600/90 dark:bg-teal-700 dark:hover:bg-teal-700/90 dark:text-white`,
+        success: `bg-emerald-600 text-white shadow-sm hover:bg-emerald-600/90 dark:bg-emerald-700 dark:hover:bg-emerald-700/90 dark:text-white`,
         outline: `border-zinc-300 bg-transparent shadow-sm hover:bg-zinc-100 dark:bg-zinc-800/10 dark:border-zinc-200/10 dark:hover:bg-zinc-800`,
         ghost: `hover:bg-zinc-200/80 dark:hover:bg-zinc-100/10`,
         link: `text-primary underline-offset-4 hover:underline`,
@@ -46,9 +46,11 @@ rounded-md text-sm font-medium border border-transparent transition-colors disab
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {}
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(({ className, variant, size, ...props }, ref) => (
-  <button className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
-))
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, roundedness, ...props }, ref) => (
+    <button className={cn(buttonVariants({ variant, size, roundedness, className }))} ref={ref} {...props} />
+  ),
+)
 Button.displayName = 'Button'
 
 export { Button, buttonVariants, type ButtonProps }

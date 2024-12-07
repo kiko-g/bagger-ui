@@ -11,7 +11,7 @@ import { GithubIcon } from './icons/GithubIcon'
 import { SpinnerIcon } from './icons/SpinnerIcon'
 import { CheckIcon, ClipboardIcon, LinkIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 
-export function ComponentShowcase({ name, path, component }: ComponentCardType) {
+export function ComponentShowcase({ index, name, path, component }: ComponentCardType & { index: number }) {
   const sectionId = name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
   const [code, setCode] = useState<string>('')
   const [isCodeVisible, setIsCodeVisible] = useState(false)
@@ -29,7 +29,12 @@ export function ComponentShowcase({ name, path, component }: ComponentCardType) 
 
   return (
     <li className="flex flex-col" id={sectionId}>
-      <h4 className="mb-2 mt-16 flex flex-wrap items-center text-sm font-semibold tracking-tighter md:text-base lg:text-lg lg:tracking-tight xl:text-xl 2xl:text-2xl">
+      <h4
+        className={clsx(
+          'mb-2 flex flex-wrap items-center text-sm font-semibold tracking-tighter md:text-base lg:text-lg lg:tracking-tight xl:text-xl 2xl:text-2xl',
+          index === 0 ? 'pt-3' : 'pt-16',
+        )}
+      >
         <a href={`#${sectionId}`} className="group flex w-full items-center gap-1">
           <span className="group-hover:underline">{name}</span>
           <LinkIcon className="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-60" />

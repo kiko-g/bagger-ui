@@ -1,3 +1,12 @@
+export interface NavigationLevel {
+  name: string
+  items?: NavigationItem[]
+}
+
+export interface NavigationItem {
+  name: string
+  href: string
+}
 export interface ComponentCardType {
   name: string
   path: string | null

@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { ArrowRightIcon, CableCarIcon, CheckIcon, FactoryIcon, TrashIcon, WrenchIcon } from 'lucide-react'
 
-export function ButtonIconAction() {
+export function ButtonIcon() {
   return (
     <div className="flex items-center gap-3">
       <Button variant="default" size="icon">
