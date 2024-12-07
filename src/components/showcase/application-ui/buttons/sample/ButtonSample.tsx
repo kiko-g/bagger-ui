@@ -41,7 +41,7 @@ export function ButtonSampleSetup() {
             setup, preference and needs.
           </p>
 
-          <CodeShowcaseFile path="/ui/button.tsx" />
+          <CodeShowcaseFile path="ui/button.tsx" />
         </AccordionContent>
       </AccordionItem>
     </Accordion>
