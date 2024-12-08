@@ -24,7 +24,14 @@ export function ComponentTypePage({ title, description, sample, examples, combos
   const filteredCombos = useMemo(() => combos?.filter((item) => strIncludes(item.name, search)), [combos, search])
 
   const quickNav: QuickNavigation = useMemo(() => {
-    return [
+    const singles =
+      sample && sample.nodes.length > 0
+        ? sample.nodes.map((node) => ({
+            name: node.item,
+            href: `#${node.item.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+          }))
+        : []
+    const levels = [
       {
         name: 'Examples',
         items: filteredExamples.map((item) => ({
@@ -43,7 +50,8 @@ export function ComponentTypePage({ title, description, sample, examples, combos
               })),
       },
     ]
-  }, [filteredExamples, filteredCombos])
+    return [singles, levels].flat()
+  }, [filteredExamples, filteredCombos, sample])
 
   return (
     <Layout location={title} sidebar quickNav={quickNav}>
