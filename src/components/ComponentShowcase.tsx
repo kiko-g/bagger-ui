@@ -31,7 +31,7 @@ export function ComponentShowcase({ index, name, path, component }: ComponentCar
     <li className="flex flex-col" id={sectionId}>
       <h4
         className={clsx(
-          'mb-2 flex flex-wrap items-center text-sm font-semibold tracking-tighter md:text-base lg:text-lg lg:tracking-tight xl:text-xl 2xl:text-2xl',
+          'mb-2 flex flex-wrap items-center text-base font-semibold tracking-tight xl:text-xl 2xl:text-2xl',
           index === 0 ? 'pt-3' : 'pt-16',
         )}
       >

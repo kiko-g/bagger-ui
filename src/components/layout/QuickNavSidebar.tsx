@@ -5,7 +5,7 @@ import { QuickNavigation } from '@/types'
 
 export function QuickNavSidebar({ navigation }: { navigation?: QuickNavigation }) {
   return (
-    <aside className="sticky mt-8 hidden shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 p-3 xl:flex xl:w-72">
+    <aside className="sticky mt-8 hidden shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 px-5 py-5 xl:flex xl:w-72">
       <h4 className="mb-4 text-xl font-semibold">On this page</h4>
       <ul className="flex w-full flex-col gap-3">
         {navigation &&

@@ -8,9 +8,9 @@ export function SupportBadge() {
       href="https://github.com/kiko-g/bagger-ui"
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-center gap-1.5 rounded-full border border-primary-600/20 bg-primary-600/10 px-2.5 py-1.5 text-xs font-medium leading-none transition hover:bg-primary-600/20 dark:border-primary-600/50 dark:bg-primary-600/20 dark:hover:bg-primary-600/40"
+      className="flex w-full items-center justify-start gap-1.5 rounded-full border border-primary-600/20 bg-primary-600/10 px-2.5 py-1.5 text-xs font-medium leading-none transition hover:bg-primary-600/20 dark:border-primary-600/50 dark:bg-primary-600/20 dark:hover:bg-primary-600/40 md:w-auto"
     >
-      <span className="order-1 flex flex-col gap-1 lg:order-2 lg:flex-row">
+      <span className="order-1 flex flex-row gap-1 lg:order-2">
         <span className="font-semibold">Enjoy BaggerUI?</span>
         <span className="font-normal">Give it a star on GitHub</span>
       </span>

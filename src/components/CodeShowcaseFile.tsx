@@ -1,17 +1,23 @@
 'use client'
 
 import clsx from 'clsx'
-import { CheckIcon, ClipboardIcon } from 'lucide-react'
 import { useState, useEffect, useCallback } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+
+import { Skeleton } from './ui/skeleton'
+
 import { SpinnerIcon } from './icons/SpinnerIcon'
+import { CheckIcon, ClipboardIcon } from 'lucide-react'
+import { Button } from './ui/button'
 
 interface CodeShowcaseFileProps extends React.HTMLAttributes<HTMLDivElement> {
   path: string
 }
 
 export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
+  const [isLoading, setIsLoading] = useState(true)
+  const [isExpanded, setIsExpanded] = useState(false)
   const [code, setCode] = useState('')
 
   useEffect(() => {
@@ -21,11 +27,16 @@ export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
       .catch((error) => {
         console.error('Failed to fetch component code.', error)
       })
+      .finally(() => setIsLoading(false))
   }, [path])
 
   if (!code) return null
 
-  return (
+  return isLoading ? (
+    <div className="flex flex-col space-y-3">
+      <Skeleton className="h-[200px] w-full rounded-xl" />
+    </div>
+  ) : (
     <div className="relative" {...divProps}>
       <SyntaxHighlighter
         language="tsx"
@@ -33,17 +44,34 @@ export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
         customStyle={{
           margin: '0',
           minHeight: '60px',
-          maxHeight: '300px',
+          maxHeight: isExpanded ? '500px' : '200px',
+          overflow: isExpanded ? 'auto' : 'hidden',
           lineHeight: '1.25',
           fontSize: '12px',
           borderRadius: '0.75rem',
+          position: 'relative',
         }}
       >
         {code}
       </SyntaxHighlighter>
 
+      {!isExpanded && (
+        <div
+          className="absolute bottom-0 left-0 right-0 h-[120px] rounded-b-xl"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 1) 100%)',
+          }}
+        />
+      )}
+
       <div className="absolute right-4 top-4 z-10 flex items-center justify-end gap-2">
         <CopyCodeButton text={code} />
+      </div>
+
+      <div className="absolute bottom-4 z-10 flex w-full items-center justify-center gap-2">
+        <Button variant="default-dark" onClick={() => setIsExpanded(!isExpanded)}>
+          {isExpanded ? 'Collapse' : 'Expand'}
+        </Button>
       </div>
     </div>
   )

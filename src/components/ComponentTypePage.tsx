@@ -8,19 +8,19 @@ import type { ComponentCardType, ComponentSample, QuickNavigation } from '@/type
 import { Layout } from '@/components/Layout'
 import { ComponentShowcase } from '@/components/ComponentShowcase'
 
-import { BookDashedIcon, PuzzleIcon } from 'lucide-react'
+import { BookDashedIcon, CircleOffIcon, PuzzleIcon } from 'lucide-react'
 
 type Props = {
   title: string
   description?: React.ReactNode
   sample?: ComponentSample
-  examples: ComponentCardType[]
+  examples?: ComponentCardType[]
   combos?: ComponentCardType[]
 }
 
 export function ComponentTypePage({ title, description, sample, examples, combos }: Props) {
   const [search, setSearch] = useState('')
-  const filteredExamples = useMemo(() => examples.filter((item) => strIncludes(item.name, search)), [examples, search])
+  const filteredExamples = useMemo(() => examples?.filter((item) => strIncludes(item.name, search)), [examples, search])
   const filteredCombos = useMemo(() => combos?.filter((item) => strIncludes(item.name, search)), [combos, search])
 
   const quickNav: QuickNavigation = useMemo(() => {
@@ -34,7 +34,7 @@ export function ComponentTypePage({ title, description, sample, examples, combos
     const levels = [
       {
         name: 'Examples',
-        items: filteredExamples.map((item) => ({
+        items: filteredExamples?.map((item) => ({
           name: item.name,
           href: `#${item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
         })),
@@ -71,7 +71,7 @@ export function ComponentTypePage({ title, description, sample, examples, combos
         </h3>
 
         <ul id="examples" className="grid grid-cols-1">
-          {filteredExamples?.length > 0 ? (
+          {filteredExamples && filteredExamples?.length > 0 ? (
             filteredExamples.map((item, itemIdx) => (
               <ComponentShowcase
                 index={itemIdx}
@@ -82,9 +82,10 @@ export function ComponentTypePage({ title, description, sample, examples, combos
               />
             ))
           ) : (
-            <div>
+            <div className="mt-4 flex items-center gap-3 rounded-md border border-amber-700/20 bg-amber-700/10 px-3 py-2 text-sm dark:border-amber-600/20 dark:bg-amber-600/10">
+              <CircleOffIcon className="h-4 w-4" />
               <p>
-                No component <strong>examples</strong> found matching your search.
+                No component <strong>examples</strong> in this section.
               </p>
             </div>
           )}
@@ -112,9 +113,10 @@ export function ComponentTypePage({ title, description, sample, examples, combos
             ))}
           </ul>
         ) : (
-          <div>
+          <div className="mt-4 flex items-center gap-3 rounded-md border border-amber-700/20 bg-amber-700/10 px-3 py-2 text-sm dark:border-amber-600/20 dark:bg-amber-600/10">
+            <CircleOffIcon className="h-4 w-4" />
             <p>
-              No component <strong>combos</strong> found matching your search.
+              No component <strong>combos</strong> in this section.
             </p>
           </div>
         )}

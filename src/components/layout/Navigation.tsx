@@ -138,7 +138,7 @@ function NavItem({ name, href, isActive, isNew }: { name: string; href: string; 
         isActive
           ? 'border-primary-500 bg-primary-500/10 dark:bg-primary-300/5'
           : 'border-zinc-900/10 hover:bg-zinc-500/5 dark:border-white/10 dark:hover:bg-zinc-50/10',
-        'flex cursor-pointer items-center justify-start gap-2 border-l py-0.5 pl-3 text-sm transition ease-in-out',
+        'flex cursor-pointer items-center justify-start gap-2 border-l py-1.5 pl-3 text-sm leading-none transition ease-in-out',
       )}
     >
       <div className="hidden w-full items-center gap-1.5 pr-4 md:flex lg:pr-12">

@@ -11,7 +11,7 @@ import { CodeShowcaseFile } from '@/components/CodeShowcaseFile'
 
 export function ButtonSampleSetup() {
   return (
-    <Accordion id="setup" className="pt-12" type="single" defaultValue="item-1" collapsible>
+    <Accordion id="setup" className="pt-4 xl:pt-12" type="single" defaultValue="item-1" collapsible>
       <AccordionItem value="item-1" className="border-b-0">
         <AccordionTrigger className="mb-2 flex flex-wrap items-center border-b border-zinc-200 pb-1 pt-0 text-base font-semibold tracking-tighter dark:border-zinc-800 md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl">
           <span>Setup</span>
