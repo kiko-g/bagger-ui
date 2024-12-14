@@ -18,23 +18,29 @@ interface CodeShowcaseFileProps extends React.HTMLAttributes<HTMLDivElement> {
 export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [isExpanded, setIsExpanded] = useState(false)
-  const [code, setCode] = useState('')
+  const [code, setCode] = useState<string | null>('')
 
   useEffect(() => {
     fetch(`/api/code/ui?filepath=${encodeURIComponent(path)}`)
       .then((response) => response.text())
       .then((data) => setCode(data))
       .catch((error) => {
+        setIsLoading(false)
+        setCode(null)
         console.error('Failed to fetch component code.', error)
       })
       .finally(() => setIsLoading(false))
   }, [path])
 
-  if (!code) return null
+  if (code === null) return null
 
   return isLoading ? (
-    <div className="flex flex-col space-y-3">
-      <Skeleton className="h-[200px] w-full rounded-xl" />
+    <div className="flex w-full items-center justify-center gap-3">
+      <Skeleton className="h-[200px] flex-1 rounded-xl" />
+      <div className="flex flex-[8] flex-col gap-3">
+        <Skeleton className="h-[100px] w-full rounded-xl" />
+        <Skeleton className="h-[88px] w-full rounded-xl" />
+      </div>
     </div>
   ) : (
     <div className="relative" {...divProps}>
