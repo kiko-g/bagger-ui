@@ -63,7 +63,8 @@ export function ComponentShowcase({ index, name, path, component }: ComponentCar
               margin: '0',
               minHeight: '60px',
               lineHeight: '1.25',
-              fontSize: '14px',
+              fontSize: '12px',
+              letterSpacing: '-0.025em',
               borderRadius: '0.75rem',
             }}
           >

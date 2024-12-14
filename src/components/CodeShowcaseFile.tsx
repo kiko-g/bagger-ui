@@ -54,6 +54,7 @@ export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
           overflow: isExpanded ? 'auto' : 'hidden',
           lineHeight: '1.25',
           fontSize: '12px',
+          letterSpacing: '-0.025em',
           borderRadius: '0.75rem',
           position: 'relative',
         }}

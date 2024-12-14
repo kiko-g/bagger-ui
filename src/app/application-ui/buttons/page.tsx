@@ -7,13 +7,14 @@ import { ButtonSample } from '@/components/showcase/application-ui/buttons/sampl
 import { ButtonDefault } from '@/components/showcase/application-ui/buttons/ButtonDefault'
 import { ButtonSecondary } from '@/components/showcase/application-ui/buttons/ButtonSecondary'
 import { ButtonOutline } from '@/components/showcase/application-ui/buttons/ButtonOutline'
-import { ButtonWithIcon } from '@/components/showcase/application-ui/buttons/ButtonWithIcon'
 import { ButtonIcon } from '@/components/showcase/application-ui/buttons/ButtonIcon'
 import { ButtonStatus } from '@/components/showcase/application-ui/buttons/ButtonStatus'
-import { ButtonDisabled } from '@/components/showcase/application-ui/buttons/ButtonDisabled'
-import { ButtonWithAnimation } from '@/components/showcase/application-ui/buttons/ButtonWithAnimation'
-import { ButtonFilling } from '@/components/showcase/application-ui/buttons/ButtonFilling'
 import { ButtonFlat } from '@/components/showcase/application-ui/buttons/ButtonFlat'
+import { ButtonDisabled } from '@/components/showcase/application-ui/buttons/ButtonDisabled'
+
+import { ButtonWithIcon } from '@/components/showcase/application-ui/buttons/combos/ButtonWithIcon'
+import { ButtonWithAnimation } from '@/components/showcase/application-ui/buttons/combos/ButtonWithAnimation'
+import { ButtonFilling } from '@/components/showcase/application-ui/buttons/combos/ButtonFilling'
 
 export default function Buttons() {
   const base = 'application-ui/buttons'
@@ -69,17 +70,17 @@ export default function Buttons() {
       combos={[
         {
           name: 'With Icon',
-          path: `${base}/ButtonWithIcon.tsx`,
+          path: `${base}/combos/ButtonWithIcon.tsx`,
           component: <ButtonWithIcon />,
         },
         {
           name: 'With Animation',
-          path: `${base}/ButtonWithAnimation.tsx`,
+          path: `${base}/combos/ButtonWithAnimation.tsx`,
           component: <ButtonWithAnimation />,
         },
         {
           name: 'Filling Animation',
-          path: `${base}/ButtonFilling.tsx`,
+          path: `${base}/combos/ButtonFilling.tsx`,
           component: <ButtonFilling />,
         },
       ]}
