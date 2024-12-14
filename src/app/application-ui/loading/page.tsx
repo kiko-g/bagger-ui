@@ -2,16 +2,16 @@ import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
 import { SkeletonCard, Spinner } from '@/components/showcase/application-ui/loading'
 
-export default function Loading() {
-  const base = 'application-ui/loading'
+export default function Skeleton() {
+  const base = 'application-ui/skeleton'
 
   return (
     <ComponentTypePage
-      title="Loading"
+      title="Skeleton"
       examples={[
         {
           name: 'Spinner',
-          path: `${base}/Spinner.tsx`,
+          path: `${base}/Skeleton.tsx`,
           component: <Spinner />,
         },
         {

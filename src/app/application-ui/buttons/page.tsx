@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
 
 import { Button } from '@/components/ui/button'
-import { ButtonSampleSetup } from '@/components/showcase/application-ui/buttons/sample/ButtonSample'
+import { ButtonSample } from '@/components/showcase/application-ui/buttons/sample/ButtonSample'
 
 import { ButtonDefault } from '@/components/showcase/application-ui/buttons/ButtonDefault'
 import { ButtonSecondary } from '@/components/showcase/application-ui/buttons/ButtonSecondary'
@@ -25,7 +25,7 @@ export default function Buttons() {
         nodes: [
           {
             item: 'Setup',
-            component: <ButtonSampleSetup />,
+            component: <ButtonSample />,
           },
         ],
       }}

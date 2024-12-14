@@ -1,6 +1,8 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
 import { AlertCustom } from '@/components/showcase/application-ui/alerts/AlertCustom'
+import { AlertSample } from '@/components/showcase/application-ui/alerts/sample/AlertSample'
+import { AlertDefault } from '@/components/showcase/application-ui/alerts/AlertDefault'
 
 export default function Alerts() {
   const base = 'application-ui/alerts'
@@ -8,13 +10,22 @@ export default function Alerts() {
   return (
     <ComponentTypePage
       title="Alerts"
-      description={
-        <p className="mb-3 max-w-4xl text-sm">
-          Customizable alerts to send information to the user with different icons, colors, and actions. Click the{' '}
-          <strong className="underline decoration-primary-500">code</strong> tab buttons to see demos for every entry.
-        </p>
-      }
+      sample={{
+        nodes: [
+          {
+            item: 'Setup',
+            component: <AlertSample />,
+          },
+        ],
+      }}
       examples={[
+        {
+          name: 'Default',
+          path: `${base}/AlertDefault.tsx`,
+          component: <AlertDefault />,
+        },
+      ]}
+      combos={[
         {
           name: 'With Accent and Dismissible',
           path: `${base}/AlertCustom.tsx`,
