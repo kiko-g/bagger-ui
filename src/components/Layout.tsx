@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import type { NavigationLevel } from '@/types'
 
 import { Seo } from '@/components/layout/Seo'
@@ -24,7 +24,7 @@ export function Layout({ children, location = 'Unknown', sidebar = false, quickN
   return (
     <>
       <Seo title={location} />
-      <main className={clsx('mx-auto flex min-h-screen max-w-[100vw] flex-col')}>
+      <main className={cn('mx-auto flex min-h-screen max-w-[100vw] flex-col')}>
         <Header />
         <HeroPattern />
         <div className="flex flex-1">

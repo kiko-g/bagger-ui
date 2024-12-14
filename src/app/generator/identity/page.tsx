@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 
 import { Layout } from '@/components/Layout'
 import { possible } from '@/utils/jumpseller'
@@ -24,7 +24,7 @@ export default function JumpsellerStoreIdentity() {
 
   return (
     <Layout location="Identity" sidebar>
-      <h2 className={clsx('mb-4 text-2xl font-semibold tracking-tighter lg:text-4xl')}>Jumpseller Store Identity</h2>
+      <h2 className={cn('mb-4 text-2xl font-semibold tracking-tighter lg:text-4xl')}>Jumpseller Store Identity</h2>
 
       <p className="mb-2 max-w-3xl text-base">
         Fill out your store identity form to get started with{' '}
@@ -110,7 +110,7 @@ function RadioBubble({
   return (
     <button
       onClick={handleClick}
-      className={clsx(
+      className={cn(
         checked
           ? 'border-primary-500 bg-primary-500/10 dark:border-transparent dark:bg-primary-500/20'
           : 'border-zinc-900/20 bg-white hover:border-primary-500/50 hover:bg-primary-500/5 dark:bg-white/5 dark:hover:border-white/0 dark:hover:bg-white/10',
@@ -118,7 +118,7 @@ function RadioBubble({
       )}
     >
       <span
-        className={clsx(
+        className={cn(
           checked
             ? 'bg-primary-500 group-hover:bg-primary-500/80'
             : 'bg-zinc-300 group-hover:bg-primary-500/80 dark:bg-zinc-200/20 dark:group-hover:bg-white',

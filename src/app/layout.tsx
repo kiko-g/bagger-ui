@@ -1,7 +1,7 @@
 import '@/styles/globals.css'
 import type { Metadata, Viewport } from 'next'
 
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { siteConfig } from '@/utils/config'
 import { fontMono, fontSans } from '@/lib/fonts'
 import { Analytics } from '@/components/Analytics'
@@ -68,7 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={clsx('min-h-screen bg-background antialiased', fontSans.variable, fontMono.variable)}>
+      <body className={cn('min-h-screen bg-background antialiased', fontSans.variable, fontMono.variable)}>
         <Providers>
           <Analytics />
           {children}

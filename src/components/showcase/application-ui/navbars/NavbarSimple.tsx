@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 
 type Props = {
   location: string
@@ -30,7 +30,7 @@ export function NavbarSimple({ location }: Props) {
           <li key={item.name}>
             <a
               href={item.href}
-              className={clsx(
+              className={cn(
                 'rounded-md px-3 py-2 text-sm font-medium transition',
                 location === item.name
                   ? 'bg-slate-700 text-white'

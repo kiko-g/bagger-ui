@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { GridPattern } from '@/components/layout/GridPattern'
 import { type MotionValue, motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import { Section } from '@/utils/data'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 
 export function SectionCard({ section }: { section: Section }) {
   let mouseX = useMotionValue(0)
@@ -60,7 +60,7 @@ function Pattern({
         />
       </div>
       <motion.div
-        className={clsx(
+        className={cn(
           'absolute inset-0 rounded-2xl bg-gradient-to-br transition-all duration-300',
           'from-sky-200 to-purple-200 opacity-10 dark:from-purple-200 dark:to-sky-200 dark:opacity-0',
           'group-hover:from-sky-200 group-hover:to-purple-200 group-hover:opacity-20',

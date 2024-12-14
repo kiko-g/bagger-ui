@@ -1,5 +1,5 @@
 import React from 'react'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { Layout } from '@/components/Layout'
 import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
@@ -10,8 +10,8 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 export default function Config() {
   const npmPackages = [
     {
-      name: 'clsx',
-      description: 'A simple JavaScript utility for conditionally joining clsx together.',
+      name: 'cn',
+      description: 'A simple JavaScript utility for conditionally joining cn together.',
     },
     {
       name: '@heroicons/react',

@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import type { ColorVariant, RoundedVariant, SizeVariant } from '@/types'
 
 type Props = {
@@ -77,7 +77,7 @@ const sizes = {
 const Badge = ({ children, variant, outline, rounded, size, className }: Props) => {
   return (
     <div
-      className={clsx(
+      className={cn(
         'inline-flex items-center gap-1',
         outline ? 'border' : 'border-0',
         rounded ? roundeds[rounded as keyof typeof roundeds] : roundeds['sm'],

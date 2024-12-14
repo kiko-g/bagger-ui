@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useMemo } from 'react'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { strIncludes } from '@/utils'
 import type { ComponentCardType, ComponentSample, QuickNavigation } from '@/types'
 
@@ -101,7 +101,7 @@ export function ComponentTypePage({ title, description, sample, examples, combos
           </a>
         </h3>
         {filteredCombos && filteredCombos?.length > 0 ? (
-          <ul id="combos" className={clsx('grid grid-cols-1')}>
+          <ul id="combos" className={cn('grid grid-cols-1')}>
             {filteredCombos.map((item, itemIdx) => (
               <ComponentShowcase
                 index={itemIdx}

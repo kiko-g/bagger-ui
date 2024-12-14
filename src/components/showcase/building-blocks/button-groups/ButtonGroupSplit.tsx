@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { Menu } from '@headlessui/react'
 import { BuildingOfficeIcon, ChartBarIcon, ChevronDownIcon, CpuChipIcon } from '@heroicons/react/24/outline'
 
@@ -34,7 +34,7 @@ export function ButtonGroupSplit() {
             <Menu.Item key={`button-split-item-${itemIdx}`}>
               {({ active }) => (
                 <button
-                  className={clsx(
+                  className={cn(
                     'flex items-center gap-2 px-3 py-2.5 text-sm transition',
                     itemIdx === 0 && 'rounded-t',
                     itemIdx === items.length - 1 && 'rounded-b',

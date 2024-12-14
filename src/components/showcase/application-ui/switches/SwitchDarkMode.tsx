@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 
 export function SwitchDarkMode() {
   function disableTransitionsTemporarily() {
@@ -34,7 +34,7 @@ export function SwitchDarkMode() {
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden="true"
-        className={clsx(
+        className={cn(
           'h-8 w-8 transition dark:hidden',
           'fill-white',
           'stroke-blue-500',
@@ -55,7 +55,7 @@ export function SwitchDarkMode() {
       <svg
         viewBox="0 0 24 24"
         aria-hidden="true"
-        className={clsx(
+        className={cn(
           'hidden h-8 w-8 transition dark:block',
           'stroke-blue-50',
           '[@media(prefers-color-scheme:dark)]:fill-blue-400',

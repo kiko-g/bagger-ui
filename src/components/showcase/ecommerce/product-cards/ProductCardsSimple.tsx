@@ -1,6 +1,6 @@
 'use client'
 
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
@@ -33,7 +33,7 @@ function ProductSimple({ product }: { product: ProductType }) {
 
   return (
     <div
-      className={clsx(
+      className={cn(
         'flex max-h-[80vh] w-full flex-col self-stretch overflow-hidden border-0 border-zinc-900/10 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-zinc-700 dark:bg-black/30 md:w-72',
       )}
     >
@@ -62,7 +62,7 @@ function ProductSimple({ product }: { product: ProductType }) {
           height={800}
           placeholder="blur"
           blurDataURL={product.info.image}
-          className={clsx('block w-full transition-all hover:scale-110', product.info.soldOut ? 'sold-out' : '')}
+          className={cn('block w-full transition-all hover:scale-110', product.info.soldOut ? 'sold-out' : '')}
           src={product.info.image}
         />
       </a>
@@ -109,7 +109,7 @@ function ProductSimple({ product }: { product: ProductType }) {
 
             <div className="flex items-center gap-1 text-base">
               <span
-                className={clsx(
+                className={cn(
                   'leading-none tracking-tight',
                   product.info.sale.active ? 'font-medium line-through' : 'font-bold',
                 )}
@@ -132,7 +132,7 @@ function ProductSimple({ product }: { product: ProductType }) {
                 key={`color-${x}-${i}`}
                 onClick={() => setColor(x)}
                 style={{ backgroundColor: `${x}aa` }}
-                className={clsx(
+                className={cn(
                   'h-6 w-6 rounded-sm border-2 border-[#00000040] transition-all duration-200 ease-in-out hover:opacity-80',
                   color === x
                     ? 'ring-2 ring-zinc-400 ring-offset-2 ring-offset-white dark:ring-white dark:ring-offset-zinc-800'

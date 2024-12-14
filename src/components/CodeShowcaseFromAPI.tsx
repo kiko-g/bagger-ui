@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState, useCallback, useMemo } from 'react'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { ArrowDownTrayIcon, CheckIcon, ClipboardIcon } from '@heroicons/react/24/outline'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
@@ -88,7 +88,7 @@ function CopyCodeButton({ text }: { text: string }) {
     <button
       onClick={copyToClipboard}
       disabled={isCopied}
-      className={clsx(
+      className={cn(
         'flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2.5 py-1 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900',
         isCopied ? '' : 'hover:bg-zinc-600 dark:hover:bg-zinc-700',
       )}
@@ -125,7 +125,7 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
     <button
       onClick={download}
       disabled={isDownloading}
-      className={clsx(
+      className={cn(
         'flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900',
         isDownloading ? '' : 'hover:bg-zinc-600 dark:hover:bg-zinc-700',
       )}

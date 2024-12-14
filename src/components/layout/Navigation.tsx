@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { applicationUiNav, generalNav, generatorNav, marketingNav, eCommerceNav, buildingBlocksNav } from '@/utils/data'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 
@@ -136,7 +136,7 @@ function NavItem({ name, href, isActive, isNew }: { name: string; href: string; 
     <Link
       title={name}
       href={href}
-      className={clsx(
+      className={cn(
         isActive
           ? 'border-zinc-500 bg-zinc-500/10 dark:bg-zinc-300/5'
           : 'border-zinc-900/10 hover:bg-zinc-500/10 dark:border-white/10 dark:hover:bg-zinc-50/10',

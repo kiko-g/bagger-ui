@@ -1,6 +1,6 @@
 'use client'
 
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { useState, useEffect, useCallback } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
@@ -100,7 +100,7 @@ function CopyCodeButton({ text }: { text: string }) {
     <button
       onClick={copyToClipboard}
       disabled={isCopied || !text}
-      className={clsx(
+      className={cn(
         'flex items-center justify-start gap-1 rounded border px-2 py-2 text-xs shadow-sm transition disabled:pointer-events-none',
         isCopied
           ? 'border-teal-600 bg-teal-600 text-white'

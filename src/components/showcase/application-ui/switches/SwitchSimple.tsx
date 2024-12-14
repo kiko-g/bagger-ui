@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { Switch } from '@headlessui/react'
 import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -16,7 +16,7 @@ export function SwitchSimple() {
     <Switch checked={isOn} onChange={toggle}>
       <span className="sr-only">Use setting</span>
       <span
-        className={clsx(
+        className={cn(
           'flex items-center justify-start gap-1.5 rounded px-3 py-2 text-sm text-white shadow-sm transition hover:opacity-80 disabled:cursor-not-allowed',
           isOn ? 'bg-rose-600 dark:bg-rose-600/50' : 'bg-slate-700 dark:bg-slate-500/60',
         )}

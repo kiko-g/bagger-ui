@@ -1,7 +1,7 @@
 'use client'
 
-import React, { Dispatch, Fragment, SetStateAction, useMemo, useState } from 'react'
-import clsx from 'clsx'
+import React, { Fragment, useMemo, useState } from 'react'
+import { cn } from '@/lib/utils'
 import { Listbox, Transition } from '@headlessui/react'
 import { ChevronUpDownIcon } from '@heroicons/react/24/outline'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
@@ -44,16 +44,16 @@ export function SelectSingle({ className }: Props) {
   return (
     <Listbox as="div" value={picked} onChange={setPicked}>
       {({ open }) => (
-        <div className={clsx('relative', className)}>
+        <div className={cn('relative', className)}>
           <Listbox.Button
-            className={clsx(
+            className={cn(
               'inline-flex w-full items-center justify-center gap-x-0.5 rounded border py-1.5 pl-2 pr-1.5 text-center text-xs text-white transition hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 lg:py-1.5 lg:pl-2.5 lg:pr-1.5 lg:text-xs',
               nothingSelected
                 ? 'border-zinc-500 bg-zinc-500/70 dark:border-zinc-500 dark:bg-zinc-500/50'
                 : 'border-blue-600 bg-slate-700/70 dark:border-blue-600 dark:bg-slate-500/50',
             )}
           >
-            <span className={clsx('whitespace-nowrap font-normal tracking-tighter')}>
+            <span className={cn('whitespace-nowrap font-normal tracking-tighter')}>
               {nothingSelected ? 'Select One' : picked}
             </span>
             <ChevronUpDownIcon className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
@@ -61,7 +61,7 @@ export function SelectSingle({ className }: Props) {
 
           <Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
             <Listbox.Options
-              className={clsx(
+              className={cn(
                 'z-50 max-h-80 overflow-scroll rounded-md bg-white px-0 py-1 text-sm shadow-xl dark:bg-zinc-800',
                 open ? 'absolute right-0 mt-2 w-full min-w-[12rem] lg:w-48' : 'hidden',
               )}
@@ -84,7 +84,7 @@ export function SelectSingle({ className }: Props) {
                     key={`game-${itemIdx}`}
                     value={item}
                     className={({ active }) =>
-                      clsx(
+                      cn(
                         'relative cursor-default select-none py-1.5 pl-3 pr-3',
                         active ? 'bg-zinc-200 dark:bg-zinc-600' : '',
                       )
@@ -99,9 +99,7 @@ export function SelectSingle({ className }: Props) {
                           ) : (
                             <span className="h-5 w-5" />
                           )}
-                          <span className={clsx('block truncate', highlight ? 'font-bold' : 'font-normal')}>
-                            {item}
-                          </span>
+                          <span className={cn('block truncate', highlight ? 'font-bold' : 'font-normal')}>{item}</span>
                         </span>
                       )
                     }}

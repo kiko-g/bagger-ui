@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 
 import type { ColorHex, TailwindCombo, TailwindPalette } from '@/types'
 import { suggestedPalettes } from '@/utils/data'
@@ -184,7 +184,7 @@ export default function Generator() {
                         >
                           <span className="absolute -right-1 -top-1 flex w-full items-center justify-end opacity-0 group-hover:opacity-100">
                             <span
-                              className={clsx(
+                              className={cn(
                                 'rounded-full border border-transparent bg-zinc-800/90 p-[2px] text-center text-2xs font-medium text-white shadow-xl transition-all dark:bg-rose-400/80',
                               )}
                             >
@@ -303,7 +303,7 @@ function Palette({
               >
                 <span className="absolute -right-1 -top-1 flex w-full items-center justify-end opacity-0 group-hover:opacity-100">
                   <span
-                    className={clsx(
+                    className={cn(
                       'rounded-full border border-transparent bg-zinc-800/90 p-[2px] text-center text-2xs font-medium text-white shadow-xl transition-all dark:bg-rose-400/80',
                     )}
                   >

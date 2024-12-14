@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from 'react'
 import Link from 'next/link'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { Switch } from '@headlessui/react'
 import type { ComponentCardType } from '@/types'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -30,7 +30,7 @@ export function ComponentShowcase({ index, name, path, component }: ComponentCar
   return (
     <li className="flex flex-col" id={sectionId}>
       <h4
-        className={clsx(
+        className={cn(
           'mb-2 flex flex-wrap items-center text-base font-semibold tracking-tight xl:text-xl 2xl:text-2xl',
           index === 0 ? 'pt-3' : 'pt-16',
         )}
@@ -96,7 +96,7 @@ function CopyCodeButton({ text }: { text: string }) {
     <button
       onClick={copyToClipboard}
       disabled={isCopied || !text}
-      className={clsx(
+      className={cn(
         'flex items-center justify-start gap-1 rounded border px-2 py-2 text-xs shadow-sm transition disabled:pointer-events-none',
         isCopied
           ? 'border-teal-600 bg-teal-600 text-white'
@@ -129,7 +129,7 @@ function ChangeViewModeTabs({
     <div className="flex items-center justify-start gap-2 transition">
       <button
         onClick={toggleShowPreview}
-        className={clsx(
+        className={cn(
           'inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all lg:px-3 lg:py-1.5',
           isCodeVisible
             ? 'border-transparent'
@@ -140,7 +140,7 @@ function ChangeViewModeTabs({
       </button>
       <button
         onClick={toggleShowCode}
-        className={clsx(
+        className={cn(
           'inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all hover:bg-zinc-100 dark:hover:bg-white/5 lg:px-3 lg:py-1.5',
           isCodeVisible
             ? 'border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5'
@@ -175,7 +175,7 @@ function ChangeBackgroundButton({ isDarkBackground, toggle }: { isDarkBackground
     <Switch checked={isDarkBackground} onChange={toggle}>
       <span className="sr-only">Use setting</span>
       <span
-        className={clsx(
+        className={cn(
           'flex items-center justify-start gap-1.5 rounded px-3 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed',
           isDarkBackground
             ? 'bg-blue-600/80 text-white hover:opacity-80 dark:bg-blue-500/60 dark:hover:opacity-80'
@@ -211,7 +211,7 @@ function ChangeViewModeButtons({
     <div className="flex items-center justify-start gap-1 rounded-full border-0 bg-black/70 px-1 py-1 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-black/50">
       <button
         onClick={toggleShowPreview}
-        className={clsx(
+        className={cn(
           'inline-flex rounded-full px-2.5 py-0.5 text-2xs',
           isCodeVisible ? 'hover:bg-white/20 dark:hover:bg-white/10' : 'bg-white/30 dark:bg-white/20',
         )}
@@ -220,7 +220,7 @@ function ChangeViewModeButtons({
       </button>
       <button
         onClick={toggleShowCode}
-        className={clsx(
+        className={cn(
           'inline-flex rounded-full px-2.5 py-0.5 text-2xs',
           isCodeVisible ? 'bg-white/30 dark:bg-white/20' : 'hover:bg-white/10',
         )}

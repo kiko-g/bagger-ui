@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { HomeIcon, InformationCircleIcon, LifebuoyIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
@@ -64,7 +64,7 @@ function SidebarItem({
     <a
       title={name}
       href={href}
-      className={clsx(
+      className={cn(
         isActive
           ? 'bg-slate-700 text-white hover:opacity-80 dark:bg-slate-500/80'
           : 'hover:bg-slate-700/10 dark:hover:bg-slate-700/30',
