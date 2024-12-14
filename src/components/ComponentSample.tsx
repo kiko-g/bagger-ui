@@ -48,7 +48,7 @@ export function ComponentSample({ name }: { name: string }) {
   ]
 
   return (
-    <div className="space-y-4 pt-4 text-sm xl:pt-12" id="setup">
+    <div className="space-y-4 pt-4 text-sm lg:pt-6" id="setup">
       <ul className="flex flex-col gap-3">
         {steps.map((step) => (
           <li key={step.number} className="flex gap-3">
@@ -58,7 +58,7 @@ export function ComponentSample({ name }: { name: string }) {
               </span>
               <span className="h-full w-[1px] bg-zinc-300 dark:bg-zinc-800"></span>
             </div>
-            <p>{step.content}</p>
+            {step.content}
           </li>
         ))}
       </ul>
