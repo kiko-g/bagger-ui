@@ -12,8 +12,6 @@ import { QuickNavSidebar } from '@/components/layout/QuickNavSidebar'
 import { SupportBadge } from '@/components/layout/support/Badge'
 import { HeroPattern } from '@/components/layout/HeroPattern'
 import { ThemeSupportNotification } from '@/components/layout/support/ThemeSupportNotification'
-import { Alert, AlertDescription, AlertTitle } from './ui/alert'
-import { TerminalIcon } from 'lucide-react'
 
 type Props = {
   children: React.ReactNode
@@ -41,14 +39,6 @@ export function Layout({ children, location = 'Unknown', sidebar = false, quickN
         </div>
 
         <ThemeSupportNotification />
-
-        <div className="p-4">
-          <Alert variant="destructive" roundedness="lg" border="no" transparent="no" accent="yes" dismissible>
-            <TerminalIcon className="h-4 w-4" />
-            <AlertTitle>Heads up!</AlertTitle>
-            <AlertDescription>You can add components to your app using the cli.</AlertDescription>
-          </Alert>
-        </div>
 
         <Footer />
       </main>

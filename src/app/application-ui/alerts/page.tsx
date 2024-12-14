@@ -1,8 +1,17 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { AlertCustom } from '@/components/showcase/application-ui/alerts/AlertCustom'
 import { AlertSample } from '@/components/showcase/application-ui/alerts/sample/AlertSample'
+
 import { AlertDefault } from '@/components/showcase/application-ui/alerts/AlertDefault'
+import { AlertDestructive } from '@/components/showcase/application-ui/alerts/AlertDestructive'
+import { AlertInfo } from '@/components/showcase/application-ui/alerts/AlertInfo'
+import { AlertSuccess } from '@/components/showcase/application-ui/alerts/AlertSuccess'
+import { AlertWarning } from '@/components/showcase/application-ui/alerts/AlertWarning'
+
+import { AlertCombo1 } from '@/components/showcase/application-ui/alerts/combos/AlertCombo1'
+import { AlertCombo2 } from '@/components/showcase/application-ui/alerts/combos/AlertCombo2'
+import { AlertCombo3 } from '@/components/showcase/application-ui/alerts/combos/AlertCombo3'
+import { AlertCombo4 } from '@/components/showcase/application-ui/alerts/combos/AlertCombo4'
 
 export default function Alerts() {
   const base = 'application-ui/alerts'
@@ -24,172 +33,47 @@ export default function Alerts() {
           path: `${base}/AlertDefault.tsx`,
           component: <AlertDefault />,
         },
+        {
+          name: 'Information',
+          path: `${base}/AlertInfo.tsx`,
+          component: <AlertInfo />,
+        },
+        {
+          name: 'Destructive',
+          path: `${base}/AlertDestructive.tsx`,
+          component: <AlertDestructive />,
+        },
+        {
+          name: 'Success',
+          path: `${base}/AlertSuccess.tsx`,
+          component: <AlertSuccess />,
+        },
+        {
+          name: 'Warning',
+          path: `${base}/AlertWarning.tsx`,
+          component: <AlertWarning />,
+        },
       ]}
       combos={[
         {
-          name: 'With Accent and Dismissible',
-          path: `${base}/AlertCustom.tsx`,
-          component: (
-            <div className="w-full space-y-16">
-              <div className="flex w-full flex-col items-start gap-3">
-                <AlertCustom type="info" accent dismissible>
-                  Content of your information alert provided through children.
-                </AlertCustom>
-                <AlertCustom type="success" accent dismissible>
-                  Content of your success alert provided through children.
-                </AlertCustom>
-                <AlertCustom type="warning" accent dismissible>
-                  Content of your warning alert provided through children.
-                </AlertCustom>
-                <AlertCustom type="error" accent dismissible>
-                  Content of your error alert provided through children.
-                </AlertCustom>
-                <AlertCustom accent dismissible>
-                  Content of your alert provided through children.
-                </AlertCustom>
-              </div>
-            </div>
-          ),
+          name: "Chef's Choice 🧑‍🍳",
+          path: `${base}/combos/AlertCombo4.tsx`,
+          component: <AlertCombo4 />,
         },
         {
-          name: 'Rounded with Border',
-          path: `${base}/AlertCustom.tsx`,
-          component: (
-            <div className="w-full space-y-16">
-              <div className="flex w-full flex-col items-start gap-3">
-                <AlertCustom type="info" rounded border>
-                  Content of your information alert provided through children.
-                </AlertCustom>
-                <AlertCustom type="success" rounded border>
-                  Content of your success alert provided through children.
-                </AlertCustom>
-                <AlertCustom type="warning" rounded border>
-                  Content of your warning alert provided through children.
-                </AlertCustom>
-                <AlertCustom type="error" rounded border>
-                  Content of your error alert provided through children.
-                </AlertCustom>
-                <AlertCustom rounded border>
-                  Content of your alert provided through children.
-                </AlertCustom>
-              </div>
-            </div>
-          ),
+          name: 'With Accent, Not Dismissible',
+          path: `${base}/combos/AlertCombo1.tsx`,
+          component: <AlertCombo1 />,
         },
         {
-          name: 'Filled, Rounded and dismissible',
-          path: `${base}/AlertCustom.tsx`,
-          component: (
-            <div className="w-full space-y-16">
-              <div className="flex w-full flex-col items-start gap-3">
-                <AlertCustom type="info" filled rounded dismissible>
-                  Content of your information alert provided through children.
-                </AlertCustom>
-                <AlertCustom type="success" filled rounded dismissible>
-                  Content of your success alert provided through children.
-                </AlertCustom>
-                <AlertCustom type="warning" filled rounded dismissible>
-                  Content of your warning alert provided through children.
-                </AlertCustom>
-                <AlertCustom type="error" filled rounded dismissible>
-                  Content of your error alert provided through children.
-                </AlertCustom>
-                <AlertCustom filled rounded dismissible>
-                  Content of your alert provided through children.
-                </AlertCustom>
-              </div>
-            </div>
-          ),
+          name: 'Transparent, Not Rounded',
+          path: `${base}/combos/AlertCombo2.tsx`,
+          component: <AlertCombo2 />,
         },
         {
-          name: 'Accent, dismissible with Long Children',
-          path: `${base}/AlertCustom.tsx`,
-          component: (
-            <div className="w-full space-y-16">
-              <div className="flex w-full flex-col items-start gap-3">
-                <AlertCustom type="info" accent dismissible>
-                  <p>
-                    Content of your <strong>information alert</strong> provided through children.
-                  </p>
-                  <ul className="list-inside list-disc">
-                    <li>Apples</li>
-                    <li>Bananas</li>
-                    <li>Cherries</li>
-                  </ul>
-                  <blockquote className="italic">Blockquote showcase content</blockquote>
-                </AlertCustom>
-                <AlertCustom type="success" accent dismissible>
-                  <p>
-                    Content of your <strong>success alert</strong> provided through children.
-                  </p>
-                  <ul className="list-inside list-disc">
-                    <li>Apples</li>
-                    <li>Bananas</li>
-                    <li>Cherries</li>
-                  </ul>
-                  <blockquote className="italic">Blockquote showcase content</blockquote>
-                </AlertCustom>
-                <AlertCustom type="warning" accent dismissible>
-                  <p>
-                    Content of your <strong>warning alert</strong> provided through children.
-                  </p>
-                  <ul className="list-inside list-disc">
-                    <li>Apples</li>
-                    <li>Bananas</li>
-                    <li>Cherries</li>
-                  </ul>
-                  <blockquote className="italic">Blockquote showcase content</blockquote>
-                </AlertCustom>
-                <AlertCustom type="error" accent dismissible>
-                  <p>
-                    Content of your <strong>error alert</strong> provided through children.
-                  </p>
-                  <ul className="list-inside list-disc">
-                    <li>Apples</li>
-                    <li>Bananas</li>
-                    <li>Cherries</li>
-                  </ul>
-                  <blockquote className="italic">Blockquote showcase content</blockquote>
-                </AlertCustom>
-                <AlertCustom accent dismissible>
-                  <p>
-                    Content of your <strong>general alert</strong> provided through children.
-                  </p>
-                  <ul className="list-inside list-disc">
-                    <li>Apples</li>
-                    <li>Bananas</li>
-                    <li>Cherries</li>
-                  </ul>
-                  <blockquote className="italic">Blockquote showcase content</blockquote>
-                </AlertCustom>
-              </div>
-            </div>
-          ),
-        },
-        {
-          name: 'Accent and no Icon',
-          path: `${base}/AlertCustom.tsx`,
-          component: (
-            <div className="w-full space-y-16">
-              <div className="flex w-full flex-col items-start gap-3">
-                <AlertCustom type="info" accent noIcon>
-                  Content of your <strong>information alert</strong> provided through children.
-                </AlertCustom>
-                <AlertCustom type="success" accent noIcon>
-                  Content of your <strong>success alert</strong> provided through children.
-                </AlertCustom>
-                <AlertCustom type="warning" accent noIcon>
-                  Content of your <strong>warning alert</strong> provided through children.
-                </AlertCustom>
-                <AlertCustom type="error" accent noIcon>
-                  Content of your <strong>error alert</strong> provided through children.
-                </AlertCustom>
-                <AlertCustom accent noIcon>
-                  Content of your <strong>general alert</strong> provided through children.
-                </AlertCustom>
-              </div>
-            </div>
-          ),
+          name: 'Extra Rounded, No Border',
+          path: `${base}/combos/AlertCombo3.tsx`,
+          component: <AlertCombo3 />,
         },
       ]}
     />
