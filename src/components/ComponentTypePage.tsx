@@ -58,7 +58,14 @@ export function ComponentTypePage({ title, description, sample, examples, combos
       <section className="mb-36 w-full py-6 lg:py-8 xl:py-12">
         <h2 className="mb-2 text-2xl font-semibold tracking-tighter lg:mb-4 lg:text-4xl">{title}</h2>
 
-        {sample && <ComponentSample sample={sample} description={description} />}
+        {sample && (
+          <div className="mb-0 border-zinc-200 dark:border-zinc-800">
+            {description ? description : null}
+            {sample.nodes.map((node, nodeIdx) => (
+              <div key={`sample-${nodeIdx}`}>{node.component}</div>
+            ))}
+          </div>
+        )}
 
         <h3
           id="examples"
@@ -122,18 +129,5 @@ export function ComponentTypePage({ title, description, sample, examples, combos
         )}
       </section>
     </Layout>
-  )
-}
-
-function ComponentSample({ sample, description }: { sample: ComponentSample; description?: React.ReactNode }) {
-  if (!sample) return null
-
-  return (
-    <div className="mb-0 border-zinc-200 dark:border-zinc-800">
-      {description ? description : null}
-      {sample.nodes.map((node, nodeIdx) => (
-        <div key={`sample-${nodeIdx}`}>{node.component}</div>
-      ))}
-    </div>
   )
 }

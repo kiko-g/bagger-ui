@@ -9,7 +9,7 @@ import { ShadCnIcon } from '@/components/icons'
 import { ExternalLink } from 'lucide-react'
 import { CodeShowcaseFile } from '@/components/CodeShowcaseFile'
 
-export function ComponentSample({ name, children }: { name: string; children?: React.ReactNode }) {
+export function ComponentSample({ name }: { name: string; children?: React.ReactNode }) {
   const steps = [
     {
       number: 1,
@@ -47,26 +47,22 @@ export function ComponentSample({ name, children }: { name: string; children?: R
   ]
 
   return (
-    <div className="space-y-4 pt-4 text-sm xl:pt-12">
-      {children ? (
-        children
-      ) : (
-        <>
-          {steps.map((step) => (
-            <div key={step.number} className="flex gap-3">
-              <div className="flex flex-col items-center gap-1.5">
-                <span className="mt-1 flex size-5 min-w-5 items-center justify-center rounded-full border border-zinc-800 bg-zinc-800 text-center font-mono text-xs font-bold text-white">
-                  {step.number}
-                </span>
-                <span className="h-full w-[1px] bg-zinc-300 dark:bg-zinc-800"></span>
-              </div>
-              <p>{step.content}</p>
+    <div className="space-y-4 pt-4 text-sm xl:pt-12" id="setup">
+      <ul>
+        {steps.map((step) => (
+          <li key={step.number} className="flex gap-3">
+            <div className="flex flex-col items-center gap-1.5">
+              <span className="mt-1 flex size-5 min-w-5 items-center justify-center rounded-full border border-zinc-800 bg-zinc-800 text-center font-mono text-xs font-bold text-white">
+                {step.number}
+              </span>
+              <span className="h-full w-[1px] bg-zinc-300 dark:bg-zinc-800"></span>
             </div>
-          ))}
+            <p>{step.content}</p>
+          </li>
+        ))}
+      </ul>
 
-          <CodeShowcaseFile path={`ui/${name}.tsx`} />
-        </>
-      )}
+      <CodeShowcaseFile path={`ui/${name}.tsx`} />
     </div>
   )
 }
