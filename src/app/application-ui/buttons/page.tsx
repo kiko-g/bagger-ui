@@ -12,6 +12,7 @@ import { ButtonStatus } from '@/components/showcase/application-ui/buttons/Butto
 import { ButtonFlat } from '@/components/showcase/application-ui/buttons/ButtonFlat'
 import { ButtonDisabled } from '@/components/showcase/application-ui/buttons/ButtonDisabled'
 
+import { ButtonLoading } from '@/components/showcase/application-ui/buttons/combos/ButtonLoading'
 import { ButtonWithIcon } from '@/components/showcase/application-ui/buttons/combos/ButtonWithIcon'
 import { ButtonWithAnimation } from '@/components/showcase/application-ui/buttons/combos/ButtonWithAnimation'
 import { ButtonFilling } from '@/components/showcase/application-ui/buttons/combos/ButtonFilling'
@@ -68,6 +69,11 @@ export default function Buttons() {
         },
       ]}
       combos={[
+        {
+          name: 'Loading With Await',
+          path: `${base}/combos/ButtonLoading.tsx`,
+          component: <ButtonLoading />,
+        },
         {
           name: 'With Icon',
           path: `${base}/combos/ButtonWithIcon.tsx`,
