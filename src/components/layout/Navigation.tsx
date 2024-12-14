@@ -15,7 +15,7 @@ export function Navigation({ location }: { location: string }) {
 
   return (
     <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] min-w-64 shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 px-8 py-8 pr-10 hover:overflow-auto md:sticky md:block lg:flex lg:border-r lg:border-zinc-900/10 dark:lg:border-white/10">
-      <ul className="flex w-full flex-col border-b-0 border-zinc-900/10 dark:border-white/10">
+      <ul className="flex w-full flex-col gap-0.5 border-b-0 border-zinc-900/10 dark:border-white/10">
         {generalNavFiltered.map((item, itemIdx) => {
           const isActive = location.toLowerCase() === item.name.toLowerCase()
           return (
@@ -54,7 +54,7 @@ export function Navigation({ location }: { location: string }) {
             <span className="whitespace-nowrap text-left">Components</span>
           </AccordionTrigger>
           <AccordionContent>
-            <ul className="flex w-full flex-col pl-0">
+            <ul className="flex w-full flex-col gap-0.5 pl-0">
               {applicationUiNavFiltered.map((item, itemIdx) => {
                 const isActive = location.toLowerCase() === item.name.toLowerCase()
                 return (
@@ -74,7 +74,7 @@ export function Navigation({ location }: { location: string }) {
             <span className="whitespace-nowrap text-left">Building Blocks</span>
           </AccordionTrigger>
           <AccordionContent>
-            <ul className="flex w-full flex-col pl-0">
+            <ul className="flex w-full flex-col gap-0.5 pl-0">
               {buildingBlocksNavFiltered.map((item, itemIdx) => {
                 const isActive = location.toLowerCase() === item.name.toLowerCase()
                 return (
@@ -94,7 +94,7 @@ export function Navigation({ location }: { location: string }) {
             <span className="whitespace-nowrap text-left">Marketing</span>
           </AccordionTrigger>
           <AccordionContent>
-            <ul className="flex w-full flex-col pl-0">
+            <ul className="flex w-full flex-col gap-0.5 pl-0">
               {marketingNavFiltered.map((item, itemIdx) => {
                 const isActive = location.toLowerCase() === item.name.toLowerCase()
                 return (
@@ -114,7 +114,7 @@ export function Navigation({ location }: { location: string }) {
             <span className="whitespace-nowrap text-left">Ecommerce</span>
           </AccordionTrigger>
           <AccordionContent>
-            <ul className="flex w-full flex-col pl-0">
+            <ul className="flex w-full flex-col gap-0.5 pl-0">
               {eCommerceNavFiltered.map((item, itemIdx) => {
                 const isActive = location.toLowerCase() === item.name.toLowerCase()
                 return (
@@ -140,7 +140,7 @@ function NavItem({ name, href, isActive, isNew }: { name: string; href: string; 
         isActive
           ? 'border-primary-500 bg-primary-500/10 dark:bg-primary-300/5'
           : 'border-zinc-900/10 hover:bg-zinc-500/5 dark:border-white/10 dark:hover:bg-zinc-50/10',
-        'flex h-7 cursor-pointer items-center justify-start gap-2 border-l pl-3 text-sm leading-none transition ease-in-out',
+        'flex h-7 cursor-pointer items-center justify-start gap-2 rounded-md border-0 pl-2 text-sm leading-none transition ease-in-out',
       )}
     >
       <div className="hidden w-full items-center gap-1.5 pr-4 md:flex lg:pr-12">
