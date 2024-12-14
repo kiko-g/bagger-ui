@@ -14,7 +14,7 @@ export function Navigation({ location }: { location: string }) {
   const eCommerceNavFiltered = eCommerceNav.filter((item) => item.shown)
 
   return (
-    <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] min-w-64 shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 px-8 py-8 pr-10 hover:overflow-auto md:sticky md:block lg:flex lg:border-r lg:border-zinc-900/10 dark:lg:border-white/10">
+    <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] min-w-64 shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 px-6 py-8 hover:overflow-auto md:sticky md:block lg:flex lg:border-r lg:border-zinc-900/10 dark:lg:border-white/10">
       <ul className="flex w-full flex-col gap-0.5 border-b-0 border-zinc-900/10 dark:border-white/10">
         {generalNavFiltered.map((item, itemIdx) => {
           const isActive = location.toLowerCase() === item.name.toLowerCase()
@@ -138,12 +138,12 @@ function NavItem({ name, href, isActive, isNew }: { name: string; href: string; 
       href={href}
       className={clsx(
         isActive
-          ? 'border-primary-500 bg-primary-500/10 dark:bg-primary-300/5'
-          : 'border-zinc-900/10 hover:bg-zinc-500/5 dark:border-white/10 dark:hover:bg-zinc-50/10',
-        'flex h-7 cursor-pointer items-center justify-start gap-2 rounded-md border-0 pl-2 text-sm leading-none transition ease-in-out',
+          ? 'border-zinc-500 bg-zinc-500/10 dark:bg-zinc-300/5'
+          : 'border-zinc-900/10 hover:bg-zinc-500/10 dark:border-white/10 dark:hover:bg-zinc-50/10',
+        'flex h-8 cursor-pointer items-center justify-start gap-2 rounded-md border-0 pl-2 text-sm leading-none transition ease-in-out',
       )}
     >
-      <div className="hidden w-full items-center gap-1.5 pr-4 md:flex lg:pr-12">
+      <div className="hidden w-full items-center gap-1.5 pr-4 md:flex lg:pr-16">
         <span>{name}</span>
         {isNew && (
           <span className="inline-flex items-center rounded-full bg-teal-700 px-[5px] py-[3px] text-white dark:bg-teal-600">
