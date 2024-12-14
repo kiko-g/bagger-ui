@@ -65,13 +65,13 @@ export const generatorNav: Section[] = [
   {
     name: 'Backstage',
     href: '/generator/backstage',
-    shown: isDev,
+    shown: false,
     icon: BuildingOffice2Icon,
   },
   {
     name: 'Palette',
     href: '/generator/palette',
-    shown: true,
+    shown: false,
     icon: Cog8ToothIcon,
   },
   {

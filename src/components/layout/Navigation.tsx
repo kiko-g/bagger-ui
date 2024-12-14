@@ -26,25 +26,27 @@ export function Navigation({ location }: { location: string }) {
         })}
       </ul>
 
-      <Accordion type="single" collapsible defaultValue="item-1">
-        <AccordionItem value="item-1" className="border-b-0 border-zinc-900/10 dark:border-white/10">
-          <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
-            <span className="whitespace-nowrap text-left">Generator</span>
-          </AccordionTrigger>
-          <AccordionContent>
-            <ul className="flex w-full flex-col pl-0">
-              {generatorNavFiltered.map((item, itemIdx) => {
-                const isActive = location.toLowerCase() === item.name.toLowerCase()
-                return (
-                  <li key={`nav-${itemIdx}`}>
-                    <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
-                  </li>
-                )
-              })}
-            </ul>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+      {generatorNavFiltered.length > 0 && (
+        <Accordion type="single" collapsible defaultValue="item-1">
+          <AccordionItem value="item-1" className="border-b-0 border-zinc-900/10 dark:border-white/10">
+            <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
+              <span className="whitespace-nowrap text-left">Generator</span>
+            </AccordionTrigger>
+            <AccordionContent>
+              <ul className="flex w-full flex-col gap-0.5 pl-0">
+                {generatorNavFiltered.map((item, itemIdx) => {
+                  const isActive = location.toLowerCase() === item.name.toLowerCase()
+                  return (
+                    <li key={`nav-${itemIdx}`}>
+                      <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                    </li>
+                  )
+                })}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      )}
 
       <Accordion type="single" collapsible defaultValue="item-2">
         <AccordionItem value="item-2" className="border-b-0 border-zinc-900/10 dark:border-white/10">
@@ -138,7 +140,7 @@ function NavItem({ name, href, isActive, isNew }: { name: string; href: string; 
         isActive
           ? 'border-primary-500 bg-primary-500/10 dark:bg-primary-300/5'
           : 'border-zinc-900/10 hover:bg-zinc-500/5 dark:border-white/10 dark:hover:bg-zinc-50/10',
-        'flex cursor-pointer items-center justify-start gap-2 border-l py-1.5 pl-3 text-sm leading-none transition ease-in-out',
+        'flex h-7 cursor-pointer items-center justify-start gap-2 border-l pl-3 text-sm leading-none transition ease-in-out',
       )}
     >
       <div className="hidden w-full items-center gap-1.5 pr-4 md:flex lg:pr-12">
