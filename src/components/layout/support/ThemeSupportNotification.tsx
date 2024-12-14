@@ -108,7 +108,7 @@ export function ThemeSupportNotification() {
                       className="inline-flex rounded-md text-zinc-500 transition hover:bg-zinc-900/5 focus:outline-none dark:text-zinc-100 dark:hover:bg-white/10"
                     >
                       <span className="sr-only">Close</span>
-                      <XMarkIcon aria-hidden="true" className="h-5 w-5" />
+                      <XMarkIcon aria-hidden="true" className="size-5" />
                     </button>
                   </div>
                 </div>

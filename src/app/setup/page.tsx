@@ -1,11 +1,10 @@
 import React from 'react'
-import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import { Layout } from '@/components/Layout'
 import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
 import { CodeShowcaseFromAPI } from '@/components/CodeShowcaseFromAPI'
 import { H3, H4 } from '@/components/common/Headings'
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
+import { SquareArrowOutUpRightIcon } from 'lucide-react'
 
 export default function Config() {
   const npmPackages = [
@@ -83,7 +82,7 @@ export default function Config() {
                 <div className="mb-1.5 flex items-center gap-2">
                   <H4 noMargin>{npmPackage.name}</H4>
                   <a href={`https://www.npmjs.com/package/${npmPackage.name}`} target="_blank">
-                    <ArrowTopRightOnSquareIcon className="h-4 w-4 opacity-50" />
+                    <SquareArrowOutUpRightIcon className="size-4 opacity-50" />
                   </a>
                 </div>
                 <p className="mb-2">{npmPackage.description}</p>

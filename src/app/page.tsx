@@ -56,7 +56,7 @@ function Hero() {
     <div className="max-w-xl space-y-3 py-4 lg:py-6">
       <div className="flex flex-wrap items-center gap-3">
         {technologies.map(({ TechIcon, name, className }) => (
-          <TechIcon key={name} className={cn(`inline-flex h-5 w-5 align-middle lg:h-7 lg:w-7`, className)} />
+          <TechIcon key={name} className={cn(`inline-flex size-5 align-middle lg:h-7 lg:w-7`, className)} />
         ))}
       </div>
       <h2

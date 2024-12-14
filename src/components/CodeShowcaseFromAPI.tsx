@@ -94,7 +94,7 @@ function CopyCodeButton({ text }: { text: string }) {
       )}
     >
       <span className="hidden xl:flex">{isCopied ? 'Copied' : 'Copy'}</span>
-      {isCopied ? <CheckIcon className="h-4 w-4" /> : <ClipboardIcon className="h-4 w-4" />}
+      {isCopied ? <CheckIcon className="size-4" /> : <ClipboardIcon className="size-4" />}
     </button>
   )
 }
@@ -131,7 +131,7 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
       )}
     >
       <span className="hidden xl:flex">Download</span>
-      {isDownloading ? <CheckIcon className="h-4 w-4" /> : <ArrowDownTrayIcon className="h-4 w-4" />}
+      {isDownloading ? <CheckIcon className="size-4" /> : <ArrowDownTrayIcon className="size-4" />}
     </button>
   )
 }

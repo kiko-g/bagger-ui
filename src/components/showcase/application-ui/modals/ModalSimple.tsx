@@ -26,7 +26,7 @@ export function ModalSimple({ startOpen }: Props) {
         className="h:bg-black/70 flex items-center gap-1 rounded-md bg-black/40 px-3 py-2 text-sm font-medium text-white transition data-[focus]:outline-1 focus:outline-none dark:bg-white/30 dark:data-[hover]:bg-white/50"
       >
         <span>Open dialog</span>
-        <KeyIcon className="h-4 w-4" />
+        <KeyIcon className="size-4" />
       </Button>
 
       <Dialog open={isOpen} as="div" className="relative z-[100000] focus:outline-none" onClose={closeModal}>
@@ -44,7 +44,7 @@ export function ModalSimple({ startOpen }: Props) {
                   onClick={closeModal}
                   className="flex items-center gap-x-1 rounded bg-black/10 px-1 py-1 text-sm transition hover:bg-black/30 dark:bg-black/20 dark:text-white dark:hover:bg-black/40"
                 >
-                  <XMarkIcon className="h-4 w-4" />{' '}
+                  <XMarkIcon className="size-4" />{' '}
                 </button>
               </div>
 

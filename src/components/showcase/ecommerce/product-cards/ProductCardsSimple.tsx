@@ -79,7 +79,7 @@ function ProductSimple({ product }: { product: ProductType }) {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              className="h-5 w-5 -rotate-45 stroke-zinc-500 opacity-0 transition-opacity duration-200 ease-in-out dark:stroke-zinc-400"
+              className="size-5 -rotate-45 stroke-zinc-500 opacity-0 transition-opacity duration-200 ease-in-out dark:stroke-zinc-400"
               strokeWidth={1.5}
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
@@ -94,7 +94,7 @@ function ProductSimple({ product }: { product: ProductType }) {
             <div className="flex flex-col items-start text-xs">
               <a href="#" className="flex items-center gap-x-1 tracking-tight hover:underline">
                 <svg
-                  className="mr-[1px] h-3 w-3 fill-amber-500 stroke-amber-500"
+                  className="mr-[1px] size-3 fill-amber-500 stroke-amber-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -133,7 +133,7 @@ function ProductSimple({ product }: { product: ProductType }) {
                 onClick={() => setColor(x)}
                 style={{ backgroundColor: `${x}aa` }}
                 className={cn(
-                  'h-6 w-6 rounded-sm border-2 border-[#00000040] transition-all duration-200 ease-in-out hover:opacity-80',
+                  'size-6 rounded-sm border-2 border-[#00000040] transition-all duration-200 ease-in-out hover:opacity-80',
                   color === x
                     ? 'ring-2 ring-zinc-400 ring-offset-2 ring-offset-white dark:ring-white dark:ring-offset-zinc-800'
                     : '',
@@ -153,7 +153,7 @@ function ProductSimple({ product }: { product: ProductType }) {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="h-5 w-5"
+                className="size-5"
               >
                 <path
                   strokeLinecap="round"
@@ -171,7 +171,7 @@ function ProductSimple({ product }: { product: ProductType }) {
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="h-5 w-5"
+                className="size-5"
               >
                 <path
                   strokeLinecap="round"

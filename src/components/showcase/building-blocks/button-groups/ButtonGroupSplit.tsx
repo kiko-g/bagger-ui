@@ -27,7 +27,7 @@ export function ButtonGroupSplit() {
 
       <Menu>
         <Menu.Button className="h-full flex-1 self-stretch rounded-r bg-slate-700 px-3 py-3 text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-25 dark:bg-slate-500/60 dark:hover:bg-slate-700">
-          <ChevronDownIcon className="h-5 w-5" />
+          <ChevronDownIcon className="size-5" />
         </Menu.Button>
         <Menu.Items className="absolute right-0 top-2 mt-12 flex min-w-full flex-col rounded bg-white py-0 shadow dark:bg-black/50">
           {items.map((item, itemIdx) => (
@@ -41,7 +41,7 @@ export function ButtonGroupSplit() {
                     active && 'bg-slate-700 text-white',
                   )}
                 >
-                  <item.icon className="h-4 w-4" />
+                  <item.icon className="size-4" />
                   <span>Option {itemIdx + 1}</span>
                 </button>
               )}

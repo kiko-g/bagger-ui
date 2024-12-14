@@ -56,7 +56,7 @@ export function SelectMultiple({ className }: Props) {
             <span className={cn('max-w-[12rem] truncate whitespace-nowrap font-normal tracking-tighter')}>
               {nothingSelected ? 'Select Many' : picked.join(', ')}
             </span>
-            <ChevronUpDownIcon className="h-4 w-4 lg:h-5 lg:w-5" aria-hidden="true" />
+            <ChevronUpDownIcon className="size-4 lg:h-5 lg:w-5" aria-hidden="true" />
           </Listbox.Button>
 
           <Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
@@ -95,9 +95,9 @@ export function SelectMultiple({ className }: Props) {
                       return (
                         <span className="flex items-center gap-2">
                           {highlight ? (
-                            <CheckCircleIcon className="h-5 w-5 text-blue-500" aria-hidden="true" />
+                            <CheckCircleIcon className="size-5 text-blue-500" aria-hidden="true" />
                           ) : (
-                            <span className="h-5 w-5" />
+                            <span className="size-5" />
                           )}
                           <span className={cn('block truncate', highlight ? 'font-bold' : 'font-normal')}>{item}</span>
                         </span>

@@ -55,8 +55,8 @@ export function ComponentTypePage({ title, description, sample, examples, combos
 
   return (
     <Layout location={title} sidebar quickNav={quickNav}>
-      <section className="mb-36 w-full py-6 lg:py-8 xl:py-12">
-        <h2 className="mb-2 text-2xl font-semibold tracking-tighter lg:mb-4 lg:text-4xl">{title}</h2>
+      <section className="mb-40 w-full pt-6 lg:pt-8 xl:pt-10">
+        <h2 className="mb-2 text-2xl font-semibold tracking-tighter lg:mb-3 lg:text-4xl">{title}</h2>
 
         {sample && (
           <div className="mb-0 border-zinc-200 dark:border-zinc-800">
@@ -73,7 +73,7 @@ export function ComponentTypePage({ title, description, sample, examples, combos
         >
           <a href="#examples" className="group flex w-full items-center gap-2">
             <span className="group-hover:underline">Examples</span>
-            <BookDashedIcon className="h-5 w-5" />
+            <BookDashedIcon className="size-5" />
           </a>
         </h3>
 
@@ -90,7 +90,7 @@ export function ComponentTypePage({ title, description, sample, examples, combos
             ))
           ) : (
             <div className="mt-4 flex items-center gap-3 rounded-md border border-amber-700/20 bg-amber-700/10 px-3 py-2 text-sm dark:border-amber-600/20 dark:bg-amber-600/10">
-              <CircleOffIcon className="h-4 w-4" />
+              <CircleOffIcon className="size-4" />
               <p>
                 No component <strong>examples</strong> in this section.
               </p>
@@ -104,7 +104,7 @@ export function ComponentTypePage({ title, description, sample, examples, combos
         >
           <a href="#combos" className="group flex w-full items-center gap-2">
             <span className="group-hover:underline">Combos</span>
-            <PuzzleIcon className="h-5 w-5" />
+            <PuzzleIcon className="size-5" />
           </a>
         </h3>
         {filteredCombos && filteredCombos?.length > 0 ? (
@@ -121,7 +121,7 @@ export function ComponentTypePage({ title, description, sample, examples, combos
           </ul>
         ) : (
           <div className="mt-4 flex items-center gap-3 rounded-md border border-amber-700/20 bg-amber-700/10 px-3 py-2 text-sm dark:border-amber-600/20 dark:bg-amber-600/10">
-            <CircleOffIcon className="h-4 w-4" />
+            <CircleOffIcon className="size-4" />
             <p>
               No component <strong>combos</strong> in this section.
             </p>

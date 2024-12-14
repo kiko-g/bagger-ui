@@ -77,7 +77,7 @@ export function SidebarSections({ location }: { location: string }) {
                   name={item.name}
                   href={item.href}
                   isActive={isActive}
-                  icon={<item.icon className="h-5 w-5" />}
+                  icon={<item.icon className="size-5" />}
                 />
               </li>
             )
@@ -95,7 +95,7 @@ export function SidebarSections({ location }: { location: string }) {
                   name={item.name}
                   href={item.href}
                   isActive={isActive}
-                  icon={<item.icon className="h-5 w-5" />}
+                  icon={<item.icon className="size-5" />}
                 />
               </li>
             )
@@ -113,7 +113,7 @@ export function SidebarSections({ location }: { location: string }) {
                   name={item.name}
                   href={item.href}
                   isActive={isActive}
-                  icon={<item.icon className="h-5 w-5" />}
+                  icon={<item.icon className="size-5" />}
                 />
               </li>
             )

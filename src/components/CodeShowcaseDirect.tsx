@@ -63,7 +63,7 @@ function CopyCodeButton({ text }: { text: string }) {
         isCopied ? '' : 'hover:bg-zinc-600 dark:hover:bg-zinc-700',
       )}
     >
-      {isCopied ? <CheckIcon className="h-4 w-4" /> : <ClipboardIcon className="h-4 w-4" />}
+      {isCopied ? <CheckIcon className="size-4" /> : <ClipboardIcon className="size-4" />}
     </button>
   )
 }
@@ -99,7 +99,7 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
         isDownloading ? '' : 'hover:bg-zinc-600 dark:hover:bg-zinc-700',
       )}
     >
-      {isDownloading ? <CheckIcon className="h-4 w-4" /> : <ArrowDownTrayIcon className="h-4 w-4" />}
+      {isDownloading ? <CheckIcon className="size-4" /> : <ArrowDownTrayIcon className="size-4" />}
     </button>
   )
 }

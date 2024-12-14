@@ -26,7 +26,7 @@ function H1({ children, slideTo, noMargin, withDivider, ...props }: Props) {
   return slideTo ? (
     <a id={slideTo} href={`#${slideTo}`} className="group relative hover:underline">
       <span className="absolute -left-6 top-8 opacity-0 transition-all group-hover:opacity-60">
-        <LinkIcon className="h-5 w-5" />
+        <LinkIcon className="size-5" />
       </span>
       {heading}
     </a>
@@ -52,7 +52,7 @@ function H2({ children, slideTo, noMargin, withDivider, ...props }: Props) {
   return slideTo ? (
     <a id={slideTo} href={`#${slideTo}`} className="group relative hover:underline">
       <span className="absolute -left-6 top-8 opacity-0 transition-all group-hover:opacity-60">
-        <LinkIcon className="h-5 w-5" />
+        <LinkIcon className="size-5" />
       </span>
       {heading}
     </a>
@@ -78,7 +78,7 @@ function H3({ children, slideTo, noMargin, withDivider, ...props }: Props) {
   return slideTo ? (
     <a id={slideTo} href={`#${slideTo}`} className="group relative hover:underline">
       <span className="absolute -left-6 top-8 opacity-0 transition-all group-hover:opacity-60">
-        <LinkIcon className="h-5 w-5" />
+        <LinkIcon className="size-5" />
       </span>
       {heading}
     </a>
@@ -104,7 +104,7 @@ function H4({ children, slideTo, noMargin, withDivider, ...props }: Props) {
   return slideTo ? (
     <a id={slideTo} href={`#${slideTo}`} className="group relative hover:underline">
       <span className="absolute -left-6 top-8 opacity-0 transition-all group-hover:opacity-60">
-        <LinkIcon className="h-5 w-5" />
+        <LinkIcon className="size-5" />
       </span>
       {heading}
     </a>
@@ -130,7 +130,7 @@ function H5({ children, slideTo, noMargin, withDivider, ...props }: Props) {
   return slideTo ? (
     <a id={slideTo} href={`#${slideTo}`} className="group relative hover:underline">
       <span className="absolute -left-6 top-8 opacity-0 transition-all group-hover:opacity-60">
-        <LinkIcon className="h-5 w-5" />
+        <LinkIcon className="size-5" />
       </span>
       {heading}
     </a>
@@ -156,7 +156,7 @@ function H6({ children, slideTo, noMargin, withDivider, ...props }: Props) {
   return slideTo ? (
     <a id={slideTo} href={`#${slideTo}`} className="group relative hover:underline">
       <span className="absolute -left-6 top-8 opacity-0 transition-all group-hover:opacity-60">
-        <LinkIcon className="h-5 w-5" />
+        <LinkIcon className="size-5" />
       </span>
       {heading}
     </a>

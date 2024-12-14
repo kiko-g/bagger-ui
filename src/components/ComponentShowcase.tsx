@@ -37,7 +37,7 @@ export function ComponentShowcase({ index, name, path, component }: ComponentCar
       >
         <a href={`#${sectionId}`} className="group flex w-full items-center gap-1">
           <span className="group-hover:underline">{name}</span>
-          <LinkIcon className="h-4 w-4 opacity-0 transition-opacity group-hover:opacity-60" />
+          <LinkIcon className="size-4 opacity-0 transition-opacity group-hover:opacity-60" />
         </a>
       </h4>
 
@@ -186,12 +186,12 @@ function ChangeBackgroundButton({ isDarkBackground, toggle }: { isDarkBackground
         {isDarkBackground ? (
           <>
             <span className="hidden lg:inline-flex">Dark</span>
-            <MoonIcon className="h-4 w-4" />
+            <MoonIcon className="size-4" />
           </>
         ) : (
           <>
             <span className="hidden lg:inline-flex">Light</span>
-            <SunIcon className="h-4 w-4" />
+            <SunIcon className="size-4" />
           </>
         )}
       </span>

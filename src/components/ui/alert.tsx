@@ -87,7 +87,7 @@ const Alert = React.forwardRef<
             'absolute right-3 top-3 rounded text-zinc-700 transition hover:bg-black/10 dark:text-white dark:hover:bg-white/10',
           )}
         >
-          <X className="h-4 w-4" />
+          <X className="size-4" />
         </button>
       )}
     </div>

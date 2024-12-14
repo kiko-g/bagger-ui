@@ -71,7 +71,7 @@ export function HeroGridNav() {
           )}
         >
           <span className={cn(action.iconClasses, 'inline-flex rounded-lg p-4 transition')}>
-            <action.icon className="h-6 w-6" aria-hidden="true" />
+            <action.icon className="size-6" aria-hidden="true" />
           </span>
           <span className="mt-3 block text-base font-semibold leading-6 text-zinc-900 dark:text-white">
             {action.title}
@@ -81,7 +81,7 @@ export function HeroGridNav() {
             className="pointer-events-none absolute right-6 top-6 text-zinc-300 group-hover:text-zinc-500 dark:text-zinc-400 dark:group-hover:text-white"
             aria-hidden="true"
           >
-            <ArrowLongRightIcon className="h-5 w-5 transition group-hover:-rotate-45 md:h-6 md:w-6" />
+            <ArrowLongRightIcon className="size-5 transition group-hover:-rotate-45 md:h-6 md:w-6" />
           </span>
         </Link>
       ))}

@@ -24,12 +24,12 @@ export function SwitchSimple() {
         {isOn ? (
           <>
             <span className="hidden lg:inline-flex">Off</span>
-            <XMarkIcon className="h-5 w-5" />
+            <XMarkIcon className="size-5" />
           </>
         ) : (
           <>
             <span className="hidden lg:inline-flex">On</span>
-            <CheckIcon className="h-5 w-5" />
+            <CheckIcon className="size-5" />
           </>
         )}
       </span>

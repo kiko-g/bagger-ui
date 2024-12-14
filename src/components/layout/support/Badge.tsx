@@ -14,7 +14,7 @@ export function SupportBadge() {
         <span className="font-semibold">Enjoy BaggerUI?</span>
         <span className="font-normal">Give it a star on GitHub</span>
       </span>
-      <span aria-hidden="true" role="img" className="h-3 w-3">
+      <span aria-hidden="true" role="img" className="size-3">
         ⭐️
       </span>
     </Link>
