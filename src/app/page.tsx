@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import clsx from 'clsx'
+import { cn } from '@/lib/utils'
 import { ReactIcon, TailwindIcon, TypescriptIcon, ShadCnIcon } from '@/components/icons'
 import { applicationUiNav, eCommerceNav, marketingNav, Section } from '@/utils/data'
 
@@ -46,24 +46,25 @@ function ComponentsSection({ items, title }: { items: Section[]; title: string }
 
 function Hero() {
   const technologies = [
-    { TechIcon: ReactIcon, name: 'React', color: 'text-[#149eca]', bgColor: '' },
-    { TechIcon: TypescriptIcon, name: 'Typescript', color: 'text-[#3178c6]', bgColor: '' },
-    { TechIcon: TailwindIcon, name: 'TailwindCSS', color: 'text-[#38bdf8]', bgColor: '' },
+    { TechIcon: ReactIcon, name: 'React', className: 'text-[#149eca]' },
+    { TechIcon: TypescriptIcon, name: 'Typescript', className: 'text-[#3178c6]' },
+    { TechIcon: TailwindIcon, name: 'TailwindCSS', className: 'text-[#38bdf8]' },
+    { TechIcon: ShadCnIcon, name: 'Shadcn', className: 'text-white rounded-sm p-[1px] bg-zinc-950' },
   ]
 
   return (
     <div className="max-w-xl space-y-3 py-4 lg:py-6">
       <div className="flex flex-wrap items-center gap-3">
-        {technologies.map(({ TechIcon, name, color, bgColor }) => (
-          <TechIcon key={name} className={`inline-flex h-5 w-5 align-middle ${color} ${bgColor} lg:h-7 lg:w-7`} />
+        {technologies.map(({ TechIcon, name, className }) => (
+          <TechIcon key={name} className={cn(`inline-flex h-5 w-5 align-middle lg:h-7 lg:w-7`, className)} />
         ))}
       </div>
       <h2
-        className={clsx(
+        className={cn(
           'flex flex-wrap items-center text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl',
         )}
       >
-        Reusable React Typescript Components with TailwindCSS
+        Reusable React Typescript Components with TailwindCSS and Shadcn
       </h2>
     </div>
   )
