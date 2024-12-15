@@ -20,7 +20,7 @@ export function Header({ location }: { location: string }) {
         </div>
 
         <ul className="flex items-center justify-center gap-0.5 md:gap-1">
-          <Button variant="ghost" size="icon-sm" asChild>
+          <Button variant="ghost" size="icon-sm" asChild className="hidden md:inline-flex">
             <Link target="_blank" href="https://github.com/kiko-g/bagger-ui">
               <GithubIcon />
             </Link>

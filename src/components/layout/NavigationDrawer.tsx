@@ -5,9 +5,16 @@ import { cn } from '@/lib/utils'
 import { applicationUiNav, generalNav, generatorNav, marketingNav, eCommerceNav, buildingBlocksNav } from '@/utils/data'
 
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { Drawer, DrawerContent, DrawerTrigger } from '@/components/ui/drawer'
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTitle,
+  DrawerHeader,
+  DrawerTrigger,
+  DrawerDescription,
+} from '@/components/ui/drawer'
 
-import { SquareMenuIcon } from 'lucide-react'
+import { MenuIcon } from 'lucide-react'
 
 export function NavigationDrawer({ location }: { location: string }) {
   const generalNavFiltered = generalNav.filter((item) => item.shown)
@@ -18,9 +25,14 @@ export function NavigationDrawer({ location }: { location: string }) {
   return (
     <Drawer>
       <DrawerTrigger className="flex items-center justify-center p-[7px] md:hidden">
-        <SquareMenuIcon className="size-4" />
+        <MenuIcon className="size-4" />
       </DrawerTrigger>
       <DrawerContent className="px-1 pb-4 pt-1">
+        <DrawerHeader className="sr-only">
+          <DrawerTitle className="sr-only">Navigation</DrawerTitle>
+          <DrawerDescription className="sr-only">Drawer menu to navigate through the site</DrawerDescription>
+        </DrawerHeader>
+
         <ScrollArea className="h-[400px] pt-4">
           {generalNavFiltered.length > 0 && (
             <ul className="mb-4 flex w-full flex-col gap-0.5">
