@@ -1,8 +1,8 @@
 'use client'
 
-import React, { Fragment, useState } from 'react'
-import { XMarkIcon, KeyIcon } from '@heroicons/react/24/outline'
+import React, { useState } from 'react'
 import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+import { KeyIcon, XIcon } from 'lucide-react'
 
 type Props = {
   startOpen?: boolean
@@ -44,7 +44,7 @@ export function ModalSimple({ startOpen }: Props) {
                   onClick={closeModal}
                   className="flex items-center gap-x-1 rounded bg-black/10 px-1 py-1 text-sm transition hover:bg-black/30 dark:bg-black/20 dark:text-white dark:hover:bg-black/40"
                 >
-                  <XMarkIcon className="size-4" />{' '}
+                  <XIcon className="size-4" />{' '}
                 </button>
               </div>
 

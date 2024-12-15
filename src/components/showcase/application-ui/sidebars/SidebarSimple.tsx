@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { cn } from '@/lib/utils'
-import { HomeIcon, InformationCircleIcon, LifebuoyIcon } from '@heroicons/react/24/outline'
+import { HomeIcon, InfoIcon, LifeBuoyIcon } from 'lucide-react'
 
 const navigation = [
   {
@@ -14,13 +14,13 @@ const navigation = [
   {
     name: 'About',
     href: '#',
-    icon: InformationCircleIcon,
+    icon: InfoIcon,
     shown: true,
   },
   {
     name: 'Help',
     href: '#',
-    icon: LifebuoyIcon,
+    icon: LifeBuoyIcon,
     shown: true,
   },
 ]

@@ -3,8 +3,7 @@
 import React, { useState, useMemo, Dispatch, Fragment, SetStateAction } from 'react'
 import { cn } from '@/lib/utils'
 import { Listbox, Transition } from '@headlessui/react'
-import { ChevronUpDownIcon } from '@heroicons/react/24/outline'
-import { CheckCircleIcon } from '@heroicons/react/24/solid'
+import { CheckCircleIcon, ChevronsUpDownIcon } from 'lucide-react'
 
 type Props = {
   className?: string
@@ -56,7 +55,7 @@ export function SelectMultiple({ className }: Props) {
             <span className={cn('max-w-[12rem] truncate whitespace-nowrap font-normal tracking-tighter')}>
               {nothingSelected ? 'Select Many' : picked.join(', ')}
             </span>
-            <ChevronUpDownIcon className="size-4 lg:h-5 lg:w-5" aria-hidden="true" />
+            <ChevronsUpDownIcon className="size-4 lg:h-5 lg:w-5" aria-hidden="true" />
           </Listbox.Button>
 
           <Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">

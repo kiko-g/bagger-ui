@@ -3,13 +3,13 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
 import { Menu } from '@headlessui/react'
-import { BuildingOfficeIcon, ChartBarIcon, ChevronDownIcon, CpuChipIcon } from '@heroicons/react/24/outline'
+import { BuildingIcon, ChartBarIcon, ChartPieIcon, ChevronDownIcon } from 'lucide-react'
 
 export function ButtonGroupSplit() {
   const items = [
-    { icon: BuildingOfficeIcon, text: 'Option 1' },
+    { icon: BuildingIcon, text: 'Option 1' },
     { icon: ChartBarIcon, text: 'Option 2' },
-    { icon: CpuChipIcon, text: 'Option 3' },
+    { icon: ChartPieIcon, text: 'Option 3' },
   ]
 
   function myFunction() {

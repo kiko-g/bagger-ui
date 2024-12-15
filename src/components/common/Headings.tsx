@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from 'react'
 import { cn } from '@/lib/utils'
-import { LinkIcon } from '@heroicons/react/24/outline'
+import { LinkIcon } from 'lucide-react'
 
 type Props = HTMLAttributes<HTMLHeadingElement> & {
   children: React.ReactNode

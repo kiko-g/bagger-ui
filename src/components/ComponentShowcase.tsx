@@ -5,11 +5,12 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { Switch } from '@headlessui/react'
 import type { ComponentCardType } from '@/types'
+
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+
 import { GithubIcon } from './icons/GithubIcon'
-import { SpinnerIcon } from './icons/SpinnerIcon'
-import { CheckIcon, ClipboardIcon, LinkIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline'
+import { CheckIcon, ClipboardIcon, LinkIcon, LoaderCircleIcon, MoonIcon, SunIcon } from 'lucide-react'
 
 export function ComponentShowcase({ index, name, path, component }: ComponentCardType & { index: number }) {
   const sectionId = name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
@@ -111,7 +112,7 @@ function CopyCodeButton({ text }: { text: string }) {
           <ClipboardIcon className="size-3.5 stroke-2" />
         )
       ) : (
-        <SpinnerIcon className="size-3.5 animate-spin" />
+        <LoaderCircleIcon className="size-3.5 animate-spin" />
       )}
     </button>
   )

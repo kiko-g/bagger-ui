@@ -1,13 +1,12 @@
 'use client'
 
-import { Transition } from '@headlessui/react'
-import { InboxIcon } from '@heroicons/react/24/outline'
-import { XMarkIcon } from '@heroicons/react/20/solid'
 import { useMemo, useState, useEffect } from 'react'
-import { usePathname } from 'next/navigation'
-import { BaggerFlowIcon } from '@/components/icons/BaggerFlowIcon'
-import { VSCodeIcon } from '@/components/icons/VSCodeIcon'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
+import { Transition } from '@headlessui/react'
+
+import { VSCodeIcon } from '@/components/icons/VSCodeIcon'
+import { XIcon } from 'lucide-react'
 
 export function ThemeSupportNotification() {
   const pathname = usePathname()
@@ -108,7 +107,7 @@ export function ThemeSupportNotification() {
                       className="inline-flex rounded-md text-zinc-500 transition hover:bg-zinc-900/5 focus:outline-none dark:text-zinc-100 dark:hover:bg-white/10"
                     >
                       <span className="sr-only">Close</span>
-                      <XMarkIcon aria-hidden="true" className="size-5" />
+                      <XIcon aria-hidden="true" className="size-5" />
                     </button>
                   </div>
                 </div>

@@ -5,11 +5,10 @@ import { useState, useEffect, useCallback } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
-import { Skeleton } from './ui/skeleton'
+import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/skeleton'
 
-import { SpinnerIcon } from './icons/SpinnerIcon'
-import { CheckIcon, ClipboardIcon } from 'lucide-react'
-import { Button } from './ui/button'
+import { CheckIcon, ClipboardIcon, LoaderCircleIcon } from 'lucide-react'
 
 interface CodeShowcaseFileProps extends React.HTMLAttributes<HTMLDivElement> {
   path: string
@@ -43,14 +42,13 @@ export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
       </div>
     </div>
   ) : (
-    <div className="relative" {...divProps}>
+    <div className={cn('relative', isExpanded ? 'expanded' : 'not-expanded')} {...divProps}>
       <SyntaxHighlighter
         language="tsx"
         style={coldarkDark}
         customStyle={{
           margin: '0',
           minHeight: '60px',
-          maxHeight: isExpanded ? '500px' : '200px',
           overflow: isExpanded ? 'auto' : 'hidden',
           lineHeight: '1.25',
           fontSize: '12px',
@@ -115,7 +113,7 @@ function CopyCodeButton({ text }: { text: string }) {
           <ClipboardIcon className="size-3.5 stroke-2" />
         )
       ) : (
-        <SpinnerIcon className="size-3.5 animate-spin" />
+        <LoaderCircleIcon className="size-3.5 animate-spin" />
       )}
     </button>
   )

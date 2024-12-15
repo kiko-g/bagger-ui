@@ -3,13 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import {
-  ArrowLongRightIcon,
-  CursorArrowRaysIcon,
-  MapIcon,
-  ViewColumnsIcon,
-  ViewfinderCircleIcon,
-} from '@heroicons/react/24/outline'
+import { ArrowBigUpDash, ArrowRightFromLineIcon, EuroIcon, MapPinIcon, MenuIcon } from 'lucide-react'
 
 type NavAction = {
   title: string
@@ -30,28 +24,28 @@ export function HeroGridNav() {
       title: 'Moscow',
       text: 'Moscow is the capital and most populous city of Russia. Moscow is a major political, economic, cultural, and scientific centre of Russia and Eastern Europe, as well as the largest city (by area) on the European continent.',
       href: '#',
-      icon: ViewfinderCircleIcon,
+      icon: MapPinIcon,
       iconClasses: 'bg-blue-50 group-hover:bg-slate-700 group-hover:text-white text-blue-600',
     },
     {
       title: 'Prague',
       text: 'Prague is the capital and largest city in the Czech Republic, the 13th largest city in the European Union and the historical capital of Bohemia. Situated on the Vltava river, Prague is home to about 1.3 million people, while its metropolitan area is estimated to have a population of 2.7 million.',
       href: '#',
-      icon: MapIcon,
+      icon: MenuIcon,
       iconClasses: 'bg-orange-50 group-hover:bg-orange-600 group-hover:text-white text-orange-600',
     },
     {
       title: 'Paris',
       text: "Located in France, Paris is the capital and most populous city of the French Republic. Since the 17th century, Paris has been one of Europe's major centres of finance, diplomacy, commerce, fashion, science and arts.",
       href: '#',
-      icon: ViewColumnsIcon,
+      icon: EuroIcon,
       iconClasses: 'bg-sky-50 group-hover:bg-sky-600 group-hover:text-white text-sky-600',
     },
     {
       title: 'London',
       text: 'The capital and largest city of England and the United Kingdom. The city stands on the River Thames in the south-east of England, at the head of its 50-mile (80 km) estuary leading to the North Sea, London has been a major settlement for two millennia.',
       href: '#',
-      icon: CursorArrowRaysIcon,
+      icon: ArrowBigUpDash,
       iconClasses: 'bg-rose-50 group-hover:bg-rose-600 group-hover:text-white text-rose-600',
     },
   ]
@@ -81,7 +75,7 @@ export function HeroGridNav() {
             className="pointer-events-none absolute right-6 top-6 text-zinc-300 group-hover:text-zinc-500 dark:text-zinc-400 dark:group-hover:text-white"
             aria-hidden="true"
           >
-            <ArrowLongRightIcon className="size-5 transition group-hover:-rotate-45 md:h-6 md:w-6" />
+            <ArrowRightFromLineIcon className="size-5 transition group-hover:-rotate-45 md:h-6 md:w-6" />
           </span>
         </Link>
       ))}

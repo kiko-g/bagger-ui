@@ -52,6 +52,16 @@ pre {
   border: 1px solid theme('colors.zinc.800');
 }
 
+.expanded pre {
+  height: 500px;
+  transition: height 250ms ease-in-out;
+}
+
+.not-expanded pre {
+  height: 200px;
+  transition: height 250ms ease-in-out;
+}
+
 @keyframes rotate {
   from {
     transform: rotateY(-90deg);

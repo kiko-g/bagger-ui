@@ -2,15 +2,7 @@
 
 import React from 'react'
 import { cn } from '@/lib/utils'
-import {
-  HeartIcon,
-  HomeIcon,
-  InformationCircleIcon,
-  LifebuoyIcon,
-  RectangleStackIcon,
-  TruckIcon,
-  UserCircleIcon,
-} from '@heroicons/react/24/outline'
+import { HeartIcon, HomeIcon, InfoIcon, LifeBuoyIcon, RectangleEllipsis, TruckIcon, UserCircleIcon } from 'lucide-react'
 
 const generalNavigations = [
   {
@@ -22,13 +14,13 @@ const generalNavigations = [
   {
     name: 'About',
     href: '#',
-    icon: InformationCircleIcon,
+    icon: InfoIcon,
     shown: true,
   },
   {
     name: 'Help',
     href: '#',
-    icon: LifebuoyIcon,
+    icon: LifeBuoyIcon,
     shown: true,
   },
 ]
@@ -37,7 +29,7 @@ const componentNavigations = [
   {
     name: 'Products',
     href: '#',
-    icon: RectangleStackIcon,
+    icon: RectangleEllipsis,
     shown: true,
   },
   {

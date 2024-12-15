@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { useDropzone } from 'react-dropzone'
 import { useCallback, useState } from 'react'
-import { ArrowUpTrayIcon } from '@heroicons/react/24/outline'
+import { DownloadIcon } from 'lucide-react'
 
 type Props = {
   accept?: Record<string, string[]>
@@ -37,7 +37,7 @@ export function DropzoneArea({ accept = {}, multiple = true, onDrop, className =
     >
       <input {...getInputProps()} />
       <div className="flex flex-col items-center justify-center text-zinc-700 group-hover:text-primary-950 dark:text-zinc-300 dark:group-hover:text-primary-50">
-        <ArrowUpTrayIcon className="h-8 w-8 transition" />
+        <DownloadIcon className="h-8 w-8 transition" />
         <p className="mt-2 text-sm transition">
           <span className="font-bold">Click to upload</span> or drag and drop. Colors within the image will be used to
           generate the palette.

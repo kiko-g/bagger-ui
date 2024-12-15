@@ -13,8 +13,8 @@ export default function Config() {
       description: 'A simple JavaScript utility for conditionally joining cn together.',
     },
     {
-      name: '@heroicons/react',
-      description: 'Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS.',
+      name: 'lucide/react',
+      description: 'Beautiful & consistent icons, community made.',
     },
     {
       name: '@headlessui/react',

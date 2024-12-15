@@ -2,9 +2,9 @@
 
 import React, { useState, useCallback, useMemo } from 'react'
 import { cn } from '@/lib/utils'
-import { ArrowDownTrayIcon, CheckIcon, ClipboardIcon } from '@heroicons/react/24/outline'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { CheckIcon, ClipboardIcon, DownloadIcon } from 'lucide-react'
 
 type Props = {
   code: string
@@ -99,7 +99,7 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
         isDownloading ? '' : 'hover:bg-zinc-600 dark:hover:bg-zinc-700',
       )}
     >
-      {isDownloading ? <CheckIcon className="size-4" /> : <ArrowDownTrayIcon className="size-4" />}
+      {isDownloading ? <CheckIcon className="size-4" /> : <DownloadIcon className="size-4" />}
     </button>
   )
 }

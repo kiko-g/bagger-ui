@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { cn } from '@/lib/utils'
 import { Switch } from '@headlessui/react'
-import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { CheckIcon, XIcon } from 'lucide-react'
 
 export function SwitchSimple() {
   const [isOn, setIsOn] = useState(false)
@@ -24,7 +24,7 @@ export function SwitchSimple() {
         {isOn ? (
           <>
             <span className="hidden lg:inline-flex">Off</span>
-            <XMarkIcon className="size-5" />
+            <XIcon className="size-5" />
           </>
         ) : (
           <>
