@@ -12,7 +12,7 @@ export function Header() {
       <div className="flex items-center justify-between px-3 py-3 sm:px-3 lg:px-4 xl:px-1">
         <div className="flex items-center gap-3">
           <LogoLink />
-          <span className="inline-flex items-center rounded-full border border-amber-600 bg-gradient-to-br from-yellow-500/70 to-amber-600/70 px-1.5 py-0.5 text-xs/4 font-bold uppercase tracking-tight text-white dark:border-amber-500">
+          <span className="inline-flex items-center rounded-full bg-gradient-to-br from-orange-600/70 to-rose-600/70 px-1.5 py-0.5 text-xs/4 font-bold uppercase tracking-tight text-white">
             Beta
           </span>
         </div>
