@@ -64,7 +64,10 @@ export default function Config() {
         </p>
       </section>
 
-      <section id="tailwind-config" className="mb-24 w-full pb-2 pt-4 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10">
+      <section
+        id="tailwind-config"
+        className="w-full border-b-0 border-zinc-900/10 pb-2 pt-4 text-sm dark:border-white/10 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10"
+      >
         <h2 className="mb-3 text-lg font-semibold tracking-tighter lg:text-3xl">Tailwind Config File</h2>
         <p className="mb-3 max-w-3xl">
           This site uses a custom Tailwind config that extends the default Tailwind config. Copy our config to your{' '}
@@ -76,7 +79,10 @@ export default function Config() {
         </div>
       </section>
 
-      <section id="types" className="mb-24 w-full pb-2 pt-4 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10">
+      <section
+        id="types"
+        className="w-full border-b-0 border-zinc-900/10 pb-2 pt-4 text-sm dark:border-white/10 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10"
+      >
         <h2 className="mb-3 text-lg font-semibold tracking-tighter lg:text-3xl">Types</h2>
         <p className="mb-3 max-w-3xl">
           To keep a tidy codebase, reduce errors and have strong maintainability, we make use of TypeScript, Defined in
