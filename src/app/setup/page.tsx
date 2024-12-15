@@ -47,9 +47,9 @@ export default function Config() {
 
         <p className="mb-3 max-w-3xl">
           Outside of that stack, our project follows ShadcnUI and is built on top of it for the most part. The goal of
-          BaggerUI is to expand on ShadCN's work by delivering more out of the box options for your components as well
-          as putting the pieces together. We want you to come on our platform and find what you need with little to no
-          additional effort.
+          BaggerUI is to expand on ShadCN&apos;s work by delivering more out of the box options for your components as
+          well as putting the pieces together. We want you to come on our platform and find what you need with little to
+          no additional effort.
         </p>
 
         <p className="mb-3 max-w-3xl">
