@@ -15,16 +15,18 @@ export function Navigation({ location }: { location: string }) {
 
   return (
     <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] min-w-64 shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 py-8 pl-4 pr-6 hover:overflow-auto md:sticky md:block lg:flex lg:border-r lg:border-zinc-900/10 dark:lg:border-white/10">
-      <ul className="flex w-full flex-col gap-0.5 border-b-0 border-zinc-900/10 dark:border-white/10">
-        {generalNavFiltered.map((item, itemIdx) => {
-          const isActive = location.toLowerCase() === item.name.toLowerCase()
-          return (
-            <li key={`nav-${itemIdx}`}>
-              <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
-            </li>
-          )
-        })}
-      </ul>
+      {generalNavFiltered.length > 0 && (
+        <ul className="flex w-full flex-col gap-0.5 border-b-0 border-zinc-900/10 dark:border-white/10">
+          {generalNavFiltered.map((item, itemIdx) => {
+            const isActive = location.toLowerCase() === item.name.toLowerCase()
+            return (
+              <li key={`nav-${itemIdx}`}>
+                <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+              </li>
+            )
+          })}
+        </ul>
+      )}
 
       {generatorNavFiltered.length > 0 && (
         <Accordion type="single" collapsible defaultValue="item-1">
@@ -48,45 +50,49 @@ export function Navigation({ location }: { location: string }) {
         </Accordion>
       )}
 
-      <Accordion type="single" collapsible defaultValue="item-2">
-        <AccordionItem value="item-2" className="border-b-0 border-zinc-900/10 dark:border-white/10">
-          <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
-            <span className="ml-2 whitespace-nowrap text-left">Components</span>
-          </AccordionTrigger>
-          <AccordionContent>
-            <ul className="flex w-full flex-col gap-0.5 pl-0">
-              {applicationUiNavFiltered.map((item, itemIdx) => {
-                const isActive = location.toLowerCase() === item.name.toLowerCase()
-                return (
-                  <li key={`nav-${itemIdx}`}>
-                    <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
-                  </li>
-                )
-              })}
-            </ul>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+      {applicationUiNavFiltered.length > 0 && (
+        <Accordion type="single" collapsible defaultValue="item-2">
+          <AccordionItem value="item-2" className="border-b-0 border-zinc-900/10 dark:border-white/10">
+            <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
+              <span className="ml-2 whitespace-nowrap text-left">Components</span>
+            </AccordionTrigger>
+            <AccordionContent>
+              <ul className="flex w-full flex-col gap-0.5 pl-0">
+                {applicationUiNavFiltered.map((item, itemIdx) => {
+                  const isActive = location.toLowerCase() === item.name.toLowerCase()
+                  return (
+                    <li key={`nav-${itemIdx}`}>
+                      <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                    </li>
+                  )
+                })}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      )}
 
-      <Accordion type="single" collapsible defaultValue="item-3">
-        <AccordionItem value="item-3" className="border-b-0 border-zinc-900/10 dark:border-white/10">
-          <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
-            <span className="ml-2 whitespace-nowrap text-left">Building Blocks</span>
-          </AccordionTrigger>
-          <AccordionContent>
-            <ul className="flex w-full flex-col gap-0.5 pl-0">
-              {buildingBlocksNavFiltered.map((item, itemIdx) => {
-                const isActive = location.toLowerCase() === item.name.toLowerCase()
-                return (
-                  <li key={`nav-${itemIdx}`}>
-                    <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
-                  </li>
-                )
-              })}
-            </ul>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+      {buildingBlocksNavFiltered.length > 0 && (
+        <Accordion type="single" collapsible defaultValue="item-3">
+          <AccordionItem value="item-3" className="border-b-0 border-zinc-900/10 dark:border-white/10">
+            <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
+              <span className="ml-2 whitespace-nowrap text-left">Building Blocks</span>
+            </AccordionTrigger>
+            <AccordionContent>
+              <ul className="flex w-full flex-col gap-0.5 pl-0">
+                {buildingBlocksNavFiltered.map((item, itemIdx) => {
+                  const isActive = location.toLowerCase() === item.name.toLowerCase()
+                  return (
+                    <li key={`nav-${itemIdx}`}>
+                      <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                    </li>
+                  )
+                })}
+              </ul>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      )}
 
       <Accordion type="single" collapsible>
         <AccordionItem value="item-4" className="border-b-0 border-zinc-900/10 dark:border-white/10">

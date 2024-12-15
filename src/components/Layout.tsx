@@ -24,24 +24,26 @@ export function Layout({ children, location = 'Unknown', sidebar = false, quickN
   return (
     <>
       <Seo title={location} />
-      <main className={cn('mx-auto flex min-h-screen max-w-[100vw] flex-col')}>
-        <Header />
+      <div className="mx-auto flex min-h-screen max-w-[100vw] flex-col">
+        <Header location={location} />
         <HeroPattern />
-        <div className="flex flex-1">
+
+        <main className="flex flex-1">
           {sidebar && <Navigation location={location} />}
+
           <article className="relative mb-16 flex max-w-full flex-1 flex-col items-start justify-start px-4 xl:pl-12 xl:pr-10">
             <div className="my-4 flex flex-1 flex-row items-start justify-between gap-2 lg:flex-row lg:items-center">
               <SupportBadge />
             </div>
             {children}
           </article>
+
           {quickNav && <QuickNavSidebar navigation={quickNav} />}
-        </div>
+        </main>
 
         <ThemeSupportNotification />
-
         <Footer />
-      </main>
+      </div>
     </>
   )
 }

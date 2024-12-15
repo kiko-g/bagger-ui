@@ -19,8 +19,8 @@ export function ThemeToggle() {
       aria-label={mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'}
       onClick={() => setTheme(otherTheme)}
     >
-      <SunIcon className="size-4 dark:hidden" />
-      <MoonIcon className="hidden size-4 dark:block" />
+      <SunIcon className="dark:hidden" />
+      <MoonIcon className="hidden dark:inline-flex" />
     </Button>
   )
 }

@@ -14,7 +14,7 @@ export default function Home() {
     <Layout location="Home" sidebar>
       <Hero />
       <div className="mb-24 w-full">
-        <p className="mb-4 max-w-4xl">
+        <p className="mb-4 max-w-4xl text-sm">
           Start exploring the types of components we have available and visit their individual pages where you can find
           the web components and their source code. Make sure you have checked out the{' '}
           <Link href="/setup" className="font-medium text-primary-600 transition hover:underline dark:text-primary-500">
@@ -61,7 +61,7 @@ function Hero() {
       </div>
       <h2
         className={cn(
-          'flex flex-wrap items-center text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl',
+          'flex flex-wrap items-center text-lg font-bold tracking-tighter lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl',
         )}
       >
         Reusable React Typescript Components with TailwindCSS and Shadcn
