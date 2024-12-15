@@ -7,7 +7,7 @@ export function QuickNavSidebar({ navigation }: { navigation?: QuickNavigation }
   if (!navigation) return null
 
   return (
-    <aside className="sticky mt-8 hidden shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 px-5 py-5 xl:flex xl:w-72">
+    <nav className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] min-w-64 shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 py-8 pl-4 pr-6 hover:overflow-auto md:sticky md:block lg:flex lg:border-zinc-900/10 dark:lg:border-white/10">
       <h4 className="mb-4 text-xl font-semibold">On this page</h4>
       <ul className="flex w-full flex-col gap-3">
         {navigation.map((level, levelIdx) => {
@@ -43,6 +43,6 @@ export function QuickNavSidebar({ navigation }: { navigation?: QuickNavigation }
           )
         })}
       </ul>
-    </aside>
+    </nav>
   )
 }

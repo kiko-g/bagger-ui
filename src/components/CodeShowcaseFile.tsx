@@ -76,7 +76,7 @@ export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
       </div>
 
       <div className="absolute bottom-4 z-10 flex w-full items-center justify-center gap-2">
-        <Button variant="default-dark" onClick={() => setIsExpanded(!isExpanded)}>
+        <Button variant="default-inverted" onClick={() => setIsExpanded(!isExpanded)}>
           {isExpanded ? 'Collapse' : 'Expand'}
         </Button>
       </div>
