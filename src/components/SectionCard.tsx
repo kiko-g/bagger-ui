@@ -63,8 +63,8 @@ function Pattern({
         className={cn(
           'absolute inset-0 rounded-2xl bg-gradient-to-br transition-all duration-300',
           'from-sky-200 to-purple-200 opacity-10 dark:from-purple-200 dark:to-sky-200 dark:opacity-0',
-          'group-hover:from-sky-200 group-hover:to-purple-200 group-hover:opacity-20',
-          'dark:group-hover:from-sky-200/30 dark:group-hover:to-purple-200/30 dark:group-hover:opacity-20',
+          'group-hover:from-sky-200 group-hover:to-purple-200 group-hover:opacity-10 md:group-hover:opacity-30',
+          'dark:group-hover:from-sky-200/30 dark:group-hover:to-purple-200/30 dark:group-hover:opacity-0 md:dark:group-hover:opacity-[15%]',
         )}
         style={style}
       />

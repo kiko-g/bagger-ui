@@ -162,6 +162,13 @@ export const applicationUiNav: Section[] = [
     name: 'Headers',
     href: '/application-ui/headers',
     description: 'Customizable and expansible top menu components.',
+    pattern: {
+      y: 32,
+      squares: [
+        [0, 2],
+        [1, 4],
+      ],
+    },
     image: undefined,
     shown: true,
   },
