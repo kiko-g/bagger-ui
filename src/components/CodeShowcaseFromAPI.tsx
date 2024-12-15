@@ -49,7 +49,7 @@ export function CodeShowcaseFromAPI({ route, language, options, allowDownload }:
     )
 
   return (
-    <div className="group relative max-w-7xl overflow-auto rounded-xl border border-zinc-200 dark:border-white/10">
+    <div className="group relative max-w-7xl overflow-auto rounded-xl">
       {/* Controls */}
       <div className="absolute right-4 top-4 flex items-center justify-end gap-2">
         {canDownload ? <DownloadButton text={code} filename={`code.${language}`} /> : null}
@@ -64,6 +64,8 @@ export function CodeShowcaseFromAPI({ route, language, options, allowDownload }:
           minHeight: '500px',
           maxHeight: '1000px',
           margin: '0',
+          fontSize: '12px',
+          letterSpacing: '-0.025em',
           ...options,
         }}
       >
