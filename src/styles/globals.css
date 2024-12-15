@@ -15,11 +15,11 @@
 }
 
 *::selection {
-  @apply bg-primary-600/50 text-white dark:bg-secondary-500/50;
+  @apply bg-teal-700/50 text-white dark:bg-teal-500/50;
 }
 
 pre *::selection {
-  @apply bg-secondary-500/40 text-white;
+  @apply bg-rose-500/50 text-white;
 }
 
 html {
