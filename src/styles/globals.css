@@ -70,3 +70,7 @@ pre {
 .rotate-in {
   animation: rotate 0.5s forwards;
 }
+
+.logo-animation {
+  animation: spin 0.5s ease-in-out;
+}
