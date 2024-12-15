@@ -94,7 +94,7 @@ export default function Generator() {
       <p className="mb-2 max-w-3xl text-sm">
         Generate a custom TailwindCSS color palette based on two colors. Enter the two colors you want to interpolate
         and the name of your color palette. Copy the output and paste it into your{' '}
-        <span className="font-semibold text-primary-600 dark:text-primary-500">tailwind.config.js</span> 😎
+        <span className="font-semibold text-teal-600 dark:text-teal-500">tailwind.config.js</span> 😎
       </p>
 
       {isLoading ? (
@@ -112,7 +112,7 @@ export default function Generator() {
                   placeholder="Type the name of your color palette"
                   value={tailwindPalette.name}
                   onChange={(e) => setTailwindPalette((x) => ({ ...x, name: e.target.value }))}
-                  className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3 lg:py-2 lg:text-sm"
+                  className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-teal-600/80 hover:bg-teal-600/5 focus:border-teal-600 focus:accent-teal-600 focus:ring-0 focus:ring-teal-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5 dark:focus:border-teal-600/80 dark:focus:ring-0 dark:focus:ring-teal-600 lg:px-3 lg:py-2 lg:text-sm"
                 />
 
                 <div className="flex w-full items-center gap-3">
@@ -128,7 +128,7 @@ export default function Generator() {
                     value={firstColor}
                     onChange={(e) => setFirstColor(e.target.value as ColorHex)}
                     placeholder="First Color"
-                    className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3 lg:py-2 lg:text-sm"
+                    className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-teal-600/80 hover:bg-teal-600/5 focus:border-teal-600 focus:accent-teal-600 focus:ring-0 focus:ring-teal-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5 dark:focus:border-teal-600/80 dark:focus:ring-0 dark:focus:ring-teal-600 lg:px-3 lg:py-2 lg:text-sm"
                   />
                 </div>
 
@@ -145,7 +145,7 @@ export default function Generator() {
                     value={secondColor}
                     onChange={(e) => setSecondColor(e.target.value as ColorHex)}
                     placeholder="Second Color"
-                    className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-primary-600/80 hover:bg-primary-600/5 focus:border-primary-600 focus:accent-primary-600 focus:ring-0 focus:ring-primary-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-primary-600/80 dark:hover:bg-primary-600/5 dark:focus:border-primary-600/80 dark:focus:ring-0 dark:focus:ring-primary-600 lg:px-3 lg:py-2 lg:text-sm"
+                    className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-teal-600/80 hover:bg-teal-600/5 focus:border-teal-600 focus:accent-teal-600 focus:ring-0 focus:ring-teal-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5 dark:focus:border-teal-600/80 dark:focus:ring-0 dark:focus:ring-teal-600 lg:px-3 lg:py-2 lg:text-sm"
                   />
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function Generator() {
               <button
                 type="button"
                 onClick={generateTailwindPalette}
-                className="rounded-sm bg-primary-600 px-4 py-2 text-sm font-normal text-white shadow transition hover:opacity-80 dark:bg-primary-600/80"
+                className="rounded-sm bg-teal-600 px-4 py-2 text-sm font-normal text-white shadow transition hover:opacity-80 dark:bg-teal-600/80"
               >
                 Generate Palette
               </button>

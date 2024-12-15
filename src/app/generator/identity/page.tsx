@@ -28,7 +28,7 @@ export default function JumpsellerStoreIdentity() {
 
       <p className="mb-2 max-w-3xl text-base">
         Fill out your store identity form to get started with{' '}
-        <span className="inline-flex items-center gap-0.5 bg-gradient-to-r from-pink-600 via-primary-600 to-sky-600 bg-clip-text font-semibold text-transparent">
+        <span className="inline-flex items-center gap-0.5 bg-gradient-to-r from-pink-600 via-teal-600 to-sky-600 bg-clip-text font-semibold text-transparent">
           AI suggestions
         </span>{' '}
         in your platform.
@@ -112,16 +112,16 @@ function RadioBubble({
       onClick={handleClick}
       className={cn(
         checked
-          ? 'border-primary-500 bg-primary-500/10 dark:border-transparent dark:bg-primary-500/20'
-          : 'border-zinc-900/20 bg-white hover:border-primary-500/50 hover:bg-primary-500/5 dark:bg-white/5 dark:hover:border-white/0 dark:hover:bg-white/10',
+          ? 'border-teal-500 bg-teal-500/10 dark:border-transparent dark:bg-teal-500/20'
+          : 'border-zinc-900/20 bg-white hover:border-teal-500/50 hover:bg-teal-500/5 dark:bg-white/5 dark:hover:border-white/0 dark:hover:bg-white/10',
         'group flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-sm transition-all duration-200',
       )}
     >
       <span
         className={cn(
           checked
-            ? 'bg-primary-500 group-hover:bg-primary-500/80'
-            : 'bg-zinc-300 group-hover:bg-primary-500/80 dark:bg-zinc-200/20 dark:group-hover:bg-white',
+            ? 'bg-teal-500 group-hover:bg-teal-500/80'
+            : 'bg-zinc-300 group-hover:bg-teal-500/80 dark:bg-zinc-200/20 dark:group-hover:bg-white',
           'h-2 w-2 rounded-full transition-all duration-200',
         )}
       />
@@ -132,12 +132,12 @@ function RadioBubble({
 
 function Skeleton() {
   return (
-    <div className="mt-4 flex h-64 w-full max-w-lg items-center justify-center rounded bg-primary-500/5 dark:bg-primary-500/10">
+    <div className="mt-4 flex h-64 w-full max-w-lg items-center justify-center rounded bg-teal-500/5 dark:bg-teal-500/10">
       <svg
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
-        className="-ml-1 mr-3 h-12 w-12 animate-spin text-primary-600 dark:text-primary-500"
+        className="-ml-1 mr-3 h-12 w-12 animate-spin text-teal-600 dark:text-teal-500"
       >
         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
 

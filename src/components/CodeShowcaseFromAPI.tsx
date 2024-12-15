@@ -36,7 +36,7 @@ export function CodeShowcaseFromAPI({ route, language, options, allowDownload }:
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="-ml-1 mr-3 h-12 w-12 animate-spin text-primary-600 dark:text-primary-500"
+          className="-ml-1 mr-3 h-12 w-12 animate-spin text-teal-600 dark:text-teal-500"
         >
           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
           <path

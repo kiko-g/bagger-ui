@@ -17,7 +17,7 @@ export default function Home() {
         <p className="mb-4 max-w-4xl text-sm">
           Start exploring the types of components we have available and visit their individual pages where you can find
           the web components and their source code. Make sure you have checked out the{' '}
-          <Link href="/setup" className="font-medium text-primary-600 transition hover:underline dark:text-primary-500">
+          <Link href="/setup" className="font-medium text-teal-600 transition hover:underline dark:text-teal-500">
             configuration
           </Link>{' '}
           page. Your setup should be similar, otherwise some components might not work as expected in your project.

@@ -86,7 +86,7 @@ export function ThemeSupportNotification() {
                       <a
                         href="https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow"
                         target="_blank"
-                        className="flex items-center gap-1 rounded-md text-sm font-medium text-primary-600 focus:underline focus:outline-none dark:text-primary-500 dark:hover:text-primary-400"
+                        className="flex items-center gap-1 rounded-md text-sm font-medium text-teal-600 focus:underline focus:outline-none dark:text-teal-500 dark:hover:text-teal-400"
                       >
                         <span>Take me there</span>
                       </a>

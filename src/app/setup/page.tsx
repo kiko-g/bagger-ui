@@ -71,8 +71,8 @@ export default function Config() {
         <h2 className="mb-3 text-lg font-semibold tracking-tighter lg:text-3xl">Tailwind Config File</h2>
         <p className="mb-3 max-w-3xl">
           This site uses a custom Tailwind config that extends the default Tailwind config. Copy our config to your{' '}
-          <span className="font-semibold text-primary-600 dark:text-primary-500">tailwind.config.js</span> file that
-          should be in the root of your project.
+          <span className="font-semibold text-teal-600 dark:text-teal-500">tailwind.config.js</span> file that should be
+          in the root of your project.
         </p>
         <div className="w-full rounded-xl">
           <CodeShowcaseFromAPI route="api/code/tailwind" language="typescript" />
@@ -86,8 +86,8 @@ export default function Config() {
         <h2 className="mb-3 text-lg font-semibold tracking-tighter lg:text-3xl">Types</h2>
         <p className="mb-3 max-w-3xl">
           To keep a tidy codebase, reduce errors and have strong maintainability, we make use of TypeScript, Defined in
-          the <span className="font-semibold text-primary-600 dark:text-primary-500">@/types</span> folder you can get a
-          grasp of the types used to build our components and BaggerUI.
+          the <span className="font-semibold text-teal-600 dark:text-teal-500">@/types</span> folder you can get a grasp
+          of the types used to build our components and BaggerUI.
         </p>
         <div className="w-full rounded-xl">
           <CodeShowcaseFromAPI route="api/code/types" language="typescript" />
