@@ -2,7 +2,37 @@
 
 import React from 'react'
 import { cn } from '@/lib/utils'
-import type { ColorVariant, RoundedVariant, SizeVariant } from '@/types'
+
+type ColorVariant =
+  | 'info'
+  | 'success'
+  | 'error'
+  | 'warning'
+  | 'slate'
+  | 'gray'
+  | 'zinc'
+  | 'neutral'
+  | 'stone'
+  | 'red'
+  | 'orange'
+  | 'amber'
+  | 'yellow'
+  | 'lime'
+  | 'green'
+  | 'emerald'
+  | 'teal'
+  | 'cyan'
+  | 'sky'
+  | 'blue'
+  | 'indigo'
+  | 'violet'
+  | 'purple'
+  | 'fuchsia'
+  | 'pink'
+  | 'rose'
+
+type RoundedVariant = 'sm' | 'md' | 'lg' | 'full' | 'none'
+type SizeVariant = 'sm' | 'md' | 'lg'
 
 type Props = {
   children: React.ReactNode

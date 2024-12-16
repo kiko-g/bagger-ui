@@ -18,7 +18,7 @@ export function Navigation({ location }: { location: string }) {
     <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] min-w-64 shrink-0 flex-col space-y-4 self-stretch overflow-auto bg-opacity-80 py-8 pl-4 pr-6 hover:overflow-auto md:sticky md:block lg:flex lg:border-r lg:border-zinc-900/10 dark:lg:border-white/10">
       <ScrollArea className="h-full">
         {generalNavFiltered.length > 0 && (
-          <ul className="flex w-full flex-col gap-0.5 border-b-0 border-zinc-900/10 dark:border-white/10">
+          <ul className="mb-4 flex w-full flex-col gap-0.5 border-b-0 border-zinc-900/10 dark:border-white/10">
             {generalNavFiltered.map((item, itemIdx) => {
               const isActive = location.toLowerCase() === item.name.toLowerCase()
               return (

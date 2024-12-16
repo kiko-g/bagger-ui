@@ -46,34 +46,3 @@ export type TailwindPalette = {
   combos: TailwindCombo[]
   config: string
 }
-
-export type ColorVariant =
-  | 'info'
-  | 'success'
-  | 'error'
-  | 'warning'
-  | 'slate'
-  | 'gray'
-  | 'zinc'
-  | 'neutral'
-  | 'stone'
-  | 'red'
-  | 'orange'
-  | 'amber'
-  | 'yellow'
-  | 'lime'
-  | 'green'
-  | 'emerald'
-  | 'teal'
-  | 'cyan'
-  | 'sky'
-  | 'blue'
-  | 'indigo'
-  | 'violet'
-  | 'purple'
-  | 'fuchsia'
-  | 'pink'
-  | 'rose'
-
-export type RoundedVariant = 'sm' | 'md' | 'lg' | 'full' | 'none'
-export type SizeVariant = 'sm' | 'md' | 'lg'
