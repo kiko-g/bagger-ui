@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils'
 import { useState, useEffect, useCallback } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { baggerDark } from '@/lib/syntax'
+import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -45,7 +45,7 @@ export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
     <div className={cn('relative', isExpanded ? 'expanded' : 'not-expanded')} {...divProps}>
       <SyntaxHighlighter
         language="tsx"
-        style={baggerDark}
+        style={coldarkDark}
         customStyle={{
           margin: '0',
           minHeight: '60px',

@@ -4,7 +4,9 @@ const colors = {
   keyword: '#bb88ff',
   string: '#61e57e',
   function: '#55ffff',
-  xd: '#66cccc',
+  variable: '#ffffff',
+  class: '#ff88aa',
+  tag: '#60a5fa',
 }
 
 export const baggerDark: SyntaxHighlighterStyle = {
@@ -93,35 +95,35 @@ export const baggerDark: SyntaxHighlighterStyle = {
     color: '#e3eaf2',
   },
   'delimiter.important': {
-    color: colors.xd,
+    color: colors.variable,
     fontWeight: 'inherit',
   },
   'selector.parent': {
-    color: colors.xd,
+    color: colors.variable,
   },
   tag: {
-    color: colors.xd,
+    color: colors.tag,
   },
   'tag.punctuation': {
-    color: colors.xd,
+    color: colors.variable,
   },
   'attr-name': {
-    color: '#e6d37a',
+    color: colors.class,
   },
   boolean: {
-    color: '#e6d37a',
+    color: colors.class,
   },
   'boolean.important': {
-    color: '#e6d37a',
+    color: colors.class,
   },
   number: {
-    color: '#e6d37a',
+    color: colors.class,
   },
   constant: {
-    color: '#e6d37a',
+    color: colors.class,
   },
   'selector.attribute': {
-    color: '#e6d37a',
+    color: colors.class,
   },
   'class-name': {
     color: '#6cb8e6',
@@ -249,7 +251,7 @@ export const baggerDark: SyntaxHighlighterStyle = {
     color: colors.string,
   },
   '.language-markdown .token.url-link': {
-    color: '#e6d37a',
+    color: colors.class,
   },
   '.language-markdown .token.list.punctuation': {
     color: '#f4adf4',
@@ -339,13 +341,13 @@ export const baggerDark: SyntaxHighlighterStyle = {
     color: '#8da1b9da',
   },
   '.rainbow-braces .token.token.punctuation.brace-level-1': {
-    color: '#e6d37a',
+    color: colors.class,
   },
   '.rainbow-braces .token.token.punctuation.brace-level-5': {
-    color: '#e6d37a',
+    color: colors.class,
   },
   '.rainbow-braces .token.token.punctuation.brace-level-9': {
-    color: '#e6d37a',
+    color: colors.class,
   },
   '.rainbow-braces .token.token.punctuation.brace-level-2': {
     color: '#f4adf4',
