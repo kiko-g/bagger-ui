@@ -3,7 +3,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { Switch } from '@headlessui/react'
 import type { ComponentCardType } from '@/types'
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -169,66 +168,5 @@ function LinkToGithubButton({ path }: { path: string }) {
       <span>Open on Github</span>
       <GithubIcon className="size-3.5" />
     </Link>
-  )
-}
-
-function ChangeBackgroundButton({ isDarkBackground, toggle }: { isDarkBackground: boolean; toggle: () => void }) {
-  return (
-    <Switch checked={isDarkBackground} onChange={toggle}>
-      <span className="sr-only">Use setting</span>
-      <span
-        className={cn(
-          'flex items-center justify-start gap-1.5 rounded px-3 py-2 text-xs shadow-sm transition disabled:cursor-not-allowed',
-          isDarkBackground
-            ? 'bg-blue-600/80 text-white hover:opacity-80 dark:bg-blue-500/60 dark:hover:opacity-80'
-            : 'bg-white/90 text-zinc-800 hover:opacity-80',
-        )}
-      >
-        {isDarkBackground ? (
-          <>
-            <span className="hidden lg:inline-flex">Dark</span>
-            <MoonIcon className="size-4" />
-          </>
-        ) : (
-          <>
-            <span className="hidden lg:inline-flex">Light</span>
-            <SunIcon className="size-4" />
-          </>
-        )}
-      </span>
-    </Switch>
-  )
-}
-
-function ChangeViewModeButtons({
-  isCodeVisible,
-  toggleShowCode,
-  toggleShowPreview,
-}: {
-  isCodeVisible: boolean
-  toggleShowCode: () => void
-  toggleShowPreview: () => void
-}) {
-  return (
-    <div className="flex items-center justify-start gap-1 rounded-full border-0 bg-black/70 px-1 py-1 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-black/50">
-      <button
-        onClick={toggleShowPreview}
-        className={cn(
-          'inline-flex rounded-full px-2.5 py-0.5 text-2xs',
-          isCodeVisible ? 'hover:bg-white/20 dark:hover:bg-white/10' : 'bg-white/30 dark:bg-white/20',
-        )}
-      >
-        Preview
-      </button>
-      <button
-        onClick={toggleShowCode}
-        className={cn(
-          'inline-flex rounded-full px-2.5 py-0.5 text-2xs',
-          isCodeVisible ? 'bg-white/30 dark:bg-white/20' : 'hover:bg-white/10',
-        )}
-      >
-        Code
-      </button>
-    </div>
   )
 }
