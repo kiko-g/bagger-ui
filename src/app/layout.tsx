@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
-  keywords: ['Next.js', 'React', 'Typescript', 'Tailwind CSS', 'Headless UI'],
+  keywords: ['Next.js', 'React', 'Typescript', 'Tailwind CSS', 'Shadcn UI'],
   authors: [
     {
       name: 'Francisco Gonçalves',
