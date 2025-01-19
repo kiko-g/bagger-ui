@@ -1,7 +1,6 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
 
-import { Button } from '@/components/ui/button'
 import { ButtonSample } from '@/components/showcase/application-ui/buttons/sample/ButtonSample'
 
 import { ButtonDefault } from '@/components/showcase/application-ui/buttons/ButtonDefault'

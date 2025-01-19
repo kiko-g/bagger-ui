@@ -14,7 +14,7 @@ rounded-md text-sm font-medium border border-transparent transition-colors disab
         'default-inverted': `bg-white text-zinc-900 shadow hover:bg-zinc-200 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700`,
         secondary: `bg-indigo-600 text-white shadow-sm hover:bg-indigo-600/90 dark:bg-indigo-700 dark:hover:bg-indigo-700/90 dark:text-white`,
         glass: `bg-zinc-700/10 text-zinc-800 hover:bg-zinc-700/20 dark:bg-zinc-100/5 dark:text-zinc-200 dark:hover:bg-zinc-100/10`,
-        dangerous: `bg-rose-600 text-white shadow-sm hover:bg-rose-600/90 dark:bg-rose-700 dark:hover:bg-rose-700/90 dark:text-white`,
+        destructive: `bg-rose-600 text-white shadow-sm hover:bg-rose-600/90 dark:bg-rose-700 dark:hover:bg-rose-700/90 dark:text-white`,
         orange: `bg-orange-600 text-white shadow-sm hover:bg-orange-600/90 dark:bg-orange-700 dark:hover:bg-orange-700/90 dark:text-white`,
         success: `bg-emerald-600 text-white shadow-sm hover:bg-emerald-600/90 dark:bg-emerald-700 dark:hover:bg-emerald-700/90 dark:text-white`,
         outline: `border-zinc-300 bg-transparent shadow-sm hover:bg-zinc-100 dark:bg-zinc-800/10 dark:border-zinc-200/10 dark:hover:bg-zinc-800`,

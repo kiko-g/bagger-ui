@@ -1,6 +1,14 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { Badge } from '@/components/showcase/application-ui/badges/Badge'
+
+import { BadgeSample } from '@/components/showcase/application-ui/badges/sample/BadgeSample'
+
+import { BadgeDefault } from '@/components/showcase/application-ui/badges/BadgeDefault'
+import { BadgeSecondary } from '@/components/showcase/application-ui/badges/BadgeSecondary'
+import { BadgeStatus } from '@/components/showcase/application-ui/badges/BadgeStatus'
+import { BadgeOutline } from '@/components/showcase/application-ui/badges/BadgeOutline'
+
+import { BadgeSituation } from '@/components/showcase/application-ui/badges/combos/BadgeSituation'
 
 export default function Badges() {
   const base = 'application-ui/badges'
@@ -8,63 +16,41 @@ export default function Badges() {
   return (
     <ComponentTypePage
       title="Badges"
+      sample={{
+        nodes: [
+          {
+            item: 'Setup',
+            component: <BadgeSample />,
+          },
+        ],
+      }}
       examples={[
         {
-          name: 'Badge',
-          path: `${base}/Badge.tsx`,
-          component: (
-            <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-3xl">
-              <Badge outline size="sm" rounded="md" variant="pink">
-                New
-              </Badge>
-            </div>
-          ),
+          name: 'Default',
+          path: `${base}/BadgeDefault.tsx`,
+          component: <BadgeDefault />,
         },
         {
-          name: 'Outline with Type',
-          path: null,
-          component: (
-            <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-3xl">
-              <Badge variant="error">Error</Badge>
-              <Badge variant="warning">Warning</Badge>
-            </div>
-          ),
+          name: 'Secondary',
+          path: `${base}/BadgeSecondary.tsx`,
+          component: <BadgeSecondary />,
         },
         {
-          name: 'Success',
-          path: null,
-          component: (
-            <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
-              <Badge variant="success">Success</Badge>
-              <Badge variant="success" outline>
-                Success
-              </Badge>
-            </div>
-          ),
+          name: 'Status',
+          path: `${base}/BadgeStatus.tsx`,
+          component: <BadgeStatus />,
         },
         {
-          name: 'Error',
-          path: null,
-          component: (
-            <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
-              <Badge variant="error">Error</Badge>
-              <Badge variant="error" outline>
-                Error
-              </Badge>
-            </div>
-          ),
+          name: 'Outline',
+          path: `${base}/BadgeOutline.tsx`,
+          component: <BadgeOutline />,
         },
+      ]}
+      combos={[
         {
-          name: 'Beta',
-          path: null,
-          component: (
-            <div className="flex w-full max-w-full flex-row flex-wrap items-center justify-center gap-3 xl:max-w-xl">
-              <Badge size="sm">Beta</Badge>
-              <Badge size="sm" rounded="full">
-                Beta
-              </Badge>
-            </div>
-          ),
+          name: 'Situation',
+          path: `${base}/combos/BadgeSituation.tsx`,
+          component: <BadgeSituation />,
         },
       ]}
     />

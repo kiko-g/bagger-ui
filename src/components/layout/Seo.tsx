@@ -1,11 +1,12 @@
 'use client'
 
+import { siteConfig } from '@/utils/config'
 import Head from 'next/head'
 
 export function Seo({ title }: { title: string }) {
-  const siteTitle = `BaggerUI`
-  const author = `kikogoncalves`
-  const description = `Reusable UI Components with React, Typescript, and TailwindCSS.`
+  const siteTitle = siteConfig.name
+  const author = siteConfig.author
+  const description = siteConfig.description
 
   const meta = [
     {
