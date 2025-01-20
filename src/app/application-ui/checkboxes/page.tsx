@@ -22,7 +22,7 @@ export default function Inputs() {
       examples={[
         {
           name: 'Basic with Label',
-          path: `${base}/Checkbox.tsx`,
+          path: `${base}/CheckboxDefault.tsx`,
           component: <CheckboxDefault />,
         },
         {

@@ -18,7 +18,7 @@ export function ButtonLoading() {
       if (!response.ok) console.warn(`Example Button Loading: HTTP error! [Status ${response.status}]`)
 
       const data = await response.json()
-      console.debug(data)
+      console.info(data)
     } catch (err) {
       console.warn(`Example Button Loading: HTTP error! [Status ${err}]`)
     } finally {

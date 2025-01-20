@@ -23,7 +23,6 @@ export function CheckboxParent() {
       setParentChecked(false)
       setIndeterminate(false)
     } else {
-      console.debug('indeterminate')
       setParentChecked(false)
       setIndeterminate(true)
     }

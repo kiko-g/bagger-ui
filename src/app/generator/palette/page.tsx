@@ -153,7 +153,7 @@ export default function Generator() {
               {/* Dropzone */}
               <DropzoneArea
                 onDrop={() => {
-                  console.debug('dropped')
+                  console.info('dropped')
                 }}
               />
             </div>

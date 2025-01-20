@@ -18,8 +18,6 @@ export async function GET(req: NextRequest) {
     }
   } else {
     try {
-      console.clear()
-      console.debug(process.cwd())
       const filePath = path.join(process.cwd(), 'src/types/index.d.ts')
 
       if (!fs.existsSync(filePath)) {
