@@ -36,6 +36,9 @@ const config: Config = {
     typography: 'typographyStyles',
     extend: {
       colors: {
+        primary: {
+          DEFAULT: '#009689',
+        },
         background: 'var(--background-color)',
         slate: {
           '150': '#eaeef4',

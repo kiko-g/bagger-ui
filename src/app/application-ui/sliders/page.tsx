@@ -1,6 +1,9 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { SliderSimple } from '@/components/showcase/application-ui/sliders'
+
+import { SlidersSample } from '@/components/showcase/application-ui/sliders/sample/SlidersSample'
+
+import { SliderBasic } from '@/components/showcase/application-ui/sliders/SliderBasic'
 
 export default function Sliders() {
   const base = 'application-ui/sliders'
@@ -8,11 +11,19 @@ export default function Sliders() {
   return (
     <ComponentTypePage
       title="Sliders"
+      sample={{
+        nodes: [
+          {
+            item: 'Setup',
+            component: <SlidersSample />,
+          },
+        ],
+      }}
       examples={[
         {
-          name: 'Simple',
-          path: `${base}/SliderSimple.tsx`,
-          component: <SliderSimple />,
+          name: 'Basic',
+          path: `${base}/SliderBasic.tsx`,
+          component: <SliderBasic />,
         },
       ]}
     />

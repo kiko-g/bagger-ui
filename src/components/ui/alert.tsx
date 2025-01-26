@@ -5,11 +5,11 @@ import { cn } from '@/lib/utils'
 import { X } from 'lucide-react'
 
 const alertVariants = cva(
-  'relative w-full rounded-lg border border-gray-300 p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-gray-950 dark:border-gray-700 dark:[&>svg]:text-gray-50',
+  'relative w-full rounded-lg border border-zinc-300 p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-zinc-950 dark:border-zinc-700 dark:[&>svg]:text-zinc-50',
   {
     variants: {
       variant: {
-        default: 'bg-gray-400/5 text-gray-950 dark:bg-gray-700/20 dark:text-gray-50',
+        default: 'bg-zinc-400/5 text-zinc-950 dark:bg-zinc-700/20 dark:text-zinc-50',
         destructive:
           'border-rose-600/50 bg-rose-600/5 text-rose-600 dark:border-rose-600 [&>svg]:text-rose-600 dark:border-rose-900/50 dark:bg-rose-900/20 dark:text-rose-50 dark:dark:border-rose-900 dark:[&>svg]:text-rose-50',
         info: 'border-sky-600/50 bg-sky-600/5 text-sky-600 dark:border-sky-600 [&>svg]:text-sky-600 dark:border-sky-900/50 dark:bg-sky-900/20 dark:text-sky-50 dark:dark:border-sky-900 dark:[&>svg]:text-sky-50',
