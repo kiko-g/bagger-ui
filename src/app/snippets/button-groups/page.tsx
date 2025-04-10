@@ -5,10 +5,10 @@ import {
   ButtonGroupJoinedVertical,
   ButtonGroupSimple,
   ButtonGroupSplit,
-} from '@/components/showcase/building-blocks/button-groups'
+} from '@/components/showcase/snippets/button-groups'
 
 export default function ButtonGroups() {
-  const base = 'building-blocks/button-groups'
+  const base = 'snippets/button-groups'
 
   return (
     <ComponentTypePage

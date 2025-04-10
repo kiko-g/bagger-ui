@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { ReactIcon, TailwindIcon, TypescriptIcon, ShadCnIcon } from '@/components/icons'
-import { applicationUiNav, eCommerceNav, marketingNav, Section } from '@/utils/data'
+import { applicationUiNav, snippetsNav, Section } from '@/utils/data'
 
 import { Layout } from '@/components/Layout'
 import { SectionCard } from '@/components/SectionCard'
@@ -24,8 +24,7 @@ export default function Home() {
         </p>
 
         <ComponentsSection items={applicationUiNav} title="Components" />
-        <ComponentsSection items={eCommerceNav} title="eCommerce" />
-        <ComponentsSection items={marketingNav} title="Marketing" />
+        <ComponentsSection items={snippetsNav} title="Snippets" />
       </div>
     </Layout>
   )

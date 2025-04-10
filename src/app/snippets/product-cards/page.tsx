@@ -1,9 +1,9 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { ProductCardsSimple } from '@/components/showcase/ecommerce/product-cards'
+import { ProductCardsSimple } from '@/components/showcase/snippets/product-cards'
 
 export default function ProductLists() {
-  const base = 'ecommerce/product-cards'
+  const base = 'snippets/product-cards'
 
   return (
     <ComponentTypePage

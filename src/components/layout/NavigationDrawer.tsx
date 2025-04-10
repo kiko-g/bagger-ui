@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { applicationUiNav, generalNav, generatorNav, marketingNav, eCommerceNav, buildingBlocksNav } from '@/utils/data'
+import { applicationUiNav, generalNav, generatorNav, snippetsNav } from '@/utils/data'
 
 import { ScrollArea } from '@/components/ui/scroll-area'
 import {
@@ -20,7 +20,7 @@ export function NavigationDrawer({ location }: { location: string }) {
   const generalNavFiltered = generalNav.filter((item) => item.shown)
   const generatorNavFiltered = generatorNav.filter((item) => item.shown)
   const applicationUiNavFiltered = applicationUiNav.filter((item) => item.shown)
-  const buildingBlocksNavFiltered = buildingBlocksNav.filter((item) => item.shown)
+  const snippetsNavFiltered = snippetsNav.filter((item) => item.shown)
 
   return (
     <Drawer>
@@ -79,11 +79,11 @@ export function NavigationDrawer({ location }: { location: string }) {
             </>
           )}
 
-          {buildingBlocksNavFiltered.length > 0 && (
+          {snippetsNavFiltered.length > 0 && (
             <>
-              <p className="mb-2 ml-4 text-lg font-semibold">Building Blocks</p>
+              <p className="mb-2 ml-4 text-lg font-semibold">Snippets</p>
               <ul className="flex w-full flex-col gap-0.5 pl-0">
-                {buildingBlocksNavFiltered.map((item, itemIdx) => {
+                {snippetsNavFiltered.map((item, itemIdx) => {
                   const isActive = location.toLowerCase() === item.name.toLowerCase()
                   return (
                     <li key={`nav-${itemIdx}`}>

@@ -240,10 +240,10 @@ export const applicationUiNav: Section[] = [
   },
 ].sort((a, b) => a.name.localeCompare(b.name))
 
-export const buildingBlocksNav: Section[] = [
+export const snippetsNav: Section[] = [
   {
     name: 'Button Groups',
-    href: '/building-blocks/button-groups',
+    href: '/snippets/button-groups',
     description: 'Sections with multiple buttons with different layouts and functionalities.',
     pattern: {
       y: 22,
@@ -252,12 +252,9 @@ export const buildingBlocksNav: Section[] = [
     image: Footage.ButtonGroups,
     shown: true,
   },
-]
-
-export const marketingNav: Section[] = [
   {
     name: 'Hero Sections',
-    href: '/marketing/hero',
+    href: '/snippets/hero',
     description: 'Opening sections to amaze and impress the user.',
     pattern: {
       y: 16,
@@ -271,7 +268,7 @@ export const marketingNav: Section[] = [
   },
   {
     name: 'CTA Sections',
-    href: '/marketing/ctas',
+    href: '/snippets/ctas',
     description: 'Diversely styled sections to appeal the user to click on them.',
     pattern: {
       y: -6,
@@ -285,7 +282,7 @@ export const marketingNav: Section[] = [
   },
   {
     name: 'KPI Widgets',
-    href: '/marketing/kpi',
+    href: '/snippets/kpi',
     description: 'Key Performance Indicators to show the user the most important metrics.',
     pattern: {
       y: 32,
@@ -297,12 +294,9 @@ export const marketingNav: Section[] = [
     image: Footage.KPI,
     shown: true,
   },
-].sort((a, b) => a.name.localeCompare(b.name))
-
-export const eCommerceNav: Section[] = [
   {
     name: 'Product Overviews',
-    href: '/ecommerce/product-overviews',
+    href: '/snippets/product-overviews',
     description: 'Product overview page components',
     pattern: {
       y: 16,
@@ -315,7 +309,7 @@ export const eCommerceNav: Section[] = [
   },
   {
     name: 'Product Cards',
-    href: '/ecommerce/product-cards',
+    href: '/snippets/product-cards',
     description: 'Product list page components',
     pattern: {
       y: -6,

@@ -1,9 +1,9 @@
 import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { HeroGridNav } from '@/components/showcase/marketing/hero'
+import { HeroGridNav } from '@/components/showcase/snippets/hero'
 
 export default function Hero() {
-  const base = 'marketing/hero'
+  const base = 'snippets/hero'
 
   return (
     <ComponentTypePage
