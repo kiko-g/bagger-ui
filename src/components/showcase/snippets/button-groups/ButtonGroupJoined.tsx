@@ -1,25 +1,24 @@
 'use client'
 
 import React from 'react'
+import { Button } from '@/components/ui/button'
+import { PlusIcon, MinusIcon, ArrowUpRightIcon } from 'lucide-react'
 
 export function ButtonGroupJoined() {
   return (
-    <div className="flex items-center">
-      <button className="rounded-l bg-zinc-600 px-3.5 py-2.5 text-sm font-medium text-white transition hover:bg-zinc-700 focus:ring disabled:cursor-not-allowed disabled:opacity-25 dark:bg-slate-500/30 dark:hover:bg-slate-700">
-        Button A
-      </button>
-
-      <button className="bg-zinc-600 px-3.5 py-2.5 text-sm font-medium text-white transition hover:bg-zinc-700 focus:ring disabled:cursor-not-allowed disabled:opacity-25 dark:bg-slate-500/30 dark:hover:bg-slate-700">
-        Button B
-      </button>
-
-      <button className="bg-zinc-600 px-3.5 py-2.5 text-sm font-medium text-white transition hover:bg-zinc-700 focus:ring disabled:cursor-not-allowed disabled:opacity-25 dark:bg-slate-500/30 dark:hover:bg-slate-700">
-        Button C
-      </button>
-
-      <button className="rounded-r bg-zinc-600 px-3.5 py-2.5 text-sm font-medium text-white transition hover:bg-zinc-700 focus:ring disabled:cursor-not-allowed disabled:opacity-25 dark:bg-slate-500/30 dark:hover:bg-slate-700">
-        Button D
-      </button>
+    <div className="inline-flex rounded-md shadow-sm" role="group">
+      <Button variant="outline" className="rounded-r-none">
+        <PlusIcon className="h-4 w-4" />
+        Stake
+      </Button>
+      <Button variant="outline" className="rounded-none border-x-0">
+        <MinusIcon className="h-4 w-4" />
+        Unstake
+      </Button>
+      <Button variant="outline" className="rounded-l-none">
+        <ArrowUpRightIcon className="h-4 w-4" />
+        Claim
+      </Button>
     </div>
   )
 }

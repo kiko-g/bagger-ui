@@ -9,8 +9,8 @@ import { fontFamily } from 'tailwindcss/defaultTheme'
 import typographyStyles from './typography'
 
 const config: Config = {
-  content: ['./src/**/*.{js,mjs,jsx,ts,tsx,mdx}'],
   darkMode: 'class',
+  content: ['./src/**/*.{js,mjs,jsx,ts,tsx,mdx}'],
   theme: {
     fontSize: {
       '3xs': ['0.60rem', { lineHeight: '0.75rem' }],
@@ -37,9 +37,45 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#009689',
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
         },
-        background: 'var(--background-color)',
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        card: {
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)',
+        },
+        popover: {
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)',
+        },
+        secondary: {
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
+        },
+        muted: {
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
+        },
+        accent: {
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)',
+        },
+        destructive: {
+          DEFAULT: 'var(--destructive)',
+          foreground: 'var(--destructive-foreground)',
+        },
+        border: 'var(--border)',
+        input: 'var(--input)',
+        ring: 'var(--ring)',
+        chart: {
+          '1': 'var(--chart-1)',
+          '2': 'var(--chart-2)',
+          '3': 'var(--chart-3)',
+          '4': 'var(--chart-4)',
+          '5': 'var(--chart-5)',
+        },
         slate: {
           '150': '#eaeef4',
         },
@@ -52,6 +88,7 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+        xs: 'calc(var(--radius) - 6px)',
       },
       boxShadow: {
         glow: '0 0 4px rgb(0 0 0 / 0.1)',
@@ -69,7 +106,42 @@ const config: Config = {
         '2.5': '0.025',
         '7.5': '0.075',
       },
+      animation: {
+        'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
+        'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
+        'fade-in': 'fade-in 1s ease-in-out forwards',
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-out': 'fade-out 0.3s ease-out',
+      },
       keyframes: {
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '1',
+          },
+        },
+        'shimmer-slide': {
+          to: {
+            transform: 'translate(calc(100cqw - 100%), 0)',
+          },
+        },
+        'spin-around': {
+          '0%': {
+            transform: 'translateZ(0) rotate(0)',
+          },
+          '15%, 35%': {
+            transform: 'translateZ(0) rotate(90deg)',
+          },
+          '65%, 85%': {
+            transform: 'translateZ(0) rotate(270deg)',
+          },
+          '100%': {
+            transform: 'translateZ(0) rotate(360deg)',
+          },
+        },
         'accordion-down': {
           from: {
             height: '0',
@@ -87,10 +159,13 @@ const config: Config = {
           },
         },
       },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-        'fade-out': 'fade-out 0.3s ease-out',
+      fontSize: {
+        '2xs': [
+          '0.65rem',
+          {
+            lineHeight: '0.75rem',
+          },
+        ],
       },
     },
   },

@@ -2,7 +2,8 @@ import React from 'react'
 import { ComponentTypePage } from '@/components/ComponentTypePage'
 import {
   ButtonGroupJoined,
-  ButtonGroupJoinedVertical,
+  ButtonGroupJoinedToggle,
+  ButtonGroupSegmentedControl,
   ButtonGroupSimple,
   ButtonGroupSplit,
 } from '@/components/showcase/snippets/button-groups'
@@ -25,14 +26,21 @@ export default function ButtonGroups() {
           component: <ButtonGroupJoined />,
         },
         {
-          name: 'Joined Vertical',
-          path: `${base}/ButtonGroupJoinedVertical.tsx`,
-          component: <ButtonGroupJoinedVertical />,
+          name: 'Joined Toggle',
+          path: `${base}/ButtonGroupJoinedToggle.tsx`,
+          component: <ButtonGroupJoinedToggle />,
         },
         {
           name: 'Split',
           path: `${base}/ButtonGroupSplit.tsx`,
           component: <ButtonGroupSplit />,
+        },
+      ]}
+      combos={[
+        {
+          name: 'Segmented Control',
+          path: `${base}/ButtonGroupSegmentedControl.tsx`,
+          component: <ButtonGroupSegmentedControl />,
         },
       ]}
     />
