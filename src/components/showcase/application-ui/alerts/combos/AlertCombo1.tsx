@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { BadgeEuroIcon, CheckCircleIcon, InfoIcon, ShieldOffIcon, TriangleAlertIcon } from 'lucide-react'
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { BadgeEuroIcon, CheckCircleIcon, InfoIcon, ShieldOffIcon, TriangleAlertIcon } from "lucide-react"
 
 export function AlertCombo1() {
   return (

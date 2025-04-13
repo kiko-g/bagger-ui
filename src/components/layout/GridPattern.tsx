@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { useId } from "react"
 
 export function GridPattern({
   width,
@@ -7,7 +7,7 @@ export function GridPattern({
   y,
   squares,
   ...props
-}: React.ComponentPropsWithoutRef<'svg'> & {
+}: React.ComponentPropsWithoutRef<"svg"> & {
   width: number
   height: number
   x: string | number

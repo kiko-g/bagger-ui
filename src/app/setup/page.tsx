@@ -1,27 +1,27 @@
-import React from 'react'
-import Link from 'next/link'
-import type { QuickNavigation } from '@/types'
+import React from "react"
+import Link from "next/link"
+import type { QuickNavigation } from "@/types"
 
-import { CodeShowcaseFromAPI } from '@/components/CodeShowcaseFromAPI'
-import { Layout } from '@/components/Layout'
-import { Button } from '@/components/ui/button'
-import { ShadCnIcon } from '@/components/icons'
+import { CodeShowcaseFromAPI } from "@/components/CodeShowcaseFromAPI"
+import { Layout } from "@/components/Layout"
+import { Button } from "@/components/ui/button"
+import { ShadCnIcon } from "@/components/icons"
 
-import { ExternalLink } from 'lucide-react'
+import { ExternalLink } from "lucide-react"
 
 export default function Config() {
   const quickNav: QuickNavigation = [
     {
-      name: 'Getting Started',
-      href: '#getting-started',
+      name: "Getting Started",
+      href: "#getting-started",
     },
     {
-      name: 'Tailwind Config',
-      href: '#tailwind-config',
+      name: "Tailwind Config",
+      href: "#tailwind-config",
     },
     {
-      name: 'Types',
-      href: '#types',
+      name: "Types",
+      href: "#types",
     },
   ]
 
@@ -70,7 +70,7 @@ export default function Config() {
       >
         <h2 className="mb-3 text-lg font-semibold tracking-tighter lg:text-3xl">Tailwind Config File</h2>
         <p className="mb-3 max-w-3xl">
-          This site uses a custom Tailwind config that extends the default Tailwind config. Copy our config to your{' '}
+          This site uses a custom Tailwind config that extends the default Tailwind config. Copy our config to your{" "}
           <span className="font-semibold text-teal-600 dark:text-teal-500">tailwind.config.js</span> file that should be
           in the root of your project.
         </p>

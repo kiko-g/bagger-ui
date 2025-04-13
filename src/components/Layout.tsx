@@ -1,17 +1,17 @@
-'use client'
+"use client"
 
-import React from 'react'
-import { cn } from '@/lib/utils'
-import type { NavigationLevel } from '@/types'
+import React from "react"
+import { cn } from "@/lib/utils"
+import type { NavigationLevel } from "@/types"
 
-import { Seo } from '@/components/layout/Seo'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
-import { Navigation } from '@/components/layout/Navigation'
-import { QuickNavSidebar } from '@/components/layout/QuickNavSidebar'
-import { SupportBadge } from '@/components/layout/support/Badge'
-import { HeroPattern } from '@/components/layout/HeroPattern'
-import { ThemeSupportNotification } from '@/components/layout/support/ThemeSupportNotification'
+import { Seo } from "@/components/layout/Seo"
+import { Header } from "@/components/layout/Header"
+import { Footer } from "@/components/layout/Footer"
+import { Navigation } from "@/components/layout/Navigation"
+import { QuickNavSidebar } from "@/components/layout/QuickNavSidebar"
+import { SupportBadge } from "@/components/layout/support/Badge"
+import { HeroPattern } from "@/components/layout/HeroPattern"
+import { ThemeSupportNotification } from "@/components/layout/support/ThemeSupportNotification"
 
 type Props = {
   children: React.ReactNode
@@ -20,7 +20,7 @@ type Props = {
   quickNav?: NavigationLevel[]
 }
 
-export function Layout({ children, location = 'Unknown', sidebar = false, quickNav }: Props) {
+export function Layout({ children, location = "Unknown", sidebar = false, quickNav }: Props) {
   return (
     <>
       <Seo title={location} />

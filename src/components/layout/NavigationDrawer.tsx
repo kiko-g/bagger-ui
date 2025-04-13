@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import Link from 'next/link'
-import { cn } from '@/lib/utils'
-import { applicationUiNav, generalNav, generatorNav, snippetsNav } from '@/utils/data'
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+import { applicationUiNav, generalNav, generatorNav, snippetsNav } from "@/utils/data"
 
-import { ScrollArea } from '@/components/ui/scroll-area'
+import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   Drawer,
   DrawerContent,
@@ -12,9 +12,9 @@ import {
   DrawerHeader,
   DrawerTrigger,
   DrawerDescription,
-} from '@/components/ui/drawer'
+} from "@/components/ui/drawer"
 
-import { MenuIcon } from 'lucide-react'
+import { MenuIcon } from "lucide-react"
 
 export function NavigationDrawer({ location }: { location: string }) {
   const generalNavFiltered = generalNav.filter((item) => item.shown)
@@ -106,8 +106,8 @@ function NavItem({ name, href, isActive, isNew }: { name: string; href: string; 
       title={name}
       href={href}
       className={cn(
-        isActive ? 'bg-zinc-100 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100' : 'text-zinc-500 dark:text-zinc-400',
-        'mx-3 flex cursor-pointer items-center justify-start gap-2 rounded-md border-0 px-3 py-2.5 leading-none transition ease-in-out',
+        isActive ? "bg-zinc-100 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100" : "text-zinc-500 dark:text-zinc-400",
+        "mx-3 flex cursor-pointer items-center justify-start gap-2 rounded-md border-0 px-3 py-2.5 leading-none transition ease-in-out",
       )}
     >
       <div className="w-full items-center gap-1.5 pr-4 lg:pr-16">

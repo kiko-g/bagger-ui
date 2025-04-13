@@ -1,11 +1,11 @@
-import '@/styles/globals.css'
-import type { Metadata, Viewport } from 'next'
+import "@/styles/globals.css"
+import type { Metadata, Viewport } from "next"
 
-import { cn } from '@/lib/utils'
-import { siteConfig } from '@/utils/config'
-import { fontMono, fontSans } from '@/lib/fonts'
-import { Analytics } from '@/components/Analytics'
-import { Providers } from './providers'
+import { cn } from "@/lib/utils"
+import { siteConfig } from "@/utils/config"
+import { fontMono, fontSans } from "@/lib/fonts"
+import { Analytics } from "@/components/Analytics"
+import { Providers } from "./providers"
 
 export const metadata: Metadata = {
   title: {
@@ -14,17 +14,17 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
-  keywords: ['Next.js', 'React', 'Typescript', 'Tailwind CSS', 'Shadcn UI'],
+  keywords: ["Next.js", "React", "Typescript", "Tailwind CSS", "Shadcn UI"],
   authors: [
     {
-      name: 'Francisco Gonçalves',
-      url: 'https://kikogoncalves.com',
+      name: "Francisco Gonçalves",
+      url: "https://kikogoncalves.com",
     },
   ],
-  creator: 'Francisco Gonçalves',
+  creator: "Francisco Gonçalves",
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -39,24 +39,24 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: '@kikogoncalves_',
+    creator: "@kikogoncalves_",
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
 }
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: 'black' },
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
 }
 
@@ -68,7 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
-      <body className={cn('min-h-screen bg-background antialiased', fontSans.variable, fontMono.variable)}>
+      <body className={cn("min-h-screen bg-background antialiased", fontSans.variable, fontMono.variable)}>
         <Providers>
           <Analytics />
           {children}

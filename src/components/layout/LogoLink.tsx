@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import Link from 'next/link'
-import { LogoIcon } from '@/components/icons/LogoIcon'
+import Link from "next/link"
+import { LogoIcon } from "@/components/icons/LogoIcon"
 
 export function LogoLink() {
   return (

@@ -1,6 +1,6 @@
-import React, { HTMLAttributes } from 'react'
-import { cn } from '@/lib/utils'
-import { LinkIcon } from 'lucide-react'
+import React, { HTMLAttributes } from "react"
+import { cn } from "@/lib/utils"
+import { LinkIcon } from "lucide-react"
 
 type Props = HTMLAttributes<HTMLHeadingElement> & {
   children: React.ReactNode
@@ -14,9 +14,9 @@ function H1({ children, slideTo, noMargin, withDivider, ...props }: Props) {
     <h1
       {...props}
       className={cn(
-        noMargin ? 'mb-0' : 'mb-4',
-        withDivider && 'border-b border-zinc-900/10 pb-3 dark:border-white/10',
-        'flex flex-wrap items-center text-xl font-bold tracking-tighter md:text-2xl lg:text-3xl lg:tracking-tight xl:text-4xl 2xl:text-5xl',
+        noMargin ? "mb-0" : "mb-4",
+        withDivider && "border-b border-zinc-900/10 pb-3 dark:border-white/10",
+        "flex flex-wrap items-center text-xl font-bold tracking-tighter md:text-2xl lg:text-3xl lg:tracking-tight xl:text-4xl 2xl:text-5xl",
       )}
     >
       {children}
@@ -40,9 +40,9 @@ function H2({ children, slideTo, noMargin, withDivider, ...props }: Props) {
     <h2
       {...props}
       className={cn(
-        noMargin ? 'mb-0' : 'mb-3',
-        withDivider && 'border-b border-zinc-900/10 pb-2.5 dark:border-white/10',
-        'flex flex-wrap items-center text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl',
+        noMargin ? "mb-0" : "mb-3",
+        withDivider && "border-b border-zinc-900/10 pb-2.5 dark:border-white/10",
+        "flex flex-wrap items-center text-lg font-bold tracking-tighter md:text-xl lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl",
       )}
     >
       {children}
@@ -66,9 +66,9 @@ function H3({ children, slideTo, noMargin, withDivider, ...props }: Props) {
     <h3
       {...props}
       className={cn(
-        noMargin ? 'mb-0' : 'mb-2.5',
-        withDivider && 'border-b border-zinc-900/10 pb-2 dark:border-white/10',
-        'flex flex-wrap items-center text-base font-bold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl',
+        noMargin ? "mb-0" : "mb-2.5",
+        withDivider && "border-b border-zinc-900/10 pb-2 dark:border-white/10",
+        "flex flex-wrap items-center text-base font-bold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl",
       )}
     >
       {children}
@@ -92,9 +92,9 @@ function H4({ children, slideTo, noMargin, withDivider, ...props }: Props) {
     <h4
       {...props}
       className={cn(
-        noMargin ? 'mb-0' : 'mb-2',
-        withDivider && 'border-b border-zinc-900/10 pb-1.5 dark:border-white/10',
-        'flex flex-wrap items-center text-sm font-bold tracking-tighter md:text-base lg:text-lg lg:tracking-tight xl:text-xl 2xl:text-2xl',
+        noMargin ? "mb-0" : "mb-2",
+        withDivider && "border-b border-zinc-900/10 pb-1.5 dark:border-white/10",
+        "flex flex-wrap items-center text-sm font-bold tracking-tighter md:text-base lg:text-lg lg:tracking-tight xl:text-xl 2xl:text-2xl",
       )}
     >
       {children}
@@ -118,9 +118,9 @@ function H5({ children, slideTo, noMargin, withDivider, ...props }: Props) {
     <h5
       {...props}
       className={cn(
-        noMargin ? 'mb-0' : 'mb-1.5',
-        withDivider && 'border-b border-zinc-900/10 pb-1 dark:border-white/10',
-        'flex flex-wrap items-center text-sm font-bold tracking-tighter md:text-sm lg:text-base lg:tracking-tight xl:text-lg 2xl:text-xl',
+        noMargin ? "mb-0" : "mb-1.5",
+        withDivider && "border-b border-zinc-900/10 pb-1 dark:border-white/10",
+        "flex flex-wrap items-center text-sm font-bold tracking-tighter md:text-sm lg:text-base lg:tracking-tight xl:text-lg 2xl:text-xl",
       )}
     >
       {children}
@@ -144,9 +144,9 @@ function H6({ children, slideTo, noMargin, withDivider, ...props }: Props) {
     <h6
       {...props}
       className={cn(
-        noMargin ? 'mb-0' : 'mb-1',
-        withDivider && 'border-b border-zinc-900/10 pb-0.5 dark:border-white/10',
-        'flex flex-wrap items-center text-xs font-bold tracking-tighter md:text-sm lg:text-base lg:tracking-tight xl:text-lg 2xl:text-xl',
+        noMargin ? "mb-0" : "mb-1",
+        withDivider && "border-b border-zinc-900/10 pb-0.5 dark:border-white/10",
+        "flex flex-wrap items-center text-xs font-bold tracking-tighter md:text-sm lg:text-base lg:tracking-tight xl:text-lg 2xl:text-xl",
       )}
     >
       {children}

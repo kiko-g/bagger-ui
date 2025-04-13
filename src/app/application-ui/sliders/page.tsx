@@ -1,12 +1,12 @@
-import React from 'react'
-import { ComponentTypePage } from '@/components/ComponentTypePage'
+import React from "react"
+import { ComponentTypePage } from "@/components/ComponentTypePage"
 
-import { SlidersSample } from '@/components/showcase/application-ui/sliders/sample/SlidersSample'
+import { SlidersSample } from "@/components/showcase/application-ui/sliders/sample/SlidersSample"
 
-import { SliderBasic } from '@/components/showcase/application-ui/sliders/SliderBasic'
+import { SliderBasic } from "@/components/showcase/application-ui/sliders/SliderBasic"
 
 export default function Sliders() {
-  const base = 'application-ui/sliders'
+  const base = "application-ui/sliders"
 
   return (
     <ComponentTypePage
@@ -14,14 +14,14 @@ export default function Sliders() {
       sample={{
         nodes: [
           {
-            item: 'Setup',
+            item: "Setup",
             component: <SlidersSample />,
           },
         ],
       }}
       examples={[
         {
-          name: 'Basic',
+          name: "Basic",
           path: `${base}/SliderBasic.tsx`,
           component: <SliderBasic />,
         },

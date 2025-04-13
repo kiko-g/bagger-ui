@@ -1,31 +1,31 @@
-'use client'
+"use client"
 
-import React from 'react'
-import { Button } from '@/components/ui/button'
+import React from "react"
+import { Button } from "@/components/ui/button"
 
 export function ButtonGroupJoinedToggle() {
-  const [basicSelected, setBasicSelected] = React.useState('day')
+  const [basicSelected, setBasicSelected] = React.useState("day")
 
   return (
     <div className="inline-flex rounded-md shadow-sm" role="group">
       <Button
-        variant={basicSelected === 'day' ? 'default' : 'outline'}
+        variant={basicSelected === "day" ? "default" : "outline"}
         className="rounded-r-none"
-        onClick={() => setBasicSelected('day')}
+        onClick={() => setBasicSelected("day")}
       >
         Day
       </Button>
       <Button
-        variant={basicSelected === 'week' ? 'default' : 'outline'}
+        variant={basicSelected === "week" ? "default" : "outline"}
         className="rounded-none border-x-0"
-        onClick={() => setBasicSelected('week')}
+        onClick={() => setBasicSelected("week")}
       >
         Week
       </Button>
       <Button
-        variant={basicSelected === 'month' ? 'default' : 'outline'}
+        variant={basicSelected === "month" ? "default" : "outline"}
         className="rounded-l-none"
-        onClick={() => setBasicSelected('month')}
+        onClick={() => setBasicSelected("month")}
       >
         Month
       </Button>

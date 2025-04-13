@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import Link from 'next/link'
-import { QuickNavigation } from '@/types'
+import Link from "next/link"
+import { QuickNavigation } from "@/types"
 
 export function QuickNavSidebar({ navigation }: { navigation?: QuickNavigation }) {
   if (!navigation) return null
@@ -11,7 +11,7 @@ export function QuickNavSidebar({ navigation }: { navigation?: QuickNavigation }
       <h4 className="mb-4 text-xl font-semibold">On this page</h4>
       <ul className="flex w-full flex-col gap-2">
         {navigation.map((level, levelIdx) => {
-          if ('href' in level)
+          if ("href" in level)
             return (
               <li key={`nav-single-${levelIdx}`}>
                 <a href={level.href} className="text-sm font-medium hover:underline">

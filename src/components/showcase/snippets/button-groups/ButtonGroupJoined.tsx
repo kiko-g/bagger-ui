@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import React from 'react'
-import { Button } from '@/components/ui/button'
-import { PlusIcon, MinusIcon, ArrowUpRightIcon } from 'lucide-react'
+import React from "react"
+import { Button } from "@/components/ui/button"
+import { PlusIcon, MinusIcon, ArrowUpRightIcon } from "lucide-react"
 
 export function ButtonGroupJoined() {
   return (

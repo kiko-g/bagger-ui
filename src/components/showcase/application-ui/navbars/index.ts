@@ -1,3 +1,3 @@
-import { NavbarSimple } from './NavbarSimple'
+import { NavbarSimple } from "./NavbarSimple"
 
 export { NavbarSimple }

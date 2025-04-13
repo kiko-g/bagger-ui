@@ -1,12 +1,12 @@
-import React from 'react'
-import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { CheckboxSample } from '@/components/showcase/application-ui/checkboxes/sample/CheckboxSample'
+import React from "react"
+import { ComponentTypePage } from "@/components/ComponentTypePage"
+import { CheckboxSample } from "@/components/showcase/application-ui/checkboxes/sample/CheckboxSample"
 
-import { CheckboxDefault } from '@/components/showcase/application-ui/checkboxes/CheckboxDefault'
-import { CheckboxParent } from '@/components/showcase/application-ui/checkboxes/CheckboxParent'
+import { CheckboxDefault } from "@/components/showcase/application-ui/checkboxes/CheckboxDefault"
+import { CheckboxParent } from "@/components/showcase/application-ui/checkboxes/CheckboxParent"
 
 export default function Inputs() {
-  const base = 'application-ui/checkboxes'
+  const base = "application-ui/checkboxes"
 
   return (
     <ComponentTypePage
@@ -14,19 +14,19 @@ export default function Inputs() {
       sample={{
         nodes: [
           {
-            item: 'Setup',
+            item: "Setup",
             component: <CheckboxSample />,
           },
         ],
       }}
       examples={[
         {
-          name: 'Basic with Label',
+          name: "Basic with Label",
           path: `${base}/CheckboxDefault.tsx`,
           component: <CheckboxDefault />,
         },
         {
-          name: 'Parent Checkbox with children',
+          name: "Parent Checkbox with children",
           path: `${base}/CheckboxParent.tsx`,
           component: <CheckboxParent />,
         },

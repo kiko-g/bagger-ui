@@ -1,8 +1,8 @@
-import Image from 'next/image'
-import { cn } from '@/lib/utils'
-import { useDropzone } from 'react-dropzone'
-import { useCallback, useState } from 'react'
-import { DownloadIcon } from 'lucide-react'
+import Image from "next/image"
+import { cn } from "@/lib/utils"
+import { useDropzone } from "react-dropzone"
+import { useCallback, useState } from "react"
+import { DownloadIcon } from "lucide-react"
 
 type Props = {
   accept?: Record<string, string[]>
@@ -11,7 +11,7 @@ type Props = {
   className?: string
 }
 
-export function DropzoneArea({ accept = {}, multiple = true, onDrop, className = '' }: Props) {
+export function DropzoneArea({ accept = {}, multiple = true, onDrop, className = "" }: Props) {
   const [src, setSrc] = useState<File | null>(null)
 
   const handleDrop = useCallback(
@@ -31,7 +31,7 @@ export function DropzoneArea({ accept = {}, multiple = true, onDrop, className =
     <div
       {...getRootProps()}
       className={cn(
-        'group flex h-48 w-full cursor-pointer flex-col items-center justify-center rounded border border-dashed border-zinc-900/20 bg-zinc-900/[3%] p-4 text-center transition hover:border-teal-600/80 hover:bg-teal-600/5 dark:border-zinc-200/30 dark:bg-zinc-100/[3%] dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5',
+        "group flex h-48 w-full cursor-pointer flex-col items-center justify-center rounded border border-dashed border-zinc-900/20 bg-zinc-900/[3%] p-4 text-center transition hover:border-teal-600/80 hover:bg-teal-600/5 dark:border-zinc-200/30 dark:bg-zinc-100/[3%] dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5",
         className,
       )}
     >

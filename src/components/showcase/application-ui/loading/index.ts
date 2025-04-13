@@ -1,4 +1,4 @@
-import SkeletonCard from './SkeletonCard'
-import Spinner from './Spinner'
+import SkeletonCard from "./SkeletonCard"
+import Spinner from "./Spinner"
 
 export { SkeletonCard, Spinner }

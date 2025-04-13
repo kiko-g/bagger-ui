@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import { siteConfig } from '@/utils/config'
-import Head from 'next/head'
+import { siteConfig } from "@/utils/config"
+import Head from "next/head"
 
 export function Seo({ title }: { title: string }) {
   const siteTitle = siteConfig.name

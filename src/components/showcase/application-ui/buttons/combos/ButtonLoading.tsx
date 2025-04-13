@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { CarrotIcon, LoaderCircleIcon } from 'lucide-react'
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { CarrotIcon, LoaderCircleIcon } from "lucide-react"
 
 export function ButtonLoading() {
   const [loading, setLoading] = useState(false)
@@ -14,7 +14,7 @@ export function ButtonLoading() {
       const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
       await delay(1000) // this is a simulated delay for showcasing the loading state
 
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+      const response = await fetch("https://jsonplaceholder.typicode.com/posts")
       if (!response.ok) console.warn(`Example Button Loading: HTTP error! [Status ${response.status}]`)
 
       const data = await response.json()

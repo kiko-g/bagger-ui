@@ -1,36 +1,36 @@
-'use client'
+"use client"
 
-import React, { useEffect, useState } from 'react'
-import { cn } from '@/lib/utils'
+import React, { useEffect, useState } from "react"
+import { cn } from "@/lib/utils"
 
-import { Layout } from '@/components/Layout'
-import { possible } from '@/utils/jumpseller'
-import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
-import { Button } from '@/components/ui/button'
+import { Layout } from "@/components/Layout"
+import { possible } from "@/utils/jumpseller"
+import { CodeShowcaseDirect } from "@/components/CodeShowcaseDirect"
+import { Button } from "@/components/ui/button"
 
 export default function JumpsellerStoreIdentity() {
   const [form, setForm] = useState<Record<string, string[]>>({})
   const [isInitialized, setIsInitialized] = useState(false)
 
   useEffect(() => {
-    const storedForm = localStorage.getItem('jumpseller-store-identity-form')
+    const storedForm = localStorage.getItem("jumpseller-store-identity-form")
     if (storedForm) setForm(JSON.parse(storedForm))
     setIsInitialized(true)
   }, [])
 
   useEffect(() => {
-    if (isInitialized) localStorage.setItem('jumpseller-store-identity-form', JSON.stringify(form))
+    if (isInitialized) localStorage.setItem("jumpseller-store-identity-form", JSON.stringify(form))
   }, [form, isInitialized])
 
   return (
     <Layout location="Identity" sidebar>
-      <h2 className={cn('mb-4 text-2xl font-semibold tracking-tighter lg:text-4xl')}>Jumpseller Store Identity</h2>
+      <h2 className={cn("mb-4 text-2xl font-semibold tracking-tighter lg:text-4xl")}>Jumpseller Store Identity</h2>
 
       <p className="mb-2 max-w-3xl text-base">
-        Fill out your store identity form to get started with{' '}
+        Fill out your store identity form to get started with{" "}
         <span className="inline-flex items-center gap-0.5 bg-gradient-to-r from-pink-600 via-teal-600 to-sky-600 bg-clip-text font-semibold text-transparent">
           AI suggestions
-        </span>{' '}
+        </span>{" "}
         in your platform.
       </p>
 
@@ -78,10 +78,10 @@ export default function JumpsellerStoreIdentity() {
                 language="json"
                 code={JSON.stringify(form, null, 2)}
                 options={{
-                  height: '100%',
-                  maxHeight: '100%',
-                  fontSize: '14px',
-                  lineHeight: '1.25',
+                  height: "100%",
+                  maxHeight: "100%",
+                  fontSize: "14px",
+                  lineHeight: "1.25",
                 }}
               />
             </div>
@@ -112,17 +112,17 @@ function RadioBubble({
       onClick={handleClick}
       className={cn(
         checked
-          ? 'border-teal-500 bg-teal-500/10 dark:border-transparent dark:bg-teal-500/20'
-          : 'border-zinc-900/20 bg-white hover:border-teal-500/50 hover:bg-teal-500/5 dark:bg-white/5 dark:hover:border-white/0 dark:hover:bg-white/10',
-        'group flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-sm transition-all duration-200',
+          ? "border-teal-500 bg-teal-500/10 dark:border-transparent dark:bg-teal-500/20"
+          : "border-zinc-900/20 bg-white hover:border-teal-500/50 hover:bg-teal-500/5 dark:bg-white/5 dark:hover:border-white/0 dark:hover:bg-white/10",
+        "group flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-sm transition-all duration-200",
       )}
     >
       <span
         className={cn(
           checked
-            ? 'bg-teal-500 group-hover:bg-teal-500/80'
-            : 'bg-zinc-300 group-hover:bg-teal-500/80 dark:bg-zinc-200/20 dark:group-hover:bg-white',
-          'h-2 w-2 rounded-full transition-all duration-200',
+            ? "bg-teal-500 group-hover:bg-teal-500/80"
+            : "bg-zinc-300 group-hover:bg-teal-500/80 dark:bg-zinc-200/20 dark:group-hover:bg-white",
+          "h-2 w-2 rounded-full transition-all duration-200",
         )}
       />
       <span>{label}</span>

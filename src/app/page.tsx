@@ -1,13 +1,13 @@
-'use client'
+"use client"
 
-import React from 'react'
-import Link from 'next/link'
-import { cn } from '@/lib/utils'
-import { ReactIcon, TailwindIcon, TypescriptIcon, ShadCnIcon } from '@/components/icons'
-import { applicationUiNav, snippetsNav, Section } from '@/utils/data'
+import React from "react"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+import { ReactIcon, TailwindIcon, TypescriptIcon, ShadCnIcon } from "@/components/icons"
+import { applicationUiNav, snippetsNav, Section } from "@/utils/data"
 
-import { Layout } from '@/components/Layout'
-import { SectionCard } from '@/components/SectionCard'
+import { Layout } from "@/components/Layout"
+import { SectionCard } from "@/components/SectionCard"
 
 export default function Home() {
   return (
@@ -16,10 +16,10 @@ export default function Home() {
       <div className="mb-24 w-full">
         <p className="mb-4 max-w-4xl text-sm">
           Start exploring the types of components we have available and visit their individual pages where you can find
-          the web components and their source code. Make sure you have checked out the{' '}
+          the web components and their source code. Make sure you have checked out the{" "}
           <Link href="/setup" className="font-medium text-teal-600 transition hover:underline dark:text-teal-500">
             configuration
-          </Link>{' '}
+          </Link>{" "}
           page. Your setup should be similar, otherwise some components might not work as expected in your project.
         </p>
 
@@ -45,10 +45,10 @@ function ComponentsSection({ items, title }: { items: Section[]; title: string }
 
 function Hero() {
   const technologies = [
-    { TechIcon: ReactIcon, name: 'React', className: 'text-[#149eca]' },
-    { TechIcon: TypescriptIcon, name: 'Typescript', className: 'text-[#3178c6]' },
-    { TechIcon: TailwindIcon, name: 'TailwindCSS', className: 'text-[#38bdf8]' },
-    { TechIcon: ShadCnIcon, name: 'Shadcn', className: 'text-white rounded-sm p-[1px] bg-zinc-950' },
+    { TechIcon: ReactIcon, name: "React", className: "text-[#149eca]" },
+    { TechIcon: TypescriptIcon, name: "Typescript", className: "text-[#3178c6]" },
+    { TechIcon: TailwindIcon, name: "TailwindCSS", className: "text-[#38bdf8]" },
+    { TechIcon: ShadCnIcon, name: "Shadcn", className: "text-white rounded-sm p-[1px] bg-zinc-950" },
   ]
 
   return (
@@ -60,7 +60,7 @@ function Hero() {
       </div>
       <h2
         className={cn(
-          'flex flex-wrap items-center text-lg font-bold tracking-tighter lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl',
+          "flex flex-wrap items-center text-lg font-bold tracking-tighter lg:text-2xl lg:tracking-tight xl:text-3xl 2xl:text-4xl",
         )}
       >
         Reusable React Typescript Components with TailwindCSS and Shadcn

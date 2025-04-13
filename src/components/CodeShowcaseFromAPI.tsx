@@ -1,12 +1,12 @@
-'use client'
+"use client"
 
-import React, { useEffect, useState, useCallback, useMemo } from 'react'
-import { cn } from '@/lib/utils'
+import React, { useEffect, useState, useCallback, useMemo } from "react"
+import { cn } from "@/lib/utils"
 
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
-import { ClipboardIcon, DownloadIcon } from 'lucide-react'
-import { CheckIcon } from 'lucide-react'
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
+import { ClipboardIcon, DownloadIcon } from "lucide-react"
+import { CheckIcon } from "lucide-react"
 
 type Props = {
   route: string
@@ -16,16 +16,16 @@ type Props = {
 }
 
 export function CodeShowcaseFromAPI({ route, language, options, allowDownload }: Props) {
-  const [code, setCode] = useState<string>('')
-  const canCopy = useMemo(() => code !== '', [code])
-  const canDownload = useMemo(() => allowDownload && code !== '', [allowDownload, code])
+  const [code, setCode] = useState<string>("")
+  const canCopy = useMemo(() => code !== "", [code])
+  const canDownload = useMemo(() => allowDownload && code !== "", [allowDownload, code])
 
   useEffect(() => {
     fetch(route)
       .then((response) => response.text())
       .then((data) => setCode(data))
       .catch((error) => {
-        console.error('Failed to fetch component code.')
+        console.error("Failed to fetch component code.")
       })
   }, [route])
 
@@ -60,12 +60,12 @@ export function CodeShowcaseFromAPI({ route, language, options, allowDownload }:
         language={language}
         style={coldarkDark}
         customStyle={{
-          borderRadius: '0.75rem',
-          minHeight: '500px',
-          maxHeight: '1000px',
-          margin: '0',
-          fontSize: '12px',
-          letterSpacing: '-0.025em',
+          borderRadius: "0.75rem",
+          minHeight: "500px",
+          maxHeight: "1000px",
+          margin: "0",
+          fontSize: "12px",
+          letterSpacing: "-0.025em",
           ...options,
         }}
       >
@@ -85,7 +85,7 @@ function CopyCodeButton({ text }: { text: string }) {
         setIsCopied(true)
         setTimeout(() => setIsCopied(false), 4000)
       })
-      .catch(() => console.error('Failed to copy code to clipboard.'))
+      .catch(() => console.error("Failed to copy code to clipboard."))
   }, [text])
 
   return (
@@ -93,11 +93,11 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied}
       className={cn(
-        'flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2.5 py-1 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900',
-        isCopied ? '' : 'hover:bg-zinc-600 dark:hover:bg-zinc-700',
+        "flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2.5 py-1 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900",
+        isCopied ? "" : "hover:bg-zinc-600 dark:hover:bg-zinc-700",
       )}
     >
-      <span className="hidden xl:flex">{isCopied ? 'Copied' : 'Copy'}</span>
+      <span className="hidden xl:flex">{isCopied ? "Copied" : "Copy"}</span>
       {isCopied ? <CheckIcon className="size-4" /> : <ClipboardIcon className="size-4" />}
     </button>
   )
@@ -109,9 +109,9 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
   const download = () => {
     setIsDownloading(true)
     try {
-      const blob = new Blob([text], { type: 'text/plain' })
+      const blob = new Blob([text], { type: "text/plain" })
       const url = URL.createObjectURL(blob)
-      const a = document.createElement('a')
+      const a = document.createElement("a")
       a.href = url
       a.download = filename
       document.body.appendChild(a)
@@ -119,7 +119,7 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
       document.body.removeChild(a)
       URL.revokeObjectURL(url)
     } catch (error) {
-      console.error('Failed to download code.')
+      console.error("Failed to download code.")
     } finally {
       setIsDownloading(false)
     }
@@ -130,8 +130,8 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
       onClick={download}
       disabled={isDownloading}
       className={cn(
-        'flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900',
-        isDownloading ? '' : 'hover:bg-zinc-600 dark:hover:bg-zinc-700',
+        "flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900",
+        isDownloading ? "" : "hover:bg-zinc-600 dark:hover:bg-zinc-700",
       )}
     >
       <span className="hidden xl:flex">Download</span>

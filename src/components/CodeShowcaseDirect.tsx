@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import React, { useState, useCallback, useMemo } from 'react'
-import { cn } from '@/lib/utils'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
-import { CheckIcon, ClipboardIcon, DownloadIcon } from 'lucide-react'
+import React, { useState, useCallback, useMemo } from "react"
+import { cn } from "@/lib/utils"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
+import { CheckIcon, ClipboardIcon, DownloadIcon } from "lucide-react"
 
 type Props = {
   code: string
@@ -14,8 +14,8 @@ type Props = {
 }
 
 export function CodeShowcaseDirect({ code, language, options, allowDownload }: Props) {
-  const canCopy = useMemo(() => code !== '', [code])
-  const canDownload = useMemo(() => allowDownload && code !== '', [allowDownload, code])
+  const canCopy = useMemo(() => code !== "", [code])
+  const canDownload = useMemo(() => allowDownload && code !== "", [allowDownload, code])
 
   return (
     <div className="group relative mb-4 max-w-7xl overflow-auto rounded-xl">
@@ -29,9 +29,9 @@ export function CodeShowcaseDirect({ code, language, options, allowDownload }: P
         language={language}
         style={coldarkDark}
         customStyle={{
-          borderRadius: options?.borderRadius || '0.75rem',
-          maxHeight: options?.maxHeight || '200px',
-          margin: options?.margin || '0',
+          borderRadius: options?.borderRadius || "0.75rem",
+          maxHeight: options?.maxHeight || "200px",
+          margin: options?.margin || "0",
           ...options,
         }}
       >
@@ -51,7 +51,7 @@ function CopyCodeButton({ text }: { text: string }) {
         setIsCopied(true)
         setTimeout(() => setIsCopied(false), 4000)
       })
-      .catch(() => console.error('Failed to copy code to clipboard.'))
+      .catch(() => console.error("Failed to copy code to clipboard."))
   }, [text])
 
   return (
@@ -59,8 +59,8 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied}
       className={cn(
-        'flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900',
-        isCopied ? '' : 'hover:bg-zinc-600 dark:hover:bg-zinc-700',
+        "flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900",
+        isCopied ? "" : "hover:bg-zinc-600 dark:hover:bg-zinc-700",
       )}
     >
       {isCopied ? <CheckIcon className="size-4" /> : <ClipboardIcon className="size-4" />}
@@ -74,9 +74,9 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
   const download = () => {
     setIsDownloading(true)
     try {
-      const blob = new Blob([text], { type: 'text/plain' })
+      const blob = new Blob([text], { type: "text/plain" })
       const url = URL.createObjectURL(blob)
-      const a = document.createElement('a')
+      const a = document.createElement("a")
       a.href = url
       a.download = filename
       document.body.appendChild(a)
@@ -84,7 +84,7 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
       document.body.removeChild(a)
       URL.revokeObjectURL(url)
     } catch (error) {
-      console.error('Failed to download code.')
+      console.error("Failed to download code.")
     } finally {
       setIsDownloading(false)
     }
@@ -95,8 +95,8 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
       onClick={download}
       disabled={isDownloading}
       className={cn(
-        'flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900',
-        isDownloading ? '' : 'hover:bg-zinc-600 dark:hover:bg-zinc-700',
+        "flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900",
+        isDownloading ? "" : "hover:bg-zinc-600 dark:hover:bg-zinc-700",
       )}
     >
       {isDownloading ? <CheckIcon className="size-4" /> : <DownloadIcon className="size-4" />}

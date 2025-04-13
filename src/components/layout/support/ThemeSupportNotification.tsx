@@ -1,22 +1,22 @@
-'use client'
+"use client"
 
-import Image from 'next/image'
-import { useMemo, useState, useEffect } from 'react'
-import { usePathname } from 'next/navigation'
+import Image from "next/image"
+import { useMemo, useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 
-import { XIcon } from 'lucide-react'
-import { VSCodeIcon } from '@/components/icons/VSCodeIcon'
-import { cn } from '@/lib/utils'
+import { XIcon } from "lucide-react"
+import { VSCodeIcon } from "@/components/icons/VSCodeIcon"
+import { cn } from "@/lib/utils"
 
 export function ThemeSupportNotification() {
   const pathname = usePathname()
-  const isHome = pathname === '/'
+  const isHome = pathname === "/"
 
   const [show, setShow] = useState(false)
   const [hasNotBeenDismissedYet, setHasNotBeenDismissedYet] = useState<boolean | null>(null)
 
   useEffect(() => {
-    const dismissedTimestamp = localStorage.getItem('themeSupportNotificationDismissedTimestamp')
+    const dismissedTimestamp = localStorage.getItem("themeSupportNotificationDismissedTimestamp")
     if (!dismissedTimestamp) setHasNotBeenDismissedYet(true)
     else {
       const now = new Date().getTime()
@@ -37,7 +37,7 @@ export function ThemeSupportNotification() {
   const handleDismiss = () => {
     setHasNotBeenDismissedYet(false)
     const now = new Date().getTime()
-    localStorage.setItem('themeSupportNotificationDismissedTimestamp', now.toString())
+    localStorage.setItem("themeSupportNotificationDismissedTimestamp", now.toString())
     setShow(false)
   }
 
@@ -70,14 +70,14 @@ export function ThemeSupportNotification() {
                 <div className="ml-2.5 w-0 flex-1 pt-0.5">
                   <p className="text-sm font-medium text-zinc-800 dark:text-white">Check out Bagger Flow</p>
                   <p className="mt-1 text-sm/5 font-normal text-zinc-500 dark:text-zinc-300">
-                    Bagger Flow is a{' '}
+                    Bagger Flow is a{" "}
                     <a
                       href="vscode:extension/kikogoncalves.bagger-flow"
                       className="inline-flex items-center gap-1 font-semibold hover:underline"
                     >
                       <VSCodeIcon className="size-2.5 fill-blue-500" />
                       <span>VS Code theme</span>
-                    </a>{' '}
+                    </a>{" "}
                     with a modern and slick look, tailored for many languages.
                   </p>
                   <div className="mt-3 flex space-x-7">

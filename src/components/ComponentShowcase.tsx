@@ -1,19 +1,19 @@
-'use client'
+"use client"
 
-import React, { useEffect, useState, useCallback } from 'react'
-import Link from 'next/link'
-import { cn } from '@/lib/utils'
-import type { ComponentCardType } from '@/types'
+import React, { useEffect, useState, useCallback } from "react"
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+import type { ComponentCardType } from "@/types"
 
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
 
-import { GithubIcon } from './icons/GithubIcon'
-import { CheckIcon, ClipboardIcon, LinkIcon, LoaderCircleIcon, MoonIcon, SunIcon } from 'lucide-react'
+import { GithubIcon } from "./icons/GithubIcon"
+import { CheckIcon, ClipboardIcon, LinkIcon, LoaderCircleIcon, MoonIcon, SunIcon } from "lucide-react"
 
 export function ComponentShowcase({ index, name, path, component }: ComponentCardType & { index: number }) {
-  const sectionId = name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
-  const [code, setCode] = useState<string>('')
+  const sectionId = name.toLowerCase().replace(/[^a-z0-9]+/g, "-")
+  const [code, setCode] = useState<string>("")
   const [isCodeVisible, setIsCodeVisible] = useState(false)
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export function ComponentShowcase({ index, name, path, component }: ComponentCar
         .then((response) => response.text())
         .then((data) => setCode(data))
         .catch((error) => {
-          console.error('Failed to fetch component code.')
+          console.error("Failed to fetch component code.")
         })
     }
   }, [path])
@@ -31,8 +31,8 @@ export function ComponentShowcase({ index, name, path, component }: ComponentCar
     <li className="flex flex-col" id={sectionId}>
       <h4
         className={cn(
-          'mb-2 flex flex-wrap items-center text-base font-semibold tracking-tight xl:text-xl 2xl:text-2xl',
-          index === 0 ? 'pt-3' : 'pt-16',
+          "mb-2 flex flex-wrap items-center text-base font-semibold tracking-tight xl:text-xl 2xl:text-2xl",
+          index === 0 ? "pt-3" : "pt-16",
         )}
       >
         <a href={`#${sectionId}`} className="group flex w-full items-center gap-1">
@@ -60,12 +60,12 @@ export function ComponentShowcase({ index, name, path, component }: ComponentCar
             language="tsx"
             style={coldarkDark}
             customStyle={{
-              margin: '0',
-              minHeight: '60px',
-              lineHeight: '1.25',
-              fontSize: '12px',
-              letterSpacing: '-0.025em',
-              borderRadius: '0.75rem',
+              margin: "0",
+              minHeight: "60px",
+              lineHeight: "1.25",
+              fontSize: "12px",
+              letterSpacing: "-0.025em",
+              borderRadius: "0.75rem",
             }}
           >
             {code}
@@ -90,7 +90,7 @@ function CopyCodeButton({ text }: { text: string }) {
         setIsCopied(true)
         setTimeout(() => setIsCopied(false), 3000)
       })
-      .catch(() => console.error('Failed to copy code to clipboard.'))
+      .catch(() => console.error("Failed to copy code to clipboard."))
   }, [text])
 
   return (
@@ -98,10 +98,10 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied || !text}
       className={cn(
-        'flex items-center justify-start gap-1 rounded border px-2 py-2 text-xs shadow-sm transition disabled:pointer-events-none',
+        "flex items-center justify-start gap-1 rounded border px-2 py-2 text-xs shadow-sm transition disabled:pointer-events-none",
         isCopied
-          ? 'border-teal-600 bg-teal-600 text-white'
-          : 'border-zinc-700 bg-zinc-700/90 text-white hover:bg-zinc-700',
+          ? "border-teal-600 bg-teal-600 text-white"
+          : "border-zinc-700 bg-zinc-700/90 text-white hover:bg-zinc-700",
       )}
     >
       {text ? (
@@ -131,10 +131,10 @@ function ChangeViewModeTabs({
       <button
         onClick={toggleShowPreview}
         className={cn(
-          'inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all lg:px-3 lg:py-1.5',
+          "inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all lg:px-3 lg:py-1.5",
           isCodeVisible
-            ? 'border-transparent'
-            : 'border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5',
+            ? "border-transparent"
+            : "border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5",
         )}
       >
         Preview
@@ -142,10 +142,10 @@ function ChangeViewModeTabs({
       <button
         onClick={toggleShowCode}
         className={cn(
-          'inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all hover:bg-zinc-100 dark:hover:bg-white/5 lg:px-3 lg:py-1.5',
+          "inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all hover:bg-zinc-100 dark:hover:bg-white/5 lg:px-3 lg:py-1.5",
           isCodeVisible
-            ? 'border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5'
-            : 'border-transparent',
+            ? "border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5"
+            : "border-transparent",
         )}
       >
         Code
@@ -155,7 +155,7 @@ function ChangeViewModeTabs({
 }
 
 function LinkToGithubButton({ path }: { path: string }) {
-  const githubBlobWebUrl = 'https://github.com/kiko-g/bagger-ui/blob/main'
+  const githubBlobWebUrl = "https://github.com/kiko-g/bagger-ui/blob/main"
   const href = `${githubBlobWebUrl}/src/components/showcase/${path}`
 
   return (

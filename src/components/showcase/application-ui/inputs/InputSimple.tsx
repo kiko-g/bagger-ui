@@ -1,14 +1,14 @@
-'use client'
+"use client"
 
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
 type Props = {
   labelText?: string
 }
 
 export function InputSimple({ labelText }: Props) {
-  const inputId = 'input-simple'
-  const [value, setValue] = useState('')
+  const inputId = "input-simple"
+  const [value, setValue] = useState("")
 
   return (
     <div className="flex w-full flex-col">
@@ -16,7 +16,7 @@ export function InputSimple({ labelText }: Props) {
         htmlFor={inputId}
         className="mb-0.5 text-sm font-semibold tracking-tighter text-zinc-700 dark:text-zinc-300"
       >
-        {labelText || 'Label'}
+        {labelText || "Label"}
       </label>
       <input
         id={inputId}

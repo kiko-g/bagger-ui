@@ -1,3 +1,3 @@
-import { InputSimple } from './InputSimple'
+import { InputSimple } from "./InputSimple"
 
 export { InputSimple }

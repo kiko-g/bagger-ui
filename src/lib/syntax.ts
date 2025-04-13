@@ -1,119 +1,119 @@
 type SyntaxHighlighterStyle = { [key: string]: React.CSSProperties } | undefined
 
 const colors = {
-  keyword: '#bb88ff',
-  string: '#61e57e',
-  function: '#55ffff',
-  variable: '#ffffff',
-  class: '#ff88aa',
-  tag: '#60a5fa',
+  keyword: "#bb88ff",
+  string: "#61e57e",
+  function: "#55ffff",
+  variable: "#ffffff",
+  class: "#ff88aa",
+  tag: "#60a5fa",
 }
 
 export const baggerDark: SyntaxHighlighterStyle = {
   'code[class*="language-"]': {
-    color: '#e3eaf2',
-    background: 'none',
+    color: "#e3eaf2",
+    background: "none",
     fontFamily: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
-    textAlign: 'left',
-    whiteSpace: 'pre',
-    wordSpacing: 'normal',
-    wordBreak: 'normal',
-    wordWrap: 'normal',
-    lineHeight: '1.5',
-    MozTabSize: '4',
-    OTabSize: '4',
-    tabSize: '4',
-    WebkitHyphens: 'none',
-    MozHyphens: 'none',
-    msHyphens: 'none',
-    hyphens: 'none',
+    textAlign: "left",
+    whiteSpace: "pre",
+    wordSpacing: "normal",
+    wordBreak: "normal",
+    wordWrap: "normal",
+    lineHeight: "1.5",
+    MozTabSize: "4",
+    OTabSize: "4",
+    tabSize: "4",
+    WebkitHyphens: "none",
+    MozHyphens: "none",
+    msHyphens: "none",
+    hyphens: "none",
   },
   'pre[class*="language-"]': {
-    color: '#e3eaf2',
-    background: '#111b27',
+    color: "#e3eaf2",
+    background: "#111b27",
     fontFamily: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace',
-    textAlign: 'left',
-    whiteSpace: 'pre',
-    wordSpacing: 'normal',
-    wordBreak: 'normal',
-    wordWrap: 'normal',
-    lineHeight: '1.5',
-    MozTabSize: '4',
-    OTabSize: '4',
-    tabSize: '4',
-    WebkitHyphens: 'none',
-    MozHyphens: 'none',
-    msHyphens: 'none',
-    hyphens: 'none',
-    padding: '1em',
-    margin: '0.5em 0',
-    overflow: 'auto',
+    textAlign: "left",
+    whiteSpace: "pre",
+    wordSpacing: "normal",
+    wordBreak: "normal",
+    wordWrap: "normal",
+    lineHeight: "1.5",
+    MozTabSize: "4",
+    OTabSize: "4",
+    tabSize: "4",
+    WebkitHyphens: "none",
+    MozHyphens: "none",
+    msHyphens: "none",
+    hyphens: "none",
+    padding: "1em",
+    margin: "0.5em 0",
+    overflow: "auto",
   },
   'pre[class*="language-"]::-moz-selection': {
-    background: '#3c526d',
+    background: "#3c526d",
   },
   'pre[class*="language-"] ::-moz-selection': {
-    background: '#3c526d',
+    background: "#3c526d",
   },
   'code[class*="language-"]::-moz-selection': {
-    background: '#3c526d',
+    background: "#3c526d",
   },
   'code[class*="language-"] ::-moz-selection': {
-    background: '#3c526d',
+    background: "#3c526d",
   },
   'pre[class*="language-"]::selection': {
-    background: '#3c526d',
+    background: "#3c526d",
   },
   'pre[class*="language-"] ::selection': {
-    background: '#3c526d',
+    background: "#3c526d",
   },
   'code[class*="language-"]::selection': {
-    background: '#3c526d',
+    background: "#3c526d",
   },
   'code[class*="language-"] ::selection': {
-    background: '#3c526d',
+    background: "#3c526d",
   },
   ':not(pre) > code[class*="language-"]': {
-    background: '#111b27',
-    padding: '0.1em 0.3em',
-    borderRadius: '0.3em',
-    whiteSpace: 'normal',
+    background: "#111b27",
+    padding: "0.1em 0.3em",
+    borderRadius: "0.3em",
+    whiteSpace: "normal",
   },
   comment: {
-    color: '#8da1b9',
+    color: "#8da1b9",
   },
   prolog: {
-    color: '#8da1b9',
+    color: "#8da1b9",
   },
   doctype: {
-    color: '#8da1b9',
+    color: "#8da1b9",
   },
   cdata: {
-    color: '#8da1b9',
+    color: "#8da1b9",
   },
   punctuation: {
-    color: '#e3eaf2',
+    color: "#e3eaf2",
   },
-  'delimiter.important': {
+  "delimiter.important": {
     color: colors.variable,
-    fontWeight: 'inherit',
+    fontWeight: "inherit",
   },
-  'selector.parent': {
+  "selector.parent": {
     color: colors.variable,
   },
   tag: {
     color: colors.tag,
   },
-  'tag.punctuation': {
+  "tag.punctuation": {
     color: colors.variable,
   },
-  'attr-name': {
+  "attr-name": {
     color: colors.class,
   },
   boolean: {
     color: colors.class,
   },
-  'boolean.important': {
+  "boolean.important": {
     color: colors.class,
   },
   number: {
@@ -122,28 +122,28 @@ export const baggerDark: SyntaxHighlighterStyle = {
   constant: {
     color: colors.class,
   },
-  'selector.attribute': {
+  "selector.attribute": {
     color: colors.class,
   },
-  'class-name': {
-    color: '#6cb8e6',
+  "class-name": {
+    color: "#6cb8e6",
   },
   key: {
-    color: '#6cb8e6',
+    color: "#6cb8e6",
   },
   parameter: {
-    color: '#6cb8e6',
+    color: "#6cb8e6",
   },
   property: {
-    color: '#6cb8e6',
+    color: "#6cb8e6",
   },
-  'property-access': {
-    color: '#6cb8e6',
+  "property-access": {
+    color: "#6cb8e6",
   },
   variable: {
-    color: '#6cb8e6',
+    color: "#6cb8e6",
   },
-  'attr-value': {
+  "attr-value": {
     color: colors.string,
   },
   inserted: {
@@ -152,37 +152,37 @@ export const baggerDark: SyntaxHighlighterStyle = {
   color: {
     color: colors.string,
   },
-  'selector.value': {
+  "selector.value": {
     color: colors.string,
   },
   string: {
     color: colors.string,
   },
-  'string.url-link': {
+  "string.url-link": {
     color: colors.string,
   },
   builtin: {
-    color: '#f4adf4',
+    color: "#f4adf4",
   },
-  'keyword-array': {
-    color: '#f4adf4',
+  "keyword-array": {
+    color: "#f4adf4",
   },
   package: {
-    color: '#f4adf4',
+    color: "#f4adf4",
   },
   regex: {
-    color: '#f4adf4',
+    color: "#f4adf4",
   },
   function: {
     color: colors.function,
   },
-  'selector.class': {
+  "selector.class": {
     color: colors.function,
   },
-  'selector.id': {
+  "selector.id": {
     color: colors.function,
   },
-  'atrule.rule': {
+  "atrule.rule": {
     color: colors.keyword,
   },
   combinator: {
@@ -194,10 +194,10 @@ export const baggerDark: SyntaxHighlighterStyle = {
   operator: {
     color: colors.keyword,
   },
-  'pseudo-class': {
+  "pseudo-class": {
     color: colors.keyword,
   },
-  'pseudo-element': {
+  "pseudo-element": {
     color: colors.keyword,
   },
   selector: {
@@ -207,191 +207,191 @@ export const baggerDark: SyntaxHighlighterStyle = {
     color: colors.keyword,
   },
   deleted: {
-    color: '#cd6660',
+    color: "#cd6660",
   },
   important: {
-    color: '#cd6660',
-    fontWeight: 'bold',
+    color: "#cd6660",
+    fontWeight: "bold",
   },
-  'keyword-this': {
-    color: '#6cb8e6',
-    fontWeight: 'bold',
+  "keyword-this": {
+    color: "#6cb8e6",
+    fontWeight: "bold",
   },
   this: {
-    color: '#6cb8e6',
-    fontWeight: 'bold',
+    color: "#6cb8e6",
+    fontWeight: "bold",
   },
   bold: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   italic: {
-    fontStyle: 'italic',
+    fontStyle: "italic",
   },
   entity: {
-    cursor: 'help',
+    cursor: "help",
   },
-  '.language-markdown .token.title': {
-    color: '#6cb8e6',
-    fontWeight: 'bold',
+  ".language-markdown .token.title": {
+    color: "#6cb8e6",
+    fontWeight: "bold",
   },
-  '.language-markdown .token.title .token.punctuation': {
-    color: '#6cb8e6',
-    fontWeight: 'bold',
+  ".language-markdown .token.title .token.punctuation": {
+    color: "#6cb8e6",
+    fontWeight: "bold",
   },
-  '.language-markdown .token.blockquote.punctuation': {
-    color: '#f4adf4',
+  ".language-markdown .token.blockquote.punctuation": {
+    color: "#f4adf4",
   },
-  '.language-markdown .token.code': {
-    color: '#66cccc',
+  ".language-markdown .token.code": {
+    color: "#66cccc",
   },
-  '.language-markdown .token.hr.punctuation': {
-    color: '#6cb8e6',
+  ".language-markdown .token.hr.punctuation": {
+    color: "#6cb8e6",
   },
-  '.language-markdown .token.url .token.content': {
+  ".language-markdown .token.url .token.content": {
     color: colors.string,
   },
-  '.language-markdown .token.url-link': {
+  ".language-markdown .token.url-link": {
     color: colors.class,
   },
-  '.language-markdown .token.list.punctuation': {
-    color: '#f4adf4',
+  ".language-markdown .token.list.punctuation": {
+    color: "#f4adf4",
   },
-  '.language-markdown .token.table-header': {
-    color: '#e3eaf2',
+  ".language-markdown .token.table-header": {
+    color: "#e3eaf2",
   },
-  '.language-json .token.operator': {
-    color: '#e3eaf2',
+  ".language-json .token.operator": {
+    color: "#e3eaf2",
   },
-  '.language-scss .token.variable': {
-    color: '#66cccc',
+  ".language-scss .token.variable": {
+    color: "#66cccc",
   },
-  'token.tab:not(:empty):before': {
-    color: '#8da1b9',
+  "token.tab:not(:empty):before": {
+    color: "#8da1b9",
   },
-  'token.cr:before': {
-    color: '#8da1b9',
+  "token.cr:before": {
+    color: "#8da1b9",
   },
-  'token.lf:before': {
-    color: '#8da1b9',
+  "token.lf:before": {
+    color: "#8da1b9",
   },
-  'token.space:before': {
-    color: '#8da1b9',
+  "token.space:before": {
+    color: "#8da1b9",
   },
-  'div.code-toolbar > .toolbar.toolbar > .toolbar-item > a': {
-    color: '#111b27',
-    background: '#6cb8e6',
+  "div.code-toolbar > .toolbar.toolbar > .toolbar-item > a": {
+    color: "#111b27",
+    background: "#6cb8e6",
   },
-  'div.code-toolbar > .toolbar.toolbar > .toolbar-item > button': {
-    color: '#111b27',
-    background: '#6cb8e6',
+  "div.code-toolbar > .toolbar.toolbar > .toolbar-item > button": {
+    color: "#111b27",
+    background: "#6cb8e6",
   },
-  'div.code-toolbar > .toolbar.toolbar > .toolbar-item > a:hover': {
-    color: '#111b27',
-    background: '#6cb8e6da',
-    textDecoration: 'none',
+  "div.code-toolbar > .toolbar.toolbar > .toolbar-item > a:hover": {
+    color: "#111b27",
+    background: "#6cb8e6da",
+    textDecoration: "none",
   },
-  'div.code-toolbar > .toolbar.toolbar > .toolbar-item > a:focus': {
-    color: '#111b27',
-    background: '#6cb8e6da',
-    textDecoration: 'none',
+  "div.code-toolbar > .toolbar.toolbar > .toolbar-item > a:focus": {
+    color: "#111b27",
+    background: "#6cb8e6da",
+    textDecoration: "none",
   },
-  'div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:hover': {
-    color: '#111b27',
-    background: '#6cb8e6da',
-    textDecoration: 'none',
+  "div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:hover": {
+    color: "#111b27",
+    background: "#6cb8e6da",
+    textDecoration: "none",
   },
-  'div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:focus': {
-    color: '#111b27',
-    background: '#6cb8e6da',
-    textDecoration: 'none',
+  "div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:focus": {
+    color: "#111b27",
+    background: "#6cb8e6da",
+    textDecoration: "none",
   },
-  'div.code-toolbar > .toolbar.toolbar > .toolbar-item > span': {
-    color: '#111b27',
-    background: '#8da1b9',
+  "div.code-toolbar > .toolbar.toolbar > .toolbar-item > span": {
+    color: "#111b27",
+    background: "#8da1b9",
   },
-  'div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:hover': {
-    color: '#111b27',
-    background: '#8da1b9',
+  "div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:hover": {
+    color: "#111b27",
+    background: "#8da1b9",
   },
-  'div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:focus': {
-    color: '#111b27',
-    background: '#8da1b9',
+  "div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:focus": {
+    color: "#111b27",
+    background: "#8da1b9",
   },
-  '.line-highlight.line-highlight': {
-    background: 'linear-gradient(to right, #3c526d5f 70%, #3c526d55)',
+  ".line-highlight.line-highlight": {
+    background: "linear-gradient(to right, #3c526d5f 70%, #3c526d55)",
   },
-  '.line-highlight.line-highlight:before': {
-    backgroundColor: '#8da1b9',
-    color: '#111b27',
-    boxShadow: '0 1px #3c526d',
+  ".line-highlight.line-highlight:before": {
+    backgroundColor: "#8da1b9",
+    color: "#111b27",
+    boxShadow: "0 1px #3c526d",
   },
-  '.line-highlight.line-highlight[data-end]:after': {
-    backgroundColor: '#8da1b9',
-    color: '#111b27',
-    boxShadow: '0 1px #3c526d',
+  ".line-highlight.line-highlight[data-end]:after": {
+    backgroundColor: "#8da1b9",
+    color: "#111b27",
+    boxShadow: "0 1px #3c526d",
   },
-  'pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows > span:hover:before': {
-    backgroundColor: '#8da1b918',
+  "pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows > span:hover:before": {
+    backgroundColor: "#8da1b918",
   },
-  '.line-numbers.line-numbers .line-numbers-rows': {
-    borderRight: '1px solid #0b121b',
-    background: '#0b121b7a',
+  ".line-numbers.line-numbers .line-numbers-rows": {
+    borderRight: "1px solid #0b121b",
+    background: "#0b121b7a",
   },
-  '.line-numbers .line-numbers-rows > span:before': {
-    color: '#8da1b9da',
+  ".line-numbers .line-numbers-rows > span:before": {
+    color: "#8da1b9da",
   },
-  '.rainbow-braces .token.token.punctuation.brace-level-1': {
+  ".rainbow-braces .token.token.punctuation.brace-level-1": {
     color: colors.class,
   },
-  '.rainbow-braces .token.token.punctuation.brace-level-5': {
+  ".rainbow-braces .token.token.punctuation.brace-level-5": {
     color: colors.class,
   },
-  '.rainbow-braces .token.token.punctuation.brace-level-9': {
+  ".rainbow-braces .token.token.punctuation.brace-level-9": {
     color: colors.class,
   },
-  '.rainbow-braces .token.token.punctuation.brace-level-2': {
-    color: '#f4adf4',
+  ".rainbow-braces .token.token.punctuation.brace-level-2": {
+    color: "#f4adf4",
   },
-  '.rainbow-braces .token.token.punctuation.brace-level-6': {
-    color: '#f4adf4',
+  ".rainbow-braces .token.token.punctuation.brace-level-6": {
+    color: "#f4adf4",
   },
-  '.rainbow-braces .token.token.punctuation.brace-level-10': {
-    color: '#f4adf4',
+  ".rainbow-braces .token.token.punctuation.brace-level-10": {
+    color: "#f4adf4",
   },
-  '.rainbow-braces .token.token.punctuation.brace-level-3': {
-    color: '#6cb8e6',
+  ".rainbow-braces .token.token.punctuation.brace-level-3": {
+    color: "#6cb8e6",
   },
-  '.rainbow-braces .token.token.punctuation.brace-level-7': {
-    color: '#6cb8e6',
+  ".rainbow-braces .token.token.punctuation.brace-level-7": {
+    color: "#6cb8e6",
   },
-  '.rainbow-braces .token.token.punctuation.brace-level-11': {
-    color: '#6cb8e6',
+  ".rainbow-braces .token.token.punctuation.brace-level-11": {
+    color: "#6cb8e6",
   },
-  '.rainbow-braces .token.token.punctuation.brace-level-4': {
+  ".rainbow-braces .token.token.punctuation.brace-level-4": {
     color: colors.function,
   },
-  '.rainbow-braces .token.token.punctuation.brace-level-8': {
+  ".rainbow-braces .token.token.punctuation.brace-level-8": {
     color: colors.function,
   },
-  '.rainbow-braces .token.token.punctuation.brace-level-12': {
+  ".rainbow-braces .token.token.punctuation.brace-level-12": {
     color: colors.function,
   },
-  'pre.diff-highlight > code .token.token.deleted:not(.prefix)': {
-    backgroundColor: '#cd66601f',
+  "pre.diff-highlight > code .token.token.deleted:not(.prefix)": {
+    backgroundColor: "#cd66601f",
   },
-  'pre > code.diff-highlight .token.token.deleted:not(.prefix)': {
-    backgroundColor: '#cd66601f',
+  "pre > code.diff-highlight .token.token.deleted:not(.prefix)": {
+    backgroundColor: "#cd66601f",
   },
-  'pre.diff-highlight > code .token.token.inserted:not(.prefix)': {
-    backgroundColor: '#91d0761f',
+  "pre.diff-highlight > code .token.token.inserted:not(.prefix)": {
+    backgroundColor: "#91d0761f",
   },
-  'pre > code.diff-highlight .token.token.inserted:not(.prefix)': {
-    backgroundColor: '#91d0761f',
+  "pre > code.diff-highlight .token.token.inserted:not(.prefix)": {
+    backgroundColor: "#91d0761f",
   },
-  '.command-line .command-line-prompt': {
-    borderRight: '1px solid #0b121b',
+  ".command-line .command-line-prompt": {
+    borderRight: "1px solid #0b121b",
   },
-  '.command-line .command-line-prompt > span:before': {
-    color: '#8da1b9da',
+  ".command-line .command-line-prompt > span:before": {
+    color: "#8da1b9da",
   },
 }

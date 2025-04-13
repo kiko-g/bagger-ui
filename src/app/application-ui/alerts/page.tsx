@@ -1,20 +1,20 @@
-import React from 'react'
-import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { AlertSample } from '@/components/showcase/application-ui/alerts/sample/AlertSample'
+import React from "react"
+import { ComponentTypePage } from "@/components/ComponentTypePage"
+import { AlertSample } from "@/components/showcase/application-ui/alerts/sample/AlertSample"
 
-import { AlertDefault } from '@/components/showcase/application-ui/alerts/AlertDefault'
-import { AlertDestructive } from '@/components/showcase/application-ui/alerts/AlertDestructive'
-import { AlertInfo } from '@/components/showcase/application-ui/alerts/AlertInfo'
-import { AlertSuccess } from '@/components/showcase/application-ui/alerts/AlertSuccess'
-import { AlertWarning } from '@/components/showcase/application-ui/alerts/AlertWarning'
+import { AlertDefault } from "@/components/showcase/application-ui/alerts/AlertDefault"
+import { AlertDestructive } from "@/components/showcase/application-ui/alerts/AlertDestructive"
+import { AlertInfo } from "@/components/showcase/application-ui/alerts/AlertInfo"
+import { AlertSuccess } from "@/components/showcase/application-ui/alerts/AlertSuccess"
+import { AlertWarning } from "@/components/showcase/application-ui/alerts/AlertWarning"
 
-import { AlertCombo1 } from '@/components/showcase/application-ui/alerts/combos/AlertCombo1'
-import { AlertCombo2 } from '@/components/showcase/application-ui/alerts/combos/AlertCombo2'
-import { AlertCombo3 } from '@/components/showcase/application-ui/alerts/combos/AlertCombo3'
-import { AlertCombo4 } from '@/components/showcase/application-ui/alerts/combos/AlertCombo4'
+import { AlertCombo1 } from "@/components/showcase/application-ui/alerts/combos/AlertCombo1"
+import { AlertCombo2 } from "@/components/showcase/application-ui/alerts/combos/AlertCombo2"
+import { AlertCombo3 } from "@/components/showcase/application-ui/alerts/combos/AlertCombo3"
+import { AlertCombo4 } from "@/components/showcase/application-ui/alerts/combos/AlertCombo4"
 
 export default function Alerts() {
-  const base = 'application-ui/alerts'
+  const base = "application-ui/alerts"
 
   return (
     <ComponentTypePage
@@ -22,34 +22,34 @@ export default function Alerts() {
       sample={{
         nodes: [
           {
-            item: 'Setup',
+            item: "Setup",
             component: <AlertSample />,
           },
         ],
       }}
       examples={[
         {
-          name: 'Default',
+          name: "Default",
           path: `${base}/AlertDefault.tsx`,
           component: <AlertDefault />,
         },
         {
-          name: 'Information',
+          name: "Information",
           path: `${base}/AlertInfo.tsx`,
           component: <AlertInfo />,
         },
         {
-          name: 'Destructive',
+          name: "Destructive",
           path: `${base}/AlertDestructive.tsx`,
           component: <AlertDestructive />,
         },
         {
-          name: 'Success',
+          name: "Success",
           path: `${base}/AlertSuccess.tsx`,
           component: <AlertSuccess />,
         },
         {
-          name: 'Warning',
+          name: "Warning",
           path: `${base}/AlertWarning.tsx`,
           component: <AlertWarning />,
         },
@@ -61,17 +61,17 @@ export default function Alerts() {
           component: <AlertCombo4 />,
         },
         {
-          name: 'With Accent, Not Dismissible',
+          name: "With Accent, Not Dismissible",
           path: `${base}/combos/AlertCombo1.tsx`,
           component: <AlertCombo1 />,
         },
         {
-          name: 'Transparent, Not Rounded',
+          name: "Transparent, Not Rounded",
           path: `${base}/combos/AlertCombo2.tsx`,
           component: <AlertCombo2 />,
         },
         {
-          name: 'Extra Rounded, No Border',
+          name: "Extra Rounded, No Border",
           path: `${base}/combos/AlertCombo3.tsx`,
           component: <AlertCombo3 />,
         },

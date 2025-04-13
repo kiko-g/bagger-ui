@@ -1,14 +1,14 @@
-'use client'
+"use client"
 
-import React, { useState, useMemo } from 'react'
-import { cn } from '@/lib/utils'
-import { strIncludes } from '@/utils'
-import type { ComponentCardType, ComponentSample, QuickNavigation } from '@/types'
+import React, { useState, useMemo } from "react"
+import { cn } from "@/lib/utils"
+import { strIncludes } from "@/utils"
+import type { ComponentCardType, ComponentSample, QuickNavigation } from "@/types"
 
-import { Layout } from '@/components/Layout'
-import { ComponentShowcase } from '@/components/ComponentShowcase'
+import { Layout } from "@/components/Layout"
+import { ComponentShowcase } from "@/components/ComponentShowcase"
 
-import { BookDashedIcon, CircleOffIcon, PuzzleIcon } from 'lucide-react'
+import { BookDashedIcon, CircleOffIcon, PuzzleIcon } from "lucide-react"
 
 type Props = {
   title: string
@@ -19,7 +19,7 @@ type Props = {
 }
 
 export function ComponentTypePage({ title, description, sample, examples, combos }: Props) {
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState("")
   const filteredExamples = useMemo(() => examples?.filter((item) => strIncludes(item.name, search)), [examples, search])
   const filteredCombos = useMemo(() => combos?.filter((item) => strIncludes(item.name, search)), [combos, search])
 
@@ -28,25 +28,25 @@ export function ComponentTypePage({ title, description, sample, examples, combos
       sample && sample.nodes.length > 0
         ? sample.nodes.map((node) => ({
             name: node.item,
-            href: `#${node.item.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+            href: `#${node.item.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
           }))
         : []
     const levels = [
       {
-        name: 'Examples',
+        name: "Examples",
         items: filteredExamples?.map((item) => ({
           name: item.name,
-          href: `#${item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+          href: `#${item.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
         })),
       },
       {
-        name: 'Combos',
+        name: "Combos",
         items:
           filteredCombos?.length === 0
             ? []
             : filteredCombos?.map((item) => ({
                 name: item.name,
-                href: `#${item.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+                href: `#${item.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
               })),
       },
     ]
@@ -108,7 +108,7 @@ export function ComponentTypePage({ title, description, sample, examples, combos
           </a>
         </h3>
         {filteredCombos && filteredCombos?.length > 0 ? (
-          <ul id="combos" className={cn('grid grid-cols-1')}>
+          <ul id="combos" className={cn("grid grid-cols-1")}>
             {filteredCombos.map((item, itemIdx) => (
               <ComponentShowcase
                 index={itemIdx}

@@ -1,12 +1,12 @@
-'use client'
+"use client"
 
-import Link from 'next/link'
+import Link from "next/link"
 
-import { Button } from '@/components/ui/button'
-import { CodeShowcaseFile } from '@/components/CodeShowcaseFile'
+import { Button } from "@/components/ui/button"
+import { CodeShowcaseFile } from "@/components/CodeShowcaseFile"
 
-import { ShadCnIcon } from '@/components/icons'
-import { ExternalLink } from 'lucide-react'
+import { ShadCnIcon } from "@/components/icons"
+import { ExternalLink } from "lucide-react"
 
 export function ComponentSample({ name }: { name: string }) {
   const steps = [
@@ -16,7 +16,7 @@ export function ComponentSample({ name }: { name: string }) {
         <p>
           As mentioned in the Setup tab, some of our components follow Shadcn UI, with differences done on top of these
           components, namely a wider range of variants and functionality, all the while keeping the deep customization
-          options open. You can get started by installing the component from{' '}
+          options open. You can get started by installing the component from{" "}
           <Button variant="default" size="xs" className="ml-0.5">
             <Link
               target="_blank"
@@ -36,7 +36,7 @@ export function ComponentSample({ name }: { name: string }) {
       content: (
         <p>
           To have access to our features copy the code in the block below and replace the existing code in the generated
-          component file in your project, which by default is{' '}
+          component file in your project, which by default is{" "}
           <code className="mx-1 rounded-full bg-teal-700 px-1.5 py-0.5 text-2xs font-semibold text-white">{`components/ui/${name}.tsx`}</code>
         </p>
       ),

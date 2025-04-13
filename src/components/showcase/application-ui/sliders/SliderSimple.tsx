@@ -1,6 +1,6 @@
-'use client'
+"use client"
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from "react"
 
 function SliderSimpleDemo() {
   return (
@@ -59,7 +59,7 @@ export function SliderSimple({ min = 0, max = 100, step = 1, initialValue = 0, o
         className="absolute top-6 text-sm font-medium"
         style={{
           left: `${valueOffset}%`,
-          transform: 'translateX(-50%)', // Center the value display
+          transform: "translateX(-50%)", // Center the value display
         }}
       >
         {value}

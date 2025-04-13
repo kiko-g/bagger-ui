@@ -1,9 +1,9 @@
-'use client'
+"use client"
 
-import React from 'react'
-import { Button } from '@/components/ui/button'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import { ChevronDown } from 'lucide-react'
+import React from "react"
+import { Button } from "@/components/ui/button"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { ChevronDown } from "lucide-react"
 
 export function ButtonGroupSplit() {
   return (

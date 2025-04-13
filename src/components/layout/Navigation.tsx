@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import Link from 'next/link'
-import { cn } from '@/lib/utils'
-import { applicationUiNav, generalNav, generatorNav, snippetsNav } from '@/utils/data'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
-import { ScrollArea } from '@radix-ui/react-scroll-area'
+import Link from "next/link"
+import { cn } from "@/lib/utils"
+import { applicationUiNav, generalNav, generatorNav, snippetsNav } from "@/utils/data"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { ScrollArea } from "@radix-ui/react-scroll-area"
 
 export function Navigation({ location }: { location: string }) {
   const generalNavFiltered = generalNav.filter((item) => item.shown)
@@ -105,9 +105,9 @@ function NavItem({ name, href, isActive, isNew }: { name: string; href: string; 
       href={href}
       className={cn(
         isActive
-          ? 'border-zinc-500 bg-zinc-500/10 dark:bg-zinc-300/5'
-          : 'border-zinc-900/10 hover:bg-zinc-500/10 dark:border-white/10 dark:hover:bg-zinc-50/10',
-        'flex h-8 cursor-pointer items-center justify-start gap-2 rounded-md border-0 pl-2 text-sm leading-none transition ease-in-out',
+          ? "border-zinc-500 bg-zinc-500/10 dark:bg-zinc-300/5"
+          : "border-zinc-900/10 hover:bg-zinc-500/10 dark:border-white/10 dark:hover:bg-zinc-50/10",
+        "flex h-8 cursor-pointer items-center justify-start gap-2 rounded-md border-0 pl-2 text-sm leading-none transition ease-in-out",
       )}
     >
       <div className="hidden w-full items-center gap-1.5 pr-4 md:flex lg:pr-16">

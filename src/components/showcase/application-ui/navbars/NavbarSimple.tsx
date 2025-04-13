@@ -1,18 +1,18 @@
-'use client'
+"use client"
 
-import React from 'react'
-import { cn } from '@/lib/utils'
+import React from "react"
+import { cn } from "@/lib/utils"
 
 type Props = {
   location: string
 }
 
 const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'Shop', href: '#' },
-  { name: 'Profile', href: '#' },
-  { name: 'Inventory', href: '#' },
-  { name: 'Help', href: '#' },
+  { name: "Home", href: "#" },
+  { name: "Shop", href: "#" },
+  { name: "Profile", href: "#" },
+  { name: "Inventory", href: "#" },
+  { name: "Help", href: "#" },
 ]
 
 export function NavbarSimple({ location }: Props) {
@@ -31,10 +31,10 @@ export function NavbarSimple({ location }: Props) {
             <a
               href={item.href}
               className={cn(
-                'rounded-md px-3 py-2 text-sm font-medium transition',
+                "rounded-md px-3 py-2 text-sm font-medium transition",
                 location === item.name
-                  ? 'bg-slate-700 text-white'
-                  : 'text-zinc-500 hover:bg-zinc-200 dark:hover:bg-zinc-800',
+                  ? "bg-slate-700 text-white"
+                  : "text-zinc-500 hover:bg-zinc-200 dark:hover:bg-zinc-800",
               )}
             >
               {item.name}

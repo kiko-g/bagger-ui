@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert'
-import { TriangleAlert } from 'lucide-react'
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
+import { TriangleAlert } from "lucide-react"
 
 export function AlertWarning() {
   return (

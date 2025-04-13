@@ -1,3 +1,3 @@
-import { ProductCardsSimple } from './ProductCardsSimple'
+import { ProductCardsSimple } from "./ProductCardsSimple"
 
 export { ProductCardsSimple }

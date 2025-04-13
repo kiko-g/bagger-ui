@@ -1,3 +1,3 @@
-import { ModalSimple } from './ModalSimple'
+import { ModalSimple } from "./ModalSimple"
 
 export { ModalSimple }

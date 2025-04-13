@@ -1,3 +1,3 @@
-import { HeroGridNav } from './HeroGridNav'
+import { HeroGridNav } from "./HeroGridNav"
 
 export { HeroGridNav }

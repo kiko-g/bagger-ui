@@ -1,17 +1,17 @@
-'use client'
+"use client"
 
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from "next/link"
+import Image from "next/image"
 
-import { Button } from '@/components/ui/button'
-import { InstagramIcon, LinkedinIcon, XTwitterIcon } from '@/components/icons'
+import { Button } from "@/components/ui/button"
+import { InstagramIcon, LinkedinIcon, XTwitterIcon } from "@/components/icons"
 
 export function Footer() {
   return (
     <footer className="mx-auto flex w-full items-center justify-between border-t border-zinc-900/10 bg-zinc-800 px-4 py-4 pt-4 backdrop-blur-xl dark:border-white/10 dark:bg-inherit sm:px-6 lg:px-8 lg:py-8 lg:pt-8">
       <div className="flex flex-col items-start justify-start gap-0">
         <p className="text-2xs leading-5 text-zinc-400 dark:text-zinc-500 md:text-sm">
-          Built by{' '}
+          Built by{" "}
           <Link
             target="_blank"
             href="https://github.com/kiko-g"
@@ -23,7 +23,7 @@ export function Footer() {
         </p>
 
         <p className="text-2xs leading-5 text-zinc-400 dark:text-zinc-500 md:text-sm">
-          Code is open source and available on{' '}
+          Code is open source and available on{" "}
           <Link
             target="_blank"
             href="https://github.com/kiko-g/ui"

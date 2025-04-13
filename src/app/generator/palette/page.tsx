@@ -1,31 +1,31 @@
-'use client'
+"use client"
 
-import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
-import { cn } from '@/lib/utils'
+import React, { useState, useEffect, useMemo, useCallback, useRef } from "react"
+import { cn } from "@/lib/utils"
 
-import type { ColorHex, TailwindCombo, TailwindPalette } from '@/types'
-import { suggestedPalettes } from '@/utils/data'
-import { interpolateTailwindPalette, isValidHex, writeTailwindPalette } from '@/utils/colors'
+import type { ColorHex, TailwindCombo, TailwindPalette } from "@/types"
+import { suggestedPalettes } from "@/utils/data"
+import { interpolateTailwindPalette, isValidHex, writeTailwindPalette } from "@/utils/colors"
 
-import { Layout } from '@/components/Layout'
-import { ColorPicker } from '@/components/common/ColorPicker'
-import { DropzoneArea } from '@/components/common/Dropzone'
-import { CodeShowcaseDirect } from '@/components/CodeShowcaseDirect'
+import { Layout } from "@/components/Layout"
+import { ColorPicker } from "@/components/common/ColorPicker"
+import { DropzoneArea } from "@/components/common/Dropzone"
+import { CodeShowcaseDirect } from "@/components/CodeShowcaseDirect"
 
 export default function Generator() {
-  const [firstColor, setFirstColor] = useState<string | ''>('')
-  const [secondColor, setSecondColor] = useState<string | ''>('')
+  const [firstColor, setFirstColor] = useState<string | "">("")
+  const [secondColor, setSecondColor] = useState<string | "">("")
   const [tailwindPalette, setTailwindPalette] = useState<TailwindPalette>({
-    name: '',
+    name: "",
     combos: [],
-    config: '',
+    config: "",
   })
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const [loading, setLoading] = useState(true)
   const [copied, setCopied] = useState({
     active: false,
-    value: '',
+    value: "",
   })
 
   function generateTailwindPalette() {
@@ -35,7 +35,7 @@ export default function Generator() {
     setLoading(true)
 
     const tailwindCombos = interpolateTailwindPalette(firstColor as ColorHex, secondColor as ColorHex)
-    const tailwindConfig = writeTailwindPalette(tailwindPalette.name || 'custom', tailwindCombos)
+    const tailwindConfig = writeTailwindPalette(tailwindPalette.name || "custom", tailwindCombos)
     setTailwindPalette({
       ...tailwindPalette,
       combos: tailwindCombos,
@@ -47,9 +47,9 @@ export default function Generator() {
 
   useEffect(() => {
     const trial = {
-      firstColor: '#f4eaeb' as ColorHex,
-      secondColor: '#892844' as ColorHex,
-      name: 'Wine' as string,
+      firstColor: "#f4eaeb" as ColorHex,
+      secondColor: "#892844" as ColorHex,
+      name: "Wine" as string,
     }
 
     setFirstColor(trial.firstColor as string)
@@ -76,13 +76,13 @@ export default function Generator() {
 
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
     timeoutRef.current = setTimeout(() => {
-      setCopied({ active: false, value: '' })
+      setCopied({ active: false, value: "" })
       timeoutRef.current = null
     }, 2000)
   }, [])
 
   const isLoading = useMemo(() => {
-    return loading || firstColor === '' || secondColor === '' || tailwindPalette.combos.length === 0
+    return loading || firstColor === "" || secondColor === "" || tailwindPalette.combos.length === 0
   }, [loading, firstColor, secondColor, tailwindPalette.combos])
 
   return (
@@ -93,7 +93,7 @@ export default function Generator() {
 
       <p className="mb-2 max-w-3xl text-sm">
         Generate a custom TailwindCSS color palette based on two colors. Enter the two colors you want to interpolate
-        and the name of your color palette. Copy the output and paste it into your{' '}
+        and the name of your color palette. Copy the output and paste it into your{" "}
         <span className="font-semibold text-teal-600 dark:text-teal-500">tailwind.config.js</span> 😎
       </p>
 
@@ -153,7 +153,7 @@ export default function Generator() {
               {/* Dropzone */}
               <DropzoneArea
                 onDrop={() => {
-                  console.info('dropped')
+                  console.info("dropped")
                 }}
               />
             </div>
@@ -185,7 +185,7 @@ export default function Generator() {
                           <span className="absolute -right-1 -top-1 flex w-full items-center justify-end opacity-0 group-hover:opacity-100">
                             <span
                               className={cn(
-                                'rounded-full border border-transparent bg-zinc-800/90 p-[2px] text-center text-2xs font-medium text-white shadow-xl transition-all dark:bg-rose-400/80',
+                                "rounded-full border border-transparent bg-zinc-800/90 p-[2px] text-center text-2xs font-medium text-white shadow-xl transition-all dark:bg-rose-400/80",
                               )}
                             >
                               <svg
@@ -231,8 +231,8 @@ export default function Generator() {
                 language="js"
                 code={tailwindPalette.config.trim()}
                 options={{
-                  maxHeight: '100%',
-                  fontSize: '14px',
+                  maxHeight: "100%",
+                  fontSize: "14px",
                 }}
               ></CodeShowcaseDirect>
             </div>
@@ -304,7 +304,7 @@ function Palette({
                 <span className="absolute -right-1 -top-1 flex w-full items-center justify-end opacity-0 group-hover:opacity-100">
                   <span
                     className={cn(
-                      'rounded-full border border-transparent bg-zinc-800/90 p-[2px] text-center text-2xs font-medium text-white shadow-xl transition-all dark:bg-rose-400/80',
+                      "rounded-full border border-transparent bg-zinc-800/90 p-[2px] text-center text-2xs font-medium text-white shadow-xl transition-all dark:bg-rose-400/80",
                     )}
                   >
                     <svg

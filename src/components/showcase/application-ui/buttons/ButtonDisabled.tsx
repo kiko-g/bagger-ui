@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button'
-import { AlarmPlusIcon, BanIcon } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { AlarmPlusIcon, BanIcon } from "lucide-react"
 
 export function ButtonDisabled() {
   return (

@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button'
-import { ChevronRightIcon } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { ChevronRightIcon } from "lucide-react"
 
 export function ButtonWithIcon() {
   return (

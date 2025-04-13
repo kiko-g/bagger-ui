@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import React, { useState, useEffect, useRef } from 'react'
-import { Checkbox } from '@/components/ui/checkbox'
+import React, { useState, useEffect, useRef } from "react"
+import { Checkbox } from "@/components/ui/checkbox"
 
 export function CheckboxParent() {
   const [parentChecked, setParentChecked] = useState(false)

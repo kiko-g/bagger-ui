@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import React from 'react'
+import React from "react"
 
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,9 +11,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from "@/components/ui/dropdown-menu"
 
-import { Building2Icon, EllipsisIcon, PaintBucketIcon, RedoIcon, UndoIcon } from 'lucide-react'
+import { Building2Icon, EllipsisIcon, PaintBucketIcon, RedoIcon, UndoIcon } from "lucide-react"
 
 type Props = {}
 
@@ -72,6 +72,6 @@ const HeaderEditor = ({}: Props) => {
   )
 }
 
-HeaderEditor.displayName = 'HeaderEditor'
+HeaderEditor.displayName = "HeaderEditor"
 
 export { HeaderEditor }

@@ -1,10 +1,10 @@
-'use client'
+"use client"
 
-import Link from 'next/link'
-import { GridPattern } from '@/components/layout/GridPattern'
-import { type MotionValue, motion, useMotionTemplate, useMotionValue } from 'framer-motion'
-import { Section } from '@/utils/data'
-import { cn } from '@/lib/utils'
+import Link from "next/link"
+import { GridPattern } from "@/components/layout/GridPattern"
+import { type MotionValue, motion, useMotionTemplate, useMotionValue } from "framer-motion"
+import { Section } from "@/utils/data"
+import { cn } from "@/lib/utils"
 
 export function SectionCard({ section }: { section: Section }) {
   let mouseX = useMotionValue(0)
@@ -41,7 +41,7 @@ function Pattern({
   mouseX,
   mouseY,
   ...gridProps
-}: Section['pattern'] & {
+}: Section["pattern"] & {
   mouseX: MotionValue<number>
   mouseY: MotionValue<number>
 }) {
@@ -60,7 +60,7 @@ function Pattern({
         />
       </div>
       <motion.div
-        className={cn('absolute inset-0 rounded-2xl bg-gradient-to-br transition-all duration-300')}
+        className={cn("absolute inset-0 rounded-2xl bg-gradient-to-br transition-all duration-300")}
         style={style}
       />
       <motion.div

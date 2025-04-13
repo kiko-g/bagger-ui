@@ -1,24 +1,24 @@
-'use client'
+"use client"
 
-import React from 'react'
-import Image, { StaticImageData } from 'next/image'
-import Footage from '../images/screenshots'
+import React from "react"
+import Image, { StaticImageData } from "next/image"
+import Footage from "../images/screenshots"
 
-import { GithubIcon, ButtonIcon, LoadingIcon, SidebarIcon, SwitchIcon } from '@/components/icons'
-import type { ColorHex, TailwindPalette } from '@/types'
+import { GithubIcon, ButtonIcon, LoadingIcon, SidebarIcon, SwitchIcon } from "@/components/icons"
+import type { ColorHex, TailwindPalette } from "@/types"
 
-const isDev = process.env.NODE_ENV === 'development'
+const isDev = process.env.NODE_ENV === "development"
 
 export const links = [
   {
-    label: 'Francisco Gonçalves',
-    href: 'https://github.com/kiko-g',
+    label: "Francisco Gonçalves",
+    href: "https://github.com/kiko-g",
     content: <Image src="/profile.svg" alt="author" width={24} height={24} className="rounded-full" />,
     shown: false,
   },
   {
-    label: 'Github Repository',
-    href: 'https://github.com/kiko-g/bagger-ui',
+    label: "Github Repository",
+    href: "https://github.com/kiko-g/bagger-ui",
     content: <GithubIcon className="size-5" />,
     shown: true,
   },
@@ -37,35 +37,35 @@ export interface Section {
 
 export const generalNav: Section[] = [
   {
-    name: 'Home',
-    href: '/',
+    name: "Home",
+    href: "/",
     shown: true,
   },
   {
-    name: 'Setup',
-    href: '/setup',
+    name: "Setup",
+    href: "/setup",
     shown: true,
   },
 ]
 
 export const generatorNav: Section[] = [
   {
-    name: 'Palette',
-    href: '/generator/palette',
+    name: "Palette",
+    href: "/generator/palette",
     shown: false,
   },
   {
-    name: 'Identity',
-    href: '/generator/identity',
+    name: "Identity",
+    href: "/generator/identity",
     shown: false,
   },
 ]
 
 export const applicationUiNav: Section[] = [
   {
-    name: 'Alerts',
-    href: '/application-ui/alerts',
-    description: 'Customizable alerts to send information to the user with different icons, colors, and actions.',
+    name: "Alerts",
+    href: "/application-ui/alerts",
+    description: "Customizable alerts to send information to the user with different icons, colors, and actions.",
     pattern: {
       y: 16,
       squares: [
@@ -77,9 +77,9 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Badges',
-    href: '/application-ui/badges',
-    description: 'Small badges for signaling short pieces of information.',
+    name: "Badges",
+    href: "/application-ui/badges",
+    description: "Small badges for signaling short pieces of information.",
     pattern: {
       y: -6,
       squares: [
@@ -91,9 +91,9 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Buttons',
-    href: '/application-ui/buttons',
-    description: 'Button components with different styles, animations and purposes.',
+    name: "Buttons",
+    href: "/application-ui/buttons",
+    description: "Button components with different styles, animations and purposes.",
     pattern: {
       y: 32,
       squares: [
@@ -105,9 +105,9 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Checkboxes',
-    href: '/application-ui/checkboxes',
-    description: 'Checkboxes for selecting one or multiple options.',
+    name: "Checkboxes",
+    href: "/application-ui/checkboxes",
+    description: "Checkboxes for selecting one or multiple options.",
     pattern: {
       y: 16,
       squares: [
@@ -120,9 +120,9 @@ export const applicationUiNav: Section[] = [
     new: false,
   },
   {
-    name: 'Loading',
-    href: '/application-ui/loading',
-    description: 'Components for informing the user that data is loading.',
+    name: "Loading",
+    href: "/application-ui/loading",
+    description: "Components for informing the user that data is loading.",
     pattern: {
       y: -6,
       squares: [
@@ -134,9 +134,9 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Inputs',
-    href: '/application-ui/inputs',
-    description: 'Input components for receiving data from the user.',
+    name: "Inputs",
+    href: "/application-ui/inputs",
+    description: "Input components for receiving data from the user.",
     pattern: {
       y: 32,
       squares: [
@@ -148,9 +148,9 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Modals',
-    href: '/application-ui/modals',
-    description: 'Modal dialogs for displaying information or prompting the user for action.',
+    name: "Modals",
+    href: "/application-ui/modals",
+    description: "Modal dialogs for displaying information or prompting the user for action.",
     pattern: {
       y: 22,
       squares: [[0, 1]],
@@ -159,9 +159,9 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Headers',
-    href: '/application-ui/headers',
-    description: 'Customizable and expansible top menu components.',
+    name: "Headers",
+    href: "/application-ui/headers",
+    description: "Customizable and expansible top menu components.",
     pattern: {
       y: 32,
       squares: [
@@ -173,9 +173,9 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Navbars',
-    href: '/application-ui/navbars',
-    description: 'Customizable and expansible top menu components.',
+    name: "Navbars",
+    href: "/application-ui/navbars",
+    description: "Customizable and expansible top menu components.",
     pattern: {
       y: 16,
       squares: [
@@ -186,9 +186,9 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Selects',
-    href: '/application-ui/selects',
-    description: 'Accessible and fancy dropdown components for selecting one or multiple options.',
+    name: "Selects",
+    href: "/application-ui/selects",
+    description: "Accessible and fancy dropdown components for selecting one or multiple options.",
     pattern: {
       y: -6,
       squares: [
@@ -200,9 +200,9 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Sidebars',
-    href: '/application-ui/sidebars',
-    description: 'Customizable and expansible side menu components.',
+    name: "Sidebars",
+    href: "/application-ui/sidebars",
+    description: "Customizable and expansible side menu components.",
     pattern: {
       y: 32,
       squares: [
@@ -214,9 +214,9 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Sliders',
-    href: '/application-ui/sliders',
-    description: 'Interactive sliders for selecting a value from a range.',
+    name: "Sliders",
+    href: "/application-ui/sliders",
+    description: "Interactive sliders for selecting a value from a range.",
     pattern: {
       y: 22,
       squares: [[0, 1]],
@@ -225,9 +225,9 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Switches',
-    href: '/application-ui/switches',
-    description: 'Toggle between two states with our customized switches with different styles and purposes.',
+    name: "Switches",
+    href: "/application-ui/switches",
+    description: "Toggle between two states with our customized switches with different styles and purposes.",
     pattern: {
       y: 16,
       squares: [
@@ -242,9 +242,9 @@ export const applicationUiNav: Section[] = [
 
 export const snippetsNav: Section[] = [
   {
-    name: 'Button Groups',
-    href: '/snippets/button-groups',
-    description: 'Sections with multiple buttons with different layouts and functionalities.',
+    name: "Button Groups",
+    href: "/snippets/button-groups",
+    description: "Sections with multiple buttons with different layouts and functionalities.",
     pattern: {
       y: 22,
       squares: [[0, 1]],
@@ -253,9 +253,9 @@ export const snippetsNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Hero Sections',
-    href: '/snippets/hero',
-    description: 'Opening sections to amaze and impress the user.',
+    name: "Hero Sections",
+    href: "/snippets/hero",
+    description: "Opening sections to amaze and impress the user.",
     pattern: {
       y: 16,
       squares: [
@@ -267,9 +267,9 @@ export const snippetsNav: Section[] = [
     shown: true,
   },
   {
-    name: 'CTA Sections',
-    href: '/snippets/ctas',
-    description: 'Diversely styled sections to appeal the user to click on them.',
+    name: "CTA Sections",
+    href: "/snippets/ctas",
+    description: "Diversely styled sections to appeal the user to click on them.",
     pattern: {
       y: -6,
       squares: [
@@ -281,9 +281,9 @@ export const snippetsNav: Section[] = [
     shown: true,
   },
   {
-    name: 'KPI Widgets',
-    href: '/snippets/kpi',
-    description: 'Key Performance Indicators to show the user the most important metrics.',
+    name: "KPI Widgets",
+    href: "/snippets/kpi",
+    description: "Key Performance Indicators to show the user the most important metrics.",
     pattern: {
       y: 32,
       squares: [
@@ -295,9 +295,9 @@ export const snippetsNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Product Overviews',
-    href: '/snippets/product-overviews',
-    description: 'Product overview page components',
+    name: "Product Overviews",
+    href: "/snippets/product-overviews",
+    description: "Product overview page components",
     pattern: {
       y: 16,
       squares: [
@@ -308,9 +308,9 @@ export const snippetsNav: Section[] = [
     shown: true,
   },
   {
-    name: 'Product Cards',
-    href: '/snippets/product-cards',
-    description: 'Product list page components',
+    name: "Product Cards",
+    href: "/snippets/product-cards",
+    description: "Product list page components",
     pattern: {
       y: -6,
       squares: [
@@ -334,46 +334,46 @@ const writeTailwindConfig = (config: { [key: string]: string }) => {
     .map(([id, color]) => {
       return `${id}: ${color}`
     })
-    .join('\n')
+    .join("\n")
 }
 
 const palettes = {
   primary: {
-    50: '#f0f8ff',
-    100: '#dff1fe',
-    200: '#bce0fd',
-    300: '#85cafe',
-    400: '#4db0f9',
-    500: '#3393f8',
-    600: '#1474d6',
-    700: '#115ea4',
-    800: '#114a97',
-    900: '#132f78',
-    950: '#0d2a4d',
+    50: "#f0f8ff",
+    100: "#dff1fe",
+    200: "#bce0fd",
+    300: "#85cafe",
+    400: "#4db0f9",
+    500: "#3393f8",
+    600: "#1474d6",
+    700: "#115ea4",
+    800: "#114a97",
+    900: "#132f78",
+    950: "#0d2a4d",
   },
   secondary: {
-    50: '#f5fffb',
-    100: '#ddf0e9',
-    200: '#c4e1d7',
-    300: '#acd3c5',
-    400: '#93c4b3',
-    500: '#7bb5a2',
-    600: '#62a690',
-    700: '#4a977e',
-    800: '#31896c',
-    900: '#197a5a',
-    950: '#005649',
+    50: "#f5fffb",
+    100: "#ddf0e9",
+    200: "#c4e1d7",
+    300: "#acd3c5",
+    400: "#93c4b3",
+    500: "#7bb5a2",
+    600: "#62a690",
+    700: "#4a977e",
+    800: "#31896c",
+    900: "#197a5a",
+    950: "#005649",
   },
 }
 
 export const suggestedPalettes: TailwindPalette[] = [
   {
-    name: 'Primary',
+    name: "Primary",
     combos: tailwindConfigToCombo(palettes.primary),
     config: writeTailwindConfig(palettes.primary),
   },
   {
-    name: 'Secondary',
+    name: "Secondary",
     combos: tailwindConfigToCombo(palettes.secondary),
     config: writeTailwindConfig(palettes.secondary),
   },

@@ -1,12 +1,12 @@
-'use client'
+"use client"
 
-import Link from 'next/link'
+import Link from "next/link"
 
-import { Button } from '@/components/ui/button'
-import { GithubIcon } from '@/components/icons'
-import { LogoLink } from './LogoLink'
-import { NavigationDrawer } from './NavigationDrawer'
-import { ThemeToggle } from './ThemeToggle'
+import { Button } from "@/components/ui/button"
+import { GithubIcon } from "@/components/icons"
+import { LogoLink } from "./LogoLink"
+import { NavigationDrawer } from "./NavigationDrawer"
+import { ThemeToggle } from "./ThemeToggle"
 
 export function Header({ location }: { location: string }) {
   return (

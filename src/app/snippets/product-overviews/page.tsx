@@ -1,16 +1,16 @@
-import React from 'react'
-import { ComponentTypePage } from '@/components/ComponentTypePage'
-import { ProductOverviewSimple } from '@/components/showcase/snippets/product-overviews'
+import React from "react"
+import { ComponentTypePage } from "@/components/ComponentTypePage"
+import { ProductOverviewSimple } from "@/components/showcase/snippets/product-overviews"
 
 export default function ProductOverviews() {
-  const base = 'snippets/product-overviews'
+  const base = "snippets/product-overviews"
 
   return (
     <ComponentTypePage
       title="Product Overviews"
       examples={[
         {
-          name: 'Simple',
+          name: "Simple",
           path: `${base}/ProductOverviewSimple.tsx`,
           component: <ProductOverviewSimple />,
         },

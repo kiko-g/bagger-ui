@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button'
-import { ArrowRightIcon, CableCarIcon, CheckIcon, FactoryIcon, TrashIcon, WrenchIcon } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { ArrowRightIcon, CableCarIcon, CheckIcon, FactoryIcon, TrashIcon, WrenchIcon } from "lucide-react"
 
 export function ButtonIcon() {
   return (

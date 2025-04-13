@@ -1,12 +1,12 @@
-'use client'
+"use client"
 
-import { useMemo, useState } from 'react'
-import { HexColorPicker } from 'react-colorful'
-import { cn } from '@/lib/utils'
-import type { ButtonProps } from '@/components/ui/button'
-import { Button } from '@/components/ui/button'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { Input } from '@/components/ui/input'
+import { useMemo, useState } from "react"
+import { HexColorPicker } from "react-colorful"
+import { cn } from "@/lib/utils"
+import type { ButtonProps } from "@/components/ui/button"
+import { Button } from "@/components/ui/button"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { Input } from "@/components/ui/input"
 
 interface ColorPickerProps {
   value: string
@@ -22,11 +22,11 @@ export function ColorPicker<T extends HTMLInputElement>({
   name,
   className,
   ...props
-}: Omit<ButtonProps, 'value' | 'onChange' | 'onBlur'> & ColorPickerProps) {
+}: Omit<ButtonProps, "value" | "onChange" | "onBlur"> & ColorPickerProps) {
   const [open, setOpen] = useState(false)
 
   const parsedValue = useMemo(() => {
-    return value || '#FFFFFF'
+    return value || "#FFFFFF"
   }, [value])
 
   return (
@@ -53,7 +53,7 @@ export function ColorPicker<T extends HTMLInputElement>({
           color={parsedValue}
           onChange={onChange}
           style={{
-            width: '100% !important',
+            width: "100% !important",
           }}
         />
         <Input
@@ -69,4 +69,4 @@ export function ColorPicker<T extends HTMLInputElement>({
   )
 }
 
-ColorPicker.displayName = 'ColorPicker'
+ColorPicker.displayName = "ColorPicker"

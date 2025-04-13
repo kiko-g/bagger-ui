@@ -1,14 +1,14 @@
-'use client'
+"use client"
 
-import { cn } from '@/lib/utils'
-import { useState, useEffect, useCallback } from 'react'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { coldarkDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { cn } from "@/lib/utils"
+import { useState, useEffect, useCallback } from "react"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
 
-import { Button } from '@/components/ui/button'
-import { Skeleton } from '@/components/ui/skeleton'
+import { Button } from "@/components/ui/button"
+import { Skeleton } from "@/components/ui/skeleton"
 
-import { CheckIcon, ClipboardIcon, LoaderCircleIcon } from 'lucide-react'
+import { CheckIcon, ClipboardIcon, LoaderCircleIcon } from "lucide-react"
 
 interface CodeShowcaseFileProps extends React.HTMLAttributes<HTMLDivElement> {
   path: string
@@ -17,7 +17,7 @@ interface CodeShowcaseFileProps extends React.HTMLAttributes<HTMLDivElement> {
 export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [isExpanded, setIsExpanded] = useState(false)
-  const [code, setCode] = useState<string | null>('')
+  const [code, setCode] = useState<string | null>("")
 
   useEffect(() => {
     fetch(`/api/code/ui?filepath=${encodeURIComponent(path)}`)
@@ -26,7 +26,7 @@ export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
       .catch((error) => {
         setIsLoading(false)
         setCode(null)
-        console.error('Failed to fetch component code.', error)
+        console.error("Failed to fetch component code.", error)
       })
       .finally(() => setIsLoading(false))
   }, [path])
@@ -42,19 +42,19 @@ export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
       </div>
     </div>
   ) : (
-    <div className={cn('relative', isExpanded ? 'expanded' : 'not-expanded')} {...divProps}>
+    <div className={cn("relative", isExpanded ? "expanded" : "not-expanded")} {...divProps}>
       <SyntaxHighlighter
         language="tsx"
         style={coldarkDark}
         customStyle={{
-          margin: '0',
-          minHeight: '60px',
-          overflow: isExpanded ? 'auto' : 'hidden',
-          lineHeight: '1.25',
-          fontSize: '12px',
-          letterSpacing: '-0.025em',
-          borderRadius: '0.75rem',
-          position: 'relative',
+          margin: "0",
+          minHeight: "60px",
+          overflow: isExpanded ? "auto" : "hidden",
+          lineHeight: "1.25",
+          fontSize: "12px",
+          letterSpacing: "-0.025em",
+          borderRadius: "0.75rem",
+          position: "relative",
         }}
       >
         {code}
@@ -64,7 +64,7 @@ export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
         <div
           className="absolute bottom-0 left-0 right-0 h-[120px] rounded-b-xl"
           style={{
-            background: 'linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 1) 100%)',
+            background: "linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 1) 100%)",
           }}
         />
       )}
@@ -75,7 +75,7 @@ export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
 
       <div className="absolute bottom-4 z-10 flex w-full items-center justify-center gap-2">
         <Button variant="default-inverted" onClick={() => setIsExpanded(!isExpanded)}>
-          {isExpanded ? 'Collapse' : 'Expand'}
+          {isExpanded ? "Collapse" : "Expand"}
         </Button>
       </div>
     </div>
@@ -92,7 +92,7 @@ function CopyCodeButton({ text }: { text: string }) {
         setIsCopied(true)
         setTimeout(() => setIsCopied(false), 3000)
       })
-      .catch(() => console.error('Failed to copy code to clipboard.'))
+      .catch(() => console.error("Failed to copy code to clipboard."))
   }, [text])
 
   return (
@@ -100,10 +100,10 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied || !text}
       className={cn(
-        'flex items-center justify-start gap-1 rounded border px-2 py-2 text-xs shadow-sm transition disabled:pointer-events-none',
+        "flex items-center justify-start gap-1 rounded border px-2 py-2 text-xs shadow-sm transition disabled:pointer-events-none",
         isCopied
-          ? 'border-teal-600 bg-teal-600 text-white'
-          : 'border-zinc-700 bg-zinc-700/90 text-white hover:bg-zinc-700',
+          ? "border-teal-600 bg-teal-600 text-white"
+          : "border-zinc-700 bg-zinc-700/90 text-white hover:bg-zinc-700",
       )}
     >
       {text ? (
