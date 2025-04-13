@@ -11,7 +11,7 @@ export function ButtonGroupSplit() {
       <Button className="rounded-r-none">Save</Button>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="default" className="rounded-l-none border-l border-zinc-800 px-2">
+          <Button variant="default" className="rounded-l-none border-l px-2 shadow-none">
             <ChevronDown className="h-4 w-4" />
             <span className="sr-only">More save options</span>
           </Button>
