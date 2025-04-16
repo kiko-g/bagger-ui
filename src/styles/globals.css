@@ -104,8 +104,9 @@
   @apply bg-teal-700/50 text-white dark:bg-teal-500/50;
 }
 
-pre *::selection {
-  @apply bg-rose-500/50 text-white;
+pre *::selection,
+code::selection {
+  @apply bg-rose-600/80 text-white dark:bg-white/80 dark:text-black;
 }
 
 html {

@@ -67,65 +67,55 @@ export function ComponentTypePage({ title, description, sample, examples, combos
           </div>
         )}
 
-        <h3
-          id="examples"
-          className="mb-2 flex flex-wrap items-center border-b border-zinc-200 pb-2 pt-16 text-base font-semibold tracking-tighter dark:border-zinc-800 md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
-        >
-          <a href="#examples" className="group flex w-full items-center gap-2">
-            <span className="group-hover:underline">Examples</span>
-            <BookDashedIcon className="size-5" />
-          </a>
-        </h3>
+        {filteredExamples && filteredExamples.length > 0 && (
+          <>
+            <h3
+              id="examples"
+              className="mb-2 flex flex-wrap items-center border-b border-zinc-200 pb-2 pt-16 text-base font-semibold tracking-tighter dark:border-zinc-800 md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
+            >
+              <a href="#examples" className="group flex w-full items-center gap-2">
+                <span className="group-hover:underline">Examples</span>
+                <BookDashedIcon className="size-5" />
+              </a>
+            </h3>
 
-        <ul id="examples" className="grid grid-cols-1">
-          {filteredExamples && filteredExamples?.length > 0 ? (
-            filteredExamples.map((item, itemIdx) => (
-              <ComponentShowcase
-                index={itemIdx}
-                name={item.name}
-                path={item.path}
-                component={item.component}
-                key={`button-${itemIdx}-${item.name}`}
-              />
-            ))
-          ) : (
-            <div className="mt-4 flex items-center gap-3 rounded-md border border-amber-700/20 bg-amber-700/10 px-3 py-2 text-sm dark:border-amber-600/20 dark:bg-amber-600/10">
-              <CircleOffIcon className="size-4" />
-              <p>
-                No component <strong>examples</strong> in this section.
-              </p>
-            </div>
-          )}
-        </ul>
+            <ul id="examples" className="grid grid-cols-1">
+              {filteredExamples.map((item, itemIdx) => (
+                <ComponentShowcase
+                  index={itemIdx}
+                  name={item.name}
+                  path={item.path}
+                  component={item.component}
+                  key={`button-${itemIdx}-${item.name}`}
+                />
+              ))}
+            </ul>
+          </>
+        )}
 
-        <h3
-          id="combos"
-          className="mb-2 flex flex-wrap items-center border-b border-zinc-200 pb-2 pt-16 text-base font-semibold tracking-tighter dark:border-zinc-800 md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
-        >
-          <a href="#combos" className="group flex w-full items-center gap-2">
-            <span className="group-hover:underline">Combos</span>
-            <PuzzleIcon className="size-5" />
-          </a>
-        </h3>
-        {filteredCombos && filteredCombos?.length > 0 ? (
-          <ul id="combos" className={cn("grid grid-cols-1")}>
-            {filteredCombos.map((item, itemIdx) => (
-              <ComponentShowcase
-                index={itemIdx}
-                name={item.name}
-                path={item.path}
-                component={item.component}
-                key={`button-${itemIdx}-${item.name}`}
-              />
-            ))}
-          </ul>
-        ) : (
-          <div className="mt-4 flex items-center gap-3 rounded-md border border-amber-700/20 bg-amber-700/10 px-3 py-2 text-sm dark:border-amber-600/20 dark:bg-amber-600/10">
-            <CircleOffIcon className="size-4" />
-            <p>
-              No component <strong>combos</strong> in this section.
-            </p>
-          </div>
+        {filteredCombos && filteredCombos.length > 0 && (
+          <>
+            <h3
+              id="combos"
+              className="mb-2 flex flex-wrap items-center border-b border-zinc-200 pb-2 pt-16 text-base font-semibold tracking-tighter dark:border-zinc-800 md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
+            >
+              <a href="#combos" className="group flex w-full items-center gap-2">
+                <span className="group-hover:underline">Combos</span>
+                <PuzzleIcon className="size-5" />
+              </a>
+            </h3>
+            <ul id="combos" className={cn("grid grid-cols-1")}>
+              {filteredCombos.map((item, itemIdx) => (
+                <ComponentShowcase
+                  index={itemIdx}
+                  name={item.name}
+                  path={item.path}
+                  component={item.component}
+                  key={`button-${itemIdx}-${item.name}`}
+                />
+              ))}
+            </ul>
+          </>
         )}
       </section>
     </Layout>

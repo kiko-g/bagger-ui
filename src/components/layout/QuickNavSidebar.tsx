@@ -20,6 +20,8 @@ export function QuickNavSidebar({ navigation }: { navigation?: QuickNavigation }
               </li>
             )
 
+          if (!level.items || level.items.length === 0) return null
+
           return (
             <li key={`nav-${levelIdx}`}>
               <a href={`#${level.name.toLowerCase()}`} className="text-sm font-bold hover:underline">
