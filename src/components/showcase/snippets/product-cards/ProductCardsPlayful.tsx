@@ -26,7 +26,7 @@ type ProductType = {
   }
 }
 
-function ProductSimple({ product }: { product: ProductType }) {
+function ProductPlayful({ product }: { product: ProductType }) {
   const [color, setColor] = useState<ColorHex>(product.info.colors[0])
   const productId = product.info.title.replace(/\s/g, "-").toLowerCase()
   const priceWithDiscount = product.info.price - (product.info.price * product.info.sale.percent) / 100
@@ -188,7 +188,7 @@ function ProductSimple({ product }: { product: ProductType }) {
   )
 }
 
-export function ProductCardsSimple() {
+export function ProductCardsPlayful() {
   const products: ProductType[] = [
     {
       info: {
@@ -239,7 +239,7 @@ export function ProductCardsSimple() {
   return (
     <div className="flex items-center justify-start gap-6">
       {products.map((product, productIdx) => (
-        <ProductSimple key={`product-${productIdx}`} product={product} />
+        <ProductPlayful key={`product-${productIdx}`} product={product} />
       ))}
     </div>
   )
