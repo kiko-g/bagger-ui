@@ -37,14 +37,14 @@ export default function Inputs() {
       ]}
       combos={[
         {
-          name: "Checkbox Table",
-          path: `${base}/combos/CheckboxTable.tsx`,
-          component: <CheckboxTable />,
-        },
-        {
           name: "Checkbox Tree",
           path: `${base}/combos/CheckboxTree.tsx`,
           component: <CheckboxTreeExample />,
+        },
+        {
+          name: "Checkbox Form",
+          path: `${base}/combos/CheckboxForm.tsx`,
+          component: <CheckboxForm />,
         },
         {
           name: "Checkbox Group",
@@ -52,9 +52,9 @@ export default function Inputs() {
           component: <CheckboxGroupExample />,
         },
         {
-          name: "Checkbox Form",
-          path: `${base}/combos/CheckboxForm.tsx`,
-          component: <CheckboxForm />,
+          name: "Checkbox Table",
+          path: `${base}/combos/CheckboxTable.tsx`,
+          component: <CheckboxTable />,
         },
       ]}
     />
