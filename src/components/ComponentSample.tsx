@@ -37,7 +37,7 @@ export function ComponentSample({ name }: { name: string }) {
         <p>
           To have access to our features copy the code in the block below and replace the existing code in the generated
           component file in your project, which by default is{" "}
-          <code className="mx-1 rounded-full bg-teal-700 px-1.5 py-0.5 text-2xs font-semibold text-white">{`components/ui/${name}.tsx`}</code>
+          <code className="mx-1 rounded-full bg-primary px-1.5 py-0.5 text-2xs font-semibold text-primary-foreground">{`components/ui/${name}.tsx`}</code>
         </p>
       ),
     },

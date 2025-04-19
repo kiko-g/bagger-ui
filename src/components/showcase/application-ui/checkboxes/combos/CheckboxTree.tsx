@@ -222,7 +222,7 @@ export function CheckboxTreeExample() {
   ]
 
   return (
-    <div className="w-full max-w-md rounded-md border p-4">
+    <div className="w-full max-w-xl rounded-md border bg-background p-4">
       <h3 className="mb-3 font-medium">Product Categories</h3>
       <CheckboxTree data={treeData} onChange={(selected) => console.log("Selected:", selected)} expanded />
     </div>

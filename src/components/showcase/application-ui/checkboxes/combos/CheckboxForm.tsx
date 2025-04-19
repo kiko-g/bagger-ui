@@ -69,7 +69,7 @@ export function CheckboxForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full max-w-2xl space-y-6 rounded-md bg-background p-6">
         <FormField
           control={form.control}
           name="marketing"
@@ -130,16 +130,18 @@ export function CheckboxForm() {
           control={form.control}
           name="terms"
           render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-              <FormControl>
-                <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-              </FormControl>
-              <div className="space-y-1 leading-none">
-                <FormLabel>Accept terms and conditions</FormLabel>
-                <FormDescription>You agree to our Terms of Service and Privacy Policy.</FormDescription>
-              </div>
+            <>
+              <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                <FormControl>
+                  <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                </FormControl>
+                <div className="flex flex-col space-y-1 leading-none">
+                  <FormLabel>Accept terms and conditions</FormLabel>
+                  <FormDescription>You agree to our Terms of Service and Privacy Policy.</FormDescription>
+                </div>
+              </FormItem>
               <FormMessage />
-            </FormItem>
+            </>
           )}
         />
 
