@@ -28,15 +28,15 @@ export function Navigation({ location }: { location: string }) {
           </ul>
         )}
 
-        {generatorNavFiltered.length > 0 && (
-          <Accordion type="single" collapsible defaultValue="item-1">
-            <AccordionItem value="item-1" className="border-b-0 border-zinc-900/10 dark:border-white/10">
+        {snippetsNavFiltered.length > 0 && (
+          <Accordion type="single" collapsible defaultValue="item-3">
+            <AccordionItem value="item-3" className="border-b-0 border-zinc-900/10 dark:border-white/10">
               <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
-                <span className="ml-2 whitespace-nowrap text-left">Generator</span>
+                <span className="ml-2 whitespace-nowrap text-left">Snippets</span>
               </AccordionTrigger>
               <AccordionContent>
                 <ul className="flex w-full flex-col gap-0.5 pl-0">
-                  {generatorNavFiltered.map((item, itemIdx) => {
+                  {snippetsNavFiltered.map((item, itemIdx) => {
                     const isActive = location.toLowerCase() === item.name.toLowerCase()
                     return (
                       <li key={`nav-${itemIdx}`}>
@@ -72,15 +72,15 @@ export function Navigation({ location }: { location: string }) {
           </Accordion>
         )}
 
-        {snippetsNavFiltered.length > 0 && (
-          <Accordion type="single" collapsible defaultValue="item-3">
-            <AccordionItem value="item-3" className="border-b-0 border-zinc-900/10 dark:border-white/10">
+        {generatorNavFiltered.length > 0 && (
+          <Accordion type="single" collapsible defaultValue="item-1">
+            <AccordionItem value="item-1" className="border-b-0 border-zinc-900/10 dark:border-white/10">
               <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
-                <span className="ml-2 whitespace-nowrap text-left">Snippets</span>
+                <span className="ml-2 whitespace-nowrap text-left">Generator</span>
               </AccordionTrigger>
               <AccordionContent>
                 <ul className="flex w-full flex-col gap-0.5 pl-0">
-                  {snippetsNavFiltered.map((item, itemIdx) => {
+                  {generatorNavFiltered.map((item, itemIdx) => {
                     const isActive = location.toLowerCase() === item.name.toLowerCase()
                     return (
                       <li key={`nav-${itemIdx}`}>

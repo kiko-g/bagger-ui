@@ -3,7 +3,11 @@ import { ComponentTypePage } from "@/components/ComponentTypePage"
 import { CheckboxSample } from "@/components/showcase/application-ui/checkboxes/sample/CheckboxSample"
 
 import { CheckboxDefault } from "@/components/showcase/application-ui/checkboxes/CheckboxDefault"
-import { CheckboxParent } from "@/components/showcase/application-ui/checkboxes/CheckboxParent"
+import { CheckboxParentChild } from "@/components/showcase/application-ui/checkboxes/CheckboxParentChild"
+import { CheckboxTable } from "@/components/showcase/application-ui/checkboxes/combos/CheckboxTable"
+import { CheckboxTreeExample } from "@/components/showcase/application-ui/checkboxes/combos/CheckboxTree"
+import { CheckboxGroupExample } from "@/components/showcase/application-ui/checkboxes/combos/CheckboxGroup"
+import { CheckboxForm } from "@/components/showcase/application-ui/checkboxes/combos/CheckboxForm"
 
 export default function Inputs() {
   const base = "application-ui/checkboxes"
@@ -21,14 +25,36 @@ export default function Inputs() {
       }}
       examples={[
         {
-          name: "Basic with Label",
+          name: "Label and description",
           path: `${base}/CheckboxDefault.tsx`,
           component: <CheckboxDefault />,
         },
         {
           name: "Parent Checkbox with children",
-          path: `${base}/CheckboxParent.tsx`,
-          component: <CheckboxParent />,
+          path: `${base}/CheckboxParentChild.tsx`,
+          component: <CheckboxParentChild />,
+        },
+      ]}
+      combos={[
+        {
+          name: "Checkbox Table",
+          path: `${base}/combos/CheckboxTable.tsx`,
+          component: <CheckboxTable />,
+        },
+        {
+          name: "Checkbox Tree",
+          path: `${base}/combos/CheckboxTree.tsx`,
+          component: <CheckboxTreeExample />,
+        },
+        {
+          name: "Checkbox Group",
+          path: `${base}/combos/CheckboxGroup.tsx`,
+          component: <CheckboxGroupExample />,
+        },
+        {
+          name: "Checkbox Form",
+          path: `${base}/combos/CheckboxForm.tsx`,
+          component: <CheckboxForm />,
         },
       ]}
     />

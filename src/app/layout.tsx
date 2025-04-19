@@ -1,6 +1,8 @@
 import "@/styles/globals.css"
 import type { Metadata, Viewport } from "next"
 
+import { Toaster } from "@/components/ui/toaster"
+
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/utils/config"
 import { fontMono, fontSans } from "@/lib/fonts"
@@ -72,6 +74,7 @@ export default function RootLayout({
         <Providers>
           <Analytics />
           {children}
+          <Toaster />
         </Providers>
       </body>
     </html>

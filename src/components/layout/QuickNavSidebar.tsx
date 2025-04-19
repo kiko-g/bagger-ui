@@ -14,7 +14,7 @@ export function QuickNavSidebar({ navigation }: { navigation?: QuickNavigation }
           if ("href" in level)
             return (
               <li key={`nav-single-${levelIdx}`}>
-                <a href={level.href} className="text-sm font-medium hover:underline">
+                <a href={level.href} className="text-sm font-semibold hover:underline">
                   {level.name}
                 </a>
               </li>
