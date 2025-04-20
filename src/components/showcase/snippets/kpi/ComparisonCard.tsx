@@ -13,7 +13,7 @@ export function ComparisonCard({ current, previous, label, format = (v) => v.toL
   const isPositive = difference >= 0
 
   return (
-    <div className="relative max-w-full rounded bg-white/80 p-4 dark:bg-black/20 xl:max-w-xs">
+    <div className="relative max-w-full rounded bg-white/80 p-4 xl:max-w-xs dark:bg-black/20">
       <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">{label}</h3>
       <p className="mt-1 min-h-[5rem] text-sm">Comparing current period with previous period performance.</p>
 
@@ -46,11 +46,11 @@ export function ComparisonCard({ current, previous, label, format = (v) => v.toL
           </div>
 
           <div>
-            <span className={isPositive ? "text-green-600" : "text-red-600"}>
+            <span className={isPositive ? "text-green-600" : "text-destructive"}>
               {isPositive ? "+" : ""}
               {format(difference)} ({Math.abs(percentChange).toFixed(1)}%)
             </span>
-            <div className="text-xs text-gray-500">vs. previous period</div>
+            <div className="text-muted-foreground text-xs">vs. previous period</div>
           </div>
         </div>
       </div>

@@ -31,12 +31,12 @@ export function DropzoneArea({ accept = {}, multiple = true, onDrop, className =
     <div
       {...getRootProps()}
       className={cn(
-        "group flex h-48 w-full cursor-pointer flex-col items-center justify-center rounded border border-dashed border-zinc-900/20 bg-zinc-900/[3%] p-4 text-center transition hover:border-teal-600/80 hover:bg-teal-600/5 dark:border-zinc-200/30 dark:bg-zinc-100/[3%] dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5",
+        "group hover:border-primary/80 hover:bg-primary/5 dark:hover:border-primary/80 dark:hover:bg-primary/5 border-accent bg-muted flex h-48 w-full cursor-pointer flex-col items-center justify-center rounded border border-dashed p-4 text-center transition",
         className,
       )}
     >
       <input {...getInputProps()} />
-      <div className="flex flex-col items-center justify-center text-zinc-700 group-hover:text-teal-950 dark:text-zinc-300 dark:group-hover:text-teal-50">
+      <div className="text-foreground group-hover:text-primary flex flex-col items-center justify-center">
         <DownloadIcon className="h-8 w-8 transition" />
         <p className="mt-2 text-sm transition">
           <span className="font-bold">Click to upload</span> or drag and drop. Colors within the image will be used to

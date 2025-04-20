@@ -36,7 +36,7 @@ export function CodeShowcaseFromAPI({ route, language, options, allowDownload }:
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          className="-ml-1 mr-3 h-12 w-12 animate-spin text-teal-600 dark:text-teal-500"
+          className="text-primary mr-3 -ml-1 h-12 w-12 animate-spin"
         >
           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
           <path
@@ -51,7 +51,7 @@ export function CodeShowcaseFromAPI({ route, language, options, allowDownload }:
   return (
     <div className="group relative max-w-7xl overflow-auto rounded-xl">
       {/* Controls */}
-      <div className="absolute right-4 top-4 flex items-center justify-end gap-2">
+      <div className="absolute top-4 right-4 flex items-center justify-end gap-2">
         {canDownload ? <DownloadButton text={code} filename={`code.${language}`} /> : null}
         {canCopy ? <CopyCodeButton text={code} /> : null}
       </div>

@@ -27,7 +27,7 @@ export default function Config() {
 
   return (
     <Layout location="Setup" sidebar quickNav={quickNav}>
-      <section className="w-full border-b border-zinc-900/10 pb-2 pt-4 text-sm dark:border-white/10 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10">
+      <section className="w-full border-b pt-4 pb-2 text-sm lg:pt-6 lg:pb-3 xl:pt-10 xl:pb-5">
         <h2 className="mb-3 text-xl font-semibold tracking-tighter lg:text-4xl">Setup</h2>
         <p className="max-w-3xl">
           This page covers the configuration of the tech stack, packages and tools used so that you can use our
@@ -35,10 +35,7 @@ export default function Config() {
         </p>
       </section>
 
-      <section
-        id="getting-started"
-        className="w-full border-b border-zinc-900/10 pb-2 pt-4 text-sm dark:border-white/10 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10"
-      >
+      <section id="getting-started" className="w-full border-b pt-4 pb-2 text-sm lg:pt-6 lg:pb-3 xl:pt-10 xl:pb-5">
         <h2 className="mb-3 text-lg font-semibold tracking-tighter lg:text-3xl">Getting Started</h2>
         <p className="mb-3 max-w-3xl">
           This library is aimed at delivering consistent, reusable and customizable UI components specifically for
@@ -64,15 +61,12 @@ export default function Config() {
         </p>
       </section>
 
-      <section
-        id="tailwind-config"
-        className="w-full border-b-0 border-zinc-900/10 pb-2 pt-4 text-sm dark:border-white/10 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10"
-      >
+      <section id="tailwind-config" className="w-full border-b-0 pt-4 pb-2 text-sm lg:pt-6 lg:pb-3 xl:pt-10 xl:pb-5">
         <h2 className="mb-3 text-lg font-semibold tracking-tighter lg:text-3xl">Tailwind Config File</h2>
         <p className="mb-3 max-w-3xl">
           This site uses a custom Tailwind config that extends the default Tailwind config. Copy our config to your{" "}
-          <span className="font-semibold text-teal-600 dark:text-teal-500">tailwind.config.js</span> file that should be
-          in the root of your project.
+          <span className="text-primary font-semibold">tailwind.config.js</span> file that should be in the root of your
+          project.
         </p>
         <div className="w-full rounded-xl">
           <CodeShowcaseFromAPI route="api/code/tailwind" language="typescript" />
@@ -81,13 +75,13 @@ export default function Config() {
 
       <section
         id="types"
-        className="w-full border-b-0 border-zinc-900/10 pb-2 pt-4 text-sm dark:border-white/10 lg:pb-3 lg:pt-6 xl:pb-5 xl:pt-10"
+        className="w-full border-b-0 border-zinc-900/10 pt-4 pb-2 text-sm lg:pt-6 lg:pb-3 xl:pt-10 xl:pb-5 dark:border-white/10"
       >
         <h2 className="mb-3 text-lg font-semibold tracking-tighter lg:text-3xl">Types</h2>
         <p className="mb-3 max-w-3xl">
           To keep a tidy codebase, reduce errors and have strong maintainability, we make use of TypeScript, Defined in
-          the <span className="font-semibold text-teal-600 dark:text-teal-500">@/types</span> folder you can get a grasp
-          of the types used to build our components and BaggerUI.
+          the <span className="text-primary font-semibold">@/types</span> folder you can get a grasp of the types used
+          to build our components and BaggerUI.
         </p>
         <div className="w-full rounded-xl">
           <CodeShowcaseFromAPI route="api/code/types" language="typescript" />

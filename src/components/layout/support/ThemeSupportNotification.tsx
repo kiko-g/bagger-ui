@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation"
 
 import { XIcon } from "lucide-react"
 import { VSCodeIcon } from "@/components/icons/VSCodeIcon"
-import { cn } from "@/lib/utils"
 
 export function ThemeSupportNotification() {
   const pathname = usePathname()
@@ -55,21 +54,21 @@ export function ThemeSupportNotification() {
         className="pointer-events-none fixed inset-0 z-50 flex items-end justify-end px-4 py-6 sm:items-end sm:p-6"
       >
         <div className="flex w-full flex-col items-center space-y-4 sm:items-end">
-          <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white/70 shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur-sm transition data-closed:data-enter:translate-y-2 data-enter:transform data-closed:opacity-0 data-enter:duration-300 data-leave:duration-100 data-enter:ease-out data-leave:ease-in dark:bg-zinc-950/60 sm:data-closed:data-enter:translate-x-2 sm:data-closed:data-enter:translate-y-0">
+          <div className="ring-opacity-5 bg-background/90 ring-accent pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg shadow-lg ring-1 backdrop-blur-sm transition data-closed:opacity-0 data-enter:transform data-enter:duration-300 data-enter:ease-out data-closed:data-enter:translate-y-2 data-leave:duration-100 data-leave:ease-in sm:data-closed:data-enter:translate-x-2 sm:data-closed:data-enter:translate-y-0">
             <div className="p-3">
               <div className="flex items-start">
-                <div className="ml-1 mt-1 shrink-0">
+                <div className="mt-1 ml-1 shrink-0">
                   <Image
                     src="/bagger-flow.svg"
                     alt="Bagger Flow"
                     width={32}
                     height={32}
-                    className="-ml-[1px] -mt-[1px]"
+                    className="-mt-[1px] -ml-[1px]"
                   />
                 </div>
                 <div className="ml-2.5 w-0 flex-1 pt-0.5">
-                  <p className="text-sm font-medium text-zinc-800 dark:text-white">Check out Bagger Flow</p>
-                  <p className="mt-1 text-sm/5 font-normal text-zinc-500 dark:text-zinc-300">
+                  <p className="text-foreground text-sm font-medium">Check out Bagger Flow</p>
+                  <p className="text-muted-foreground mt-1 text-sm/5 font-normal">
                     Bagger Flow is a{" "}
                     <a
                       href="vscode:extension/kikogoncalves.bagger-flow"
@@ -84,7 +83,7 @@ export function ThemeSupportNotification() {
                     <a
                       href="https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow"
                       target="_blank"
-                      className="flex items-center gap-1 rounded-md text-sm font-medium text-teal-600 focus:underline focus:outline-hidden dark:text-teal-500 dark:hover:text-teal-400"
+                      className="text-primary flex items-center gap-1 rounded-md text-sm font-medium hover:opacity-80 focus:underline focus:outline-hidden"
                     >
                       <span>Take me there</span>
                     </a>

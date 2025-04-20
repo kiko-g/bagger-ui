@@ -27,7 +27,7 @@ export function NavigationDrawer({ location }: { location: string }) {
       <DrawerTrigger className="flex items-center justify-center p-[7px] md:hidden">
         <MenuIcon className="size-4" />
       </DrawerTrigger>
-      <DrawerContent className="px-1 pb-4 pt-1">
+      <DrawerContent className="px-1 pt-1 pb-4">
         <DrawerHeader className="sr-only">
           <DrawerTitle className="sr-only">Navigation</DrawerTitle>
           <DrawerDescription className="sr-only">Drawer menu to navigate through the site</DrawerDescription>
@@ -113,8 +113,8 @@ function NavItem({ name, href, isActive, isNew }: { name: string; href: string; 
       <div className="w-full items-center gap-1.5 pr-4 lg:pr-16">
         <span>{name}</span>
         {isNew && (
-          <span className="inline-flex items-center rounded-full bg-teal-700 px-[5px] py-[3px] text-white dark:bg-teal-600">
-            <span className="text-3xs font-semibold leading-none tracking-tight">New</span>
+          <span className="bg-primary text-primary-foreground inline-flex items-center rounded-full px-[5px] py-[3px]">
+            <span className="text-3xs leading-none font-semibold tracking-tight">New</span>
           </span>
         )}
       </div>

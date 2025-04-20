@@ -50,7 +50,7 @@ export function ComponentShowcase({ index, name, path, component }: ComponentCar
           />
         </div>
 
-        <div className="absolute right-3 top-16 z-10 flex items-center justify-end gap-2">
+        <div className="absolute top-16 right-3 z-10 flex items-center justify-end gap-2">
           {path && isCodeVisible && <LinkToGithubButton path={path} />}
           <CopyCodeButton text={code} />
         </div>
@@ -100,7 +100,7 @@ function CopyCodeButton({ text }: { text: string }) {
       className={cn(
         "flex items-center justify-start gap-1 rounded border px-2 py-2 text-xs shadow-xs transition disabled:pointer-events-none",
         isCopied
-          ? "border-teal-600 bg-teal-600 text-white"
+          ? "border-primary bg-primary text-primary-foreground"
           : "border-zinc-700 bg-zinc-700/90 text-white hover:bg-zinc-700",
       )}
     >
@@ -134,7 +134,7 @@ function ChangeViewModeTabs({
           "inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all lg:px-3 lg:py-1.5",
           isCodeVisible
             ? "border-transparent"
-            : "border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5",
+            : "bg-zinc-150 border-zinc-900 font-semibold dark:border-zinc-100 dark:bg-white/5",
         )}
       >
         Preview
@@ -142,9 +142,9 @@ function ChangeViewModeTabs({
       <button
         onClick={toggleShowCode}
         className={cn(
-          "inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all hover:bg-zinc-100 dark:hover:bg-white/5 lg:px-3 lg:py-1.5",
+          "inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all hover:bg-zinc-100 lg:px-3 lg:py-1.5 dark:hover:bg-white/5",
           isCodeVisible
-            ? "border-zinc-900 bg-zinc-150 font-semibold dark:border-zinc-100 dark:bg-white/5"
+            ? "bg-zinc-150 border-zinc-900 font-semibold dark:border-zinc-100 dark:bg-white/5"
             : "border-transparent",
         )}
       >
@@ -163,7 +163,7 @@ function LinkToGithubButton({ path }: { path: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-start gap-2 rounded bg-white px-3 py-1.5 text-2xs text-zinc-900 shadow-xs transition hover:opacity-80 disabled:cursor-not-allowed"
+      className="text-2xs flex items-center justify-start gap-2 rounded bg-white px-3 py-1.5 text-zinc-900 shadow-xs transition hover:opacity-80 disabled:cursor-not-allowed"
     >
       <span>Open on Github</span>
       <GithubIcon className="size-3.5" />

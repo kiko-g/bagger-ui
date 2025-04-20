@@ -112,7 +112,7 @@ export default function Generator() {
                   placeholder="Type the name of your color palette"
                   value={tailwindPalette.name}
                   onChange={(e) => setTailwindPalette((x) => ({ ...x, name: e.target.value }))}
-                  className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-teal-600/80 hover:bg-teal-600/5 focus:border-teal-600 focus:accent-teal-600 focus:ring-0 focus:ring-teal-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5 dark:focus:border-teal-600/80 dark:focus:ring-0 dark:focus:ring-teal-600 lg:px-3 lg:py-2 lg:text-sm"
+                  className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-teal-600/80 hover:bg-teal-600/5 focus:border-teal-600 focus:accent-teal-600 focus:ring-0 focus:ring-teal-600 focus:ring-offset-0 lg:px-3 lg:py-2 lg:text-sm dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5 dark:focus:border-teal-600/80 dark:focus:ring-0 dark:focus:ring-teal-600"
                 />
 
                 <div className="flex w-full items-center gap-3">
@@ -128,7 +128,7 @@ export default function Generator() {
                     value={firstColor}
                     onChange={(e) => setFirstColor(e.target.value as ColorHex)}
                     placeholder="First Color"
-                    className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-teal-600/80 hover:bg-teal-600/5 focus:border-teal-600 focus:accent-teal-600 focus:ring-0 focus:ring-teal-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5 dark:focus:border-teal-600/80 dark:focus:ring-0 dark:focus:ring-teal-600 lg:px-3 lg:py-2 lg:text-sm"
+                    className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-teal-600/80 hover:bg-teal-600/5 focus:border-teal-600 focus:accent-teal-600 focus:ring-0 focus:ring-teal-600 focus:ring-offset-0 lg:px-3 lg:py-2 lg:text-sm dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5 dark:focus:border-teal-600/80 dark:focus:ring-0 dark:focus:ring-teal-600"
                   />
                 </div>
 
@@ -145,7 +145,7 @@ export default function Generator() {
                     value={secondColor}
                     onChange={(e) => setSecondColor(e.target.value as ColorHex)}
                     placeholder="Second Color"
-                    className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-teal-600/80 hover:bg-teal-600/5 focus:border-teal-600 focus:accent-teal-600 focus:ring-0 focus:ring-teal-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5 dark:focus:border-teal-600/80 dark:focus:ring-0 dark:focus:ring-teal-600 lg:px-3 lg:py-2 lg:text-sm"
+                    className="h-10 w-full border border-zinc-900/10 bg-white px-2 py-1.5 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-teal-600/80 hover:bg-teal-600/5 focus:border-teal-600 focus:accent-teal-600 focus:ring-0 focus:ring-teal-600 focus:ring-offset-0 lg:px-3 lg:py-2 lg:text-sm dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5 dark:focus:border-teal-600/80 dark:focus:ring-0 dark:focus:ring-teal-600"
                   />
                 </div>
               </div>
@@ -163,7 +163,7 @@ export default function Generator() {
               <button
                 type="button"
                 onClick={generateTailwindPalette}
-                className="rounded-sm bg-teal-600 px-4 py-2 text-sm font-normal text-white shadow-sm transition hover:opacity-80 dark:bg-teal-600/80"
+                className="bg-primary text-primary-foreground dark:bg-primary/80 rounded-sm px-4 py-2 text-sm font-normal shadow-sm transition hover:opacity-80"
               >
                 Generate Palette
               </button>
@@ -182,10 +182,10 @@ export default function Generator() {
                           onClick={() => handleCopy(combo.color)}
                           className="group relative flex flex-col items-start justify-center rounded-sm p-1 transition hover:bg-black/5 dark:hover:bg-white/10"
                         >
-                          <span className="absolute -right-1 -top-1 flex w-full items-center justify-end opacity-0 group-hover:opacity-100">
+                          <span className="absolute -top-1 -right-1 flex w-full items-center justify-end opacity-0 group-hover:opacity-100">
                             <span
                               className={cn(
-                                "rounded-full border border-transparent bg-zinc-800/90 p-[2px] text-center text-2xs font-medium text-white shadow-xl transition-all dark:bg-rose-400/80",
+                                "text-2xs rounded-full border border-transparent bg-zinc-800/90 p-[2px] text-center font-medium text-white shadow-xl transition-all dark:bg-rose-400/80",
                               )}
                             >
                               <svg
@@ -240,8 +240,8 @@ export default function Generator() {
         </section>
       )}
 
-      <section id="tailwindcss-palette-suggestions" className="mb-24 mt-4 w-full pt-4">
-        <h2 className="mb-3 flex flex-wrap items-center border-b border-zinc-900/10 pb-3 pt-4 text-base font-bold tracking-tighter dark:border-white/10 md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl">
+      <section id="tailwindcss-palette-suggestions" className="mt-4 mb-24 w-full pt-4">
+        <h2 className="mb-3 flex flex-wrap items-center border-b border-zinc-900/10 pt-4 pb-3 text-base font-bold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl dark:border-white/10">
           Suggested Palettes
         </h2>
 
@@ -301,10 +301,10 @@ function Palette({
                 onClick={() => handleCopy(combo.color)}
                 className="group relative flex flex-col items-start justify-center rounded-sm p-1 transition hover:bg-black/5 dark:hover:bg-white/10"
               >
-                <span className="absolute -right-1 -top-1 flex w-full items-center justify-end opacity-0 group-hover:opacity-100">
+                <span className="absolute -top-1 -right-1 flex w-full items-center justify-end opacity-0 group-hover:opacity-100">
                   <span
                     className={cn(
-                      "rounded-full border border-transparent bg-zinc-800/90 p-[2px] text-center text-2xs font-medium text-white shadow-xl transition-all dark:bg-rose-400/80",
+                      "text-2xs rounded-full border border-transparent bg-zinc-800/90 p-[2px] text-center font-medium text-white shadow-xl transition-all dark:bg-rose-400/80",
                     )}
                   >
                     <svg
@@ -328,7 +328,10 @@ function Palette({
                   </span>
                 </span>
 
-                <span className="mb-2 flex h-10 w-14 rounded-sm shadow-sm" style={{ backgroundColor: combo.color }}></span>
+                <span
+                  className="mb-2 flex h-10 w-14 rounded-sm shadow-sm"
+                  style={{ backgroundColor: combo.color }}
+                ></span>
                 <span className="text-xs font-semibold text-zinc-800 dark:text-zinc-200">{combo.id}</span>
                 <span className="text-xs font-normal text-zinc-600 dark:text-zinc-400">{combo.color}</span>
               </button>

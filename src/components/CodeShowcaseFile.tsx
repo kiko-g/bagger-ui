@@ -62,14 +62,14 @@ export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
 
       {!isExpanded && (
         <div
-          className="absolute bottom-0 left-0 right-0 h-[120px] rounded-b-xl"
+          className="absolute right-0 bottom-0 left-0 h-[120px] rounded-b-xl"
           style={{
             background: "linear-gradient(to bottom, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 1) 100%)",
           }}
         />
       )}
 
-      <div className="absolute right-4 top-4 z-10 flex items-center justify-end gap-2">
+      <div className="absolute top-4 right-4 z-10 flex items-center justify-end gap-2">
         <CopyCodeButton text={code} />
       </div>
 
@@ -102,7 +102,7 @@ function CopyCodeButton({ text }: { text: string }) {
       className={cn(
         "flex items-center justify-start gap-1 rounded border px-2 py-2 text-xs shadow-xs transition disabled:pointer-events-none",
         isCopied
-          ? "border-teal-600 bg-teal-600 text-white"
+          ? "border-primary bg-primary text-primary-foreground"
           : "border-zinc-700 bg-zinc-700/90 text-white hover:bg-zinc-700",
       )}
     >
