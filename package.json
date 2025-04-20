@@ -87,5 +87,9 @@
     "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.1.4",
     "typescript": "^5"
+  },
+  "peerDependencies": {
+    "react": "^16.8 || ^17.0 || ^18.0 || ^19.0",
+    "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0"
   }
 }
