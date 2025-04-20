@@ -73,10 +73,7 @@ export default function Config() {
         </div>
       </section>
 
-      <section
-        id="types"
-        className="w-full border-b-0 border-zinc-900/10 pt-4 pb-2 text-sm lg:pt-6 lg:pb-3 xl:pt-10 xl:pb-5 dark:border-white/10"
-      >
+      <section id="types" className="w-full border-b-0 pt-4 pb-2 text-sm lg:pt-6 lg:pb-3 xl:pt-10 xl:pb-5">
         <h2 className="mb-3 text-lg font-semibold tracking-tighter lg:text-3xl">Types</h2>
         <p className="mb-3 max-w-3xl">
           To keep a tidy codebase, reduce errors and have strong maintainability, we make use of TypeScript, Defined in

@@ -16,25 +16,25 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: var(--color-neutral-200, currentcolor);
   }
 }
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #202024;
+    --background: #fcffff;
+    --foreground: #202224;
     --card: #fcfefe;
     --card-foreground: #202323;
     --popover: #fcfefe;
     --popover-foreground: #202323;
-    --primary: #7f74c7;
+    --primary: #1d4479;
     --primary-foreground: #ffffff;
-    --secondary: #e1f3f0;
-    --secondary-foreground: #27302d;
+    --secondary: #8a47b4;
+    --secondary-foreground: #ffffff;
     --muted: #efeff2;
     --muted-foreground: #646467;
-    --accent: #e8e8f2;
+    --accent: #e8e8e9;
     --accent-foreground: #202026;
     --destructive: #d34948;
     --destructive-foreground: #ffffff;
@@ -70,16 +70,16 @@
   }
 
   .dark {
-    --background: #111111;
+    --background: #101114;
     --foreground: #eeeeee;
     --card: #191919;
     --card-foreground: #eeeeee;
     --popover: #191919;
     --popover-foreground: #eeeeee;
-    --primary: #f4f6ff;
-    --primary-foreground: #1b1a22;
-    --secondary: #2b2a43;
-    --secondary-foreground: #ffffff;
+    --primary: #c0d6ff;
+    --primary-foreground: #0f131a;
+    --secondary: #eabdc5;
+    --secondary-foreground: rgb(27, 17, 17);
     --muted: #222222;
     --muted-foreground: #b4b4b4;
     --accent: #2a2a2a;
@@ -178,7 +178,7 @@
 
   pre *::selection,
   code::selection {
-    @apply bg-secondary/80 text-secondary-foreground dark:bg-secondary/80 dark:text-secondary-foreground;
+    @apply bg-secondary/80 text-secondary-foreground;
   }
 
   html {
@@ -186,7 +186,7 @@
   }
 
   body {
-    @apply bg-background dark:bg-background font-sans text-zinc-900 antialiased dark:text-zinc-100;
+    @apply bg-background font-sans text-foreground antialiased;
   }
 
   code,
@@ -199,16 +199,11 @@
     @apply text-wrap;
   }
 
-  pre {
-    color: white;
-    background-color: var(--color-zinc-900) !important;
-    border: 1px solid var(--color-zinc-800);
-  }
-
+  pre,
   .dark pre {
     color: white;
-    background-color: var(--color-zinc-900) !important;
-    border: 1px solid var(--color-zinc-800);
+    background-color: var(--color-neutral-900) !important;
+    border: 1px solid var(--color-neutral-800);
   }
 
   .expanded pre {

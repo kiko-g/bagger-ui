@@ -13,10 +13,10 @@ export function Navigation({ location }: { location: string }) {
   const snippetsNavFiltered = snippetsNav.filter((item) => item.shown)
 
   return (
-    <aside className="bg-opacity-80 fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] min-w-64 shrink-0 flex-col space-y-4 self-stretch overflow-auto py-8 pr-6 pl-4 hover:overflow-auto md:sticky md:block lg:flex lg:border-r lg:border-zinc-900/10 dark:lg:border-white/10">
+    <aside className="bg-opacity-80 fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] min-w-64 shrink-0 flex-col space-y-4 self-stretch overflow-auto py-8 pr-6 pl-4 hover:overflow-auto md:sticky md:block lg:flex lg:border-r">
       <ScrollArea className="h-full">
         {generalNavFiltered.length > 0 && (
-          <ul className="mb-4 flex w-full flex-col gap-0.5 border-b-0 border-zinc-900/10 dark:border-white/10">
+          <ul className="mb-4 flex w-full flex-col gap-0.5 border-b-0">
             {generalNavFiltered.map((item, itemIdx) => {
               const isActive = location.toLowerCase() === item.name.toLowerCase()
               return (
@@ -30,7 +30,7 @@ export function Navigation({ location }: { location: string }) {
 
         {snippetsNavFiltered.length > 0 && (
           <Accordion type="single" collapsible defaultValue="item-3">
-            <AccordionItem value="item-3" className="border-b-0 border-zinc-900/10 dark:border-white/10">
+            <AccordionItem value="item-3" className="border-b-0">
               <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
                 <span className="ml-2 text-left whitespace-nowrap">Snippets</span>
               </AccordionTrigger>
@@ -52,7 +52,7 @@ export function Navigation({ location }: { location: string }) {
 
         {applicationUiNavFiltered.length > 0 && (
           <Accordion type="single" collapsible defaultValue="item-2">
-            <AccordionItem value="item-2" className="border-b-0 border-zinc-900/10 dark:border-white/10">
+            <AccordionItem value="item-2" className="border-b-0">
               <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
                 <span className="ml-2 text-left whitespace-nowrap">Components</span>
               </AccordionTrigger>
@@ -74,7 +74,7 @@ export function Navigation({ location }: { location: string }) {
 
         {generatorNavFiltered.length > 0 && (
           <Accordion type="single" collapsible defaultValue="item-1">
-            <AccordionItem value="item-1" className="border-b-0 border-zinc-900/10 dark:border-white/10">
+            <AccordionItem value="item-1" className="border-b-0">
               <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
                 <span className="ml-2 text-left whitespace-nowrap">Generator</span>
               </AccordionTrigger>
@@ -104,9 +104,7 @@ function NavItem({ name, href, isActive, isNew }: { name: string; href: string; 
       title={name}
       href={href}
       className={cn(
-        isActive
-          ? "border-zinc-500 bg-zinc-500/10 dark:bg-zinc-300/5"
-          : "border-zinc-900/10 hover:bg-zinc-500/10 dark:border-white/10 dark:hover:bg-zinc-50/10",
+        isActive ? "bg-accent" : "hover:bg-accent/50",
         "flex h-8 cursor-pointer items-center justify-start gap-2 rounded-md border-0 pl-2 text-sm leading-none transition ease-in-out",
       )}
     >

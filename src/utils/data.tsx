@@ -120,6 +120,19 @@ export const applicationUiNav: Section[] = [
     new: false,
   },
   {
+    name: "Color Pickers",
+    href: "/application-ui/color-pickers",
+    description: "Color pickers for selecting colors.",
+    pattern: {
+      y: 16,
+      squares: [
+        [0, 1],
+        [1, 3],
+      ],
+    },
+    shown: true,
+  },
+  {
     name: "Loading",
     href: "/application-ui/loading",
     description: "Components for informing the user that data is loading.",

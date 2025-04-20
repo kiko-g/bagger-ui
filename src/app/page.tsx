@@ -32,9 +32,9 @@ export default function Home() {
 
 function ComponentsSection({ items, title }: { items: Section[]; title: string }) {
   return (
-    <div className="mt-16 border-t border-zinc-900/10 pt-4 dark:border-white/10">
+    <div className="mt-16 border-t pt-4">
       <h3 className="mb-3 text-xl font-bold">{title}</h3>
-      <div className="grid w-full grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 xl:gap-5 2xl:gap-5 2xl:xl:grid-cols-5">
+      <div className="grid w-full grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 xl:gap-5 2xl:grid-cols-6 2xl:gap-4">
         {items.map((section) => (
           <SectionCard key={`showcase-${title}-${section.href}`} section={section} />
         ))}

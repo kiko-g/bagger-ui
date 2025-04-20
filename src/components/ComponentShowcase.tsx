@@ -10,6 +10,7 @@ import { coldarkDark } from "react-syntax-highlighter/dist/cjs/styles/prism"
 
 import { GithubIcon } from "./icons/GithubIcon"
 import { CheckIcon, ClipboardIcon, LinkIcon, LoaderCircleIcon, MoonIcon, SunIcon } from "lucide-react"
+import { Button } from "./ui/button"
 
 export function ComponentShowcase({ index, name, path, component }: ComponentCardType & { index: number }) {
   const sectionId = name.toLowerCase().replace(/[^a-z0-9]+/g, "-")
@@ -128,28 +129,12 @@ function ChangeViewModeTabs({
 }) {
   return (
     <div className="flex items-center justify-start gap-2 transition">
-      <button
-        onClick={toggleShowPreview}
-        className={cn(
-          "inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all lg:px-3 lg:py-1.5",
-          isCodeVisible
-            ? "border-transparent"
-            : "bg-zinc-150 border-zinc-900 font-semibold dark:border-zinc-100 dark:bg-white/5",
-        )}
-      >
+      <Button onClick={toggleShowPreview} variant={isCodeVisible ? "ghost" : "ghost-inverted"}>
         Preview
-      </button>
-      <button
-        onClick={toggleShowCode}
-        className={cn(
-          "inline-flex items-center justify-center rounded-md px-2.5 py-1.5 text-center text-sm transition-all hover:bg-zinc-100 lg:px-3 lg:py-1.5 dark:hover:bg-white/5",
-          isCodeVisible
-            ? "bg-zinc-150 border-zinc-900 font-semibold dark:border-zinc-100 dark:bg-white/5"
-            : "border-transparent",
-        )}
-      >
+      </Button>
+      <Button onClick={toggleShowCode} variant={isCodeVisible ? "ghost-inverted" : "ghost"}>
         Code
-      </button>
+      </Button>
     </div>
   )
 }

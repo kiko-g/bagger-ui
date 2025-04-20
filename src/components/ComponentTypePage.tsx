@@ -59,7 +59,7 @@ export function ComponentTypePage({ title, description, sample, examples, combos
         <h2 className="mb-2 text-2xl font-semibold tracking-tighter lg:mb-3 lg:text-4xl">{title}</h2>
 
         {sample && (
-          <div className="mb-0 border-zinc-200 dark:border-zinc-800">
+          <div className="mb-0">
             {description ? description : null}
             {sample.nodes.map((node, nodeIdx) => (
               <div key={`sample-${nodeIdx}`}>{node.component}</div>
@@ -71,7 +71,7 @@ export function ComponentTypePage({ title, description, sample, examples, combos
           <>
             <h3
               id="examples"
-              className="mb-2 flex flex-wrap items-center border-b border-zinc-200 pb-2 pt-16 text-base font-semibold tracking-tighter dark:border-zinc-800 md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
+              className="mb-2 flex flex-wrap items-center border-b pt-16 pb-2 text-base font-semibold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
             >
               <a href="#examples" className="group flex w-full items-center gap-2">
                 <span className="group-hover:underline">Examples</span>
@@ -97,7 +97,7 @@ export function ComponentTypePage({ title, description, sample, examples, combos
           <>
             <h3
               id="combos"
-              className="mb-2 flex flex-wrap items-center border-b border-zinc-200 pb-2 pt-16 text-base font-semibold tracking-tighter dark:border-zinc-800 md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
+              className="mb-2 flex flex-wrap items-center border-b pt-16 pb-2 text-base font-semibold tracking-tighter md:text-lg lg:text-xl lg:tracking-tight xl:text-2xl 2xl:text-3xl"
             >
               <a href="#combos" className="group flex w-full items-center gap-2">
                 <span className="group-hover:underline">Combos</span>

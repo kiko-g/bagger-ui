@@ -10,11 +10,11 @@ import { ThemeToggle } from "./ThemeToggle"
 
 export function Header({ location }: { location: string }) {
   return (
-    <header className="sticky top-0 z-50 mx-auto w-full border-b border-zinc-900/10 bg-zinc-100 bg-opacity-60 backdrop-blur-xs backdrop-filter dark:border-white/10 dark:bg-zinc-950 dark:bg-opacity-50 xl:px-4">
+    <header className="bg-opacity-60 dark:bg-opacity-50 sticky top-0 z-50 mx-auto w-full border-b bg-zinc-100 backdrop-blur-xs backdrop-filter xl:px-4 dark:bg-zinc-950">
       <div className="flex items-center justify-between px-3 py-3 sm:px-3 lg:px-4 xl:px-1">
         <div className="flex items-center gap-3">
           <LogoLink />
-          <span className="inline-flex items-center rounded-full bg-linear-to-br from-orange-600/70 to-rose-600/70 px-1.5 py-0.5 text-xs/4 font-bold uppercase tracking-tight text-white">
+          <span className="inline-flex items-center rounded-full bg-linear-to-br from-orange-600/70 to-rose-600/70 px-1.5 py-0.5 text-xs/4 font-bold tracking-tight text-white uppercase">
             Beta
           </span>
         </div>

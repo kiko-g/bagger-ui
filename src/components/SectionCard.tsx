@@ -20,12 +20,12 @@ export function SectionCard({ section }: { section: Section }) {
     <div
       key={section.href}
       onMouseMove={onMouseMove}
-      className="group relative flex rounded-2xl bg-zinc-50 transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5"
+      className="group from-primary/5 to-secondary/0 relative flex rounded-2xl bg-gradient-to-br transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5"
     >
       {section.pattern && <Pattern {...section.pattern} mouseX={mouseX} mouseY={mouseY} />}
-      <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-zinc-900/7.5 group-hover:ring-zinc-900/10 dark:ring-white/10 dark:group-hover:ring-white/20" />
-      <div className="relative rounded-2xl px-4 pb-4 pt-16">
-        <h3 className="mt-4 text-sm font-semibold leading-7 text-zinc-900 dark:text-white">
+      <div className="absolute inset-0 rounded-2xl ring-1 ring-zinc-900/7.5 ring-inset group-hover:ring-zinc-900/10 dark:ring-white/10 dark:group-hover:ring-white/20" />
+      <div className="relative rounded-2xl px-4 pt-16 pb-4">
+        <h3 className="mt-4 text-sm leading-7 font-semibold text-zinc-900 dark:text-white">
           <Link href={section.href}>
             <span className="absolute inset-0 rounded-2xl" />
             {section.name}
@@ -50,7 +50,7 @@ function Pattern({
 
   return (
     <div className="pointer-events-none">
-      <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
+      <div className="absolute inset-0 rounded-2xl [mask-image:linear-gradient(white,transparent)] transition duration-300 group-hover:opacity-50">
         <GridPattern
           x="50%"
           width={100}
