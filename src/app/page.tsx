@@ -23,8 +23,8 @@ export default function Home() {
           page. Your setup should be similar, otherwise some components might not work as expected in your project.
         </p>
 
-        <ComponentsSection items={applicationUiNav} title="Components" />
         <ComponentsSection items={snippetsNav} title="Snippets" />
+        <ComponentsSection items={applicationUiNav} title="Components" />
       </div>
     </Layout>
   )
