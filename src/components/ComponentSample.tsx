@@ -37,12 +37,51 @@ export function ComponentSample({ name }: { name: string }) {
         <p>
           To have access to our features copy the code in the block below and replace the existing code in the generated
           component file in your project, which by default is{" "}
-          <code className="mx-1 rounded-full bg-primary px-1.5 py-0.5 text-2xs font-semibold text-primary-foreground">{`components/ui/${name}.tsx`}</code>
+          <code className="bg-primary text-2xs text-primary-foreground mx-1 rounded-full px-1.5 py-0.5 font-semibold">{`components/ui/${name}.tsx`}</code>
         </p>
       ),
     },
     {
       number: 3,
+      content: <p>Make sure to adjust any necessary imports and styles to fit your setup, preference and needs.</p>,
+    },
+  ]
+
+  return (
+    <div className="space-y-4 pt-4 text-sm lg:pt-6" id="setup">
+      <ul className="flex flex-col gap-3">
+        {steps.map((step) => (
+          <li key={step.number} className="flex gap-3">
+            <div className="flex flex-col items-center gap-1.5">
+              <span className="mt-[3px] flex size-5 min-w-5 items-center justify-center rounded-full border border-zinc-800 bg-zinc-800 text-center font-mono text-xs font-bold text-white dark:bg-zinc-100 dark:text-zinc-800">
+                {step.number}
+              </span>
+              <span className="h-full w-[1px] bg-zinc-300 dark:bg-zinc-800"></span>
+            </div>
+            {step.content}
+          </li>
+        ))}
+      </ul>
+
+      <CodeShowcaseFile path={`ui/${name}.tsx`} />
+    </div>
+  )
+}
+
+export function ComponentSampleVanilla({ name }: { name: string }) {
+  const steps = [
+    {
+      number: 1,
+      content: (
+        <p>
+          To be able to use the components on this page, you must have the existing <strong>{name}</strong> component in
+          your project. We recommend adding it to
+          <code className="bg-primary text-2xs text-primary-foreground mx-1 rounded-full px-1.5 py-0.5 font-semibold">{`components/ui/${name}.tsx`}</code>
+        </p>
+      ),
+    },
+    {
+      number: 2,
       content: <p>Make sure to adjust any necessary imports and styles to fit your setup, preference and needs.</p>,
     },
   ]

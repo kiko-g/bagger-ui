@@ -1,5 +1,5 @@
-import { ComponentSample } from "@/components/ComponentSample"
+import { ComponentSampleVanilla } from "@/components/ComponentSample"
 
 export function ColorPickerSample() {
-  return <ComponentSample name="color-picker" />
+  return <ComponentSampleVanilla name="color-picker" />
 }

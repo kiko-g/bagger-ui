@@ -8,7 +8,7 @@ import { suggestedPalettes } from "@/utils/data"
 import { interpolateTailwindPalette, isValidHex, writeTailwindPalette } from "@/utils/colors"
 
 import { Layout } from "@/components/Layout"
-import { ColorPicker } from "@/components/common/ColorPicker"
+import { ColorPicker } from "@/components/ui/color-picker"
 import { DropzoneArea } from "@/components/common/Dropzone"
 import { CodeShowcaseDirect } from "@/components/CodeShowcaseDirect"
 
