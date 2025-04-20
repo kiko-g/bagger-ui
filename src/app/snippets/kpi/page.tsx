@@ -24,7 +24,7 @@ export default function KPIs() {
         },
         {
           name: "Bar Comparison",
-          path: `${base}/BarCompa rison.tsx`,
+          path: `${base}/BarComparison.tsx`,
           component: <BarComparison current={293} target={400} label="Sales" />,
         },
         {

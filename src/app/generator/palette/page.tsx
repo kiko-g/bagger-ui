@@ -8,8 +8,8 @@ import { suggestedPalettes } from "@/utils/data"
 import { interpolateTailwindPalette, isValidHex, writeTailwindPalette } from "@/utils/colors"
 
 import { Layout } from "@/components/Layout"
+import { Dropzone } from "@/components/ui/dropzone"
 import { ColorPicker } from "@/components/ui/color-picker"
-import { DropzoneArea } from "@/components/common/Dropzone"
 import { CodeShowcaseDirect } from "@/components/CodeShowcaseDirect"
 
 export default function Generator() {
@@ -151,7 +151,7 @@ export default function Generator() {
               </div>
 
               {/* Dropzone */}
-              <DropzoneArea
+              <Dropzone
                 onDrop={() => {
                   console.info("dropped")
                 }}
