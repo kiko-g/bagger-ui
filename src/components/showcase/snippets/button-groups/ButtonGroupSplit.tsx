@@ -7,7 +7,7 @@ import { ChevronDown } from "lucide-react"
 
 export function ButtonGroupSplit() {
   return (
-    <div className="inline-flex rounded-md shadow-sm" role="group">
+    <div className="inline-flex rounded-md shadow-xs" role="group">
       <Button className="rounded-r-none">Save</Button>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>

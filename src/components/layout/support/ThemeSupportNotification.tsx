@@ -55,10 +55,10 @@ export function ThemeSupportNotification() {
         className="pointer-events-none fixed inset-0 z-50 flex items-end justify-end px-4 py-6 sm:items-end sm:p-6"
       >
         <div className="flex w-full flex-col items-center space-y-4 sm:items-end">
-          <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white/70 shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur transition data-[closed]:data-[enter]:translate-y-2 data-[enter]:transform data-[closed]:opacity-0 data-[enter]:duration-300 data-[leave]:duration-100 data-[enter]:ease-out data-[leave]:ease-in dark:bg-zinc-950/60 data-[closed]:data-[enter]:sm:translate-x-2 data-[closed]:data-[enter]:sm:translate-y-0">
+          <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white/70 shadow-lg ring-1 ring-black ring-opacity-5 backdrop-blur-sm transition data-closed:data-enter:translate-y-2 data-enter:transform data-closed:opacity-0 data-enter:duration-300 data-leave:duration-100 data-enter:ease-out data-leave:ease-in dark:bg-zinc-950/60 sm:data-closed:data-enter:translate-x-2 sm:data-closed:data-enter:translate-y-0">
             <div className="p-3">
               <div className="flex items-start">
-                <div className="ml-1 mt-1 flex-shrink-0">
+                <div className="ml-1 mt-1 shrink-0">
                   <Image
                     src="/bagger-flow.svg"
                     alt="Bagger Flow"
@@ -84,7 +84,7 @@ export function ThemeSupportNotification() {
                     <a
                       href="https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow"
                       target="_blank"
-                      className="flex items-center gap-1 rounded-md text-sm font-medium text-teal-600 focus:underline focus:outline-none dark:text-teal-500 dark:hover:text-teal-400"
+                      className="flex items-center gap-1 rounded-md text-sm font-medium text-teal-600 focus:underline focus:outline-hidden dark:text-teal-500 dark:hover:text-teal-400"
                     >
                       <span>Take me there</span>
                     </a>
@@ -92,17 +92,17 @@ export function ThemeSupportNotification() {
                     <button
                       type="button"
                       onClick={handleDismiss}
-                      className="rounded-md text-sm font-medium text-zinc-700 hover:text-zinc-500 focus:underline focus:outline-none dark:text-zinc-100 dark:hover:text-zinc-200"
+                      className="rounded-md text-sm font-medium text-zinc-700 hover:text-zinc-500 focus:underline focus:outline-hidden dark:text-zinc-100 dark:hover:text-zinc-200"
                     >
                       Dismiss
                     </button>
                   </div>
                 </div>
-                <div className="ml-4 flex flex-shrink-0">
+                <div className="ml-4 flex shrink-0">
                   <button
                     type="button"
                     onClick={handleClose}
-                    className="inline-flex rounded-md p-1 text-zinc-600 transition hover:bg-rose-700/5 focus:outline-none dark:text-zinc-100 dark:hover:bg-zinc-100/10"
+                    className="inline-flex rounded-md p-1 text-zinc-600 transition hover:bg-rose-700/5 focus:outline-hidden dark:text-zinc-100 dark:hover:bg-zinc-100/10"
                   >
                     <span className="sr-only">Close</span>
                     <XIcon aria-hidden="true" className="size-4" />

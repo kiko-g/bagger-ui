@@ -31,7 +31,7 @@ function ProductMinimal({ product }: { product: ProductType }) {
   const priceWithDiscount = product.info.price - (product.info.price * product.info.sale.percent) / 100
 
   return (
-    <div className="group relative flex w-full max-w-xs flex-col overflow-hidden rounded-lg bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:bg-zinc-900">
+    <div className="group relative flex w-full max-w-xs flex-col overflow-hidden rounded-lg bg-white shadow-xs transition-all duration-300 hover:shadow-md dark:bg-zinc-900">
       {/* Image container */}
       <div className="relative aspect-square overflow-hidden bg-gray-100">
         <Image
@@ -59,9 +59,9 @@ function ProductMinimal({ product }: { product: ProductType }) {
 
         {/* Quick actions */}
         <div className="absolute bottom-0 left-0 right-0 flex justify-center p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          <div className="flex gap-2 rounded-full bg-white/90 p-1 backdrop-blur-sm dark:bg-black/70">
+          <div className="flex gap-2 rounded-full bg-white/90 p-1 backdrop-blur-xs dark:bg-black/70">
             <button
-              className="rounded-full bg-white p-2 text-zinc-800 shadow-sm transition-colors hover:bg-zinc-100 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"
+              className="rounded-full bg-white p-2 text-zinc-800 shadow-xs transition-colors hover:bg-zinc-100 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"
               aria-label="Add to wishlist"
             >
               <svg
@@ -80,7 +80,7 @@ function ProductMinimal({ product }: { product: ProductType }) {
               </svg>
             </button>
             <button
-              className="rounded-full bg-white p-2 text-zinc-800 shadow-sm transition-colors hover:bg-zinc-100 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"
+              className="rounded-full bg-white p-2 text-zinc-800 shadow-xs transition-colors hover:bg-zinc-100 dark:bg-zinc-800 dark:text-white dark:hover:bg-zinc-700"
               aria-label="Quick view"
             >
               <svg

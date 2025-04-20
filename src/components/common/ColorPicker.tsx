@@ -62,7 +62,7 @@ export function ColorPicker<T extends HTMLInputElement>({
             onChange(e?.currentTarget?.value)
           }}
           value={parsedValue}
-          className="mt-3 rounded-none border border-zinc-900/10 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-teal-600/80 hover:bg-teal-600/5 focus:border-teal-600 focus:accent-teal-600 focus:outline-none focus:ring-0 focus:ring-teal-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5 dark:focus:border-teal-600/80 dark:focus:ring-0 dark:focus:ring-teal-600 lg:px-3.5 lg:text-sm"
+          className="mt-3 rounded-none border border-zinc-900/10 bg-white px-2 py-2 text-xs font-normal transition placeholder:font-light placeholder:text-zinc-400 hover:border-teal-600/80 hover:bg-teal-600/5 focus:border-teal-600 focus:accent-teal-600 focus:outline-hidden focus:ring-0 focus:ring-teal-600 focus:ring-offset-0 dark:border-zinc-200/10 dark:bg-zinc-100/5 dark:placeholder:text-zinc-400 dark:hover:border-teal-600/80 dark:hover:bg-teal-600/5 dark:focus:border-teal-600/80 dark:focus:ring-0 dark:focus:ring-teal-600 lg:px-3.5 lg:text-sm"
         />
       </PopoverContent>
     </Popover>

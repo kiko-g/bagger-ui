@@ -6,7 +6,7 @@ import { PlusIcon, MinusIcon, ArrowUpRightIcon } from "lucide-react"
 
 export function ButtonGroupJoined() {
   return (
-    <div className="inline-flex rounded-md shadow-sm" role="group">
+    <div className="inline-flex rounded-md shadow-xs" role="group">
       <Button variant="outline" className="rounded-r-none">
         <PlusIcon className="h-4 w-4" />
         Stake

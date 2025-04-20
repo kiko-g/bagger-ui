@@ -163,7 +163,7 @@ export default function Generator() {
               <button
                 type="button"
                 onClick={generateTailwindPalette}
-                className="rounded-sm bg-teal-600 px-4 py-2 text-sm font-normal text-white shadow transition hover:opacity-80 dark:bg-teal-600/80"
+                className="rounded-sm bg-teal-600 px-4 py-2 text-sm font-normal text-white shadow-sm transition hover:opacity-80 dark:bg-teal-600/80"
               >
                 Generate Palette
               </button>
@@ -210,7 +210,7 @@ export default function Generator() {
                           </span>
 
                           <span
-                            className="mb-2 flex h-10 w-14 rounded-sm shadow"
+                            className="mb-2 flex h-10 w-14 rounded-sm shadow-sm"
                             style={{ backgroundColor: combo.color }}
                           ></span>
                           <span className="text-xs font-semibold text-zinc-800 dark:text-zinc-200">{combo.id}</span>
@@ -328,7 +328,7 @@ function Palette({
                   </span>
                 </span>
 
-                <span className="mb-2 flex h-10 w-14 rounded-sm shadow" style={{ backgroundColor: combo.color }}></span>
+                <span className="mb-2 flex h-10 w-14 rounded-sm shadow-sm" style={{ backgroundColor: combo.color }}></span>
                 <span className="text-xs font-semibold text-zinc-800 dark:text-zinc-200">{combo.id}</span>
                 <span className="text-xs font-normal text-zinc-600 dark:text-zinc-400">{combo.color}</span>
               </button>

@@ -59,7 +59,7 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied}
       className={cn(
-        "flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900",
+        "flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-xs transition disabled:cursor-not-allowed dark:bg-zinc-900",
         isCopied ? "" : "hover:bg-zinc-600 dark:hover:bg-zinc-700",
       )}
     >
@@ -95,7 +95,7 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
       onClick={download}
       disabled={isDownloading}
       className={cn(
-        "flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900",
+        "flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-xs transition disabled:cursor-not-allowed dark:bg-zinc-900",
         isDownloading ? "" : "hover:bg-zinc-600 dark:hover:bg-zinc-700",
       )}
     >

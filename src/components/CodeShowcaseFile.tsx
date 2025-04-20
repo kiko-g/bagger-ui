@@ -36,7 +36,7 @@ export function CodeShowcaseFile({ path, ...divProps }: CodeShowcaseFileProps) {
   return isLoading ? (
     <div className="flex w-full items-center justify-center gap-3">
       <Skeleton className="h-[200px] flex-1 rounded-xl" />
-      <div className="flex flex-[8] flex-col gap-3">
+      <div className="flex flex-8 flex-col gap-3">
         <Skeleton className="h-[100px] w-full rounded-xl" />
         <Skeleton className="h-[88px] w-full rounded-xl" />
       </div>
@@ -100,7 +100,7 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied || !text}
       className={cn(
-        "flex items-center justify-start gap-1 rounded border px-2 py-2 text-xs shadow-sm transition disabled:pointer-events-none",
+        "flex items-center justify-start gap-1 rounded border px-2 py-2 text-xs shadow-xs transition disabled:pointer-events-none",
         isCopied
           ? "border-teal-600 bg-teal-600 text-white"
           : "border-zinc-700 bg-zinc-700/90 text-white hover:bg-zinc-700",

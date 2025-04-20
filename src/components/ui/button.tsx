@@ -10,16 +10,16 @@ rounded-md text-sm font-medium border border-transparent transition-colors disab
   {
     variants: {
       variant: {
-        default: `bg-primary text-primary-foreground shadow hover:bg-primary/90`,
-        destructive: `bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90 border-destructive`,
-        outline: 'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
-        secondary: `bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80 border-secondary`,
+        default: `bg-primary text-primary-foreground shadow-sm hover:bg-primary/90`,
+        destructive: `bg-destructive text-destructive-foreground shadow-xs hover:bg-destructive/90 border-destructive`,
+        outline: 'border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground',
+        secondary: `bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 border-secondary`,
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
-        'default-inverted': `bg-white text-zinc-900 shadow hover:bg-zinc-200 dark:bg-white dark:text-zinc-800`,
+        'default-inverted': `bg-white text-zinc-900 shadow-sm hover:bg-zinc-200 dark:bg-white dark:text-zinc-800`,
         glass: `bg-zinc-700/10 text-primary hover:bg-zinc-700/20 dark:bg-zinc-100/5 dark:text-zinc-200 dark:hover:bg-zinc-100/10`,
-        orange: `bg-orange-600 text-white shadow-sm hover:bg-orange-600/90 dark:bg-orange-700 dark:hover:bg-orange-700/90 dark:text-white`,
-        success: `bg-emerald-600 text-white shadow-sm hover:bg-emerald-600/90 dark:bg-emerald-700 dark:hover:bg-emerald-700/90 dark:text-white`,
+        orange: `bg-orange-600 text-white shadow-xs hover:bg-orange-600/90 dark:bg-orange-700 dark:hover:bg-orange-700/90 dark:text-white`,
+        success: `bg-emerald-600 text-white shadow-xs hover:bg-emerald-600/90 dark:bg-emerald-700 dark:hover:bg-emerald-700/90 dark:text-white`,
         'ghost-inverted': `hover:bg-zinc-100/20 dark:hover:bg-zinc-200/80`,
         'ghost-light': `hover:bg-zinc-200/80`,
         'ghost-dark': `hover:bg-zinc-100/20`,

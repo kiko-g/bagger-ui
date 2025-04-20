@@ -4,7 +4,6 @@ import animatePlugin from "tailwindcss-animate"
 import scrollbarPlugin from "tailwind-scrollbar"
 import headlessuiPlugin from "@headlessui/tailwindcss"
 import typographyPlugin from "@tailwindcss/typography"
-import { fontFamily } from "tailwindcss/defaultTheme"
 
 import typographyStyles from "./typography"
 
@@ -105,10 +104,10 @@ const config: Config = {
       ],
     },
     fontFamily: {
-      sans: ["var(--font-geist-sans)", ...fontFamily.sans],
-      mono: ["var(--font-geist-mono)", ...fontFamily.mono],
+      sans: ["var(--font-geist-sans)"],
+      mono: ["var(--font-geist-mono)"],
     },
-    typography: "typographyStyles",
+    typography: typographyStyles,
     extend: {
       colors: {
         primary: {

@@ -31,7 +31,7 @@ export function CodeShowcaseFromAPI({ route, language, options, allowDownload }:
 
   if (!code)
     return (
-      <div className="flex w-full items-center justify-center rounded-xl bg-[#1E2937] px-8 py-16 shadow dark:bg-black/10">
+      <div className="flex w-full items-center justify-center rounded-xl bg-[#1E2937] px-8 py-16 shadow-sm dark:bg-black/10">
         <svg
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ function CopyCodeButton({ text }: { text: string }) {
       onClick={copyToClipboard}
       disabled={isCopied}
       className={cn(
-        "flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2.5 py-1 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900",
+        "flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2.5 py-1 text-xs text-white shadow-xs transition disabled:cursor-not-allowed dark:bg-zinc-900",
         isCopied ? "" : "hover:bg-zinc-600 dark:hover:bg-zinc-700",
       )}
     >
@@ -130,7 +130,7 @@ function DownloadButton({ text, filename }: { text: string; filename: string }) 
       onClick={download}
       disabled={isDownloading}
       className={cn(
-        "flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-sm transition disabled:cursor-not-allowed dark:bg-zinc-900",
+        "flex items-center justify-start gap-1.5 rounded bg-zinc-700 px-2 py-1.5 text-xs text-white shadow-xs transition disabled:cursor-not-allowed dark:bg-zinc-900",
         isDownloading ? "" : "hover:bg-zinc-600 dark:hover:bg-zinc-700",
       )}
     >

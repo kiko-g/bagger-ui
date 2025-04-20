@@ -38,7 +38,7 @@ function ProductElegant({ product }: { product: ProductType }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image container */}
-      <div className="relative aspect-[3/4] overflow-hidden">
+      <div className="relative aspect-3/4 overflow-hidden">
         <Image
           src={product.info.image || "/placeholder.svg"}
           alt={product.info.title}
@@ -69,7 +69,7 @@ function ProductElegant({ product }: { product: ProductType }) {
         {/* Overlay with actions */}
         <div
           className={cn(
-            "absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/60 to-transparent p-6 transition-opacity duration-300",
+            "absolute inset-0 flex flex-col justify-end bg-linear-to-t from-black/60 to-transparent p-6 transition-opacity duration-300",
             isHovered ? "opacity-100" : "opacity-0",
           )}
         >

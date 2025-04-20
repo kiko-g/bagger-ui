@@ -28,7 +28,7 @@ export default function JumpsellerStoreIdentity() {
 
       <p className="mb-2 max-w-3xl text-base">
         Fill out your store identity form to get started with{" "}
-        <span className="inline-flex items-center gap-0.5 bg-gradient-to-r from-pink-600 via-teal-600 to-sky-600 bg-clip-text font-semibold text-transparent">
+        <span className="inline-flex items-center gap-0.5 bg-linear-to-r from-pink-600 via-teal-600 to-sky-600 bg-clip-text font-semibold text-transparent">
           AI suggestions
         </span>{" "}
         in your platform.

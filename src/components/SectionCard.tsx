@@ -60,7 +60,7 @@ function Pattern({
         />
       </div>
       <motion.div
-        className={cn("absolute inset-0 rounded-2xl bg-gradient-to-br transition-all duration-300")}
+        className={cn("absolute inset-0 rounded-2xl bg-linear-to-br transition-all duration-300")}
         style={style}
       />
       <motion.div

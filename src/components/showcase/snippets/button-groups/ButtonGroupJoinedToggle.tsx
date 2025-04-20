@@ -7,7 +7,7 @@ export function ButtonGroupJoinedToggle() {
   const [basicSelected, setBasicSelected] = React.useState("day")
 
   return (
-    <div className="inline-flex rounded-md shadow-sm" role="group">
+    <div className="inline-flex rounded-md shadow-xs" role="group">
       <Button
         variant={basicSelected === "day" ? "default" : "outline"}
         className="rounded-r-none"

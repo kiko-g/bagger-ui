@@ -164,7 +164,7 @@ function ProductPlayful({ product }: { product: ProductType }) {
               <span>Add to cart</span>
             </button>
 
-            <button className="flex items-center justify-center gap-x-1 rounded bg-zinc-500 px-3 py-2 text-sm font-medium tracking-tighter text-white transition-all duration-200 ease-in-out enabled:hover:bg-zinc-600 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-white/20 enabled:hover:dark:bg-white/30">
+            <button className="flex items-center justify-center gap-x-1 rounded bg-zinc-500 px-3 py-2 text-sm font-medium tracking-tighter text-white transition-all duration-200 ease-in-out enabled:hover:bg-zinc-600 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-white/20 dark:enabled:hover:bg-white/30">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

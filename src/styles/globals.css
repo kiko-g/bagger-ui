@@ -1,6 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.ts';
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @layer base {
   :root {
@@ -100,76 +118,78 @@
   }
 }
 
-*::selection {
-  @apply bg-primary/90 text-primary-foreground dark:bg-primary/90 dark:text-primary-foreground;
-}
-
-pre *::selection,
-code::selection {
-  @apply bg-rose-600/80 text-white dark:bg-white/80 dark:text-black;
-}
-
-html {
-  @apply scroll-smooth;
-}
-
-body {
-  @apply bg-background font-sans text-zinc-900 antialiased dark:bg-background dark:text-zinc-100;
-}
-
-code,
-pre {
-  font-family: var(--font-geist-mono) !important;
-}
-
-code .token,
-pre .token {
-  @apply text-wrap;
-}
-
-pre {
-  color: white;
-  background-color: theme("colors.zinc.900") !important;
-  border: 1px solid theme("colors.zinc.800");
-}
-
-.dark pre {
-  color: white;
-  background-color: theme("colors.zinc.900") !important;
-  border: 1px solid theme("colors.zinc.800");
-}
-
-.expanded pre {
-  height: 500px;
-  transition: height 250ms ease-in-out;
-}
-
-.not-expanded pre {
-  height: 200px;
-  transition: height 250ms ease-in-out;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotateY(-90deg);
-    opacity: 0;
+@layer utilities {
+  *::selection {
+    @apply bg-primary/90 text-primary-foreground dark:bg-primary/90 dark:text-primary-foreground;
   }
-  to {
-    transform: rotateY(0deg);
-    opacity: 1;
+
+  pre *::selection,
+  code::selection {
+    @apply bg-rose-600/80 text-white dark:bg-white/80 dark:text-black;
   }
-}
 
-.rotate-out {
-  animation: rotate 0.5s backwards;
-}
+  html {
+    @apply scroll-smooth;
+  }
 
-.rotate-in {
-  animation: rotate 0.5s forwards;
-}
+  body {
+    @apply bg-background font-sans text-zinc-900 antialiased dark:bg-background dark:text-zinc-100;
+  }
 
-.logo-animation {
-  animation: spin 0.5s ease-in-out;
+  code,
+  pre {
+    font-family: var(--font-geist-mono) !important;
+  }
+
+  code .token,
+  pre .token {
+    @apply text-wrap;
+  }
+
+  pre {
+    color: white;
+    background-color: var(--color-zinc-900) !important;
+    border: 1px solid var(--color-zinc-800);
+  }
+
+  .dark pre {
+    color: white;
+    background-color: var(--color-zinc-900) !important;
+    border: 1px solid var(--color-zinc-800);
+  }
+
+  .expanded pre {
+    height: 500px;
+    transition: height 250ms ease-in-out;
+  }
+
+  .not-expanded pre {
+    height: 200px;
+    transition: height 250ms ease-in-out;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotateY(-90deg);
+      opacity: 0;
+    }
+    to {
+      transform: rotateY(0deg);
+      opacity: 1;
+    }
+  }
+
+  .rotate-out {
+    animation: rotate 0.5s backwards;
+  }
+
+  .rotate-in {
+    animation: rotate 0.5s forwards;
+  }
+
+  .logo-animation {
+    animation: spin 0.5s ease-in-out;
+  }
 }
 
 @layer base {

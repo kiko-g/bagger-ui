@@ -10,7 +10,7 @@ export function ButtonFilling() {
       >
         <span className="absolute inset-y-0 left-0 w-[4px] bg-zinc-200 transition-all group-hover:w-full dark:bg-zinc-700/80"></span>
         <span className="relative">Button</span>
-        <ArrowRightIcon className="z-[1] size-4" />
+        <ArrowRightIcon className="z-1 size-4" />
       </Button>
 
       <Button
@@ -19,7 +19,7 @@ export function ButtonFilling() {
       >
         <span className="absolute inset-y-0 left-0 w-[4px] bg-indigo-100 transition-all group-hover:w-full dark:bg-indigo-700/80"></span>
         <span className="relative">Button</span>
-        <ArrowRightIcon className="z-[1] size-4" />
+        <ArrowRightIcon className="z-1 size-4" />
       </Button>
     </div>
   )
