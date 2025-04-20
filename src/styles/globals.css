@@ -101,7 +101,7 @@
 }
 
 *::selection {
-  @apply bg-black/90 text-white dark:bg-white dark:text-black;
+  @apply bg-primary/90 text-primary-foreground dark:bg-primary/90 dark:text-primary-foreground;
 }
 
 pre *::selection,
