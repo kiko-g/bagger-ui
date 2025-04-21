@@ -133,6 +133,16 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
+    name: "Dropzones  ",
+    href: "/application-ui/dropzones",
+    description: "Dropzones for receiving data from the user.",
+    pattern: {
+      y: 16,
+      squares: [[0, 1]],
+    },
+    shown: true,
+  },
+  {
     name: "Loading",
     href: "/application-ui/loading",
     description: "Components for informing the user that data is loading.",

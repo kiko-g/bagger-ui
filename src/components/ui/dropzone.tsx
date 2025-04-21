@@ -66,7 +66,7 @@ export function Dropzone({
       <div
         {...getRootProps()}
         className={cn(
-          "hover:border-primary/50 hover:bg-primary/5 relative flex flex-col items-center justify-center rounded-lg border border-dashed transition-colors",
+          "hover:border-primary/50 hover:bg-primary/5 bg-accent/10 relative flex flex-col items-center justify-center rounded-lg border border-dashed transition-colors",
           isDragActive && "border-primary/50 bg-primary/5",
           isDragReject && "border-destructive/50 bg-destructive/5",
           disabled && "cursor-not-allowed opacity-60",
