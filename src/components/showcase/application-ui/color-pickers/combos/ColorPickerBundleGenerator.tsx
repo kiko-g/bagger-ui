@@ -7,8 +7,9 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import { ColorPicker } from "@/components/ui/color-picker"
 
-import { CheckIcon, CopyIcon, SparklesIcon } from "lucide-react"
+import { CheckIcon, ChevronDownIcon, CopyIcon, SparklesIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 function hexToRgb(hex: string): { r: number; g: number; b: number } {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
@@ -146,6 +147,53 @@ function adjustSaturation(color: string, amount: number): string {
   return rgbToHex(newRgb.r, newRgb.g, newRgb.b)
 }
 
+const ColorBundleGenerators = {
+  simple: (primaryColor: string, secondaryColor: string, bundleName: string): ColorBundle => {
+    // Content theme
+    const contentTheme: ColorTheme = {
+      background: "#FFFFFF", // White background
+      main: darkenColor(primaryColor, 0.3),
+      secondary: darkenColor(secondaryColor, 0.3),
+      links: lightenColor(secondaryColor, 0.1),
+      main_button_background: primaryColor,
+      main_button_text: getTextColor(primaryColor),
+      secondary_button_background: secondaryColor,
+      secondary_button_text: getTextColor(secondaryColor),
+    }
+
+    // Light theme
+    const lightTheme: ColorTheme = {
+      background: lightenColor(mixColors(primaryColor, secondaryColor, 0.5), 0.5),
+      main: darkenColor(primaryColor, 0.3),
+      secondary: darkenColor(secondaryColor, 0.3),
+      links: lightenColor(secondaryColor, 0.1),
+      main_button_background: primaryColor,
+      main_button_text: getTextColor(primaryColor),
+      secondary_button_background: lightenColor(secondaryColor, 0.3),
+      secondary_button_text: darkenColor(secondaryColor, 0.2),
+    }
+
+    const darkTheme: ColorTheme = {
+      background: darkenColor(primaryColor, 0.3),
+      main: lightenColor(primaryColor, 0.25),
+      secondary: lightenColor(secondaryColor, 0.2),
+      links: lightenColor(primaryColor, 0.25),
+      main_button_background: adjustSaturation(lightenColor(primaryColor, 0.1), 0.1),
+      main_button_text: getTextColor(adjustSaturation(lightenColor(primaryColor, 0.1), 0.1)),
+      secondary_button_background: getTextColor(secondaryColor),
+      secondary_button_text: secondaryColor,
+    }
+
+    // Create the color bundle
+    return {
+      name: bundleName,
+      "bundle-content": contentTheme,
+      "bundle-light": lightTheme,
+      "bundle-dark": darkTheme,
+    }
+  },
+}
+
 interface ColorTheme {
   background: string
   main: string
@@ -165,6 +213,7 @@ interface ColorBundle {
 }
 
 export function ColorPickerBundleGenerator() {
+  const [generatorType, setGeneratorType] = useState("simple")
   const [bundleName, setBundleName] = useState("My Color Bundle")
   const [primaryColor, setPrimaryColor] = useState("#A3581B")
   const [secondaryColor, setSecondaryColor] = useState("#4F5D27")
@@ -172,56 +221,13 @@ export function ColorPickerBundleGenerator() {
   const [copied, setCopied] = useState(false)
   const [jsonOutput, setJsonOutput] = useState("")
 
-  // Generate the color bundle whenever primary or secondary colors change
   useEffect(() => {
     generateColorBundle()
   }, [primaryColor, secondaryColor, bundleName])
 
   const generateColorBundle = () => {
-    // Content theme
-    const contentTheme: ColorTheme = {
-      background: "#FFFFFF", // White background
-      main: darkenColor(primaryColor, 0.3),
-      secondary: darkenColor(secondaryColor, 0.3),
-      links: lightenColor(secondaryColor, 0.1),
-      main_button_background: primaryColor,
-      main_button_text: getTextColor(primaryColor),
-      secondary_button_background: secondaryColor,
-      secondary_button_text: getTextColor(secondaryColor),
-    }
-
-    // Light theme
-    const lightTheme: ColorTheme = {
-      background: lightenColor(mixColors(primaryColor, secondaryColor, 0.5), 0.5), // Light mix of primary and secondary
-      main: darkenColor(primaryColor, 0.3),
-      secondary: darkenColor(secondaryColor, 0.3),
-      links: lightenColor(secondaryColor, 0.1),
-      main_button_background: primaryColor,
-      main_button_text: getTextColor(primaryColor),
-      secondary_button_background: lightenColor(secondaryColor, 0.3), // Lighter version of primary
-      secondary_button_text: darkenColor(secondaryColor, 0.2),
-    }
-
-    // Dark theme
-    const darkTheme: ColorTheme = {
-      background: darkenColor(primaryColor, 0.3), // Dark mix of primary and secondary
-      main: lightenColor(primaryColor, 0.25), // Lighter version of primary
-      secondary: lightenColor(secondaryColor, 0.2), // Lighter version of secondary
-      links: lightenColor(primaryColor, 0.25), // Same as main
-      main_button_background: adjustSaturation(lightenColor(primaryColor, 0.1), 0.1), // Brighter primary
-      main_button_text: getTextColor(adjustSaturation(lightenColor(primaryColor, 0.1), 0.1)),
-      secondary_button_background: getTextColor(secondaryColor),
-      secondary_button_text: secondaryColor,
-    }
-
-    // Create the color bundle
-    const bundle: ColorBundle = {
-      name: bundleName,
-      "bundle-content": contentTheme,
-      "bundle-light": lightTheme,
-      "bundle-dark": darkTheme,
-    }
-
+    const generator = ColorBundleGenerators[(generatorType as keyof typeof ColorBundleGenerators) || "simple"]
+    const bundle = generator(primaryColor, secondaryColor, bundleName)
     setColorBundle(bundle)
     setJsonOutput(JSON.stringify(bundle, null, 2))
   }
@@ -253,13 +259,24 @@ export function ColorPickerBundleGenerator() {
           </p>
         </div>
         <div className="flex gap-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="capitalize">
+                {generatorType}
+                <ChevronDownIcon />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setGeneratorType("simple")}>Simple</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Button variant="outline" onClick={generateRandomColors}>
             <SparklesIcon />
-            Random Colors
+            Random
           </Button>
           <Button variant="outline" onClick={copyToClipboard}>
             {copied ? <CheckIcon /> : <CopyIcon />}
-            {copied ? "Copied!" : "Copy JSON"}
+            {copied ? "Copied!" : "Copy"}
           </Button>
         </div>
       </div>
