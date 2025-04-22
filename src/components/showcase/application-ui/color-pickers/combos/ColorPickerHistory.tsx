@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useCallback, useEffect } from "react"
+import { useState, useCallback, useEffect, useRef } from "react"
 import { cn } from "@/lib/utils"
 import { ColorPicker, type ColorPickerProps } from "@/components/ui/color-picker"
 import { Button } from "@/components/ui/button"
-import { Check, RotateCcw } from "lucide-react"
+import { CheckIcon, RotateCcwIcon } from "lucide-react"
 
 export interface ColorPickerWithHistoryProps extends ColorPickerProps {
   historySize?: number
@@ -25,6 +25,7 @@ export function ColorPickerWithHistory({
 }: ColorPickerWithHistoryProps) {
   const [localValue, setLocalValue] = useState(value)
   const [history, setHistory] = useState<string[]>([])
+  const colorTimeout = useRef<NodeJS.Timeout>(null)
 
   // load history from localStorage
   useEffect(() => {
@@ -47,19 +48,42 @@ export function ColorPickerWithHistory({
     }
   }, [history, storageKey])
 
-  const handleChange = useCallback(
+  const addToHistory = useCallback(
     (color: string) => {
-      setLocalValue(color)
-      onChange(color)
-
-      // add to history if new color
       setHistory((prev) => {
         const newHistory = prev.filter((c) => c.toLowerCase() !== color.toLowerCase())
         return [color, ...newHistory].slice(0, historySize)
       })
     },
-    [onChange, historySize],
+    [historySize],
   )
+
+  const handleChange = useCallback(
+    (color: string) => {
+      setLocalValue(color)
+      onChange(color)
+
+      // Clear any existing timeout
+      if (colorTimeout.current) {
+        clearTimeout(colorTimeout.current)
+      }
+
+      // Set new timeout to add color to history after 150ms
+      colorTimeout.current = setTimeout(() => {
+        addToHistory(color)
+      }, 150)
+    },
+    [onChange, addToHistory],
+  )
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (colorTimeout.current) {
+        clearTimeout(colorTimeout.current)
+      }
+    }
+  }, [])
 
   const clearHistory = useCallback(() => {
     setHistory([])
@@ -86,7 +110,7 @@ export function ColorPickerWithHistory({
               onClick={clearHistory}
               aria-label="Clear color history"
             >
-              <RotateCcw className="h-3 w-3" />
+              <RotateCcwIcon className="h-3 w-3" />
             </Button>
           </div>
           <div className={cn("mt-2 grid w-fit grid-cols-6 gap-2", historyClassName)}>
@@ -105,7 +129,7 @@ export function ColorPickerWithHistory({
                 aria-label={`Select color: ${color}`}
               >
                 {localValue.toLowerCase() === color.toLowerCase() && (
-                  <Check className="h-3 w-3 text-white drop-shadow-[0_1px_0px_rgba(0,0,0,0.5)]" />
+                  <CheckIcon className="h-3 w-3 text-white drop-shadow-[0_1px_0px_rgba(0,0,0,0.5)]" />
                 )}
               </Button>
             ))}
