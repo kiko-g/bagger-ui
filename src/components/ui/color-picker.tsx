@@ -151,7 +151,7 @@ export function ColorPicker({
         </Popover>
 
         {showInput && (
-          <div className="relative max-w-[8rem] flex-1">
+          <div className="relative max-w-[8.5rem] flex-1">
             <div
               className="border-input absolute top-0 bottom-0 left-0 w-8 rounded-l-md border-y border-l"
               style={{ backgroundColor: parsedValue }}

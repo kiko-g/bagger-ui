@@ -83,7 +83,7 @@ export function ThemeSupportNotification() {
                     <a
                       href="https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow"
                       target="_blank"
-                      className="text-primary flex items-center gap-1 rounded-md text-sm font-medium hover:opacity-80 focus:underline focus:outline-hidden"
+                      className="text-primary flex items-center gap-1 rounded-md text-sm font-semibold hover:opacity-80 focus:underline focus:outline-hidden"
                     >
                       <span>Take me there</span>
                     </a>
@@ -91,7 +91,7 @@ export function ThemeSupportNotification() {
                     <button
                       type="button"
                       onClick={handleDismiss}
-                      className="rounded-md text-sm font-medium text-zinc-700 hover:text-zinc-500 focus:underline focus:outline-hidden dark:text-zinc-100 dark:hover:text-zinc-200"
+                      className="text-muted-foreground rounded-md text-sm font-medium focus:underline focus:outline-hidden"
                     >
                       Dismiss
                     </button>

@@ -16,7 +16,7 @@ export interface ColorPickerWithHistoryProps extends ColorPickerProps {
 export function ColorPickerWithHistory({
   value,
   onChange,
-  historySize = 10,
+  historySize = 12,
   historyClassName,
   historyLabel = "Recent Colors",
   storageKey = "color-picker-history",
@@ -89,7 +89,7 @@ export function ColorPickerWithHistory({
               <RotateCcw className="h-3 w-3" />
             </Button>
           </div>
-          <div className={cn("mt-2 grid grid-cols-5 gap-1", historyClassName)}>
+          <div className={cn("mt-2 grid w-fit grid-cols-6 gap-2", historyClassName)}>
             {history.map((color, index) => (
               <Button
                 key={`${color}-${index}`}
@@ -100,7 +100,7 @@ export function ColorPickerWithHistory({
                   "h-6 w-6 rounded-md border p-0",
                   localValue.toLowerCase() === color.toLowerCase() && "ring-ring ring-1",
                 )}
-                style={{ backgroundColor: color }}
+                style={{ backgroundColor: color, borderColor: "#00000030" }}
                 onClick={() => handleChange(color)}
                 aria-label={`Select color: ${color}`}
               >

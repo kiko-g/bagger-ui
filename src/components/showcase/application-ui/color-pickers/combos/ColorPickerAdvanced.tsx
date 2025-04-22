@@ -346,7 +346,7 @@ export function ColorPickerAdvanced({
               </TabsContent>
 
               <TabsContent value="presets" className="mt-0 flex h-full min-h-60 flex-col justify-between space-y-4">
-                <div className="grid w-min grid-cols-9 gap-x-10 gap-y-2">
+                <div className="grid w-fit grid-cols-9 gap-x-2 gap-y-2">
                   {presets.map((preset) => (
                     <Button
                       key={preset}
@@ -357,7 +357,7 @@ export function ColorPickerAdvanced({
                         "h-8 w-8 rounded-md border p-0",
                         hexValue.toLowerCase() === preset.toLowerCase() && "ring-ring ring-1",
                       )}
-                      style={{ backgroundColor: preset }}
+                      style={{ backgroundColor: preset, borderColor: "#00000030" }}
                       onClick={() => handleHexChange(preset)}
                       aria-label={`Select color: ${preset}`}
                     >
@@ -370,8 +370,8 @@ export function ColorPickerAdvanced({
 
                 {history.length > 0 && (
                   <>
-                    <div className="text-muted-foreground mt-4 text-xs font-medium">Recent Colors</div>
-                    <div className="grid w-min grid-cols-9 gap-x-10 gap-y-2">
+                    <div className="text-muted-foreground mt-4 mb-1 text-xs font-medium">Recent Colors</div>
+                    <div className="grid w-fit grid-cols-9 gap-x-2 gap-y-2">
                       {history.map((color, index) => (
                         <Button
                           key={`${color}-${index}`}
@@ -382,7 +382,7 @@ export function ColorPickerAdvanced({
                             "h-8 w-8 rounded-md border p-0",
                             hexValue.toLowerCase() === color.toLowerCase() && "ring-ring ring-1",
                           )}
-                          style={{ backgroundColor: color }}
+                          style={{ backgroundColor: color, borderColor: "#00000030" }}
                           onClick={() => handleHexChange(color)}
                           aria-label={`Select color: ${color}`}
                         >
@@ -399,7 +399,7 @@ export function ColorPickerAdvanced({
           </PopoverContent>
         </Popover>
 
-        <div className="relative max-w-[8rem] flex-1">
+        <div className="relative max-w-[8.5rem] flex-1">
           <div
             className="border-input absolute top-0 bottom-0 left-0 w-8 rounded-l-md border-y border-l"
             style={{ backgroundColor: hexValue }}

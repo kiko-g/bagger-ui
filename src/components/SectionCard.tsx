@@ -20,18 +20,21 @@ export function SectionCard({ section }: { section: Section }) {
     <div
       key={section.href}
       onMouseMove={onMouseMove}
-      className="group relative flex rounded-2xl bg-gradient-to-br from-slate-600/5 to-slate-600/0 transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5"
+      className="group relative flex rounded-2xl bg-gradient-to-br from-slate-600/5 to-slate-600/0 transition-shadow hover:shadow-md hover:shadow-neutral-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5"
     >
       {section.pattern && <Pattern {...section.pattern} mouseX={mouseX} mouseY={mouseY} />}
-      <div className="absolute inset-0 rounded-2xl ring-1 ring-zinc-900/7.5 ring-inset group-hover:ring-zinc-900/10 dark:ring-white/10 dark:group-hover:ring-white/20" />
+      <div className="absolute inset-0 rounded-2xl ring-1 ring-neutral-900/7.5 ring-inset group-hover:ring-neutral-900/10 dark:ring-white/10 dark:group-hover:ring-white/20" />
+
+      {section.preview && <div className="absolute inset-0 scale-75 rounded-2xl pt-0">{section.preview}</div>}
+
       <div className="relative rounded-2xl px-4 pt-16 pb-4">
-        <h3 className="mt-4 text-sm leading-7 font-semibold text-zinc-900 dark:text-white">
+        <h3 className="mt-6 pt-6 text-sm leading-7 font-semibold text-neutral-900 dark:text-white">
           <Link href={section.href}>
             <span className="absolute inset-0 rounded-2xl" />
             {section.name}
           </Link>
         </h3>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{section.description}</p>
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">{section.description}</p>
       </div>
     </div>
   )

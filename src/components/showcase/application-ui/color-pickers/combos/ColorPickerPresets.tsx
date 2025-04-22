@@ -38,6 +38,10 @@ export function ColorPickerWithPresets({
     "#ff5722",
     "#795548",
     "#607d8b",
+    "#e57373",
+    "#ba68c8",
+    "#4fc3f7",
+    "#81c784",
   ],
   presetsClassName,
   presetsLabel = "Presets",
@@ -64,7 +68,7 @@ export function ColorPickerWithPresets({
       />
       <div className="w-full">
         {presetsLabel && <div className="text-muted-foreground mt-4 mb-2 text-xs font-medium">{presetsLabel}</div>}
-        <div className={cn("mt-2 grid grid-cols-5 gap-1", presetsClassName)}>
+        <div className={cn("mt-2 grid w-fit grid-cols-6 gap-2", presetsClassName)}>
           {presets.map((preset) => (
             <Button
               key={preset}
@@ -75,7 +79,7 @@ export function ColorPickerWithPresets({
                 "h-6 w-6 rounded-md border p-0",
                 localValue.toLowerCase() === preset.toLowerCase() && "ring-ring ring-1",
               )}
-              style={{ backgroundColor: preset }}
+              style={{ backgroundColor: preset, borderColor: "#00000030" }}
               onClick={() => handleChange(preset)}
               aria-label={`Select color: ${preset}`}
             >

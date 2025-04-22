@@ -2,9 +2,9 @@
 
 import React from "react"
 import Image, { StaticImageData } from "next/image"
-import Footage from "../images/screenshots"
 
-import { GithubIcon, ButtonIcon, LoadingIcon, SidebarIcon, SwitchIcon } from "@/components/icons"
+import { Previews } from "@/components/ShowcasePreviews"
+import { GithubIcon } from "@/components/icons"
 import type { ColorHex, TailwindPalette } from "@/types"
 
 const isDev = process.env.NODE_ENV === "development"
@@ -30,9 +30,9 @@ export interface Section {
   description?: string
   pattern?: any
   icon?: any
-  image?: StaticImageData | undefined
   shown?: boolean
   new?: boolean
+  preview?: React.JSX.Element
 }
 
 export const generalNav: Section[] = [
@@ -61,6 +61,90 @@ export const generatorNav: Section[] = [
   },
 ]
 
+export const snippetsNav: Section[] = [
+  {
+    name: "Button Groups",
+    href: "/snippets/button-groups",
+    description: "Sections with multiple buttons with different layouts and functionalities.",
+    pattern: {
+      y: 22,
+      squares: [[0, 1]],
+    },
+    shown: true,
+    preview: <Previews.ButtonGroups />,
+  },
+  {
+    name: "CTA Sections",
+    href: "/snippets/ctas",
+    description: "Diversely styled sections to appeal the user to click on them.",
+    pattern: {
+      y: -6,
+      squares: [
+        [-1, 2],
+        [1, 3],
+      ],
+    },
+    shown: true,
+    preview: <Previews.CTASections />,
+  },
+  {
+    name: "Hero Sections",
+    href: "/snippets/hero",
+    description: "Opening sections to amaze and impress the user.",
+    pattern: {
+      y: 16,
+      squares: [
+        [0, 1],
+        [1, 3],
+      ],
+    },
+    shown: true,
+    preview: <Previews.HeroSections />,
+  },
+  {
+    name: "KPI Widgets",
+    href: "/snippets/kpi",
+    description: "Key Performance Indicators to show the user the most important metrics.",
+    pattern: {
+      y: 32,
+      squares: [
+        [0, 2],
+        [1, 4],
+      ],
+    },
+    shown: true,
+    preview: <Previews.KPIWidgets />,
+  },
+  {
+    name: "Product Overviews",
+    href: "/snippets/product-overviews",
+    description: "Product overview page components",
+    pattern: {
+      y: 16,
+      squares: [
+        [0, 1],
+        [1, 3],
+      ],
+    },
+    shown: true,
+    preview: <Previews.ProductOverviews />,
+  },
+  {
+    name: "Product Cards",
+    href: "/snippets/product-cards",
+    description: "Views for product listing entries with different styles and purposes.",
+    pattern: {
+      y: -6,
+      squares: [
+        [-1, 2],
+        [1, 3],
+      ],
+    },
+    shown: true,
+    preview: <Previews.ProductCards />,
+  },
+].sort((a, b) => a.name.localeCompare(b.name))
+
 export const applicationUiNav: Section[] = [
   {
     name: "Alerts",
@@ -73,8 +157,8 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
-    image: Footage.Alerts,
     shown: true,
+    preview: <Previews.Alerts />,
   },
   {
     name: "Badges",
@@ -87,8 +171,8 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
-    image: Footage.Badges,
     shown: true,
+    preview: <Previews.Badges />,
   },
   {
     name: "Buttons",
@@ -101,8 +185,8 @@ export const applicationUiNav: Section[] = [
         [1, 4],
       ],
     },
-    image: Footage.Buttons,
     shown: true,
+    preview: <Previews.Buttons />,
   },
   {
     name: "Checkboxes",
@@ -115,9 +199,9 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
-    image: Footage.Checkboxes,
     shown: true,
     new: false,
+    preview: <Previews.Checkboxes />,
   },
   {
     name: "Color Pickers",
@@ -131,6 +215,7 @@ export const applicationUiNav: Section[] = [
       ],
     },
     shown: true,
+    preview: <Previews.ColorPickers />,
   },
   {
     name: "Dropzones  ",
@@ -141,6 +226,7 @@ export const applicationUiNav: Section[] = [
       squares: [[0, 1]],
     },
     shown: true,
+    preview: <Previews.Dropzones />,
   },
   {
     name: "Loading",
@@ -153,7 +239,6 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
-    image: Footage.Loading,
     shown: true,
   },
   {
@@ -167,7 +252,6 @@ export const applicationUiNav: Section[] = [
         [1, 4],
       ],
     },
-    image: Footage.Inputs,
     shown: true,
   },
   {
@@ -178,7 +262,6 @@ export const applicationUiNav: Section[] = [
       y: 22,
       squares: [[0, 1]],
     },
-    image: Footage.Modals,
     shown: true,
   },
   {
@@ -192,7 +275,6 @@ export const applicationUiNav: Section[] = [
         [1, 4],
       ],
     },
-    image: undefined,
     shown: true,
   },
   {
@@ -232,7 +314,6 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
-    image: Footage.Selects,
     shown: true,
   },
   {
@@ -246,7 +327,6 @@ export const applicationUiNav: Section[] = [
         [1, 4],
       ],
     },
-    image: Footage.Sidebar,
     shown: true,
   },
   {
@@ -257,7 +337,6 @@ export const applicationUiNav: Section[] = [
       y: 22,
       squares: [[0, 1]],
     },
-    image: undefined, //Footage.Sliders,
     shown: true,
   },
   {
@@ -271,90 +350,6 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
-    image: Footage.Switch,
-    shown: true,
-  },
-].sort((a, b) => a.name.localeCompare(b.name))
-
-export const snippetsNav: Section[] = [
-  {
-    name: "Button Groups",
-    href: "/snippets/button-groups",
-    description: "Sections with multiple buttons with different layouts and functionalities.",
-    pattern: {
-      y: 22,
-      squares: [[0, 1]],
-    },
-    image: Footage.ButtonGroups,
-    shown: true,
-  },
-  {
-    name: "Hero Sections",
-    href: "/snippets/hero",
-    description: "Opening sections to amaze and impress the user.",
-    pattern: {
-      y: 16,
-      squares: [
-        [0, 1],
-        [1, 3],
-      ],
-    },
-    image: Footage.Hero,
-    shown: true,
-  },
-  {
-    name: "CTA Sections",
-    href: "/snippets/ctas",
-    description: "Diversely styled sections to appeal the user to click on them.",
-    pattern: {
-      y: -6,
-      squares: [
-        [-1, 2],
-        [1, 3],
-      ],
-    },
-    image: Footage.CTA,
-    shown: true,
-  },
-  {
-    name: "KPI Widgets",
-    href: "/snippets/kpi",
-    description: "Key Performance Indicators to show the user the most important metrics.",
-    pattern: {
-      y: 32,
-      squares: [
-        [0, 2],
-        [1, 4],
-      ],
-    },
-    image: Footage.KPI,
-    shown: true,
-  },
-  {
-    name: "Product Overviews",
-    href: "/snippets/product-overviews",
-    description: "Product overview page components",
-    pattern: {
-      y: 16,
-      squares: [
-        [0, 1],
-        [1, 3],
-      ],
-    },
-    shown: true,
-  },
-  {
-    name: "Product Cards",
-    href: "/snippets/product-cards",
-    description: "Product list page components",
-    pattern: {
-      y: -6,
-      squares: [
-        [-1, 2],
-        [1, 3],
-      ],
-    },
-    image: Footage.ProductCards,
     shown: true,
   },
 ].sort((a, b) => a.name.localeCompare(b.name))
