@@ -149,7 +149,7 @@ export const applicationUiNav: Section[] = [
   {
     name: "Alerts",
     href: "/application-ui/alerts",
-    description: "Customizable alerts to send information to the user with different icons, colors, and actions.",
+    description: "Customizable alerts to send information to the user.",
     pattern: {
       y: 16,
       squares: [
@@ -206,7 +206,7 @@ export const applicationUiNav: Section[] = [
   {
     name: "Color Pickers",
     href: "/application-ui/color-pickers",
-    description: "Color pickers for selecting colors.",
+    description: "Color pickers for selecting colors within different scenarios.",
     pattern: {
       y: 16,
       squares: [

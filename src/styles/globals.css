@@ -38,6 +38,12 @@
     --accent-foreground: #202026;
     --destructive: #d34948;
     --destructive-foreground: #ffffff;
+    --success: #49ba72;
+    --success-foreground: #ffffff;
+    --warning: #ff9800;
+    --warning-foreground: #ffffff;
+    --info: #2196f3;
+    --info-foreground: #ffffff;
     --border: #d8d8d8;
     --input: #d8d8d8;
     --ring: #335577;
@@ -76,7 +82,7 @@
     --card-foreground: #eeeeee;
     --popover: #191919;
     --popover-foreground: #eeeeee;
-    --primary: #c0d6ff;
+    --primary: #afcbff;
     --primary-foreground: #0f131a;
     --secondary: #eabdc5;
     --secondary-foreground: rgb(27, 17, 17);
@@ -86,6 +92,12 @@
     --accent-foreground: #eeeeee;
     --destructive: #d34855;
     --destructive-foreground: #ffffff;
+    --success: #49ba72;
+    --success-foreground: #ffffff;
+    --warning: #ff9800;
+    --warning-foreground: #ffffff;
+    --info: #2196f3;
+    --info-foreground: #ffffff;
     --border: #2a2a2d;
     --input: #484949;
     --ring: #cec0ff;
@@ -134,6 +146,12 @@
     --color-accent-foreground: var(--accent-foreground);
     --color-destructive: var(--destructive);
     --color-destructive-foreground: var(--destructive-foreground);
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+    --color-info: var(--info);
+    --color-info-foreground: var(--info-foreground);
     --color-border: var(--border);
     --color-input: var(--input);
     --color-ring: var(--ring);
