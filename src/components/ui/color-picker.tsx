@@ -79,7 +79,7 @@ export function ColorPicker({
   }, [])
 
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex flex-col gap-1">
       {label && <Label>{label}</Label>}
       {description && <p className="text-muted-foreground mb-2 text-sm">{description}</p>}
 
@@ -161,7 +161,7 @@ export function ColorPicker({
               color={parsedValue}
               onChange={onChange}
               prefixed
-              className="border-input focus:ring-ring h-10 w-full rounded-md border pr-3 pl-10 text-sm focus:ring-1 focus:outline-none"
+              className="bg-background border-input focus:ring-ring h-10 w-full rounded-md border pr-3 pl-10 text-sm focus:ring-1 focus:outline-none"
               onBlur={onBlur}
               disabled={disabled}
             />

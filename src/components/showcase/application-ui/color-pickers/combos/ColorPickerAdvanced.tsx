@@ -240,7 +240,7 @@ export function ColorPickerAdvanced({
                         color={hexValue}
                         onChange={handleHexChange}
                         prefixed
-                        className="w-full border-0 bg-transparent p-0 text-sm focus:ring-0 focus:outline-none"
+                        className="bg-background w-full border-0 p-0 text-sm focus:ring-0 focus:outline-none"
                       />
                     </div>
                   </div>
@@ -327,7 +327,7 @@ export function ColorPickerAdvanced({
                         color={hexValue}
                         onChange={handleHexChange}
                         prefixed
-                        className="w-full border-0 bg-transparent p-0 text-sm focus:ring-0 focus:outline-none"
+                        className="bg-background w-full border-0 p-0 text-sm focus:ring-0 focus:outline-none"
                       />
                     </div>
                   </div>
@@ -409,7 +409,7 @@ export function ColorPickerAdvanced({
             color={hexValue}
             onChange={handleHexChange}
             prefixed
-            className="border-input focus:ring-ring h-10 w-full rounded-md border pr-3 pl-10 text-sm focus:ring-1 focus:outline-none"
+            className="bg-background border-input focus:ring-ring h-10 w-full rounded-md border pr-3 pl-10 text-sm focus:ring-1 focus:outline-none"
             onBlur={onBlur}
             disabled={disabled}
           />

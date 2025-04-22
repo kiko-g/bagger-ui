@@ -11,6 +11,8 @@ import { ColorPickerWithPresets } from "@/components/showcase/application-ui/col
 import { ColorPickerWithHistory } from "@/components/showcase/application-ui/color-pickers/combos/ColorPickerHistory"
 import { ColorPickerAdvanced } from "@/components/showcase/application-ui/color-pickers/combos/ColorPickerAdvanced"
 import { ColorPickerForm } from "@/components/showcase/application-ui/color-pickers/combos/ColorPickerForm"
+import { ColorPickerBundles } from "@/components/showcase/application-ui/color-pickers/combos/ColorPickerBundles"
+import { ColorPickerBundleGenerator } from "@/components/showcase/application-ui/color-pickers/combos/ColorPickerBundleGenerator"
 
 export default function ColorPickers() {
   const base = "application-ui/color-pickers"
@@ -53,6 +55,16 @@ export default function ColorPickers() {
           name: "With Form",
           path: `${base}/combos/ColorPickerForm.tsx`,
           component: <ColorPickerForm />,
+        },
+        {
+          name: "Color Bundle Editor",
+          path: `${base}/combos/ColorPickerBundles.tsx`,
+          component: <ColorPickerBundles />,
+        },
+        {
+          name: "Color Bundle Generator",
+          path: `${base}/combos/ColorPickerBundleGenerator.tsx`,
+          component: <ColorPickerBundleGenerator />,
         },
       ]}
     />
