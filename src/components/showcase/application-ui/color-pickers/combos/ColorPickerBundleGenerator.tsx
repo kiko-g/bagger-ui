@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import { ColorPicker } from "@/components/ui/color-picker"
 
-import { Check, Copy, Sparkles } from "lucide-react"
+import { CheckIcon, CopyIcon, SparklesIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 function hexToRgb(hex: string): { r: number; g: number; b: number } {
@@ -254,11 +254,11 @@ export function ColorPickerBundleGenerator() {
         </div>
         <div className="flex gap-2">
           <Button variant="outline" onClick={generateRandomColors}>
-            <Sparkles className="mr-2 h-4 w-4" />
+            <SparklesIcon />
             Random Colors
           </Button>
           <Button variant="outline" onClick={copyToClipboard}>
-            {copied ? <Check className="mr-2 h-4 w-4" /> : <Copy className="mr-2 h-4 w-4" />}
+            {copied ? <CheckIcon /> : <CopyIcon />}
             {copied ? "Copied!" : "Copy JSON"}
           </Button>
         </div>
@@ -472,7 +472,7 @@ export function ColorPickerBundleGenerator() {
             <div className="flex items-center justify-between">
               <Label>JSON Output</Label>
               <Button variant="ghost" size="icon" onClick={copyToClipboard}>
-                {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                {copied ? <CheckIcon /> : <CopyIcon />}
                 <span className="sr-only">Copy to clipboard</span>
               </Button>
             </div>

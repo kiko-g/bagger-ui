@@ -7,8 +7,9 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import { ColorPicker } from "@/components/ui/color-picker"
 
-import { Check, Copy, RefreshCw } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { CheckIcon, CopyIcon, ChevronDownIcon, ImportIcon } from "lucide-react"
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu"
 
 type ThemeType = "bundle-content" | "bundle-light" | "bundle-dark"
 
@@ -200,26 +201,36 @@ export function ColorPickerBundles() {
         <div className="flex gap-2">
           <div className="relative">
             <Button variant="outline" onClick={copyToClipboard}>
-              {copied ? <Check className="mr-2 h-4 w-4" /> : <Copy className="mr-2 h-4 w-4" />}
+              {copied ? <CheckIcon /> : <CopyIcon />}
               {copied ? "Copied!" : "Copy JSON"}
             </Button>
           </div>
-          <div className="group relative">
-            <Button variant="outline">
-              <RefreshCw className="mr-2 h-4 w-4" />
-              Load Preset
+
+          <div className="inline-flex rounded-md shadow-xs" role="group">
+            <Button className="mr-[-1px] rounded-r-none" variant="outline">
+              <ImportIcon />
+              Import
             </Button>
-            <div className="bg-popover absolute right-0 z-10 mt-1 hidden w-56 rounded-md border shadow-md group-hover:block">
-              {predefinedBundles.map((preset, index) => (
-                <button
-                  key={index}
-                  className="hover:bg-accent hover:text-accent-foreground w-full px-3 py-2 text-left text-sm"
-                  onClick={() => loadBundle(preset)}
-                >
-                  {preset.name}
-                </button>
-              ))}
-            </div>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" className="rounded-l-none border-l px-2 shadow-none">
+                  <ChevronDownIcon className="h-4 w-4" />
+                  <span className="sr-only">More save options</span>
+                </Button>
+              </DropdownMenuTrigger>
+
+              <DropdownMenuContent align="end">
+                {predefinedBundles.map((preset, index) => (
+                  <DropdownMenuItem
+                    key={index}
+                    className="hover:bg-accent hover:text-accent-foreground w-full px-3 py-2 text-left text-sm"
+                    onClick={() => loadBundle(preset)}
+                  >
+                    {preset.name}
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
       </div>
@@ -410,7 +421,7 @@ export function ColorPickerBundles() {
         <div className="flex items-center justify-between">
           <Label>JSON Output</Label>
           <Button variant="ghost" size="sm" onClick={copyToClipboard}>
-            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+            {copied ? <CheckIcon className="h-4 w-4" /> : <CopyIcon className="h-4 w-4" />}
             <span className="sr-only">Copy to clipboard</span>
           </Button>
         </div>
