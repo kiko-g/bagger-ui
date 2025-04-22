@@ -149,9 +149,8 @@ function adjustSaturation(color: string, amount: number): string {
 
 const ColorBundleGenerators = {
   simple: (primaryColor: string, secondaryColor: string, bundleName: string): ColorBundle => {
-    // Content theme
     const contentTheme: ColorTheme = {
-      background: "#FFFFFF", // White background
+      background: "#FFFFFF",
       main: darkenColor(primaryColor, 0.3),
       secondary: darkenColor(secondaryColor, 0.3),
       links: lightenColor(secondaryColor, 0.1),
@@ -161,7 +160,6 @@ const ColorBundleGenerators = {
       secondary_button_text: getTextColor(secondaryColor),
     }
 
-    // Light theme
     const lightTheme: ColorTheme = {
       background: lightenColor(mixColors(primaryColor, secondaryColor, 0.5), 0.5),
       main: darkenColor(primaryColor, 0.3),
@@ -184,7 +182,6 @@ const ColorBundleGenerators = {
       secondary_button_text: secondaryColor,
     }
 
-    // Create the color bundle
     return {
       name: bundleName,
       "bundle-content": contentTheme,

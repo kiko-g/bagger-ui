@@ -13,6 +13,7 @@ import { ColorPickerAdvanced } from "@/components/showcase/application-ui/color-
 import { ColorPickerForm } from "@/components/showcase/application-ui/color-pickers/combos/ColorPickerForm"
 import { ColorPickerBundles } from "@/components/showcase/application-ui/color-pickers/combos/ColorPickerBundles"
 import { ColorPickerBundleGenerator } from "@/components/showcase/application-ui/color-pickers/combos/ColorPickerBundleGenerator"
+import { ColorPickerMixer } from "@/components/showcase/application-ui/color-pickers/combos/ColorPickerMixer"
 
 export default function ColorPickers() {
   const base = "application-ui/color-pickers"
@@ -47,12 +48,12 @@ export default function ColorPickers() {
           component: <ColorPickerWithHistory value="#404044" onChange={() => {}} />,
         },
         {
-          name: "With Advanced",
+          name: "Advanced Picker",
           path: `${base}/combos/ColorPickerAdvanced.tsx`,
           component: <ColorPickerAdvanced value="#404044" onChange={() => {}} />,
         },
         {
-          name: "With Form",
+          name: "Form based",
           path: `${base}/combos/ColorPickerForm.tsx`,
           component: <ColorPickerForm />,
         },
@@ -65,6 +66,11 @@ export default function ColorPickers() {
           name: "Color Bundle Generator",
           path: `${base}/combos/ColorPickerBundleGenerator.tsx`,
           component: <ColorPickerBundleGenerator />,
+        },
+        {
+          name: "Color Mixer",
+          path: `${base}/combos/ColorPickerMixer.tsx`,
+          component: <ColorPickerMixer />,
         },
       ]}
     />
