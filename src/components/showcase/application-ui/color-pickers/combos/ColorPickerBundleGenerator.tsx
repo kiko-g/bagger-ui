@@ -323,7 +323,7 @@ const ColorBundleGenerators = {
       // For dark primary colors, use a very light tint of the color
       contentBackground = lightenColor(primaryColor, 0.8)
       lightBackground = lightenColor(primaryColor, 0.9)
-      darkBackground = darkenColor(primaryColor, 0.1)
+      darkBackground = darkenColor(primaryColor, 0.4)
     }
 
     // Adjust text colors for optimal contrast
