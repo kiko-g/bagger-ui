@@ -7,8 +7,7 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import { ColorPicker } from "@/components/ui/color-picker"
 
-import { CheckIcon, ChevronDownIcon, CopyIcon, SparklesIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { Check, ChevronDown, Copy, Sparkles } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 function hexToRgb(hex: string): { r: number; g: number; b: number } {
@@ -147,6 +146,122 @@ function adjustSaturation(color: string, amount: number): string {
   return rgbToHex(newRgb.r, newRgb.g, newRgb.b)
 }
 
+// New color utility functions
+function getColorCategory(color: string): "light" | "dark" | "vibrant" | "muted" | "neutral" {
+  const rgb = hexToRgb(color)
+  const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b)
+
+  const luminance = getLuminance(rgb.r, rgb.g, rgb.b)
+
+  if (hsl.s < 0.15) return "neutral"
+  if (luminance > 0.7) return "light"
+  if (luminance < 0.3) return "dark"
+  if (hsl.s > 0.6) return "vibrant"
+  return "muted"
+}
+
+function getComplementaryColor(color: string): string {
+  const rgb = hexToRgb(color)
+  const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b)
+
+  // Rotate hue by 180 degrees
+  hsl.h = (hsl.h + 0.5) % 1
+
+  const newRgb = hslToRgb(hsl.h, hsl.s, hsl.l)
+  return rgbToHex(newRgb.r, newRgb.g, newRgb.b)
+}
+
+function getAnalogousColor(color: string, offset = 0.083): string {
+  const rgb = hexToRgb(color)
+  const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b)
+
+  // Rotate hue by 30 degrees (0.083 in the 0-1 scale)
+  hsl.h = (hsl.h + offset) % 1
+
+  const newRgb = hslToRgb(hsl.h, hsl.s, hsl.l)
+  return rgbToHex(newRgb.r, newRgb.g, newRgb.b)
+}
+
+function getTriadicColor(color: string, offset = 0.333): string {
+  const rgb = hexToRgb(color)
+  const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b)
+
+  // Rotate hue by 120 degrees (0.333 in the 0-1 scale)
+  hsl.h = (hsl.h + offset) % 1
+
+  const newRgb = hslToRgb(hsl.h, hsl.s, hsl.l)
+  return rgbToHex(newRgb.r, newRgb.g, newRgb.b)
+}
+
+function getSplitComplementaryColor(color: string, offset = 0.15): string {
+  const complementary = getComplementaryColor(color)
+  return getAnalogousColor(complementary, offset)
+}
+
+function adjustColorForBackground(color: string, bgColor: string, contrastThreshold = 4.5): string {
+  const bgRgb = hexToRgb(bgColor)
+  const bgLuminance = getLuminance(bgRgb.r, bgRgb.g, bgRgb.b)
+
+  let adjustedColor = color
+  let colorRgb = hexToRgb(adjustedColor)
+  let colorLuminance = getLuminance(colorRgb.r, colorRgb.g, colorRgb.b)
+
+  // Calculate contrast ratio
+  const contrast = (Math.max(bgLuminance, colorLuminance) + 0.05) / (Math.min(bgLuminance, colorLuminance) + 0.05)
+
+  // If contrast is below threshold, adjust the color
+  if (contrast < contrastThreshold) {
+    const hsl = rgbToHsl(colorRgb.r, colorRgb.g, colorRgb.b)
+
+    // Determine if we should lighten or darken based on background
+    if (bgLuminance > 0.5) {
+      // Dark text on light background
+      let amount = 0.1
+      while (amount < 0.8) {
+        adjustedColor = darkenColor(color, amount)
+        colorRgb = hexToRgb(adjustedColor)
+        colorLuminance = getLuminance(colorRgb.r, colorRgb.g, colorRgb.b)
+        const newContrast =
+          (Math.max(bgLuminance, colorLuminance) + 0.05) / (Math.min(bgLuminance, colorLuminance) + 0.05)
+        if (newContrast >= contrastThreshold) break
+        amount += 0.1
+      }
+    } else {
+      // Light text on dark background
+      let amount = 0.1
+      while (amount < 0.8) {
+        adjustedColor = lightenColor(color, amount)
+        colorRgb = hexToRgb(adjustedColor)
+        colorLuminance = getLuminance(colorRgb.r, colorRgb.g, colorRgb.b)
+        const newContrast =
+          (Math.max(bgLuminance, colorLuminance) + 0.05) / (Math.min(bgLuminance, colorLuminance) + 0.05)
+        if (newContrast >= contrastThreshold) break
+        amount += 0.1
+      }
+    }
+  }
+
+  return adjustedColor
+}
+
+interface ColorTheme {
+  background: string
+  main: string
+  secondary: string
+  links: string
+  main_button_background: string
+  main_button_text: string
+  secondary_button_background: string
+  secondary_button_text: string
+}
+
+interface ColorBundle {
+  name: string
+  "bundle-content": ColorTheme
+  "bundle-light": ColorTheme
+  "bundle-dark": ColorTheme
+}
+
 const ColorBundleGenerators = {
   simple: (primaryColor: string, secondaryColor: string, bundleName: string): ColorBundle => {
     const contentTheme: ColorTheme = {
@@ -189,24 +304,258 @@ const ColorBundleGenerators = {
       "bundle-dark": darkTheme,
     }
   },
-}
 
-interface ColorTheme {
-  background: string
-  main: string
-  secondary: string
-  links: string
-  main_button_background: string
-  main_button_text: string
-  secondary_button_background: string
-  secondary_button_text: string
-}
+  // New generator: Adaptive - adjusts strategy based on color properties
+  adaptive: (primaryColor: string, secondaryColor: string, bundleName: string): ColorBundle => {
+    const primaryCategory = getColorCategory(primaryColor)
+    const secondaryCategory = getColorCategory(secondaryColor)
 
-interface ColorBundle {
-  name: string
-  "bundle-content": ColorTheme
-  "bundle-light": ColorTheme
-  "bundle-dark": ColorTheme
+    // Determine background colors based on primary color properties
+    let contentBackground = "#FFFFFF"
+    let lightBackground = "#F8FAFC"
+    let darkBackground = "#111827"
+
+    if (primaryCategory === "light") {
+      // For light primary colors, use a slightly tinted background
+      contentBackground = lightenColor(primaryColor, 0.3)
+      lightBackground = lightenColor(primaryColor, 0.4)
+    } else if (primaryCategory === "dark") {
+      // For dark primary colors, use a very light tint of the color
+      contentBackground = lightenColor(primaryColor, 0.8)
+      lightBackground = lightenColor(primaryColor, 0.9)
+      darkBackground = darkenColor(primaryColor, 0.1)
+    }
+
+    // Adjust text colors for optimal contrast
+    const contentMain = adjustColorForBackground(primaryColor, contentBackground)
+    const contentSecondary = adjustColorForBackground(secondaryColor, contentBackground)
+    const lightMain = adjustColorForBackground(primaryColor, lightBackground)
+    const lightSecondary = adjustColorForBackground(secondaryColor, lightBackground)
+    const darkMain = adjustColorForBackground(lightenColor(primaryColor, 0.2), darkBackground)
+    const darkSecondary = adjustColorForBackground(lightenColor(secondaryColor, 0.2), darkBackground)
+
+    // Create button colors with appropriate contrast
+    const contentMainButton = primaryColor
+    const contentSecondaryButton = secondaryColor
+    const lightMainButton = primaryColor
+    const lightSecondaryButton = secondaryColor
+    const darkMainButton = adjustColorForBackground(primaryColor, darkBackground, 3)
+    const darkSecondaryButton = adjustColorForBackground(secondaryColor, darkBackground, 3)
+
+    // Ensure button text has good contrast
+    const contentMainButtonText = getTextColor(contentMainButton)
+    const contentSecondaryButtonText = getTextColor(contentSecondaryButton)
+    const lightMainButtonText = getTextColor(lightMainButton)
+    const lightSecondaryButtonText = getTextColor(lightSecondaryButton)
+    const darkMainButtonText = getTextColor(darkMainButton)
+    const darkSecondaryButtonText = getTextColor(darkSecondaryButton)
+
+    // Create themes
+    const contentTheme: ColorTheme = {
+      background: contentBackground,
+      main: contentMain,
+      secondary: contentSecondary,
+      links: contentSecondary,
+      main_button_background: contentMainButton,
+      main_button_text: contentMainButtonText,
+      secondary_button_background: contentSecondaryButton,
+      secondary_button_text: contentSecondaryButtonText,
+    }
+
+    const lightTheme: ColorTheme = {
+      background: lightBackground,
+      main: lightMain,
+      secondary: lightSecondary,
+      links: lightSecondary,
+      main_button_background: lightMainButton,
+      main_button_text: lightMainButtonText,
+      secondary_button_background: lightSecondaryButton,
+      secondary_button_text: lightSecondaryButtonText,
+    }
+
+    const darkTheme: ColorTheme = {
+      background: darkBackground,
+      main: darkMain,
+      secondary: darkSecondary,
+      links: darkMain,
+      main_button_background: darkMainButton,
+      main_button_text: darkMainButtonText,
+      secondary_button_background: darkSecondaryButton,
+      secondary_button_text: darkSecondaryButtonText,
+    }
+
+    return {
+      name: bundleName,
+      "bundle-content": contentTheme,
+      "bundle-light": lightTheme,
+      "bundle-dark": darkTheme,
+    }
+  },
+
+  // New generator: Complementary - uses color theory to create complementary color schemes
+  complementary: (primaryColor: string, secondaryColor: string, bundleName: string): ColorBundle => {
+    // Generate complementary colors
+    const primaryComplement = getComplementaryColor(primaryColor)
+    const secondaryComplement = getComplementaryColor(secondaryColor)
+
+    // Content theme with white background and complementary accents
+    const contentTheme: ColorTheme = {
+      background: "#FFFFFF",
+      main: primaryColor,
+      secondary: secondaryColor,
+      links: getSplitComplementaryColor(primaryColor),
+      main_button_background: primaryColor,
+      main_button_text: getTextColor(primaryColor),
+      secondary_button_background: primaryComplement,
+      secondary_button_text: getTextColor(primaryComplement),
+    }
+
+    // Light theme with subtle background and complementary colors
+    const lightTheme: ColorTheme = {
+      background: lightenColor(mixColors(primaryColor, "#FFFFFF", 0.9), 0.1),
+      main: primaryColor,
+      secondary: secondaryColor,
+      links: getAnalogousColor(primaryColor, 0.1),
+      main_button_background: primaryColor,
+      main_button_text: getTextColor(primaryColor),
+      secondary_button_background: getAnalogousColor(primaryColor, -0.1),
+      secondary_button_text: getTextColor(getAnalogousColor(primaryColor, -0.1)),
+    }
+
+    // Dark theme with rich background and vibrant complementary colors
+    const darkTheme: ColorTheme = {
+      background: "#1A1A2E",
+      main: lightenColor(primaryColor, 0.1),
+      secondary: lightenColor(secondaryColor, 0.1),
+      links: lightenColor(primaryComplement, 0.2),
+      main_button_background: primaryColor,
+      main_button_text: getTextColor(primaryColor),
+      secondary_button_background: primaryComplement,
+      secondary_button_text: getTextColor(primaryComplement),
+    }
+
+    return {
+      name: bundleName,
+      "bundle-content": contentTheme,
+      "bundle-light": lightTheme,
+      "bundle-dark": darkTheme,
+    }
+  },
+
+  // New generator: Monochromatic - creates variations based on a single color
+  monochromatic: (primaryColor: string, secondaryColor: string, bundleName: string): ColorBundle => {
+    // For monochromatic, we primarily use the primary color and create variations
+    const primaryHsl = rgbToHsl(hexToRgb(primaryColor).r, hexToRgb(primaryColor).g, hexToRgb(primaryColor).b)
+
+    // Create variations by adjusting saturation and lightness
+    const primaryLight = hslToRgb(primaryHsl.h, Math.max(0.1, primaryHsl.s - 0.2), Math.min(0.9, primaryHsl.l + 0.3))
+    const primaryLighter = hslToRgb(
+      primaryHsl.h,
+      Math.max(0.05, primaryHsl.s - 0.3),
+      Math.min(0.95, primaryHsl.l + 0.4),
+    )
+    const primaryDark = hslToRgb(primaryHsl.h, Math.min(1, primaryHsl.s + 0.1), Math.max(0.2, primaryHsl.l - 0.2))
+    const primaryDarker = hslToRgb(primaryHsl.h, Math.min(1, primaryHsl.s + 0.15), Math.max(0.1, primaryHsl.l - 0.3))
+
+    // Convert back to hex
+    const lightVariant = rgbToHex(primaryLight.r, primaryLight.g, primaryLight.b)
+    const lighterVariant = rgbToHex(primaryLighter.r, primaryLighter.g, primaryLighter.b)
+    const darkVariant = rgbToHex(primaryDark.r, primaryDark.g, primaryDark.b)
+    const darkerVariant = rgbToHex(primaryDarker.r, primaryDarker.g, primaryDarker.b)
+
+    // Content theme with white background and monochromatic accents
+    const contentTheme: ColorTheme = {
+      background: "#FFFFFF",
+      main: primaryColor,
+      secondary: darkVariant,
+      links: primaryColor,
+      main_button_background: primaryColor,
+      main_button_text: getTextColor(primaryColor),
+      secondary_button_background: lightVariant,
+      secondary_button_text: getTextColor(lightVariant),
+    }
+
+    // Light theme with very light primary background
+    const lightTheme: ColorTheme = {
+      background: lighterVariant,
+      main: primaryColor,
+      secondary: darkVariant,
+      links: primaryColor,
+      main_button_background: primaryColor,
+      main_button_text: getTextColor(primaryColor),
+      secondary_button_background: lightVariant,
+      secondary_button_text: darkerVariant,
+    }
+
+    // Dark theme with dark primary background
+    const darkTheme: ColorTheme = {
+      background: darkerVariant,
+      main: lightVariant,
+      secondary: lighterVariant,
+      links: lightVariant,
+      main_button_background: primaryColor,
+      main_button_text: getTextColor(primaryColor),
+      secondary_button_background: darkVariant,
+      secondary_button_text: lighterVariant,
+    }
+
+    return {
+      name: bundleName,
+      "bundle-content": contentTheme,
+      "bundle-light": lightTheme,
+      "bundle-dark": darkTheme,
+    }
+  },
+
+  // New generator: Triadic - uses triadic color harmony
+  triadic: (primaryColor: string, secondaryColor: string, bundleName: string): ColorBundle => {
+    // Generate triadic colors
+    const triadicColor1 = getTriadicColor(primaryColor)
+    const triadicColor2 = getTriadicColor(primaryColor, 0.667) // 240 degrees
+
+    // Content theme with white background and triadic accents
+    const contentTheme: ColorTheme = {
+      background: "#FFFFFF",
+      main: primaryColor,
+      secondary: secondaryColor,
+      links: triadicColor1,
+      main_button_background: primaryColor,
+      main_button_text: getTextColor(primaryColor),
+      secondary_button_background: triadicColor2,
+      secondary_button_text: getTextColor(triadicColor2),
+    }
+
+    // Light theme with subtle background and triadic colors
+    const lightTheme: ColorTheme = {
+      background: lightenColor(mixColors(primaryColor, "#FFFFFF", 0.95), 0.05),
+      main: primaryColor,
+      secondary: secondaryColor,
+      links: triadicColor1,
+      main_button_background: primaryColor,
+      main_button_text: getTextColor(primaryColor),
+      secondary_button_background: lightenColor(triadicColor2, 0.2),
+      secondary_button_text: getTextColor(lightenColor(triadicColor2, 0.2)),
+    }
+
+    // Dark theme with rich background and vibrant triadic colors
+    const darkTheme: ColorTheme = {
+      background: "#121212",
+      main: lightenColor(primaryColor, 0.1),
+      secondary: lightenColor(secondaryColor, 0.1),
+      links: lightenColor(triadicColor1, 0.2),
+      main_button_background: primaryColor,
+      main_button_text: getTextColor(primaryColor),
+      secondary_button_background: triadicColor2,
+      secondary_button_text: getTextColor(triadicColor2),
+    }
+
+    return {
+      name: bundleName,
+      "bundle-content": contentTheme,
+      "bundle-light": lightTheme,
+      "bundle-dark": darkTheme,
+    }
+  },
 }
 
 export function ColorPickerBundleGenerator() {
@@ -220,7 +569,7 @@ export function ColorPickerBundleGenerator() {
 
   useEffect(() => {
     generateColorBundle()
-  }, [primaryColor, secondaryColor, bundleName])
+  }, [primaryColor, secondaryColor, bundleName, generatorType])
 
   const generateColorBundle = () => {
     const generator = ColorBundleGenerators[(generatorType as keyof typeof ColorBundleGenerators) || "simple"]
@@ -260,19 +609,23 @@ export function ColorPickerBundleGenerator() {
             <DropdownMenuTrigger asChild>
               <Button variant="outline" className="capitalize">
                 {generatorType}
-                <ChevronDownIcon />
+                <ChevronDown className="ml-2 h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuItem onClick={() => setGeneratorType("simple")}>Simple</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setGeneratorType("adaptive")}>Adaptive</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setGeneratorType("complementary")}>Complementary</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setGeneratorType("monochromatic")}>Monochromatic</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setGeneratorType("triadic")}>Triadic</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <Button variant="outline" onClick={generateRandomColors}>
-            <SparklesIcon />
+            <Sparkles className="mr-2 h-4 w-4" />
             Random
           </Button>
           <Button variant="outline" onClick={copyToClipboard}>
-            {copied ? <CheckIcon /> : <CopyIcon />}
+            {copied ? <Check className="mr-2 h-4 w-4" /> : <Copy className="mr-2 h-4 w-4" />}
             {copied ? "Copied!" : "Copy"}
           </Button>
         </div>
@@ -313,13 +666,11 @@ export function ColorPickerBundleGenerator() {
                 {Object.entries(colorBundle["bundle-content"]).map(([key, value]) => (
                   <div
                     key={`content-${key}`}
-                    className="flex h-12 items-center justify-between gap-2 rounded-md border p-2 text-sm font-medium capitalize"
+                    className="flex h-12 items-center justify-between gap-2 rounded-md border p-2 text-sm font-medium tracking-tighter capitalize"
                     style={{ backgroundColor: value, color: getTextColor(value) }}
                   >
-                    <span className="max-w-32 leading-none tracking-tighter">{key.split("_").join(" ")}</span>
-                    <span className="text-2xs rounded bg-black px-1 py-0.5 font-bold text-white uppercase">
-                      {value}
-                    </span>
+                    <span className="max-w-32 leading-none">{key.split("_").join(" ")}</span>
+                    <span className="text-2xs rounded bg-black px-1 py-0.5 text-white uppercase">{value}</span>
                   </div>
                 ))}
               </div>
@@ -332,15 +683,11 @@ export function ColorPickerBundleGenerator() {
                 {Object.entries(colorBundle["bundle-light"]).map(([key, value]) => (
                   <div
                     key={`light-${key}`}
-                    className="flex h-12 items-center justify-between gap-2 rounded-md border p-2 text-sm font-medium capitalize"
+                    className="flex h-12 items-center justify-between gap-2 rounded-md border p-2 text-sm font-medium tracking-tighter capitalize"
                     style={{ backgroundColor: value, color: getTextColor(value) }}
                   >
-                    <span className="tracking-tighter">
-                      {key.split("_")[0]} {key.split("_")[1]}
-                    </span>
-                    <span className="text-2xs rounded bg-black px-1 py-0.5 font-bold text-white uppercase">
-                      {value}
-                    </span>
+                    <span className="max-w-32 leading-none">{key.split("_").join(" ")}</span>
+                    <span className="text-2xs rounded bg-black px-1 py-0.5 text-white uppercase">{value}</span>
                   </div>
                 ))}
               </div>
@@ -353,15 +700,11 @@ export function ColorPickerBundleGenerator() {
                 {Object.entries(colorBundle["bundle-dark"]).map(([key, value]) => (
                   <div
                     key={`dark-${key}`}
-                    className="flex h-12 items-center justify-between gap-2 rounded-md border p-2 text-sm font-medium capitalize"
+                    className="flex h-12 items-center justify-between gap-2 rounded-md border p-2 text-sm font-medium tracking-tighter capitalize"
                     style={{ backgroundColor: value, color: getTextColor(value) }}
                   >
-                    <span className="tracking-tighter">
-                      {key.split("_")[0]} {key.split("_")[1]}
-                    </span>
-                    <span className="text-2xs rounded bg-black px-1 py-0.5 font-bold text-white uppercase">
-                      {value}
-                    </span>
+                    <span className="max-w-32 leading-none">{key.split("_").join(" ")}</span>
+                    <span className="text-2xs rounded bg-black px-1 py-0.5 text-white uppercase">{value}</span>
                   </div>
                 ))}
               </div>
@@ -373,7 +716,7 @@ export function ColorPickerBundleGenerator() {
             <div className="flex items-center justify-between">
               <Label>JSON Output</Label>
               <Button variant="ghost" size="icon" onClick={copyToClipboard}>
-                {copied ? <CheckIcon /> : <CopyIcon />}
+                {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                 <span className="sr-only">Copy to clipboard</span>
               </Button>
             </div>
