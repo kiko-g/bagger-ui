@@ -331,8 +331,8 @@ const ColorBundleGenerators = {
     const contentSecondary = adjustColorForBackground(secondaryColor, contentBackground)
     const lightMain = adjustColorForBackground(primaryColor, lightBackground)
     const lightSecondary = adjustColorForBackground(secondaryColor, lightBackground)
-    const darkMain = adjustColorForBackground(lightenColor(primaryColor, 0.2), darkBackground)
-    const darkSecondary = adjustColorForBackground(lightenColor(secondaryColor, 0.2), darkBackground)
+    const darkMain = adjustColorForBackground(lightenColor(primaryColor, 0.5), darkBackground)
+    const darkSecondary = adjustColorForBackground(lightenColor(secondaryColor, 0.5), darkBackground)
 
     // Create button colors with appropriate contrast
     const contentMainButton = primaryColor
