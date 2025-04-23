@@ -75,7 +75,6 @@ const defaultBundle: ColorBundle = {
   },
 }
 
-// Predefined color bundles
 const predefinedBundles: ColorBundle[] = [
   defaultBundle,
   {
@@ -179,7 +178,6 @@ const predefinedBundles: ColorBundle[] = [
   },
 ]
 
-// Validate if an object is a valid ColorTheme
 function isValidColorTheme(obj: any): obj is ColorTheme {
   if (!obj || typeof obj !== "object") return false
 
@@ -194,70 +192,44 @@ function isValidColorTheme(obj: any): obj is ColorTheme {
     "secondary_button_text",
   ]
 
-  // Check if all required keys exist and are strings
   return requiredKeys.every(
     (key) => key in obj && typeof obj[key] === "string" && /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(obj[key]),
   )
 }
 
-// Validate if an object is a valid ColorBundle
 function isValidColorBundle(obj: any): obj is ColorBundle {
   if (!obj || typeof obj !== "object") return false
 
-  // Check if name exists and is a string
   if (!("name" in obj) || typeof obj.name !== "string") return false
 
-  // Check if all required themes exist and are valid ColorThemes
   const requiredThemes: ThemeType[] = ["bundle-content", "bundle-light", "bundle-dark"]
-
   return requiredThemes.every((theme) => theme in obj && isValidColorTheme(obj[theme]))
 }
 
-/**
- * Attempts to convert JavaScript/TypeScript object notation to valid JSON
- * Handles common issues like unquoted property names and trailing commas
- */
 function tryConvertToValidJson(input: string): string {
   try {
-    // First try to parse as-is (maybe it's already valid JSON)
-    JSON.parse(input)
+    JSON.parse(input) // check if already valid
     return input
   } catch (e) {
-    // Not valid JSON, try to fix common issues
-
     let processed = input
-      // Remove trailing commas
-      .replace(/,\s*([}\]])/g, "$1")
-
-      // Quote unquoted property names (but avoid requoting)
-      .replace(/([{,]\s*)([a-zA-Z0-9_$]+)(\s*:)/g, '$1"$2"$3')
-
-      // Handle single quotes for strings (convert to double quotes)
-      .replace(/'([^'\\]*(\\.[^'\\]*)*)'(?=:|\s*[,}\]])/g, '"$1"')
-
-      // Remove comments (both // and /* */)
-      .replace(/\/\/.*?(\r?\n|$)/g, "$1")
+      .replace(/,\s*([}\]])/g, "$1") // remove trailing commas
+      .replace(/([{,]\s*)([a-zA-Z0-9_$]+)(\s*:)/g, '$1"$2"$3') // quote unquoted property names, avoid requoting
+      .replace(/'([^'\\]*(\\.[^'\\]*)*)'(?=:|\s*[,}\]])/g, '"$1"') // convert single quotes to double
+      .replace(/\/\/.*?(\r?\n|$)/g, "$1") // remove comments (both // and /* */)
       .replace(/\/\*[\s\S]*?\*\//g, "")
-
-      // Trim whitespace
       .trim()
 
-    // If the input appears to be an object within an array or another object,
-    // extract just the object part
+    // input appears to be an object within an array or another object extract just the object part
     if (!processed.startsWith("{")) {
       const objectStart = processed.indexOf("{")
       const objectEnd = processed.lastIndexOf("}") + 1
-      if (objectStart >= 0 && objectEnd > objectStart) {
-        processed = processed.substring(objectStart, objectEnd)
-      }
+      if (objectStart >= 0 && objectEnd > objectStart) processed = processed.substring(objectStart, objectEnd)
     }
 
-    // Validate the processed string
     try {
       JSON.parse(processed)
       return processed
     } catch (e) {
-      // Still not valid JSON, throw error
       throw new Error("Could not convert to valid JSON. Please check the format.")
     }
   }
@@ -273,12 +245,10 @@ export function ColorPickerBundles() {
   const [importFormat, setImportFormat] = useState<"json" | "js">("json")
   const { toast } = useToast()
 
-  // Update JSON output whenever bundle changes
   useEffect(() => {
     setJsonOutput(JSON.stringify(bundle, null, 2))
   }, [bundle])
 
-  // Initialize import JSON when dialog opens
   useEffect(() => {
     if (importDialogOpen) {
       setImportJson(JSON.stringify(bundle, null, 2))
@@ -287,7 +257,6 @@ export function ColorPickerBundles() {
     }
   }, [importDialogOpen, bundle])
 
-  // Handle color change
   const handleColorChange = (theme: ThemeType, property: keyof ColorTheme, value: string) => {
     setBundle((prev) => ({
       ...prev,
@@ -298,7 +267,6 @@ export function ColorPickerBundles() {
     }))
   }
 
-  // Handle bundle name change
   const handleNameChange = (name: string) => {
     setBundle((prev) => ({
       ...prev,
@@ -306,7 +274,6 @@ export function ColorPickerBundles() {
     }))
   }
 
-  // Copy JSON to clipboard
   const copyToClipboard = () => {
     navigator.clipboard.writeText(jsonOutput)
     setCopied(true)
@@ -318,7 +285,6 @@ export function ColorPickerBundles() {
     })
   }
 
-  // Import bundle from JSON or JS/TS object notation
   const importBundle = () => {
     setImportError(null)
 
@@ -327,27 +293,23 @@ export function ColorPickerBundles() {
       let parsedBundle: any
 
       if (importFormat === "json") {
-        // Try to parse as JSON directly
         processedJson = importJson
         parsedBundle = JSON.parse(processedJson)
       } else {
-        // Try to convert JS/TS object notation to valid JSON
         try {
           processedJson = tryConvertToValidJson(importJson)
           parsedBundle = JSON.parse(processedJson)
         } catch (e) {
-          setImportError(`Could not convert to valid JSON: ${e instanceof Error ? e.message : "Unknown error"}`)
+          setImportError(`${e instanceof Error ? e.message : "Unknown error"}`)
           return
         }
       }
 
-      // Validate the parsed bundle
       if (!isValidColorBundle(parsedBundle)) {
         setImportError("Invalid color bundle format. Please check the structure and try again.")
         return
       }
 
-      // Set the bundle and close the dialog
       setBundle(parsedBundle)
       setImportDialogOpen(false)
 
@@ -360,9 +322,8 @@ export function ColorPickerBundles() {
     }
   }
 
-  // Load a predefined bundle
   const loadBundle = (presetBundle: ColorBundle) => {
-    setBundle(JSON.parse(JSON.stringify(presetBundle))) // Deep clone to avoid reference issues
+    setBundle(JSON.parse(JSON.stringify(presetBundle)))
 
     toast({
       title: "Preset loaded",
@@ -370,7 +331,6 @@ export function ColorPickerBundles() {
     })
   }
 
-  // Color properties to display in order
   const colorProperties: Array<{ key: keyof ColorTheme; label: string }> = [
     { key: "background", label: "Background" },
     { key: "main", label: "Main Color" },
@@ -454,8 +414,8 @@ export function ColorPickerBundles() {
                     />
                     {importFormat === "js" && (
                       <p className="text-muted-foreground text-xs">
-                        You can paste directly from your code files. We'll try to convert JS/TS object notation to valid
-                        JSON.
+                        You can paste directly from your code files. We&apos;ll try to convert JS/TS object notation to
+                        valid JSON.
                       </p>
                     )}
                   </div>
