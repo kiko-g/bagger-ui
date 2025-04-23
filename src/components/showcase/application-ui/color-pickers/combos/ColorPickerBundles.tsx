@@ -6,10 +6,20 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
 import { ColorPicker } from "@/components/ui/color-picker"
-
-import { cn } from "@/lib/utils"
-import { CheckIcon, CopyIcon, ChevronDownIcon, ImportIcon } from "lucide-react"
+import { AlertCircle, Check, ChevronDown, Copy, Import } from "lucide-react"
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu"
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog"
+import { Textarea } from "@/components/ui/textarea"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { useToast } from "@/hooks/use-toast"
 
 type ThemeType = "bundle-content" | "bundle-light" | "bundle-dark"
 
@@ -134,17 +144,148 @@ const predefinedBundles: ColorBundle[] = [
       secondary_button_text: "#F472B6",
     },
   },
+  {
+    name: "Candyland",
+    "bundle-content": {
+      background: "#FFFFFF",
+      main: "#5a1826",
+      secondary: "#030807",
+      links: "#37a086",
+      main_button_background: "#cc3f5d",
+      main_button_text: "#FFFFFF",
+      secondary_button_background: "#2a7a66",
+      secondary_button_text: "#FFFFFF",
+    },
+    "bundle-light": {
+      background: "#eee9ea",
+      main: "#5a1826",
+      secondary: "#030807",
+      links: "#37a086",
+      main_button_background: "#cc3f5d",
+      main_button_text: "#FFFFFF",
+      secondary_button_background: "#6fceb6",
+      secondary_button_text: "#102e27",
+    },
+    "bundle-dark": {
+      background: "#5a1826",
+      main: "#ffffff",
+      secondary: "#bbe8dd",
+      links: "#ecb8c3",
+      main_button_background: "#e15d7a",
+      main_button_text: "#FFFFFF",
+      secondary_button_background: "#FFFFFF",
+      secondary_button_text: "#2a7a66",
+    },
+  },
 ]
+
+// Validate if an object is a valid ColorTheme
+function isValidColorTheme(obj: any): obj is ColorTheme {
+  if (!obj || typeof obj !== "object") return false
+
+  const requiredKeys: (keyof ColorTheme)[] = [
+    "background",
+    "main",
+    "secondary",
+    "links",
+    "main_button_background",
+    "main_button_text",
+    "secondary_button_background",
+    "secondary_button_text",
+  ]
+
+  // Check if all required keys exist and are strings
+  return requiredKeys.every(
+    (key) => key in obj && typeof obj[key] === "string" && /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/.test(obj[key]),
+  )
+}
+
+// Validate if an object is a valid ColorBundle
+function isValidColorBundle(obj: any): obj is ColorBundle {
+  if (!obj || typeof obj !== "object") return false
+
+  // Check if name exists and is a string
+  if (!("name" in obj) || typeof obj.name !== "string") return false
+
+  // Check if all required themes exist and are valid ColorThemes
+  const requiredThemes: ThemeType[] = ["bundle-content", "bundle-light", "bundle-dark"]
+
+  return requiredThemes.every((theme) => theme in obj && isValidColorTheme(obj[theme]))
+}
+
+/**
+ * Attempts to convert JavaScript/TypeScript object notation to valid JSON
+ * Handles common issues like unquoted property names and trailing commas
+ */
+function tryConvertToValidJson(input: string): string {
+  try {
+    // First try to parse as-is (maybe it's already valid JSON)
+    JSON.parse(input)
+    return input
+  } catch (e) {
+    // Not valid JSON, try to fix common issues
+
+    let processed = input
+      // Remove trailing commas
+      .replace(/,\s*([}\]])/g, "$1")
+
+      // Quote unquoted property names (but avoid requoting)
+      .replace(/([{,]\s*)([a-zA-Z0-9_$]+)(\s*:)/g, '$1"$2"$3')
+
+      // Handle single quotes for strings (convert to double quotes)
+      .replace(/'([^'\\]*(\\.[^'\\]*)*)'(?=:|\s*[,}\]])/g, '"$1"')
+
+      // Remove comments (both // and /* */)
+      .replace(/\/\/.*?(\r?\n|$)/g, "$1")
+      .replace(/\/\*[\s\S]*?\*\//g, "")
+
+      // Trim whitespace
+      .trim()
+
+    // If the input appears to be an object within an array or another object,
+    // extract just the object part
+    if (!processed.startsWith("{")) {
+      const objectStart = processed.indexOf("{")
+      const objectEnd = processed.lastIndexOf("}") + 1
+      if (objectStart >= 0 && objectEnd > objectStart) {
+        processed = processed.substring(objectStart, objectEnd)
+      }
+    }
+
+    // Validate the processed string
+    try {
+      JSON.parse(processed)
+      return processed
+    } catch (e) {
+      // Still not valid JSON, throw error
+      throw new Error("Could not convert to valid JSON. Please check the format.")
+    }
+  }
+}
 
 export function ColorPickerBundles() {
   const [bundle, setBundle] = useState<ColorBundle>(defaultBundle)
   const [copied, setCopied] = useState(false)
   const [jsonOutput, setJsonOutput] = useState("")
+  const [importDialogOpen, setImportDialogOpen] = useState(false)
+  const [importJson, setImportJson] = useState("")
+  const [importError, setImportError] = useState<string | null>(null)
+  const [importFormat, setImportFormat] = useState<"json" | "js">("json")
+  const { toast } = useToast()
 
   // Update JSON output whenever bundle changes
   useEffect(() => {
     setJsonOutput(JSON.stringify(bundle, null, 2))
   }, [bundle])
+
+  // Initialize import JSON when dialog opens
+  useEffect(() => {
+    if (importDialogOpen) {
+      setImportJson(JSON.stringify(bundle, null, 2))
+      setImportError(null)
+      setImportFormat("json")
+    }
+  }, [importDialogOpen, bundle])
 
   // Handle color change
   const handleColorChange = (theme: ThemeType, property: keyof ColorTheme, value: string) => {
@@ -170,11 +311,63 @@ export function ColorPickerBundles() {
     navigator.clipboard.writeText(jsonOutput)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
+
+    toast({
+      title: "Copied to clipboard",
+      description: "The color bundle JSON has been copied to your clipboard.",
+    })
+  }
+
+  // Import bundle from JSON or JS/TS object notation
+  const importBundle = () => {
+    setImportError(null)
+
+    try {
+      let processedJson: string
+      let parsedBundle: any
+
+      if (importFormat === "json") {
+        // Try to parse as JSON directly
+        processedJson = importJson
+        parsedBundle = JSON.parse(processedJson)
+      } else {
+        // Try to convert JS/TS object notation to valid JSON
+        try {
+          processedJson = tryConvertToValidJson(importJson)
+          parsedBundle = JSON.parse(processedJson)
+        } catch (e) {
+          setImportError(`Could not convert to valid JSON: ${e instanceof Error ? e.message : "Unknown error"}`)
+          return
+        }
+      }
+
+      // Validate the parsed bundle
+      if (!isValidColorBundle(parsedBundle)) {
+        setImportError("Invalid color bundle format. Please check the structure and try again.")
+        return
+      }
+
+      // Set the bundle and close the dialog
+      setBundle(parsedBundle)
+      setImportDialogOpen(false)
+
+      toast({
+        title: "Import successful",
+        description: `Color bundle "${parsedBundle.name}" has been imported.`,
+      })
+    } catch (e) {
+      setImportError(`Invalid format: ${e instanceof Error ? e.message : "Unknown error"}`)
+    }
   }
 
   // Load a predefined bundle
   const loadBundle = (presetBundle: ColorBundle) => {
     setBundle(JSON.parse(JSON.stringify(presetBundle))) // Deep clone to avoid reference issues
+
+    toast({
+      title: "Preset loaded",
+      description: `Color bundle "${presetBundle.name}" has been loaded.`,
+    })
   }
 
   // Color properties to display in order
@@ -201,20 +394,95 @@ export function ColorPickerBundles() {
         <div className="flex gap-2">
           <div className="relative">
             <Button variant="outline" onClick={copyToClipboard}>
-              {copied ? <CheckIcon /> : <CopyIcon />}
+              {copied ? <Check className="mr-2 h-4 w-4" /> : <Copy className="mr-2 h-4 w-4" />}
               {copied ? "Copied!" : "Copy JSON"}
             </Button>
           </div>
 
           <div className="inline-flex rounded-md shadow-xs" role="group">
-            <Button className="mr-[-1px] rounded-r-none" variant="outline">
-              <ImportIcon />
-              Import
-            </Button>
+            <Dialog open={importDialogOpen} onOpenChange={setImportDialogOpen}>
+              <DialogTrigger asChild>
+                <Button className="mr-[-1px] rounded-r-none" variant="outline">
+                  <Import className="mr-2 h-4 w-4" />
+                  Import
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-xl">
+                <DialogHeader>
+                  <DialogTitle>Import Color Bundle</DialogTitle>
+                  <DialogDescription>
+                    Paste your color bundle below. You can use either JSON format or JavaScript/TypeScript object
+                    notation.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center space-x-4">
+                    <Label>Format:</Label>
+                    <div className="flex rounded-md border">
+                      <Button
+                        type="button"
+                        variant={importFormat === "json" ? "default" : "ghost"}
+                        className="rounded-r-none"
+                        onClick={() => setImportFormat("json")}
+                      >
+                        JSON
+                      </Button>
+                      <Button
+                        type="button"
+                        variant={importFormat === "js" ? "default" : "ghost"}
+                        className="rounded-l-none border-l"
+                        onClick={() => setImportFormat("js")}
+                      >
+                        JS/TS Object
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-2">
+                    <Label htmlFor="color-bundle-json">
+                      {importFormat === "json" ? "JSON" : "JavaScript/TypeScript Object"}
+                    </Label>
+                    <Textarea
+                      id="color-bundle-json"
+                      value={importJson}
+                      onChange={(e) => setImportJson(e.target.value)}
+                      placeholder={
+                        importFormat === "json" ? "Paste your color bundle JSON here" : "Paste your JS/TS object here"
+                      }
+                      rows={10}
+                      className="font-mono text-xs"
+                    />
+                    {importFormat === "js" && (
+                      <p className="text-muted-foreground text-xs">
+                        You can paste directly from your code files. We'll try to convert JS/TS object notation to valid
+                        JSON.
+                      </p>
+                    )}
+                  </div>
+
+                  {importError && (
+                    <Alert variant="destructive">
+                      <AlertCircle className="h-4 w-4" />
+                      <AlertTitle>Error</AlertTitle>
+                      <AlertDescription>{importError}</AlertDescription>
+                    </Alert>
+                  )}
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => setImportDialogOpen(false)}>
+                    Cancel
+                  </Button>
+                  <Button type="submit" onClick={importBundle}>
+                    Import Bundle
+                  </Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" className="rounded-l-none border-l px-2 shadow-none">
-                  <ChevronDownIcon className="h-4 w-4" />
+                  <ChevronDown className="h-4 w-4" />
                   <span className="sr-only">More save options</span>
                 </Button>
               </DropdownMenuTrigger>
@@ -302,7 +570,7 @@ export function ColorPickerBundles() {
         <div className="flex items-center justify-between">
           <Label>JSON Output</Label>
           <Button variant="ghost" size="sm" onClick={copyToClipboard}>
-            {copied ? <CheckIcon className="h-4 w-4" /> : <CopyIcon className="h-4 w-4" />}
+            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
             <span className="sr-only">Copy to clipboard</span>
           </Button>
         </div>
