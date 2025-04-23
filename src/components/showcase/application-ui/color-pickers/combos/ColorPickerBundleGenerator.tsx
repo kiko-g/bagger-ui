@@ -288,9 +288,9 @@ const ColorBundleGenerators = {
 
     const darkTheme: ColorTheme = {
       background: darkenColor(primaryColor, 0.3),
-      main: lightenColor(primaryColor, 0.25),
-      secondary: lightenColor(secondaryColor, 0.2),
-      links: lightenColor(primaryColor, 0.25),
+      main: lightenColor(primaryColor, 0.5),
+      secondary: lightenColor(secondaryColor, 0.5),
+      links: lightenColor(primaryColor, 0.3),
       main_button_background: adjustSaturation(lightenColor(primaryColor, 0.1), 0.1),
       main_button_text: getTextColor(adjustSaturation(lightenColor(primaryColor, 0.1), 0.1)),
       secondary_button_background: getTextColor(secondaryColor),
