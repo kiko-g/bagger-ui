@@ -632,7 +632,7 @@ export function ColorPickerBundleGenerator() {
       </div>
 
       {/* Input Section */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         <div className="space-y-4">
           <Label htmlFor="bundle-name">Bundle Name</Label>
           <Input id="bundle-name" value={bundleName} onChange={(e) => setBundleName(e.target.value)} className="mt-1" />
@@ -649,7 +649,7 @@ export function ColorPickerBundleGenerator() {
 
       {colorBundle && (
         <>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
             <ColorBundleCard name="Content Theme" theme={colorBundle["bundle-content"]} />
             <ColorBundleCard name="Light Theme" theme={colorBundle["bundle-light"]} />
             <ColorBundleCard name="Dark Theme" theme={colorBundle["bundle-dark"]} />
@@ -662,16 +662,9 @@ export function ColorPickerBundleGenerator() {
             {/* Content Theme Colors */}
             <div className="space-y-3">
               <Label>Content Theme Colors</Label>
-              <div className="grid grid-cols-2 gap-1 md:grid-cols-4">
+              <div className="grid grid-cols-2 gap-1 xl:grid-cols-4">
                 {Object.entries(colorBundle["bundle-content"]).map(([key, value]) => (
-                  <div
-                    key={`content-${key}`}
-                    className="flex h-12 items-center justify-between gap-2 rounded-md border p-2 text-sm font-medium tracking-tighter capitalize"
-                    style={{ backgroundColor: value, color: getTextColor(value) }}
-                  >
-                    <span className="max-w-32 leading-none">{key.split("_").join(" ")}</span>
-                    <span className="text-2xs rounded bg-black px-1 py-0.5 text-white uppercase">{value}</span>
-                  </div>
+                  <ColorEntry key={`content-${key}`} name={key} value={value} />
                 ))}
               </div>
             </div>
@@ -679,16 +672,9 @@ export function ColorPickerBundleGenerator() {
             {/* Light Theme Colors */}
             <div className="space-y-3">
               <Label>Light Theme Colors</Label>
-              <div className="grid grid-cols-2 gap-1 md:grid-cols-4">
+              <div className="grid grid-cols-2 gap-1 xl:grid-cols-4">
                 {Object.entries(colorBundle["bundle-light"]).map(([key, value]) => (
-                  <div
-                    key={`light-${key}`}
-                    className="flex h-12 items-center justify-between gap-2 rounded-md border p-2 text-sm font-medium tracking-tighter capitalize"
-                    style={{ backgroundColor: value, color: getTextColor(value) }}
-                  >
-                    <span className="max-w-32 leading-none">{key.split("_").join(" ")}</span>
-                    <span className="text-2xs rounded bg-black px-1 py-0.5 text-white uppercase">{value}</span>
-                  </div>
+                  <ColorEntry key={`light-${key}`} name={key} value={value} />
                 ))}
               </div>
             </div>
@@ -696,16 +682,9 @@ export function ColorPickerBundleGenerator() {
             {/* Dark Theme Colors */}
             <div className="space-y-3">
               <Label>Dark Theme Colors</Label>
-              <div className="grid grid-cols-2 gap-1 md:grid-cols-4">
+              <div className="grid grid-cols-2 gap-1 xl:grid-cols-4">
                 {Object.entries(colorBundle["bundle-dark"]).map(([key, value]) => (
-                  <div
-                    key={`dark-${key}`}
-                    className="flex h-12 items-center justify-between gap-2 rounded-md border p-2 text-sm font-medium tracking-tighter capitalize"
-                    style={{ backgroundColor: value, color: getTextColor(value) }}
-                  >
-                    <span className="max-w-32 leading-none">{key.split("_").join(" ")}</span>
-                    <span className="text-2xs rounded bg-black px-1 py-0.5 text-white uppercase">{value}</span>
-                  </div>
+                  <ColorEntry key={`dark-${key}`} name={key} value={value} />
                 ))}
               </div>
             </div>
@@ -735,7 +714,7 @@ function ColorBundleCard({ name, theme }: { name: string; theme: ColorTheme }) {
   return (
     <Card className="border-none shadow-none">
       <CardContent className="p-0">
-        <div className="rounded-xl border p-6" style={{ backgroundColor: theme.background }}>
+        <div className="rounded-xl border p-5" style={{ backgroundColor: theme.background }}>
           <h3 className="mb-2 text-xl font-bold" style={{ color: theme.main }}>
             {name}
           </h3>
@@ -746,9 +725,9 @@ function ColorBundleCard({ name, theme }: { name: string; theme: ColorTheme }) {
             </a>{" "}
             and text.
           </p>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <button
-              className="rounded-md px-4 py-2"
+              className="rounded-md px-4 py-2 text-sm font-medium"
               style={{
                 backgroundColor: theme.main_button_background,
                 color: theme.main_button_text,
@@ -757,7 +736,7 @@ function ColorBundleCard({ name, theme }: { name: string; theme: ColorTheme }) {
               Primary
             </button>
             <button
-              className="rounded-md px-4 py-2"
+              className="rounded-md px-4 py-2 text-sm font-medium"
               style={{ backgroundColor: theme.secondary_button_background, color: theme.secondary_button_text }}
             >
               Secondary
@@ -766,5 +745,17 @@ function ColorBundleCard({ name, theme }: { name: string; theme: ColorTheme }) {
         </div>
       </CardContent>
     </Card>
+  )
+}
+
+function ColorEntry({ name, value }: { name: string; value: string }) {
+  return (
+    <div
+      className="flex h-12 items-center justify-between gap-2 rounded-md border p-2 text-sm font-medium tracking-tighter capitalize"
+      style={{ backgroundColor: value, color: getTextColor(value) }}
+    >
+      <span className="max-w-32 leading-none">{name.split("_").join(" ")}</span>
+      <span className="text-2xs rounded bg-black px-1 py-0.5 text-white uppercase">{value}</span>
+    </div>
   )
 }

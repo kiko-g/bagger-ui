@@ -246,7 +246,7 @@ export function ColorPickerBundles() {
       </div>
 
       {/* Color Pickers - 3 columns */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {/* Content Theme */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Content Theme</h3>
@@ -291,7 +291,7 @@ export function ColorPickerBundles() {
       </div>
 
       {/* Theme Previews - 3 columns */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {/* Content Theme Preview */}
         <Card>
           <CardContent className="p-0">
