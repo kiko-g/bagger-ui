@@ -318,11 +318,11 @@ const ColorBundleGenerators = {
     if (primaryCategory === "light") {
       // For light primary colors, use a slightly tinted background
       contentBackground = lightenColor(primaryColor, 0.3)
-      lightBackground = lightenColor(primaryColor, 0.4)
+      lightBackground = lightenColor(primaryColor, 0.3)
     } else if (primaryCategory === "dark") {
       // For dark primary colors, use a very light tint of the color
       contentBackground = lightenColor(primaryColor, 0.8)
-      lightBackground = lightenColor(primaryColor, 0.9)
+      lightBackground = lightenColor(primaryColor, 0.5)
       darkBackground = darkenColor(primaryColor, 0.4)
     }
 
