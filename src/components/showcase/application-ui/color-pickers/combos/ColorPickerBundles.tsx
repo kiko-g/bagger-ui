@@ -246,7 +246,7 @@ export function ColorPickerBundles() {
       </div>
 
       {/* Color Pickers - 3 columns */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {/* Content Theme */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Content Theme</h3>
@@ -291,129 +291,10 @@ export function ColorPickerBundles() {
       </div>
 
       {/* Theme Previews - 3 columns */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {/* Content Theme Preview */}
-        <Card>
-          <CardContent className="p-0">
-            <div
-              className="overflow-hidden rounded-xl p-6"
-              style={{ backgroundColor: bundle["bundle-content"].background }}
-            >
-              <h3 className="mb-2 text-xl font-bold" style={{ color: bundle["bundle-content"].main }}>
-                Content Theme
-              </h3>
-              <p className="mb-4" style={{ color: bundle["bundle-content"].secondary }}>
-                This is a preview of your content theme with{" "}
-                <a href="#" className="underline" style={{ color: bundle["bundle-content"].links }}>
-                  sample links
-                </a>{" "}
-                and text.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  className="rounded-md px-4 py-2 whitespace-nowrap"
-                  style={{
-                    backgroundColor: bundle["bundle-content"].main_button_background,
-                    color: bundle["bundle-content"].main_button_text,
-                  }}
-                >
-                  Primary Button
-                </button>
-                <button
-                  className="rounded-md px-4 py-2 whitespace-nowrap"
-                  style={{
-                    backgroundColor: bundle["bundle-content"].secondary_button_background,
-                    color: bundle["bundle-content"].secondary_button_text,
-                  }}
-                >
-                  Secondary Button
-                </button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Light Theme Preview */}
-        <Card>
-          <CardContent className="p-0">
-            <div
-              className="overflow-hidden rounded-xl p-6"
-              style={{ backgroundColor: bundle["bundle-light"].background }}
-            >
-              <h3 className="mb-2 text-xl font-bold" style={{ color: bundle["bundle-light"].main }}>
-                Light Theme
-              </h3>
-              <p className="mb-4" style={{ color: bundle["bundle-light"].secondary }}>
-                This is a preview of your light theme with{" "}
-                <a href="#" className="underline" style={{ color: bundle["bundle-light"].links }}>
-                  sample links
-                </a>{" "}
-                and text.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  className="rounded-md px-4 py-2 whitespace-nowrap"
-                  style={{
-                    backgroundColor: bundle["bundle-light"].main_button_background,
-                    color: bundle["bundle-light"].main_button_text,
-                  }}
-                >
-                  Primary Button
-                </button>
-                <button
-                  className="rounded-md px-4 py-2 whitespace-nowrap"
-                  style={{
-                    backgroundColor: bundle["bundle-light"].secondary_button_background,
-                    color: bundle["bundle-light"].secondary_button_text,
-                  }}
-                >
-                  Secondary Button
-                </button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Dark Theme Preview */}
-        <Card>
-          <CardContent className="p-0">
-            <div
-              className="overflow-hidden rounded-xl p-6"
-              style={{ backgroundColor: bundle["bundle-dark"].background }}
-            >
-              <h3 className="mb-2 text-xl font-bold" style={{ color: bundle["bundle-dark"].main }}>
-                Dark Theme
-              </h3>
-              <p className="mb-4" style={{ color: bundle["bundle-dark"].secondary }}>
-                This is a preview of your dark theme with{" "}
-                <a href="#" className="underline" style={{ color: bundle["bundle-dark"].links }}>
-                  sample links
-                </a>{" "}
-                and text.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  className="rounded-md px-4 py-2 whitespace-nowrap"
-                  style={{
-                    backgroundColor: bundle["bundle-dark"].main_button_background,
-                    color: bundle["bundle-dark"].main_button_text,
-                  }}
-                >
-                  Primary Button
-                </button>
-                <button
-                  className="rounded-md px-4 py-2 whitespace-nowrap"
-                  style={{
-                    backgroundColor: bundle["bundle-dark"].secondary_button_background,
-                    color: bundle["bundle-dark"].secondary_button_text,
-                  }}
-                >
-                  Secondary Button
-                </button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
+        <ColorBundleCard name="Content Theme" theme={bundle["bundle-content"]} />
+        <ColorBundleCard name="Light Theme" theme={bundle["bundle-light"]} />
+        <ColorBundleCard name="Dark Theme" theme={bundle["bundle-dark"]} />
       </div>
 
       {/* JSON Output */}
@@ -430,5 +311,43 @@ export function ColorPickerBundles() {
         </pre>
       </div>
     </div>
+  )
+}
+
+function ColorBundleCard({ name, theme }: { name: string; theme: ColorTheme }) {
+  return (
+    <Card className="border-none shadow-none">
+      <CardContent className="p-0">
+        <div className="rounded-xl border p-5" style={{ backgroundColor: theme.background }}>
+          <h3 className="mb-2 text-xl font-bold" style={{ color: theme.main }}>
+            {name}
+          </h3>
+          <p className="mb-4 text-sm" style={{ color: theme.secondary }}>
+            This is a preview of your {name} theme with{" "}
+            <a href="#" className="underline" style={{ color: theme.links }}>
+              sample links
+            </a>{" "}
+            and text.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <button
+              className="rounded-md px-4 py-2 text-sm font-medium"
+              style={{
+                backgroundColor: theme.main_button_background,
+                color: theme.main_button_text,
+              }}
+            >
+              Primary
+            </button>
+            <button
+              className="rounded-md px-4 py-2 text-sm font-medium"
+              style={{ backgroundColor: theme.secondary_button_background, color: theme.secondary_button_text }}
+            >
+              Secondary
+            </button>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   )
 }

@@ -331,8 +331,8 @@ const ColorBundleGenerators = {
     const contentSecondary = adjustColorForBackground(secondaryColor, contentBackground)
     const lightMain = adjustColorForBackground(primaryColor, lightBackground)
     const lightSecondary = adjustColorForBackground(secondaryColor, lightBackground)
-    const darkMain = adjustColorForBackground(lightenColor(primaryColor, 0.5), darkBackground)
-    const darkSecondary = adjustColorForBackground(lightenColor(secondaryColor, 0.5), darkBackground)
+    const darkMain = adjustColorForBackground(lightenColor(primaryColor, 0.6), darkBackground)
+    const darkSecondary = adjustColorForBackground(lightenColor(secondaryColor, 0.6), darkBackground)
 
     // Create button colors with appropriate contrast
     const contentMainButton = primaryColor
@@ -632,7 +632,7 @@ export function ColorPickerBundleGenerator() {
       </div>
 
       {/* Input Section */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
         <div className="space-y-4">
           <Label htmlFor="bundle-name">Bundle Name</Label>
           <Input id="bundle-name" value={bundleName} onChange={(e) => setBundleName(e.target.value)} className="mt-1" />
@@ -718,7 +718,7 @@ function ColorBundleCard({ name, theme }: { name: string; theme: ColorTheme }) {
           <h3 className="mb-2 text-xl font-bold" style={{ color: theme.main }}>
             {name}
           </h3>
-          <p className="mb-4" style={{ color: theme.secondary }}>
+          <p className="mb-4 text-sm" style={{ color: theme.secondary }}>
             This is a preview of your {name} theme with{" "}
             <a href="#" className="underline" style={{ color: theme.links }}>
               sample links

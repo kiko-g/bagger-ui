@@ -91,7 +91,7 @@ export function ColorPicker({
               disabled={disabled}
               variant="outline"
               size="icon"
-              className={cn("h-10 w-10 border-2", className)}
+              className={cn("h-10 w-10 border", className)}
               style={{ backgroundColor: parsedValue, borderColor: isLight ? "#00000020" : "#ffffff20" }}
               aria-label={`Select color: ${parsedValue}`}
             >
@@ -111,7 +111,7 @@ export function ColorPicker({
             <div className="flex items-center gap-2">
               {showInput && (
                 <div className="border-input flex h-8 flex-1 items-center overflow-hidden rounded-md border">
-                  <div className="h-full w-8" style={{ backgroundColor: parsedValue }} aria-hidden="true" />
+                  <div aria-hidden="true" className="h-full w-8" style={{ backgroundColor: parsedValue }} />
                   <div className="flex-1 px-2">
                     <HexColorInput
                       color={parsedValue}
@@ -153,8 +153,8 @@ export function ColorPicker({
         {showInput && (
           <div className="relative max-w-[8.5rem] flex-1">
             <div
-              className="border-input absolute top-0 bottom-0 left-0 w-8 rounded-l-md border-y border-l"
-              style={{ backgroundColor: parsedValue }}
+              className="border-input absolute top-0 bottom-0 left-0 w-8 rounded-l-md border"
+              style={{ backgroundColor: parsedValue, borderColor: isLight ? "#00000020" : "#ffffff20" }}
               aria-hidden="true"
             />
             <HexColorInput
