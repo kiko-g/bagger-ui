@@ -26,6 +26,9 @@ Each theme needs these exact color properties (all valid hex codes):
 - secondary_button_background
 - secondary_button_text
 
+Important details:
+- The main and secondary colors are foreground colors to be used on the background, so the contrast ratio should be high.
+
 Return ONLY valid JSON with this exact structure (no explanation text):
 [
   {

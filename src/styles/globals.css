@@ -256,6 +256,10 @@
   .logo-animation {
     animation: spin 0.5s ease-in-out;
   }
+
+  .border-swatch {
+    border-color: #00000030;
+  }
 }
 
 @layer base {

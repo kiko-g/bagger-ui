@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent } from "@/components/ui/card"
@@ -43,10 +43,34 @@ export function AiColorBundleGenerator() {
   const [generatedBundles, setGeneratedBundles] = useState<ColorBundle[]>([])
   const [selectedBundle, setSelectedBundle] = useState<ColorBundle | null>(null)
   const [copied, setCopied] = useState(false)
+  const [elapsedTime, setElapsedTime] = useState(0)
+  const [finalTime, setFinalTime] = useState<number | null>(null)
   const placeholderPrompt = "A vibrant tropical theme with sunset colors, perfect for a travel website"
+
+  const generatingWordDisplay = useMemo(() => {
+    const words = ["Working", "Crunching", "Cooking", "Mixing", "Blending"]
+    let index = Math.floor(elapsedTime) % words.length
+    return words[index]
+  }, [elapsedTime])
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout
+    if (isGenerating) {
+      const startTime = Date.now()
+      interval = setInterval(() => {
+        setElapsedTime(Math.floor((Date.now() - startTime) / 1000))
+      }, 1000)
+    }
+    return () => {
+      if (interval) clearInterval(interval)
+    }
+  }, [isGenerating])
 
   const generateColorBundles = async () => {
     setIsGenerating(true)
+    setElapsedTime(0)
+    setFinalTime(null)
+    const startTime = Date.now()
 
     try {
       const response = await fetch("/api/colors", {
@@ -76,9 +100,13 @@ export function AiColorBundleGenerator() {
         setSelectedBundle(bundles[0])
       }
 
+      const endTime = Date.now()
+      const totalTime = Math.floor((endTime - startTime) / 1000)
+      setFinalTime(totalTime)
+
       toast({
         title: "Color bundles generated!",
-        description: `Created ${bundles.length} color bundles based on your prompt`,
+        description: `Created ${bundles.length} color bundles based on your prompt in ${totalTime} seconds`,
       })
     } catch (error) {
       console.error("Error generating color bundles:", error)
@@ -133,17 +161,26 @@ export function AiColorBundleGenerator() {
                 className="min-h-24"
               />
             </div>
-            <div className="flex justify-end">
+            <div className="flex items-center">
+              <div className="flex-1">
+                {isGenerating && (
+                  <span className="text-muted-foreground text-left text-sm">
+                    {generatingWordDisplay}... {elapsedTime}s
+                  </span>
+                )}
+
+                {finalTime && !isGenerating && (
+                  <p className="text-muted-foreground text-sm">Response retrieved in {finalTime}s</p>
+                )}
+              </div>
+
               <Button onClick={generateColorBundles} disabled={isGenerating}>
                 {isGenerating ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Generating...
-                  </>
+                  <Loader2 className="h-4 w-4 animate-spin" />
                 ) : (
                   <>
-                    <Wand2 className="mr-2 h-4 w-4" />
-                    Generate Color Bundles
+                    <Wand2 />
+                    Generate
                   </>
                 )}
               </Button>
@@ -198,7 +235,7 @@ export function AiColorBundleGenerator() {
                 <div className="space-y-6">
                   <h3 className="text-xl font-semibold">{selectedBundle.name}</h3>
 
-                  <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                  <div className="grid grid-cols-1 gap-4 xl:grid-cols-3">
                     <ColorBundleCard name="Content Theme" theme={selectedBundle["bundle-content"]} />
                     <ColorBundleCard name="Light Theme" theme={selectedBundle["bundle-light"]} />
                     <ColorBundleCard name="Dark Theme" theme={selectedBundle["bundle-dark"]} />
@@ -280,7 +317,7 @@ function ColorBundleCard({ name, theme }: { name: string; theme: ColorTheme }) {
   return (
     <Card className="border-none shadow-none">
       <CardContent className="p-0">
-        <div className="rounded-xl border p-5" style={{ backgroundColor: theme.background }}>
+        <div className="border-swatch rounded-xl border p-5" style={{ backgroundColor: theme.background }}>
           <h3 className="mb-2 text-xl font-bold" style={{ color: theme.main }}>
             {name}
           </h3>
@@ -317,7 +354,7 @@ function ColorBundleCard({ name, theme }: { name: string; theme: ColorTheme }) {
 function ColorEntry({ name, value }: { name: string; value: string }) {
   return (
     <div
-      className="flex h-12 items-center justify-between gap-2 rounded-md border p-2 text-sm font-medium tracking-tighter capitalize"
+      className="border-swatch flex h-12 items-center justify-between gap-2 rounded-md border p-2 text-sm font-medium tracking-tighter capitalize"
       style={{ backgroundColor: value, color: getTextColor(value) }}
     >
       <span className="max-w-32 leading-none">{name.split("_").join(" ")}</span>
