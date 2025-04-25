@@ -59,6 +59,11 @@ export default function ColorPickers() {
           component: <ColorPickerForm />,
         },
         {
+          name: "Color Mixer",
+          path: `${base}/combos/ColorPickerMixer.tsx`,
+          component: <ColorPickerMixer />,
+        },
+        {
           name: "Color Bundle Editor",
           path: `${base}/combos/ColorPickerBundles.tsx`,
           component: <ColorPickerBundles />,
@@ -67,11 +72,6 @@ export default function ColorPickers() {
           name: "Color Bundle Generator",
           path: `${base}/combos/ColorPickerBundleGenerator.tsx`,
           component: <ColorPickerBundleGenerator />,
-        },
-        {
-          name: "Color Mixer",
-          path: `${base}/combos/ColorPickerMixer.tsx`,
-          component: <ColorPickerMixer />,
         },
         {
           name: "Color Bundle AI Generator",
