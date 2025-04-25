@@ -367,7 +367,7 @@ export function ColorPickerBundles() {
                   Import
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-xl">
+              <DialogContent className="sm:max-w-2xl">
                 <DialogHeader>
                   <DialogTitle>Import Color Bundle</DialogTitle>
                   <DialogDescription>
@@ -376,21 +376,18 @@ export function ColorPickerBundles() {
                   </DialogDescription>
                 </DialogHeader>
                 <div className="flex flex-col gap-4">
-                  <div className="flex items-center space-x-4">
-                    <Label>Format:</Label>
-                    <div className="flex rounded-md border">
+                  <div className="flex flex-col items-start justify-center space-y-2">
+                    <div className="inline-flex rounded-md shadow-xs" role="group">
                       <Button
-                        type="button"
-                        variant={importFormat === "json" ? "default" : "ghost"}
+                        variant={importFormat === "json" ? "default" : "outline"}
                         className="rounded-r-none"
                         onClick={() => setImportFormat("json")}
                       >
                         JSON
                       </Button>
                       <Button
-                        type="button"
-                        variant={importFormat === "js" ? "default" : "ghost"}
-                        className="rounded-l-none border-l"
+                        variant={importFormat === "js" ? "default" : "outline"}
+                        className="rounded-l-none"
                         onClick={() => setImportFormat("js")}
                       >
                         JS/TS Object
@@ -409,15 +406,9 @@ export function ColorPickerBundles() {
                       placeholder={
                         importFormat === "json" ? "Paste your color bundle JSON here" : "Paste your JS/TS object here"
                       }
-                      rows={10}
-                      className="font-mono text-xs"
+                      rows={12}
+                      className="font-mono text-xs leading-4 md:text-xs md:leading-4"
                     />
-                    {importFormat === "js" && (
-                      <p className="text-muted-foreground text-xs">
-                        You can paste directly from your code files. We&apos;ll try to convert JS/TS object notation to
-                        valid JSON.
-                      </p>
-                    )}
                   </div>
 
                   {importError && (
