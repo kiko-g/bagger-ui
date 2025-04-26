@@ -25,7 +25,11 @@ export function SectionCard({ section }: { section: Section }) {
       {section.pattern && <Pattern {...section.pattern} mouseX={mouseX} mouseY={mouseY} />}
       <div className="absolute inset-0 rounded-2xl ring-1 ring-neutral-900/7.5 ring-inset group-hover:ring-neutral-900/10 dark:ring-white/10 dark:group-hover:ring-white/20" />
 
-      {section.preview && <div className="absolute inset-0 max-h-24 scale-80 rounded-2xl pt-5">{section.preview}</div>}
+      {section.preview && (
+        <div className="absolute inset-0 max-h-24 scale-80 rounded-2xl pt-5 opacity-80 transition-opacity duration-300 group-hover:opacity-100">
+          {section.preview}
+        </div>
+      )}
 
       <div className="relative rounded-2xl px-4 pt-16 pb-4">
         <h3 className="pt-16 text-sm leading-7 font-semibold text-neutral-900 dark:text-white">

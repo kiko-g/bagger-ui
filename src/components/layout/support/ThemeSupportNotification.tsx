@@ -83,7 +83,7 @@ export function ThemeSupportNotification() {
                     <a
                       href="https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow"
                       target="_blank"
-                      className="text-primary flex items-center gap-1 rounded-md text-sm font-semibold hover:opacity-80 focus:underline focus:outline-hidden"
+                      className="text-secondary flex items-center gap-1 rounded-md text-sm font-semibold hover:opacity-80 focus:underline focus:outline-hidden"
                     >
                       <span>Take me there</span>
                     </a>
@@ -101,7 +101,7 @@ export function ThemeSupportNotification() {
                   <button
                     type="button"
                     onClick={handleClose}
-                    className="inline-flex rounded-md p-1 text-zinc-600 transition hover:bg-rose-700/5 focus:outline-hidden dark:text-zinc-100 dark:hover:bg-zinc-100/10"
+                    className="hover:bg-destructive/10 dark:hover:bg-destructive/20 inline-flex rounded-md p-1 text-zinc-600 transition focus:outline-hidden dark:text-zinc-100 dark:hover:text-white"
                   >
                     <span className="sr-only">Close</span>
                     <XIcon aria-hidden="true" className="size-4" />

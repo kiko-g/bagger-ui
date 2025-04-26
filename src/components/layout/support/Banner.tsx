@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export function SupportBanner() {
   return (
-    <div className="group text-primary hover:bg-primary/5 dark:text-primary dark:hover:bg-primary/5 mb-2 border-b border-transparent bg-transparent transition">
+    <div className="group text-secondary hover:bg-secondary/5 dark:text-secondary dark:hover:bg-secondary/5 mb-2 border-b border-transparent bg-transparent transition">
       <div className="mx-auto max-w-(--breakpoint-xl)">
         <Link
           href="https://github.com/kiko-g/bagger-ui"

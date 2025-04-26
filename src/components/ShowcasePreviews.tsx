@@ -36,6 +36,7 @@ export function ButtonGroupsPreview() {
           <span className="text-xs">Secondary</span>
         </div>
       </div>
+
       <div className="flex justify-center gap-2">
         <div className="bg-primary flex h-8 w-8 items-center justify-center rounded-full">
           <StarIcon className="text-primary-foreground h-3 w-3" />
@@ -107,37 +108,17 @@ export function KPIWidgetsPreview() {
 }
 
 export function ProductCardsPreview() {
+  const ProductCard = () => (
+    <div className="bg-primary/10 text-primary/60 border-primary/20 flex flex-col items-center justify-center overflow-hidden rounded-lg border p-4">
+      <ShoppingBagIcon className="size-4" />
+    </div>
+  )
+
   return (
-    <div className="grid w-full grid-cols-3 gap-2">
-      <div className="bg-card flex flex-col overflow-hidden rounded border">
-        <div className="bg-primary/30 flex h-12 items-center justify-center">
-          <ShoppingBagIcon className="text-muted-foreground h-5 w-5" />
-        </div>
-        <div className="p-1">
-          <div className="bg-primary/20 mb-1 h-2 w-10 rounded" />
-          <div className="bg-primary/10 h-1.5 w-8 rounded" />
-        </div>
-      </div>
-
-      <div className="bg-card flex flex-col overflow-hidden rounded border">
-        <div className="bg-primary/40 flex h-12 items-center justify-center">
-          <ShoppingBagIcon className="text-muted-foreground h-5 w-5" />
-        </div>
-        <div className="p-1">
-          <div className="bg-primary/20 mb-1 h-2 w-10 rounded" />
-          <div className="bg-primary/10 h-1.5 w-8 rounded" />
-        </div>
-      </div>
-
-      <div className="bg-card flex flex-col overflow-hidden rounded border">
-        <div className="bg-primary/50 flex h-12 items-center justify-center">
-          <ShoppingBagIcon className="text-muted-foreground h-5 w-5" />
-        </div>
-        <div className="p-1">
-          <div className="bg-primary/20 mb-1 h-2 w-10 rounded" />
-          <div className="bg-primary/10 h-1.5 w-8 rounded" />
-        </div>
-      </div>
+    <div className="grid w-full grid-cols-4 gap-2">
+      {Array.from({ length: 8 }).map((_, i) => (
+        <ProductCard key={i} />
+      ))}
     </div>
   )
 }
@@ -202,36 +183,32 @@ export function BadgesPreview() {
 export function ButtonsPreview() {
   return (
     <div className="mx-auto grid w-fit grid-cols-2 gap-3">
-      <div className="bg-primary flex h-8 w-20 items-center justify-center rounded-md px-2">
-        <span className="text-primary-foreground text-xs">Primary</span>
+      <div className="bg-primary text-primary-foreground flex h-8 w-24 items-center justify-center rounded-md text-xs">
+        Primary
       </div>
-      <div className="bg-background flex h-8 w-20 items-center justify-center rounded-md border px-2">
-        <span className="text-xs">Secondary</span>
+      <div className="bg-background flex h-8 w-24 items-center justify-center rounded-md border text-xs">Secondary</div>
+      <div className="text-destructive-foreground bg-destructive flex h-8 w-24 items-center justify-center rounded-md text-xs">
+        Destructive
       </div>
-      <div className="bg-destructive flex h-8 w-20 items-center justify-center rounded-md px-2">
-        <span className="text-destructive-foreground text-xs">Destructive</span>
-      </div>
-      <div className="bg-muted flex h-8 w-20 items-center justify-center rounded-md px-2">
-        <span className="text-xs">Ghost</span>
-      </div>
+      <div className="bg-muted flex h-8 w-24 items-center justify-center rounded-md text-xs">Ghost</div>
     </div>
   )
 }
 
 export function CheckboxesPreview() {
   return (
-    <div className="bg-foreground/10 flex w-full flex-col gap-3 rounded-xl p-3">
+    <div className="bg-primary/10 flex w-full flex-col gap-3 rounded-xl p-3">
       <div className="flex items-center gap-2">
-        <CheckCircleIcon className="text-background flex size-4 items-center justify-center" />
-        <div className="bg-background h-2 w-20 rounded" />
+        <CheckCircleIcon className="text-primary/50 flex size-4 items-center justify-center" />
+        <div className="bg-primary/50 h-2 w-20 rounded" />
       </div>
       <div className="flex items-center gap-2">
-        <div className="bg-muted h-4 w-4 rounded border" />
-        <div className="bg-background h-2 w-16 rounded" />
+        <div className="bg-primary/50 border-primary/50 h-4 w-4 rounded border" />
+        <div className="bg-primary/50 h-2 w-16 rounded" />
       </div>
       <div className="flex items-center gap-2">
-        <div className="bg-muted h-4 w-4 rounded border" />
-        <div className="bg-background h-2 w-24 rounded" />
+        <div className="bg-primary/50 border-primary/50 h-4 w-4 rounded border" />
+        <div className="bg-primary/50 h-2 w-24 rounded" />
       </div>
     </div>
   )

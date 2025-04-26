@@ -116,20 +116,6 @@ export const snippetsNav: Section[] = [
     preview: <Previews.KPIWidgets />,
   },
   {
-    name: "Product Overviews",
-    href: "/snippets/product-overviews",
-    description: "Product overview page components",
-    pattern: {
-      y: 16,
-      squares: [
-        [0, 1],
-        [1, 3],
-      ],
-    },
-    shown: true,
-    preview: <Previews.ProductOverviews />,
-  },
-  {
     name: "Product Cards",
     href: "/snippets/product-cards",
     description: "Views for product listing entries with different styles and purposes.",
@@ -200,7 +186,6 @@ export const applicationUiNav: Section[] = [
       ],
     },
     shown: true,
-    new: false,
     preview: <Previews.Checkboxes />,
   },
   {
@@ -214,6 +199,7 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
+    new: true,
     shown: true,
     preview: <Previews.ColorPickers />,
   },
