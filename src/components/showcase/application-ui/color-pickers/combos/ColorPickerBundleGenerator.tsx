@@ -244,6 +244,32 @@ function adjustColorForBackground(color: string, bgColor: string, contrastThresh
   return adjustedColor
 }
 
+function colorBundleToColorPack(colorBundle: ColorBundle): ColorPack {
+  return {
+    label: colorBundle.name || "My Color Bundle",
+    settings: {
+      color: {
+        default: {
+          identifier: "default",
+          options: colorBundle["bundle-content"],
+        },
+        "system-1": {
+          options: colorBundle["bundle-light"],
+        },
+        "system-2": {
+          options: colorBundle["bundle-dark"],
+        },
+        "system-3": {
+          options: colorBundle["bundle-light"],
+        },
+        "system-4": {
+          options: colorBundle["bundle-content"],
+        },
+      },
+    },
+  }
+}
+
 interface ColorTheme {
   background: string
   main: string
@@ -256,10 +282,25 @@ interface ColorTheme {
 }
 
 interface ColorBundle {
-  name: string
+  name?: string
   "bundle-content": ColorTheme
   "bundle-light": ColorTheme
   "bundle-dark": ColorTheme
+}
+
+type SystemKey = "default" | "system-1" | "system-2" | "system-3" | "system-4"
+
+interface ColorPack {
+  label: string
+  settings: {
+    color: Record<
+      SystemKey,
+      {
+        identifier?: string
+        options: ColorTheme
+      }
+    >
+  }
 }
 
 const ColorBundleGenerators = {
@@ -378,6 +419,94 @@ const ColorBundleGenerators = {
       main: darkMain,
       secondary: darkSecondary,
       links: darkMain,
+      main_button_background: darkMainButton,
+      main_button_text: darkMainButtonText,
+      secondary_button_background: darkSecondaryButton,
+      secondary_button_text: darkSecondaryButtonText,
+    }
+
+    return {
+      name: bundleName,
+      "bundle-content": contentTheme,
+      "bundle-light": lightTheme,
+      "bundle-dark": darkTheme,
+    }
+  },
+
+  // New generator: Dark Adaptive - adjusts strategy based on color properties with dark themes
+  adaptiveDark: (primaryColor: string, secondaryColor: string, bundleName: string): ColorBundle => {
+    const primaryCategory = getColorCategory(primaryColor)
+    const secondaryCategory = getColorCategory(secondaryColor)
+
+    // Determine background colors based on primary color properties - defaulting to dark
+    let contentBackground = "#1A1A1A"
+    let lightBackground = "#2A2A2A"
+    let darkBackground = "#0A0A0A"
+
+    if (primaryCategory === "light") {
+      // For light primary colors, use darker shades
+      contentBackground = darkenColor(primaryColor, 0.7)
+      lightBackground = darkenColor(primaryColor, 0.6)
+      darkBackground = darkenColor(primaryColor, 0.8)
+    } else if (primaryCategory === "dark") {
+      // For dark primary colors, use slightly lighter shades
+      contentBackground = lightenColor(primaryColor, 0.2)
+      lightBackground = lightenColor(primaryColor, 0.3)
+      darkBackground = darkenColor(primaryColor, 0.2)
+    }
+
+    // Adjust text colors for optimal contrast - making them brighter
+    const contentMain = lightenColor(adjustColorForBackground(primaryColor, contentBackground), 0.3)
+    const contentSecondary = lightenColor(adjustColorForBackground(secondaryColor, contentBackground), 0.3)
+    const lightMain = lightenColor(adjustColorForBackground(primaryColor, lightBackground), 0.4)
+    const lightSecondary = lightenColor(adjustColorForBackground(secondaryColor, lightBackground), 0.4)
+    const darkMain = lightenColor(adjustColorForBackground(primaryColor, darkBackground), 0.2)
+    const darkSecondary = lightenColor(adjustColorForBackground(secondaryColor, darkBackground), 0.2)
+
+    // Create button colors with appropriate contrast - making them pop
+    const contentMainButton = lightenColor(primaryColor, 0.5)
+    const contentSecondaryButton = lightenColor(secondaryColor, 0.2)
+    const lightMainButton = lightenColor(primaryColor, 0.1)
+    const lightSecondaryButton = lightenColor(secondaryColor, 0.1)
+    const darkMainButton = lightenColor(primaryColor, 0.3)
+    const darkSecondaryButton = lightenColor(secondaryColor, 0.3)
+
+    // Ensure button text has good contrast
+    const contentMainButtonText = getTextColor(contentMainButton)
+    const contentSecondaryButtonText = getTextColor(contentSecondaryButton)
+    const lightMainButtonText = getTextColor(lightMainButton)
+    const lightSecondaryButtonText = getTextColor(lightSecondaryButton)
+    const darkMainButtonText = getTextColor(darkMainButton)
+    const darkSecondaryButtonText = getTextColor(darkSecondaryButton)
+
+    // Create themes
+    const contentTheme: ColorTheme = {
+      background: contentBackground,
+      main: contentMain,
+      secondary: contentSecondary,
+      links: lightenColor(contentSecondary, 0.2),
+      main_button_background: contentMainButton,
+      main_button_text: contentMainButtonText,
+      secondary_button_background: contentSecondaryButton,
+      secondary_button_text: contentSecondaryButtonText,
+    }
+
+    const lightTheme: ColorTheme = {
+      background: lightBackground,
+      main: lightMain,
+      secondary: lightSecondary,
+      links: lightenColor(lightSecondary, 0.3),
+      main_button_background: lightMainButton,
+      main_button_text: lightMainButtonText,
+      secondary_button_background: lightSecondaryButton,
+      secondary_button_text: lightSecondaryButtonText,
+    }
+
+    const darkTheme: ColorTheme = {
+      background: darkBackground,
+      main: darkMain,
+      secondary: darkSecondary,
+      links: lightenColor(darkMain, 0.1),
       main_button_background: darkMainButton,
       main_button_text: darkMainButtonText,
       secondary_button_background: darkSecondaryButton,
@@ -575,7 +704,7 @@ export function ColorPickerBundleGenerator() {
     const generator = ColorBundleGenerators[(generatorType as keyof typeof ColorBundleGenerators) || "simple"]
     const bundle = generator(primaryColor, secondaryColor, bundleName)
     setColorBundle(bundle)
-    setJsonOutput(JSON.stringify(bundle, null, 2))
+    setJsonOutput(JSON.stringify(colorBundleToColorPack(bundle), null, 2))
   }
 
   const copyToClipboard = () => {
@@ -615,6 +744,7 @@ export function ColorPickerBundleGenerator() {
             <DropdownMenuContent align="end">
               <DropdownMenuItem onClick={() => setGeneratorType("simple")}>Simple</DropdownMenuItem>
               <DropdownMenuItem onClick={() => setGeneratorType("adaptive")}>Adaptive</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setGeneratorType("adaptiveDark")}>Adaptive Dark</DropdownMenuItem>
               <DropdownMenuItem onClick={() => setGeneratorType("complementary")}>Complementary</DropdownMenuItem>
               <DropdownMenuItem onClick={() => setGeneratorType("monochromatic")}>Monochromatic</DropdownMenuItem>
               <DropdownMenuItem onClick={() => setGeneratorType("triadic")}>Triadic</DropdownMenuItem>
