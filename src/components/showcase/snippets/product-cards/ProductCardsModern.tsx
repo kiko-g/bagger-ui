@@ -43,7 +43,7 @@ function ProductModern({ product }: { product: ProductType }) {
         />
 
         {/* Status badges */}
-        <div className="absolute left-4 top-4 flex flex-col gap-2">
+        <div className="absolute top-4 left-4 flex flex-col gap-2">
           {product.info.new && (
             <div className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-black shadow-md dark:bg-black dark:text-white">
               NEW IN
@@ -62,7 +62,7 @@ function ProductModern({ product }: { product: ProductType }) {
         </div>
 
         {/* Quick actions */}
-        <div className="absolute -bottom-10 left-0 right-0 flex justify-center gap-2 p-4 transition-all duration-300 group-hover:bottom-0">
+        <div className="absolute right-0 bottom-0 left-0 flex justify-center gap-2 p-4 transition-all duration-300 group-hover:bottom-0 md:-bottom-20">
           <button
             className={cn(
               "flex items-center gap-2 rounded-full bg-black px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-105 dark:bg-white dark:text-black",
@@ -215,7 +215,7 @@ export function ProductCardsModern() {
   ]
 
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4">
       {products.map((product, index) => (
         <ProductModern key={`product-modern-${index}`} product={product} />
       ))}

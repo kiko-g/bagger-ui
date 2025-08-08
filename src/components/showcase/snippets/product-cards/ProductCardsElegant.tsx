@@ -48,19 +48,19 @@ function ProductElegant({ product }: { product: ProductType }) {
         />
 
         {/* Status badges */}
-        <div className="absolute left-0 top-5 z-10">
+        <div className="absolute top-5 left-0 z-10">
           {product.info.new && (
-            <div className="mb-2 bg-black px-4 py-1 text-xs font-medium uppercase tracking-wider text-white dark:bg-white dark:text-black">
+            <div className="mb-2 bg-black px-4 py-1 text-xs font-medium tracking-wider text-white uppercase dark:bg-white dark:text-black">
               New
             </div>
           )}
           {product.info.sale.active && (
-            <div className="mb-2 bg-rose-600 px-4 py-1 text-xs font-medium uppercase tracking-wider text-white">
+            <div className="mb-2 bg-rose-600 px-4 py-1 text-xs font-medium tracking-wider text-white uppercase">
               Sale {product.info.sale.percent}%
             </div>
           )}
           {product.info.soldOut && (
-            <div className="mb-2 bg-zinc-800 px-4 py-1 text-xs font-medium uppercase tracking-wider text-white">
+            <div className="mb-2 bg-zinc-800 px-4 py-1 text-xs font-medium tracking-wider text-white uppercase">
               Sold out
             </div>
           )}
@@ -76,7 +76,7 @@ function ProductElegant({ product }: { product: ProductType }) {
           <div className="flex justify-between">
             <button
               className={cn(
-                "rounded-none border border-white bg-white px-4 py-2 text-xs font-medium uppercase tracking-wider text-black transition-colors",
+                "rounded-none border border-white bg-white px-4 py-2 text-xs font-medium tracking-wider text-black uppercase transition-colors",
                 product.info.soldOut
                   ? "cursor-not-allowed bg-zinc-300 text-zinc-500"
                   : "hover:bg-transparent hover:text-white",
@@ -132,7 +132,7 @@ function ProductElegant({ product }: { product: ProductType }) {
       {/* Content */}
       <div className="flex flex-1 flex-col p-4">
         <div className="mb-1 flex items-center justify-between">
-          <span className="text-xs font-medium uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+          <span className="text-xs font-medium tracking-widest text-zinc-500 uppercase dark:text-zinc-400">
             {product.info.brand}
           </span>
 
@@ -145,7 +145,7 @@ function ProductElegant({ product }: { product: ProductType }) {
           </div>
         </div>
 
-        <h3 className="font-serif mb-2 text-lg font-medium text-zinc-900 dark:text-white">
+        <h3 className="mb-2 font-serif text-lg font-medium text-zinc-900 dark:text-white">
           <a href="#" className="hover:underline">
             {product.info.title}
           </a>
@@ -234,7 +234,7 @@ export function ProductCardsElegant() {
   ]
 
   return (
-    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
+    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4">
       {products.map((product, index) => (
         <ProductElegant key={`product-elegant-${index}`} product={product} />
       ))}
