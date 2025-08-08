@@ -16,6 +16,7 @@ export const Previews = {
   KPIWidgets: KPIWidgetsPreview,
   ProductCards: ProductCardsPreview,
   ProductOverviews: ProductOverviewsPreview,
+  Timelines: TimelinesPreview,
   Alerts: AlertsPreview,
   Badges: BadgesPreview,
   Buttons: ButtonsPreview,
@@ -267,6 +268,27 @@ export function HeadingPreview() {
       <div className="flex items-center">
         <div className="bg-foreground/20 h-3 w-20 rounded" />
         <div className="text-muted-foreground ml-1">#</div>
+      </div>
+    </div>
+  )
+}
+
+export function TimelinesPreview() {
+  return (
+    <div className="flex w-full flex-col gap-3">
+      <div className="flex items-start gap-2">
+        <div className="bg-foreground/40 mt-0.5 size-2 rounded-full" />
+        <div className="flex-1">
+          <div className="bg-foreground/40 mb-1 h-2 w-28 rounded" />
+          <div className="bg-foreground/20 h-2 w-44 rounded" />
+        </div>
+      </div>
+      <div className="flex items-start gap-2">
+        <div className="bg-foreground/40 mt-0.5 size-2 rounded-full" />
+        <div className="flex-1">
+          <div className="bg-foreground/40 mb-1 h-2 w-24 rounded" />
+          <div className="bg-foreground/20 h-2 w-40 rounded" />
+        </div>
       </div>
     </div>
   )

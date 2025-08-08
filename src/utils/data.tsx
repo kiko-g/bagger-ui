@@ -129,6 +129,17 @@ export const snippetsNav: Section[] = [
     shown: true,
     preview: <Previews.ProductCards />,
   },
+  {
+    name: "Timelines",
+    href: "/snippets/timelines",
+    description: "Chronological event blocks with variants for icons, avatars, and steppers.",
+    pattern: {
+      y: 22,
+      squares: [[0, 1]],
+    },
+    shown: true,
+    preview: <Previews.Timelines />,
+  },
 ].sort((a, b) => a.name.localeCompare(b.name))
 
 export const applicationUiNav: Section[] = [
