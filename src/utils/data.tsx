@@ -140,6 +140,20 @@ export const snippetsNav: Section[] = [
     shown: true,
     preview: <Previews.Timelines />,
   },
+  {
+    name: "Navbars",
+    href: "/snippets/navbars",
+    description: "Header navigation bars with dropdowns, search, and mobile drawers.",
+    pattern: {
+      y: -6,
+      squares: [
+        [-1, 2],
+        [1, 3],
+      ],
+    },
+    shown: true,
+    preview: <Previews.Navbars />,
+  },
 ].sort((a, b) => a.name.localeCompare(b.name))
 
 export const applicationUiNav: Section[] = [
