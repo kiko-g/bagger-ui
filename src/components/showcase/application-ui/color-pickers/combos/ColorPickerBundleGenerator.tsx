@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -696,16 +696,16 @@ export function ColorPickerBundleGenerator() {
   const [copied, setCopied] = useState(false)
   const [jsonOutput, setJsonOutput] = useState("")
 
-  useEffect(() => {
-    generateColorBundle()
-  }, [primaryColor, secondaryColor, bundleName, generatorType])
-
-  const generateColorBundle = () => {
+  const generateColorBundle = useCallback(() => {
     const generator = ColorBundleGenerators[(generatorType as keyof typeof ColorBundleGenerators) || "simple"]
     const bundle = generator(primaryColor, secondaryColor, bundleName)
     setColorBundle(bundle)
     setJsonOutput(JSON.stringify(colorBundleToColorPack(bundle), null, 2))
-  }
+  }, [generatorType, primaryColor, secondaryColor, bundleName])
+
+  useEffect(() => {
+    generateColorBundle()
+  }, [generateColorBundle])
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(jsonOutput)
