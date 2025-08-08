@@ -209,6 +209,7 @@
 
   code,
   pre {
+    font-weight: 500 !important;
     font-family: var(--font-geist-mono) !important;
   }
 
