@@ -302,19 +302,6 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
-    name: "Navbars",
-    href: "/application-ui/navbars",
-    description: "Customizable and expansible top menu components.",
-    pattern: {
-      y: 16,
-      squares: [
-        [0, 1],
-        [1, 3],
-      ],
-    },
-    shown: true,
-  },
-  {
     name: "Selects",
     href: "/application-ui/selects",
     description: "Accessible and fancy dropdown components for selecting one or multiple options.",
