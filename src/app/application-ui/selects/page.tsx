@@ -1,6 +1,7 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-import { SelectSingle, SelectMultiple } from "@/components/showcase/application-ui/selects"
+import { SelectSingle, SelectMultiBubbles } from "@/components/showcase/application-ui/selects"
+import { SelectsSample } from "@/components/showcase/application-ui/selects/sample/SelectsSample"
 
 export default function Selects() {
   const base = "application-ui/selects"
@@ -8,6 +9,14 @@ export default function Selects() {
   return (
     <ComponentTypePage
       title="Selects"
+      sample={{
+        nodes: [
+          {
+            item: "Setup",
+            component: <SelectsSample />,
+          },
+        ],
+      }}
       examples={[
         {
           name: "Single",
@@ -15,9 +24,9 @@ export default function Selects() {
           component: <SelectSingle />,
         },
         {
-          name: "Multiple",
-          path: `${base}/SelectMultiple.tsx`,
-          component: <SelectMultiple />,
+          name: "Multi with Bubbles (Custom)",
+          path: `${base}/SelectMultiBubbles.tsx`,
+          component: <SelectMultiBubbles />,
         },
       ]}
     />

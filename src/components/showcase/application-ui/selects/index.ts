@@ -1,4 +1,4 @@
-import { SelectMultiple } from "./SelectMultiple"
 import { SelectSingle } from "./SelectSingle"
+import { SelectMultiBubbles } from "./SelectMultiBubbles"
 
-export { SelectMultiple, SelectSingle }
+export { SelectSingle, SelectMultiBubbles }

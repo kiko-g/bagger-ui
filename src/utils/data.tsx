@@ -316,6 +316,21 @@ export const applicationUiNav: Section[] = [
     shown: true,
   },
   {
+    name: "Selects Multi",
+    href: "/application-ui/selects/multi",
+    description: "Custom select-multi built on shadcn primitives with bubbles and search.",
+    pattern: {
+      y: -6,
+      squares: [
+        [-1, 2],
+        [1, 3],
+      ],
+    },
+    new: true,
+    shown: true,
+    preview: <Previews.Buttons />,
+  },
+  {
     name: "Sidebars",
     href: "/application-ui/sidebars",
     description: "Customizable and expansible side menu components.",
