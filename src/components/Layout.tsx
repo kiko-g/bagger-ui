@@ -31,7 +31,7 @@ export function Layout({ children, location = "Unknown", sidebar = false, quickN
         <main className="flex flex-1">
           {sidebar && <Navigation location={location} />}
 
-          <article className="relative mb-16 flex max-w-full flex-1 flex-col items-start justify-start px-4 xl:pl-12 xl:pr-10">
+          <article className="relative mb-16 flex max-w-full flex-1 flex-col items-start justify-start pr-4 pl-4 xl:pr-10 xl:pl-12">
             <div className="my-4 flex flex-1 flex-row items-start justify-between gap-2 lg:flex-row lg:items-center">
               <SupportBadge />
             </div>

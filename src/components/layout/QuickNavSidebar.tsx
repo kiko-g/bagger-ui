@@ -7,7 +7,7 @@ export function QuickNavSidebar({ navigation }: { navigation?: QuickNavigation }
   if (!navigation) return null
 
   return (
-    <nav className="bg-opacity-80 fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] min-w-64 shrink-0 flex-col space-y-4 self-stretch overflow-auto py-8 pr-6 pl-4 hover:overflow-auto lg:sticky lg:flex">
+    <nav className="bg-opacity-80 fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] min-w-64 shrink-0 flex-col space-y-4 self-stretch overflow-auto py-8 pr-6 pl-4 hover:overflow-auto xl:sticky xl:flex">
       <h4 className="mb-4 text-xl font-semibold">On this page</h4>
       <ul className="flex w-full flex-col gap-2">
         {navigation.map((level, levelIdx) => {
