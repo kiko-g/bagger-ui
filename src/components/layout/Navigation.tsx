@@ -34,7 +34,7 @@ export function Navigation({ location }: { location: string }) {
               <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
                 <span className="ml-2 text-left whitespace-nowrap">Snippets</span>
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="pt-0 pb-8">
                 <ul className="flex w-full flex-col gap-0.5 pl-0">
                   {snippetsNavFiltered.map((item, itemIdx) => {
                     const isActive = location.toLowerCase() === item.name.toLowerCase()
@@ -56,7 +56,7 @@ export function Navigation({ location }: { location: string }) {
               <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
                 <span className="ml-2 text-left whitespace-nowrap">Components</span>
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="pt-0 pb-8">
                 <ul className="flex w-full flex-col gap-0.5 pl-0">
                   {applicationUiNavFiltered.map((item, itemIdx) => {
                     const isActive = location.toLowerCase() === item.name.toLowerCase()
@@ -78,7 +78,7 @@ export function Navigation({ location }: { location: string }) {
               <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
                 <span className="ml-2 text-left whitespace-nowrap">Generator</span>
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="pt-0 pb-8">
                 <ul className="flex w-full flex-col gap-0.5 pl-0">
                   {generatorNavFiltered.map((item, itemIdx) => {
                     const isActive = location.toLowerCase() === item.name.toLowerCase()

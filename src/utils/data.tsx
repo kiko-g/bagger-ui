@@ -102,6 +102,20 @@ export const snippetsNav: Section[] = [
     preview: <Previews.HeroSections />,
   },
   {
+    name: "Headers",
+    href: "/snippets/headers",
+    description: "Command-like bars for editor/tooling surfaces (undo/redo, actions).",
+    pattern: {
+      y: 16,
+      squares: [
+        [0, 1],
+        [1, 3],
+      ],
+    },
+    shown: true,
+    preview: <Previews.Navbars />,
+  },
+  {
     name: "KPI Widgets",
     href: "/snippets/kpi",
     description: "Key Performance Indicators to show the user the most important metrics.",
@@ -272,19 +286,6 @@ export const applicationUiNav: Section[] = [
     pattern: {
       y: 22,
       squares: [[0, 1]],
-    },
-    shown: true,
-  },
-  {
-    name: "Headers",
-    href: "/application-ui/headers",
-    description: "Customizable and expansible top menu components.",
-    pattern: {
-      y: 32,
-      squares: [
-        [0, 2],
-        [1, 4],
-      ],
     },
     shown: true,
   },
