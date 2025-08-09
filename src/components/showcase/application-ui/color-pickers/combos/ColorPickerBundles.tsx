@@ -362,7 +362,7 @@ export function ColorPickerBundles() {
           <div className="inline-flex rounded-md shadow-xs" role="group">
             <Dialog open={importDialogOpen} onOpenChange={setImportDialogOpen}>
               <DialogTrigger asChild>
-                <Button className="mr-[-1px] rounded-r-none" variant="outline">
+                <Button className="-mr-px rounded-r-none" variant="outline">
                   <Import className="mr-2 h-4 w-4" />
                   Import
                 </Button>

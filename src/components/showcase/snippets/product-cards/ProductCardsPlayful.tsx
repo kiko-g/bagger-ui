@@ -37,7 +37,7 @@ function ProductPlayful({ product }: { product: ProductType }) {
         "flex max-h-[80vh] w-full flex-col self-stretch overflow-hidden border-0 border-zinc-900/10 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-zinc-700 dark:bg-black/30 md:w-72",
       )}
     >
-      <a className="relative min-h-[16rem] overflow-hidden" href="#">
+      <a className="relative min-h-64 overflow-hidden" href="#">
         <div className="absolute left-0 top-0 m-2 flex flex-col gap-y-1.5">
           {product.info.new && (
             <span className="z-10 h-full w-full border border-[#00000040] bg-emerald-600/80 px-1 py-1 text-center text-xs font-medium tracking-tighter text-white">
@@ -94,7 +94,7 @@ function ProductPlayful({ product }: { product: ProductType }) {
             <div className="flex flex-col items-start text-xs">
               <a href="#" className="flex items-center gap-x-1 tracking-tight hover:underline">
                 <svg
-                  className="mr-[1px] size-3 fill-amber-500 stroke-amber-500"
+                  className="mr-px size-3 fill-amber-500 stroke-amber-500"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"

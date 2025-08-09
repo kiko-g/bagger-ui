@@ -30,7 +30,7 @@ export function HeaderEditor({ className }: { className?: string }) {
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-1 rounded-md px-1.5 py-1 text-sm leading-tight font-medium transition hover:bg-zinc-100 dark:hover:bg-white/10">
                 <span className="max-w-[120px] truncate">Theme</span>
-                <EllipsisIcon className="mt-[1px] size-4" />
+                <EllipsisIcon className="mt-px size-4" />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56" side="bottom" align="start">
@@ -47,7 +47,7 @@ export function HeaderEditor({ className }: { className?: string }) {
           </DropdownMenu>
 
           <span className="text-2xs flex items-center gap-1 rounded-full bg-lime-500/10 px-2 py-0.5 leading-tight dark:bg-lime-500/10">
-            <span className="mt-[1px] size-1.5 rounded-full bg-lime-500"></span>
+            <span className="mt-px size-1.5 rounded-full bg-lime-500"></span>
             <span>Current</span>
           </span>
         </div>

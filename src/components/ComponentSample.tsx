@@ -56,7 +56,7 @@ export function ComponentSample({ name }: { name: string }) {
               <span className="mt-[3px] flex size-5 min-w-5 items-center justify-center rounded-full border border-zinc-800 bg-zinc-800 text-center font-mono text-xs font-bold text-white dark:bg-zinc-100 dark:text-zinc-800">
                 {step.number}
               </span>
-              <span className="h-full w-[1px] bg-zinc-300 dark:bg-zinc-800"></span>
+              <span className="h-full w-px bg-zinc-300 dark:bg-zinc-800"></span>
             </div>
             {step.content}
           </li>
@@ -95,7 +95,7 @@ export function ComponentSampleVanilla({ name }: { name: string }) {
               <span className="mt-[3px] flex size-5 min-w-5 items-center justify-center rounded-full border border-zinc-800 bg-zinc-800 text-center font-mono text-xs font-bold text-white dark:bg-zinc-100 dark:text-zinc-800">
                 {step.number}
               </span>
-              <span className="h-full w-[1px] bg-zinc-300 dark:bg-zinc-800"></span>
+              <span className="h-full w-px bg-zinc-300 dark:bg-zinc-800"></span>
             </div>
             {step.content}
           </li>

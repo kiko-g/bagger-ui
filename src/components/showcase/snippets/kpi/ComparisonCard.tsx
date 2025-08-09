@@ -15,7 +15,7 @@ export function ComparisonCard({ current, previous, label, format = (v) => v.toL
   return (
     <div className="relative max-w-full rounded bg-white/80 p-4 xl:max-w-xs dark:bg-black/20">
       <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">{label}</h3>
-      <p className="mt-1 min-h-[5rem] text-sm">Comparing current period with previous period performance.</p>
+      <p className="mt-1 min-h-20 text-sm">Comparing current period with previous period performance.</p>
 
       <div className="mt-2 p-4">
         <div className="text-4xl font-bold">{format(current)}</div>

@@ -12,7 +12,7 @@ export function BarComparison({ current, target, label }: Props) {
   return (
     <div className="relative max-w-full rounded bg-white/80 p-4 dark:bg-black/20 xl:max-w-xs">
       <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">{label}</h3>
-      <p className="mt-1 min-h-[5rem] text-sm">Comparing current performance against target goals.</p>
+      <p className="mt-1 min-h-20 text-sm">Comparing current performance against target goals.</p>
 
       <div className="mt-2 p-4">
         <div className="mb-2 flex items-end justify-between">

@@ -15,7 +15,7 @@ export function NavbarWithDropdowns({ className }: { className?: string }) {
   return (
     <header
       className={cn(
-        "border-border/60 bg-background/60 supports-[backdrop-filter]:bg-background/40 sticky top-0 z-10 w-full backdrop-blur-lg",
+        "border-border/60 bg-background/60 supports-backdrop-filter:bg-background/40 sticky top-0 z-10 w-full backdrop-blur-lg",
         className,
       )}
     >

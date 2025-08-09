@@ -74,7 +74,7 @@ export function CTASectionsPreview() {
 export function HeroSectionsPreview() {
   return (
     <div className="flex w-full flex-col gap-2">
-      <div className="from-primary/30 to-primary/10 flex h-16 w-full flex-col justify-center rounded-md bg-gradient-to-r p-2">
+      <div className="from-primary/30 to-primary/10 flex h-16 w-full flex-col justify-center rounded-md bg-linear-to-r p-2">
         <div className="bg-primary/40 mb-1 h-3 w-32 rounded" />
         <div className="bg-foreground/20 h-2 w-24 rounded" />
       </div>

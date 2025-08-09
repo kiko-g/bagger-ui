@@ -14,7 +14,7 @@ export function SliderStops() {
         max={100}
         step={10}
         stops={10}
-        trackClassName="bg-gradient-to-r from-zinc-200 via-primary/20 to-zinc-200 dark:from-zinc-800 dark:via-primary/20 dark:to-zinc-800"
+        trackClassName="bg-linear-to-r from-zinc-200 via-primary/20 to-zinc-200 dark:from-zinc-800 dark:via-primary/20 dark:to-zinc-800"
         rangeClassName="bg-linear-to-r from-primary to-secondary"
         thumbClassName="border-primary/60"
       />

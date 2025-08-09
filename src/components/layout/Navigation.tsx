@@ -111,7 +111,7 @@ function NavItem({ name, href, isActive, isNew }: { name: string; href: string; 
       <div className="relative hidden w-full items-center gap-1.5 pr-4 md:flex lg:pr-16">
         <span>{name}</span>
         {isNew && (
-          <span className="absolute top-0 right-2 inline-flex items-center rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 px-[5px] py-[3px] text-white">
+          <span className="absolute top-0 right-2 inline-flex items-center rounded-full bg-linear-to-br from-emerald-500 to-teal-600 px-[5px] py-[3px] text-white">
             <span className="text-3xs leading-none font-semibold tracking-tight">New</span>
           </span>
         )}

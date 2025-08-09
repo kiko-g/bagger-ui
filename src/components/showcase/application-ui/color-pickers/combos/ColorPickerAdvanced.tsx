@@ -284,7 +284,7 @@ export function ColorPickerAdvanced({
                       step={1}
                       value={[rgbValue.r]}
                       onValueChange={(value) => handleRgbChange({ ...rgbValue, r: value[0] })}
-                      className="[&_.relative]:bg-gradient-to-r [&_.relative]:from-black [&_.relative]:to-red-600 [&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
+                      className="[&_.relative]:bg-linear-to-r [&_.relative]:from-black [&_.relative]:to-red-600 [&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
                     />
                   </div>
 
@@ -299,7 +299,7 @@ export function ColorPickerAdvanced({
                       step={1}
                       value={[rgbValue.g]}
                       onValueChange={(value) => handleRgbChange({ ...rgbValue, g: value[0] })}
-                      className="[&_.relative]:bg-gradient-to-r [&_.relative]:from-black [&_.relative]:to-green-600 [&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
+                      className="[&_.relative]:bg-linear-to-r [&_.relative]:from-black [&_.relative]:to-green-600 [&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
                     />
                   </div>
 
@@ -314,7 +314,7 @@ export function ColorPickerAdvanced({
                       step={1}
                       value={[rgbValue.b]}
                       onValueChange={(value) => handleRgbChange({ ...rgbValue, b: value[0] })}
-                      className="[&_.relative]:bg-gradient-to-r [&_.relative]:from-black [&_.relative]:to-blue-600 [&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
+                      className="[&_.relative]:bg-linear-to-r [&_.relative]:from-black [&_.relative]:to-blue-600 [&_[role=slider]]:h-4 [&_[role=slider]]:w-4"
                     />
                   </div>
                 </div>
@@ -399,7 +399,7 @@ export function ColorPickerAdvanced({
           </PopoverContent>
         </Popover>
 
-        <div className="relative max-w-[8.5rem] flex-1">
+        <div className="relative max-w-34 flex-1">
           <div
             className="border-input absolute top-0 bottom-0 left-0 w-8 rounded-l-md border-y border-l"
             style={{ backgroundColor: hexValue }}

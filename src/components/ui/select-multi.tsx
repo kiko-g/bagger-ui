@@ -90,7 +90,7 @@ export function MultiSelect({
           </Button>
         </PopoverTrigger>
 
-        <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0" align="start">
+        <PopoverContent className="w-(--radix-popover-trigger-width) p-0" align="start">
           <Command>
             <CommandInput placeholder="Search..." className="focus:bg-accent rounded-none border-none focus:ring-0" />
             <CommandEmpty>No options found.</CommandEmpty>

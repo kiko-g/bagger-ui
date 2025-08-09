@@ -48,7 +48,7 @@ function Hero() {
     { TechIcon: ReactIcon, name: "React", className: "text-[#149eca]" },
     { TechIcon: TypescriptIcon, name: "Typescript", className: "text-[#3178c6]" },
     { TechIcon: TailwindIcon, name: "TailwindCSS", className: "text-[#38bdf8]" },
-    { TechIcon: ShadCnIcon, name: "Shadcn", className: "text-white rounded-sm p-[1px] bg-zinc-950" },
+    { TechIcon: ShadCnIcon, name: "Shadcn", className: "text-white rounded-sm p-px bg-zinc-950" },
   ]
 
   return (

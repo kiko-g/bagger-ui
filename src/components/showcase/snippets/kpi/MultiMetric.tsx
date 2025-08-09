@@ -16,7 +16,7 @@ export function MultiMetric({ title, metrics }: Props) {
   return (
     <div className="relative max-w-full rounded bg-white/80 p-4 dark:bg-black/20 xl:max-w-xs">
       <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">{title}</h3>
-      <p className="mt-1 min-h-[5rem] text-sm">Overview of multiple related performance metrics.</p>
+      <p className="mt-1 min-h-20 text-sm">Overview of multiple related performance metrics.</p>
 
       <div className="mt-2 space-y-4">
         {metrics.map((metric, index) => {

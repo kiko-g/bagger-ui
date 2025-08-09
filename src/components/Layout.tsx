@@ -24,7 +24,7 @@ export function Layout({ children, location = "Unknown", sidebar = false, quickN
   return (
     <>
       <Seo title={location} />
-      <div className="mx-auto flex min-h-screen max-w-[100vw] flex-col">
+      <div className="mx-auto flex min-h-screen max-w-screen flex-col">
         <Header location={location} />
         <HeroPattern />
 

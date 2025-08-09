@@ -20,7 +20,7 @@ export function SectionCard({ section }: { section: Section }) {
     <div
       key={section.href}
       onMouseMove={onMouseMove}
-      className="group relative flex rounded-2xl bg-gradient-to-br from-slate-600/5 to-slate-600/0 transition-shadow hover:shadow-md hover:shadow-neutral-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5"
+      className="group relative flex rounded-2xl bg-linear-to-br from-slate-600/5 to-slate-600/0 transition-shadow hover:shadow-md hover:shadow-neutral-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5"
     >
       {section.pattern && <Pattern {...section.pattern} mouseX={mouseX} mouseY={mouseY} />}
       <div className="absolute inset-0 rounded-2xl ring-1 ring-neutral-900/7.5 ring-inset group-hover:ring-neutral-900/10 dark:ring-white/10 dark:group-hover:ring-white/20" />
@@ -57,12 +57,12 @@ function Pattern({
 
   return (
     <div className="pointer-events-none">
-      <div className="absolute inset-0 rounded-2xl [mask-image:linear-gradient(white,transparent)] transition duration-300 group-hover:opacity-50">
+      <div className="absolute inset-0 rounded-2xl mask-[linear-gradient(white,transparent)] transition duration-300 group-hover:opacity-50">
         <GridPattern
           x="50%"
           width={100}
           height={100}
-          className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/[0.02] stroke-black/[0.05] dark:fill-white/[0.03] dark:stroke-white/[0.06]"
+          className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/2 stroke-black/5 dark:fill-white/3 dark:stroke-white/6"
           {...gridProps}
         />
       </div>

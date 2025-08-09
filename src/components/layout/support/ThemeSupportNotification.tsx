@@ -63,7 +63,7 @@ export function ThemeSupportNotification() {
                     alt="Bagger Flow"
                     width={32}
                     height={32}
-                    className="-mt-[1px] -ml-[1px]"
+                    className="-mt-px -ml-px"
                   />
                 </div>
                 <div className="ml-2.5 w-0 flex-1 pt-0.5">

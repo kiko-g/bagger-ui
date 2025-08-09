@@ -20,9 +20,9 @@ export function SliderChefCombo() {
         thickness="md"
         size="lg"
         stops={10}
-        trackClassName="bg-gradient-to-r from-zinc-200 via-primary/20 to-zinc-200 dark:from-zinc-800 dark:via-primary/20 dark:to-zinc-800"
+        trackClassName="bg-linear-to-r from-zinc-200 via-primary/20 to-zinc-200 dark:from-zinc-800 dark:via-primary/20 dark:to-zinc-800"
         rangeClassName="bg-linear-to-r from-primary to-secondary"
-        thumbClassName="border-foreground/30 backdrop-blur supports-[backdrop-filter]:bg-background/70"
+        thumbClassName="border-foreground/30 backdrop-blur supports-backdrop-filter:bg-background/70"
       />
       <div className="mt-3 grid grid-cols-8 gap-1">
         {["Min", "", "", "Mid", "", "", "", "Max"].map((label, i) => (

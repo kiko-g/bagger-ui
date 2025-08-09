@@ -62,7 +62,7 @@ export function SelectSingle({ className }: Props) {
             <Listbox.Options
               className={cn(
                 "z-50 max-h-80 overflow-scroll rounded-md bg-white px-0 py-1 text-sm shadow-xl dark:bg-zinc-800",
-                open ? "absolute right-0 mt-2 w-full min-w-[12rem] lg:w-48" : "hidden",
+                open ? "absolute right-0 mt-2 w-full min-w-48 lg:w-48" : "hidden",
               )}
             >
               <div className="dark:border- flex w-full items-center justify-end border-b px-3 pb-2 pt-1 font-normal tracking-tighter">

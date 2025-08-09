@@ -16,7 +16,7 @@ export function ProgressGrid({ items, title }: Props) {
   return (
     <div className="relative max-w-full rounded bg-white/80 p-4 dark:bg-black/20 xl:max-w-xs">
       <h3 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">{title}</h3>
-      <p className="mt-1 min-h-[5rem] text-sm">Grid view of multiple progress indicators at a glance.</p>
+      <p className="mt-1 min-h-20 text-sm">Grid view of multiple progress indicators at a glance.</p>
 
       <div className="mt-2 grid grid-cols-2 gap-4 p-2">
         {items.map((item, index) => {
