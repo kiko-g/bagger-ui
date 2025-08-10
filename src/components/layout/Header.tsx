@@ -10,7 +10,7 @@ import { ThemeToggle } from "./ThemeToggle"
 
 export function Header({ location }: { location: string }) {
   return (
-    <header className="bg-opacity-60 dark:bg-opacity-50 sticky top-0 z-50 mx-auto w-full border-b bg-zinc-100 backdrop-blur-xs backdrop-filter xl:px-4 dark:bg-zinc-950">
+    <header className="bg-opacity-60 dark:bg-opacity-50 bg-base-50 dark:bg-base-950 sticky top-0 z-50 mx-auto w-full border-b backdrop-blur-xs backdrop-filter xl:px-4">
       <div className="flex items-center justify-between px-3 py-3 sm:px-3 lg:px-4 xl:px-1">
         <div className="flex items-center gap-3">
           <LogoLink />

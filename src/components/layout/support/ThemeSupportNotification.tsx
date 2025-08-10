@@ -58,13 +58,7 @@ export function ThemeSupportNotification() {
             <div className="p-3">
               <div className="flex items-start">
                 <div className="mt-1 ml-1 shrink-0">
-                  <Image
-                    src="/bagger-flow.svg"
-                    alt="Bagger Flow"
-                    width={32}
-                    height={32}
-                    className="-mt-px -ml-px"
-                  />
+                  <Image src="/bagger-flow.svg" alt="Bagger Flow" width={32} height={32} className="-mt-px -ml-px" />
                 </div>
                 <div className="ml-2.5 w-0 flex-1 pt-0.5">
                   <p className="text-foreground text-sm font-medium">Check out Bagger Flow</p>
@@ -83,7 +77,7 @@ export function ThemeSupportNotification() {
                     <a
                       href="https://marketplace.visualstudio.com/items?itemName=kikogoncalves.bagger-flow"
                       target="_blank"
-                      className="text-secondary flex items-center gap-1 rounded-md text-sm font-semibold hover:opacity-80 focus:underline focus:outline-hidden"
+                      className="text-primary flex items-center gap-1 rounded-md text-sm font-semibold hover:opacity-80 focus:underline focus:outline-hidden"
                     >
                       <span>Take me there</span>
                     </a>

@@ -29,9 +29,9 @@ export const Previews = {
 
 export function ButtonGroupsPreview() {
   return (
-    <div className="flex w-full flex-col items-center justify-center gap-3">
+    <div id="button-groups-preview" className="flex w-full flex-col items-center justify-center gap-3">
       <div className="flex gap-2">
-        <div className="bg-primary flex h-8 w-20 items-center justify-center rounded-md">
+        <div className="bg-primary flex h-8 w-20 items-center justify-center rounded-md border-transparent">
           <span className="text-primary-foreground text-xs">Primary</span>
         </div>
         <div className="bg-background flex h-8 w-20 items-center justify-center rounded-md border">
@@ -227,12 +227,10 @@ export function ColorPickerPreview() {
         </div>
       </div>
       <div className="grid w-fit grid-cols-10 gap-2">
-        <div className="bg-foreground size-5 rounded-md border" style={borderStyle} />
         <div className="bg-background size-5 rounded-md border" style={borderStyle} />
+        <div className="bg-foreground size-5 rounded-md border" style={borderStyle} />
         <div className="bg-primary size-5 rounded-md border" style={borderStyle} />
         <div className="bg-secondary size-5 rounded-md border" style={borderStyle} />
-        <div className="bg-muted size-5 rounded-md border" style={borderStyle} />
-        <div className="bg-accent size-5 rounded-md border" style={borderStyle} />
         <div className="bg-destructive size-5 rounded-md border" style={borderStyle} />
         <div className="bg-success size-5 rounded-md border" style={borderStyle} />
         <div className="bg-warning size-5 rounded-md border" style={borderStyle} />
