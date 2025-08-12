@@ -2,11 +2,9 @@
 
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-
-import { ColorPickerSample } from "@/components/showcase/application-ui/color-pickers/sample/ColorPickerSample"
+import { ComponentSampleVanilla } from "@/components/ComponentSample"
 
 import { ColorPickerDefault } from "@/components/showcase/application-ui/color-pickers/ColorPickerDefault"
-
 import { ColorPickerWithPresets } from "@/components/showcase/application-ui/color-pickers/combos/ColorPickerPresets"
 import { ColorPickerWithHistory } from "@/components/showcase/application-ui/color-pickers/combos/ColorPickerHistory"
 import { ColorPickerAdvanced } from "@/components/showcase/application-ui/color-pickers/combos/ColorPickerAdvanced"
@@ -26,7 +24,7 @@ export default function ColorPickers() {
         nodes: [
           {
             item: "Setup",
-            component: <ColorPickerSample />,
+            component: <ComponentSampleVanilla name="color-picker" />,
           },
         ],
       }}

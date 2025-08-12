@@ -1,7 +1,8 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
+import { ComponentSampleVanilla } from "@/components/ComponentSample"
+
 import { SelectMultiBubbles } from "@/components/showcase/application-ui/selects/SelectMultiBubbles"
-import { MultiSelectSample } from "@/components/showcase/application-ui/selects/sample/MultiSelectSample"
 
 export default function MultiSelectPage() {
   const base = "application-ui/selects"
@@ -13,7 +14,7 @@ export default function MultiSelectPage() {
         nodes: [
           {
             item: "Setup",
-            component: <MultiSelectSample />,
+            component: <ComponentSampleVanilla name="select-multi" />,
           },
         ],
       }}

@@ -1,7 +1,6 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-
-import { SlidersSample } from "@/components/showcase/application-ui/sliders/sample/SlidersSample"
+import { ComponentSample } from "@/components/ComponentSample"
 
 import {
   SliderBasic,
@@ -21,7 +20,7 @@ export default function Sliders() {
         nodes: [
           {
             item: "Setup",
-            component: <SlidersSample />,
+            component: <ComponentSample name="slider" />,
           },
         ],
       }}

@@ -2,8 +2,7 @@
 
 import React, { useState } from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-
-import { DropzoneSample } from "@/components/showcase/application-ui/dropzone/sample/DropzoneSample"
+import { ComponentSampleVanilla } from "@/components/ComponentSample"
 
 import {
   DropzoneWithPreview,
@@ -23,7 +22,7 @@ export default function Dropzones() {
         nodes: [
           {
             item: "Setup",
-            component: <DropzoneSample />,
+            component: <ComponentSampleVanilla name="dropzone" />,
           },
         ],
       }}

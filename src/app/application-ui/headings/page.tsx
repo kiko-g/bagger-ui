@@ -2,8 +2,7 @@
 
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-
-import { HeadingSample } from "@/components/showcase/application-ui/headings/sample"
+import { ComponentSampleVanilla } from "@/components/ComponentSample"
 
 import { HeadingDefault } from "@/components/showcase/application-ui/headings/HeadingDefault"
 import { HeadingFull } from "@/components/showcase/application-ui/headings/HeadingFull"
@@ -20,7 +19,7 @@ export default function Dropzones() {
         nodes: [
           {
             item: "Setup",
-            component: <HeadingSample />,
+            component: <ComponentSampleVanilla name="heading" />,
           },
         ],
       }}

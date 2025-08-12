@@ -1,7 +1,6 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-
-import { BadgeSample } from "@/components/showcase/application-ui/badges/sample/BadgeSample"
+import { ComponentSample } from "@/components/ComponentSample"
 
 import { BadgeDefault } from "@/components/showcase/application-ui/badges/BadgeDefault"
 import { BadgeSecondary } from "@/components/showcase/application-ui/badges/BadgeSecondary"
@@ -20,7 +19,7 @@ export default function Badges() {
         nodes: [
           {
             item: "Setup",
-            component: <BadgeSample />,
+            component: <ComponentSample name="badge" />,
           },
         ],
       }}

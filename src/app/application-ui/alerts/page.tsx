@@ -1,6 +1,6 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-import { AlertSample } from "@/components/showcase/application-ui/alerts/sample/AlertSample"
+import { ComponentSample } from "@/components/ComponentSample"
 
 import { AlertDefault } from "@/components/showcase/application-ui/alerts/AlertDefault"
 import { AlertDestructive } from "@/components/showcase/application-ui/alerts/AlertDestructive"
@@ -23,7 +23,7 @@ export default function Alerts() {
         nodes: [
           {
             item: "Setup",
-            component: <AlertSample />,
+            component: <ComponentSample name="alert" />,
           },
         ],
       }}

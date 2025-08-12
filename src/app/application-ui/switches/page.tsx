@@ -1,5 +1,7 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
+import { ComponentSample } from "@/components/ComponentSample"
+
 import {
   SwitchDarkMode,
   SwitchProtected,
@@ -9,7 +11,6 @@ import {
   SwitchTones,
   SwitchAsync,
 } from "@/components/showcase/application-ui/switches"
-import { SwitchesSample } from "@/components/showcase/application-ui/switches/sample/SwitchesSample"
 
 export default function Switches() {
   const base = "application-ui/switches"
@@ -21,7 +22,7 @@ export default function Switches() {
         nodes: [
           {
             item: "Setup",
-            component: <SwitchesSample />,
+            component: <ComponentSample name="switch" />,
           },
         ],
       }}

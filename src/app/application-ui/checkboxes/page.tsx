@@ -1,6 +1,6 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-import { CheckboxSample } from "@/components/showcase/application-ui/checkboxes/sample/CheckboxSample"
+import { ComponentSample } from "@/components/ComponentSample"
 
 import { CheckboxDefault } from "@/components/showcase/application-ui/checkboxes/CheckboxDefault"
 import { CheckboxParentChild } from "@/components/showcase/application-ui/checkboxes/CheckboxParentChild"
@@ -19,7 +19,7 @@ export default function Inputs() {
         nodes: [
           {
             item: "Setup",
-            component: <CheckboxSample />,
+            component: <ComponentSample name="checkbox" />,
           },
         ],
       }}
