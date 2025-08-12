@@ -13,7 +13,7 @@ export function InputWithLabelHelper() {
         <label htmlFor={id} className="text-foreground/80 text-sm font-semibold tracking-tight">
           Email
         </label>
-        <span className="text-muted-foreground text-xs">We'll never share your email.</span>
+        <span className="text-muted-foreground text-xs">We&apos;ll never share your email.</span>
       </div>
       <Input
         id={id}
