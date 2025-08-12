@@ -1,11 +1,10 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-import {
-  TimelineHorizontal,
-  TimelineVertical,
-  TimelineWithAvatars,
-  TimelineWithIcons,
-} from "@/components/showcase/snippets/timelines"
+
+import { TimelineHorizontal } from "@/components/showcase/snippets/timelines/TimelineHorizontal"
+import { TimelineVertical } from "@/components/showcase/snippets/timelines/TimelineVertical"
+import { TimelineWithAvatars } from "@/components/showcase/snippets/timelines/TimelineWithAvatars"
+import { TimelineWithIcons } from "@/components/showcase/snippets/timelines/TimelineWithIcons"
 
 export default function Timelines() {
   const base = "snippets/timelines"

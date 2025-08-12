@@ -1,6 +1,9 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-import { SidebarSections, SidebarSimple } from "@/components/showcase/application-ui/sidebars"
+import { ComponentSample } from "@/components/ComponentSample"
+
+import { SidebarSections } from "@/components/showcase/application-ui/sidebars/SidebarSections"
+import { SidebarSimple } from "@/components/showcase/application-ui/sidebars/SidebarSimple"
 
 export default function Sidebars() {
   const base = "application-ui/sidebars"
@@ -8,6 +11,14 @@ export default function Sidebars() {
   return (
     <ComponentTypePage
       title="Sidebars"
+      sample={{
+        nodes: [
+          {
+            item: "Setup",
+            component: <ComponentSample name="sidebar" />,
+          },
+        ],
+      }}
       examples={[
         {
           name: "Simple",

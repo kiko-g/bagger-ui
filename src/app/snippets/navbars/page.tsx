@@ -1,11 +1,10 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-import {
-  NavbarMobileDrawer,
-  NavbarSimple,
-  NavbarWithDropdowns,
-  NavbarWithSearch,
-} from "@/components/showcase/snippets/navbars"
+
+import { NavbarMobileDrawer } from "@/components/showcase/snippets/navbars/NavbarMobileDrawer"
+import { NavbarSimple } from "@/components/showcase/snippets/navbars/NavbarSimple"
+import { NavbarWithDropdowns } from "@/components/showcase/snippets/navbars/NavbarWithDropdowns"
+import { NavbarWithSearch } from "@/components/showcase/snippets/navbars/NavbarWithSearch"
 
 export default function Navbars() {
   const base = "snippets/navbars"

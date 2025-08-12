@@ -1,11 +1,10 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-import {
-  HeaderEditor,
-  HeaderWithBreadcrumbs,
-  HeaderWithSearchFilters,
-  HeaderWithTabsActions,
-} from "@/components/showcase/snippets/headers"
+
+import { HeaderEditor } from "@/components/showcase/snippets/headers/HeaderEditor"
+import { HeaderWithBreadcrumbs } from "@/components/showcase/snippets/headers/HeaderWithBreadcrumbs"
+import { HeaderWithTabsActions } from "@/components/showcase/snippets/headers/HeaderWithTabsActions"
+import { HeaderWithSearchFilters } from "@/components/showcase/snippets/headers/HeaderWithSearchFilters"
 
 export default function HeadersSnippet() {
   const base = "snippets/headers"

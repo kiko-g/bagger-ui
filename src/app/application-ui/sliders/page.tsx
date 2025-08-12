@@ -2,13 +2,11 @@ import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
 import { ComponentSample } from "@/components/ComponentSample"
 
-import {
-  SliderBasic,
-  SliderSimple,
-  SliderStops,
-  SliderThicknessRadius,
-  SliderChefCombo,
-} from "@/components/showcase/application-ui/sliders"
+import { SliderBasic } from "@/components/showcase/application-ui/sliders/SliderBasic"
+import { SliderSimple } from "@/components/showcase/application-ui/sliders/SliderSimple"
+import { SliderStops } from "@/components/showcase/application-ui/sliders/SliderStops"
+import { SliderThicknessRadius } from "@/components/showcase/application-ui/sliders/SliderThicknessRadius"
+import { SliderChefCombo } from "@/components/showcase/application-ui/sliders/SliderChefCombo"
 
 export default function Sliders() {
   const base = "application-ui/sliders"

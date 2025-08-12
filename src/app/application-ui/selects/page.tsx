@@ -1,7 +1,9 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-import { SelectSingle, SelectMultiBubbles } from "@/components/showcase/application-ui/selects"
-import { SelectsSample } from "@/components/showcase/application-ui/selects/sample/SelectsSample"
+import { ComponentSample } from "@/components/ComponentSample"
+
+import { SelectSingle } from "@/components/showcase/application-ui/selects/SelectSingle"
+import { SelectMultiBubbles } from "@/components/showcase/application-ui/selects/SelectMultiBubbles"
 
 export default function Selects() {
   const base = "application-ui/selects"
@@ -13,7 +15,7 @@ export default function Selects() {
         nodes: [
           {
             item: "Setup",
-            component: <SelectsSample />,
+            component: <ComponentSample name="selects" />,
           },
         ],
       }}

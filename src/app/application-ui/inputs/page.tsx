@@ -1,20 +1,18 @@
 import React from "react"
 import { ComponentSample } from "@/components/ComponentSample"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-import {
-  InputBasic,
-  InputWithLabelHelper,
-  InputWithIcon,
-  InputWithTrailingIcon,
-  InputPasswordToggle,
-  InputPrefixSuffix,
-  InputStates,
-  InputSizes,
-  SearchInput,
-  EmailSubscribe,
-  CurrencyAmount,
-  InlineValidation,
-} from "@/components/showcase/application-ui/inputs"
+
+import { InputBasic } from "@/components/showcase/application-ui/inputs/InputBasic"
+import { InputWithLabelHelper } from "@/components/showcase/application-ui/inputs/InputWithLabelHelper"
+import { InputWithIcon, InputWithTrailingIcon } from "@/components/showcase/application-ui/inputs/InputWithIcon"
+import { InputPasswordToggle } from "@/components/showcase/application-ui/inputs/InputPasswordToggle"
+import { InputPrefixSuffix } from "@/components/showcase/application-ui/inputs/InputPrefixSuffix"
+import { InputStates } from "@/components/showcase/application-ui/inputs/InputStates"
+import { InputSizes } from "@/components/showcase/application-ui/inputs/InputSizes"
+import { SearchInput } from "@/components/showcase/application-ui/inputs/SearchInput"
+import { EmailSubscribe } from "@/components/showcase/application-ui/inputs/EmailSubscribe"
+import { CurrencyAmount } from "@/components/showcase/application-ui/inputs/CurrencyAmount"
+import { InlineValidation } from "@/components/showcase/application-ui/inputs/InlineValidation"
 
 export default function Inputs() {
   const base = "application-ui/inputs"

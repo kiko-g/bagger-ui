@@ -1,12 +1,11 @@
 import React from "react"
 import { ComponentTypePage } from "@/components/ComponentTypePage"
-import {
-  ButtonGroupJoined,
-  ButtonGroupJoinedToggle,
-  ButtonGroupSegmentedControl,
-  ButtonGroupSimple,
-  ButtonGroupSplit,
-} from "@/components/showcase/snippets/button-groups"
+
+import { ButtonGroupJoined } from "@/components/showcase/snippets/button-groups/ButtonGroupJoined"
+import { ButtonGroupJoinedToggle } from "@/components/showcase/snippets/button-groups/ButtonGroupJoinedToggle"
+import { ButtonGroupSegmentedControl } from "@/components/showcase/snippets/button-groups/ButtonGroupSegmentedControl"
+import { ButtonGroupSimple } from "@/components/showcase/snippets/button-groups/ButtonGroupSimple"
+import { ButtonGroupSplit } from "@/components/showcase/snippets/button-groups/ButtonGroupSplit"
 
 export default function ButtonGroups() {
   const base = "snippets/button-groups"

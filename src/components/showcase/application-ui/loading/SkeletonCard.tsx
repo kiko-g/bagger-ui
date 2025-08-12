@@ -2,7 +2,7 @@
 
 import React from "react"
 
-export default function SkeletonCard() {
+export function SkeletonCard() {
   return (
     <div className="mx-auto w-full max-w-md rounded-xl bg-white px-5 py-5 dark:bg-zinc-800">
       <div className="flex animate-pulse space-x-4">
