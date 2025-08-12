@@ -57,15 +57,16 @@ export function ButtonGroupsPreview() {
 export function CTASectionsPreview() {
   return (
     <div className="flex w-full flex-col gap-2">
-      <div className="bg-primary/10 flex h-12 w-full items-center justify-between rounded-md p-2">
+      <div className="bg-primary/10 border-primary/20 flex h-12 w-full items-center justify-between rounded-md border p-2">
         <div className="bg-primary/30 h-3 w-24 rounded" />
         <div className="bg-primary flex h-6 w-16 items-center justify-center rounded-md">
           <span className="text-primary-foreground text-[8px]">Get Started</span>
         </div>
       </div>
-      <div className="bg-muted flex h-8 w-full items-center justify-between rounded-md p-2">
-        <div className="bg-foreground/20 h-2 w-16 rounded" />
-        <ChevronRightIcon className="text-foreground/40 h-3 w-3" />
+
+      <div className="bg-accent flex h-8 w-full items-center justify-between rounded-md border p-2">
+        <div className="bg-accent-foreground/20 h-2 w-16 rounded" />
+        <ChevronRightIcon className="text-accent-foreground h-3 w-3" />
       </div>
     </div>
   )
@@ -74,7 +75,7 @@ export function CTASectionsPreview() {
 export function HeroSectionsPreview() {
   return (
     <div className="flex w-full flex-col gap-2">
-      <div className="from-primary/30 to-primary/10 flex h-16 w-full flex-col justify-center rounded-md bg-linear-to-r p-2">
+      <div className="from-primary/30 border-primary/20 to-primary/10 flex h-16 w-full flex-col justify-center rounded-md border bg-linear-to-r p-2">
         <div className="bg-primary/40 mb-1 h-3 w-32 rounded" />
         <div className="bg-foreground/20 h-2 w-24 rounded" />
       </div>
@@ -100,9 +101,21 @@ export function KPIWidgetsPreview() {
         <div className="text-xs font-bold">2,543</div>
         <div className="text-[8px] text-green-500">+8%</div>
       </div>
-      <div className="bg-card col-span-2 h-8 rounded-md border p-1">
-        <div className="bg-primary/30 flex h-full w-full items-center justify-center rounded-sm">
-          <LineChartIcon className="text-primary h-4 w-4" />
+      <div className="col-span-2 flex h-8 w-full items-center gap-2">
+        <div className="flex h-full w-full flex-1 items-center justify-center gap-2">
+          <div className="bg-card flex h-full w-full flex-1 items-center justify-center gap-2 rounded-sm border px-2 py-1">
+            <div className="bg-primary/30 h-3 w-full rounded" />
+          </div>
+          <div className="bg-card flex h-full w-full flex-1 items-center justify-center gap-2 rounded-sm border px-2 py-1">
+            <div className="bg-secondary/30 h-3 w-full rounded" />
+          </div>
+          <div className="bg-card flex h-full w-full flex-1 items-center justify-center gap-2 rounded-sm border px-2 py-1">
+            <div className="bg-warning/30 h-3 w-full rounded" />
+          </div>
+        </div>
+
+        <div className="bg-card flex h-full items-center justify-center rounded-sm border px-2 py-1">
+          <LineChartIcon className="text-accent-foreground h-4 w-4" />
         </div>
       </div>
     </div>
@@ -111,7 +124,7 @@ export function KPIWidgetsPreview() {
 
 export function ProductCardsPreview() {
   const ProductCard = () => (
-    <div className="bg-primary/10 text-primary/60 border-primary/20 flex flex-col items-center justify-center overflow-hidden rounded-lg border p-4">
+    <div className="bg-primary/10 text-foreground border-primary/20 flex flex-col items-center justify-center overflow-hidden rounded-lg border p-4">
       <ShoppingBagIcon className="size-4" />
     </div>
   )
