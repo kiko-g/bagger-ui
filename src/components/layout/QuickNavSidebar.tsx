@@ -30,7 +30,7 @@ export function QuickNavSidebar({ navigation }: { navigation?: QuickNavigation }
               {level.items && level.items.length > 0 && (
                 <ul className="my-2 ml-3 flex w-full flex-col gap-0.5">
                   {level.items.map((item, itemIdx) => (
-                    <li key={`nav-item-${levelIdx}-${itemIdx}`}>
+                    <li key={`nav-item-${levelIdx}-${itemIdx}`} className="max-w-60 truncate text-ellipsis">
                       <Link
                         href={item.href}
                         className="text-sm font-normal tracking-tight text-zinc-800 hover:underline dark:text-white"
