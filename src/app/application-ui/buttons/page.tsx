@@ -30,63 +30,19 @@ export default function Buttons() {
         ],
       }}
       examples={[
-        {
-          name: "Default",
-          path: `${base}/ButtonDefault.tsx`,
-          component: <ButtonDefault />,
-        },
-        {
-          name: "Secondary",
-          path: `${base}/ButtonSecondary.tsx`,
-          component: <ButtonSecondary />,
-        },
-        {
-          name: "Outline",
-          path: `${base}/ButtonOutline.tsx`,
-          component: <ButtonOutline />,
-        },
-        {
-          name: "Status",
-          path: `${base}/ButtonStatus.tsx`,
-          component: <ButtonStatus />,
-        },
-        {
-          name: "Icon",
-          path: `${base}/ButtonIcon.tsx`,
-          component: <ButtonIcon />,
-        },
-        {
-          name: "Flat",
-          path: `${base}/ButtonFlat.tsx`,
-          component: <ButtonFlat />,
-        },
-        {
-          name: "Disabled",
-          path: `${base}/ButtonDisabled.tsx`,
-          component: <ButtonDisabled />,
-        },
+        { name: "Default", path: `${base}/ButtonDefault.tsx`, component: <ButtonDefault /> },
+        { name: "Secondary", path: `${base}/ButtonSecondary.tsx`, component: <ButtonSecondary /> },
+        { name: "Outline", path: `${base}/ButtonOutline.tsx`, component: <ButtonOutline /> },
+        { name: "Status", path: `${base}/ButtonStatus.tsx`, component: <ButtonStatus /> },
+        { name: "Icon", path: `${base}/ButtonIcon.tsx`, component: <ButtonIcon /> },
+        { name: "Flat", path: `${base}/ButtonFlat.tsx`, component: <ButtonFlat /> },
+        { name: "Disabled", path: `${base}/ButtonDisabled.tsx`, component: <ButtonDisabled /> },
       ]}
       combos={[
-        {
-          name: "Loading With Await",
-          path: `${base}/combos/ButtonLoading.tsx`,
-          component: <ButtonLoading />,
-        },
-        {
-          name: "With Icon",
-          path: `${base}/combos/ButtonWithIcon.tsx`,
-          component: <ButtonWithIcon />,
-        },
-        {
-          name: "With Animation",
-          path: `${base}/combos/ButtonWithAnimation.tsx`,
-          component: <ButtonWithAnimation />,
-        },
-        {
-          name: "Filling Animation",
-          path: `${base}/combos/ButtonFilling.tsx`,
-          component: <ButtonFilling />,
-        },
+        { name: "Loading With Await", path: `${base}/combos/ButtonLoading.tsx`, component: <ButtonLoading /> },
+        { name: "With Icon", path: `${base}/combos/ButtonWithIcon.tsx`, component: <ButtonWithIcon /> },
+        { name: "With Animation", path: `${base}/combos/ButtonWithAnimation.tsx`, component: <ButtonWithAnimation /> },
+        { name: "Filling Animation", path: `${base}/combos/ButtonFilling.tsx`, component: <ButtonFilling /> },
       ]}
     />
   )

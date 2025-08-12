@@ -28,53 +28,17 @@ export default function Alerts() {
         ],
       }}
       examples={[
-        {
-          name: "Default",
-          path: `${base}/AlertDefault.tsx`,
-          component: <AlertDefault />,
-        },
-        {
-          name: "Information",
-          path: `${base}/AlertInfo.tsx`,
-          component: <AlertInfo />,
-        },
-        {
-          name: "Destructive",
-          path: `${base}/AlertDestructive.tsx`,
-          component: <AlertDestructive />,
-        },
-        {
-          name: "Success",
-          path: `${base}/AlertSuccess.tsx`,
-          component: <AlertSuccess />,
-        },
-        {
-          name: "Warning",
-          path: `${base}/AlertWarning.tsx`,
-          component: <AlertWarning />,
-        },
+        { name: "Default", path: `${base}/AlertDefault.tsx`, component: <AlertDefault /> },
+        { name: "Information", path: `${base}/AlertInfo.tsx`, component: <AlertInfo /> },
+        { name: "Destructive", path: `${base}/AlertDestructive.tsx`, component: <AlertDestructive /> },
+        { name: "Success", path: `${base}/AlertSuccess.tsx`, component: <AlertSuccess /> },
+        { name: "Warning", path: `${base}/AlertWarning.tsx`, component: <AlertWarning /> },
       ]}
       combos={[
-        {
-          name: "Chef's Choice 🧑‍🍳",
-          path: `${base}/combos/AlertCombo4.tsx`,
-          component: <AlertCombo4 />,
-        },
-        {
-          name: "With Accent, Not Dismissible",
-          path: `${base}/combos/AlertCombo1.tsx`,
-          component: <AlertCombo1 />,
-        },
-        {
-          name: "Transparent, Not Rounded",
-          path: `${base}/combos/AlertCombo2.tsx`,
-          component: <AlertCombo2 />,
-        },
-        {
-          name: "Extra Rounded, No Border",
-          path: `${base}/combos/AlertCombo3.tsx`,
-          component: <AlertCombo3 />,
-        },
+        { name: "Chef's Choice 🧑‍🍳", path: `${base}/combos/AlertCombo4.tsx`, component: <AlertCombo4 /> },
+        { name: "With Accent, Not Dismissible", path: `${base}/combos/AlertCombo1.tsx`, component: <AlertCombo1 /> },
+        { name: "Transparent, Not Rounded", path: `${base}/combos/AlertCombo2.tsx`, component: <AlertCombo2 /> },
+        { name: "Extra Rounded, No Border", path: `${base}/combos/AlertCombo3.tsx`, component: <AlertCombo3 /> },
       ]}
     />
   )

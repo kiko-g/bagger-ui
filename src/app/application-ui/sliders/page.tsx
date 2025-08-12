@@ -27,23 +27,11 @@ export default function Sliders() {
         { name: "Basic", path: `${base}/SliderBasic.tsx`, component: <SliderBasic /> },
         { name: "Vanilla", path: `${base}/SliderVanilla.tsx`, component: <SliderVanilla /> },
         { name: "Stops", path: `${base}/SliderStops.tsx`, component: <SliderStops /> },
-        {
-          name: "Thickness & Radius",
-          path: `${base}/SliderThicknessRadius.tsx`,
-          component: <SliderThicknessRadius />,
-        },
+        { name: "Thickness & Radius", path: `${base}/SliderThicknessRadius.tsx`, component: <SliderThicknessRadius /> },
       ]}
       combos={[
-        {
-          name: "Spacing controls",
-          path: `${base}/SliderMarginCombo.tsx`,
-          component: <SliderMarginCombo />,
-        },
-        {
-          name: "Chef Combo",
-          path: `${base}/SliderChefCombo.tsx`,
-          component: <SliderChefCombo />,
-        },
+        { name: "Spacing controls", path: `${base}/SliderMarginCombo.tsx`, component: <SliderMarginCombo /> },
+        { name: "Chef Combo", path: `${base}/SliderChefCombo.tsx`, component: <SliderChefCombo /> },
       ]}
     />
   )

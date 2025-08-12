@@ -24,11 +24,7 @@ export default function Inputs() {
         ],
       }}
       examples={[
-        {
-          name: "Label and description",
-          path: `${base}/CheckboxDefault.tsx`,
-          component: <CheckboxDefault />,
-        },
+        { name: "Label and description", path: `${base}/CheckboxDefault.tsx`, component: <CheckboxDefault /> },
         {
           name: "Parent Checkbox with children",
           path: `${base}/CheckboxParentChild.tsx`,
@@ -36,26 +32,10 @@ export default function Inputs() {
         },
       ]}
       combos={[
-        {
-          name: "Checkbox Tree",
-          path: `${base}/combos/CheckboxTree.tsx`,
-          component: <CheckboxTreeExample />,
-        },
-        {
-          name: "Checkbox Form",
-          path: `${base}/combos/CheckboxForm.tsx`,
-          component: <CheckboxForm />,
-        },
-        {
-          name: "Checkbox Group",
-          path: `${base}/combos/CheckboxGroup.tsx`,
-          component: <CheckboxGroupExample />,
-        },
-        {
-          name: "Checkbox Table",
-          path: `${base}/combos/CheckboxTable.tsx`,
-          component: <CheckboxTable />,
-        },
+        { name: "Checkbox Tree", path: `${base}/combos/CheckboxTree.tsx`, component: <CheckboxTreeExample /> },
+        { name: "Checkbox Form", path: `${base}/combos/CheckboxForm.tsx`, component: <CheckboxForm /> },
+        { name: "Checkbox Group", path: `${base}/combos/CheckboxGroup.tsx`, component: <CheckboxGroupExample /> },
+        { name: "Checkbox Table", path: `${base}/combos/CheckboxTable.tsx`, component: <CheckboxTable /> },
       ]}
     />
   )

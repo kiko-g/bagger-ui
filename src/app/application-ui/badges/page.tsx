@@ -24,34 +24,12 @@ export default function Badges() {
         ],
       }}
       examples={[
-        {
-          name: "Default",
-          path: `${base}/BadgeDefault.tsx`,
-          component: <BadgeDefault />,
-        },
-        {
-          name: "Secondary",
-          path: `${base}/BadgeSecondary.tsx`,
-          component: <BadgeSecondary />,
-        },
-        {
-          name: "Status",
-          path: `${base}/BadgeStatus.tsx`,
-          component: <BadgeStatus />,
-        },
-        {
-          name: "Outline",
-          path: `${base}/BadgeOutline.tsx`,
-          component: <BadgeOutline />,
-        },
+        { name: "Default", path: `${base}/BadgeDefault.tsx`, component: <BadgeDefault /> },
+        { name: "Secondary", path: `${base}/BadgeSecondary.tsx`, component: <BadgeSecondary /> },
+        { name: "Status", path: `${base}/BadgeStatus.tsx`, component: <BadgeStatus /> },
+        { name: "Outline", path: `${base}/BadgeOutline.tsx`, component: <BadgeOutline /> },
       ]}
-      combos={[
-        {
-          name: "Situation",
-          path: `${base}/combos/BadgeSituation.tsx`,
-          component: <BadgeSituation />,
-        },
-      ]}
+      combos={[{ name: "Situation", path: `${base}/combos/BadgeSituation.tsx`, component: <BadgeSituation /> }]}
     />
   )
 }
