@@ -40,7 +40,7 @@ export function NavigationDrawer({ location }: { location: string }) {
                 const isActive = location.toLowerCase() === item.name.toLowerCase()
                 return (
                   <li key={`nav-${itemIdx}`}>
-                    <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                    <NavItem name={item.name} href={item.href} isActive={isActive} status={item.status} />
                   </li>
                 )
               })}
@@ -55,7 +55,7 @@ export function NavigationDrawer({ location }: { location: string }) {
                   const isActive = location.toLowerCase() === item.name.toLowerCase()
                   return (
                     <li key={`nav-${itemIdx}`}>
-                      <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                      <NavItem name={item.name} href={item.href} isActive={isActive} status={item.status} />
                     </li>
                   )
                 })}
@@ -71,7 +71,7 @@ export function NavigationDrawer({ location }: { location: string }) {
                   const isActive = location.toLowerCase() === item.name.toLowerCase()
                   return (
                     <li key={`nav-${itemIdx}`}>
-                      <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                      <NavItem name={item.name} href={item.href} isActive={isActive} status={item.status} />
                     </li>
                   )
                 })}
@@ -87,7 +87,7 @@ export function NavigationDrawer({ location }: { location: string }) {
                   const isActive = location.toLowerCase() === item.name.toLowerCase()
                   return (
                     <li key={`nav-${itemIdx}`}>
-                      <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                      <NavItem name={item.name} href={item.href} isActive={isActive} status={item.status} />
                     </li>
                   )
                 })}
@@ -100,7 +100,7 @@ export function NavigationDrawer({ location }: { location: string }) {
   )
 }
 
-function NavItem({ name, href, isActive, isNew }: { name: string; href: string; isActive: boolean; isNew?: boolean }) {
+function NavItem({ name, href, isActive, status }: { name: string; href: string; isActive: boolean; status?: string }) {
   return (
     <Link
       title={name}
@@ -110,11 +110,18 @@ function NavItem({ name, href, isActive, isNew }: { name: string; href: string; 
         "mx-3 flex cursor-pointer items-center justify-start gap-2 rounded-md border-0 px-3 py-2.5 leading-none transition ease-in-out",
       )}
     >
-      <div className="w-full items-center gap-1.5 pr-4 lg:pr-16">
+      <div className="flex w-full items-center justify-between gap-1.5 pr-4 lg:pr-16">
         <span>{name}</span>
-        {isNew && (
-          <span className="bg-primary text-primary-foreground inline-flex items-center rounded-full px-[5px] py-[3px]">
+
+        {status === "new" && (
+          <span className="bg-success text-success-foreground inline-flex items-center rounded-full px-[5px] py-[3px]">
             <span className="text-3xs leading-none font-semibold tracking-tight">New</span>
+          </span>
+        )}
+
+        {status === "updated" && (
+          <span className="bg-info text-info-foreground inline-flex items-center rounded-full px-[5px] py-[3px]">
+            <span className="text-3xs leading-none font-semibold tracking-tight">Updated</span>
           </span>
         )}
       </div>

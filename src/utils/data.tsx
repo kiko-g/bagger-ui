@@ -31,8 +31,8 @@ export interface Section {
   pattern?: any
   icon?: any
   shown?: boolean
-  new?: boolean
-  preview?: React.JSX.Element
+  status?: string
+  preview?: React.JSX.Element | null
 }
 
 export const generalNav: Section[] = [
@@ -70,6 +70,7 @@ export const snippetsNav: Section[] = [
       y: 22,
       squares: [[0, 1]],
     },
+    status: "",
     shown: true,
     preview: <Previews.ButtonGroups />,
   },
@@ -84,6 +85,7 @@ export const snippetsNav: Section[] = [
         [1, 3],
       ],
     },
+    status: "",
     shown: true,
     preview: <Previews.CTASections />,
   },
@@ -98,6 +100,7 @@ export const snippetsNav: Section[] = [
         [1, 3],
       ],
     },
+    status: "",
     shown: true,
     preview: <Previews.HeroSections />,
   },
@@ -112,6 +115,7 @@ export const snippetsNav: Section[] = [
         [1, 3],
       ],
     },
+    status: "updated",
     shown: true,
     preview: <Previews.Navbars />,
   },
@@ -126,6 +130,7 @@ export const snippetsNav: Section[] = [
         [1, 4],
       ],
     },
+    status: "",
     shown: true,
     preview: <Previews.KPIWidgets />,
   },
@@ -140,6 +145,7 @@ export const snippetsNav: Section[] = [
         [1, 3],
       ],
     },
+    status: "",
     shown: true,
     preview: <Previews.ProductCards />,
   },
@@ -151,6 +157,7 @@ export const snippetsNav: Section[] = [
       y: 22,
       squares: [[0, 1]],
     },
+    status: "new",
     shown: true,
     preview: <Previews.Timelines />,
   },
@@ -165,6 +172,7 @@ export const snippetsNav: Section[] = [
         [1, 3],
       ],
     },
+    status: "updated",
     shown: true,
     preview: <Previews.Navbars />,
   },
@@ -182,6 +190,7 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
+    status: "",
     shown: true,
     preview: <Previews.Alerts />,
   },
@@ -196,6 +205,7 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
+    status: "",
     shown: true,
     preview: <Previews.Badges />,
   },
@@ -210,6 +220,7 @@ export const applicationUiNav: Section[] = [
         [1, 4],
       ],
     },
+    status: "",
     shown: true,
     preview: <Previews.Buttons />,
   },
@@ -224,6 +235,7 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
+    status: "",
     shown: true,
     preview: <Previews.Checkboxes />,
   },
@@ -238,18 +250,19 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
-    new: true,
+    status: "new",
     shown: true,
     preview: <Previews.ColorPickers />,
   },
   {
-    name: "Dropzones  ",
+    name: "Dropzones",
     href: "/application-ui/dropzones",
     description: "Dropzones for receiving data from the user.",
     pattern: {
       y: 16,
       squares: [[0, 1]],
     },
+    status: "",
     shown: true,
     preview: <Previews.Dropzones />,
   },
@@ -264,7 +277,9 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
+    status: "updated",
     shown: true,
+    preview: null,
   },
   {
     name: "Inputs",
@@ -277,7 +292,9 @@ export const applicationUiNav: Section[] = [
         [1, 4],
       ],
     },
+    status: "updated",
     shown: true,
+    preview: null,
   },
   {
     name: "Modals",
@@ -287,7 +304,9 @@ export const applicationUiNav: Section[] = [
       y: 22,
       squares: [[0, 1]],
     },
+    status: "updated",
     shown: true,
+    preview: null,
   },
   {
     name: "Headings",
@@ -300,7 +319,9 @@ export const applicationUiNav: Section[] = [
         [1, 4],
       ],
     },
+    status: "",
     shown: true,
+    preview: null,
   },
   {
     name: "Selects",
@@ -313,7 +334,9 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
+    status: "",
     shown: true,
+    preview: null,
   },
   {
     name: "Selects Multi",
@@ -326,9 +349,9 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
-    new: true,
+    status: "new",
     shown: true,
-    preview: <Previews.Buttons />,
+    preview: null,
   },
   {
     name: "Sidebars",
@@ -341,7 +364,9 @@ export const applicationUiNav: Section[] = [
         [1, 4],
       ],
     },
+    status: "",
     shown: true,
+    preview: null,
   },
   {
     name: "Sliders",
@@ -351,7 +376,9 @@ export const applicationUiNav: Section[] = [
       y: 22,
       squares: [[0, 1]],
     },
+    status: "",
     shown: true,
+    preview: null,
   },
   {
     name: "Switches",
@@ -364,7 +391,9 @@ export const applicationUiNav: Section[] = [
         [1, 3],
       ],
     },
+    status: "",
     shown: true,
+    preview: null,
   },
 ].sort((a, b) => a.name.localeCompare(b.name))
 

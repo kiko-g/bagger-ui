@@ -21,7 +21,7 @@ export function Navigation({ location }: { location: string }) {
               const isActive = location.toLowerCase() === item.name.toLowerCase()
               return (
                 <li key={`nav-${itemIdx}`}>
-                  <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                  <NavItem name={item.name} href={item.href} isActive={isActive} status={item.status} />
                 </li>
               )
             })}
@@ -40,7 +40,7 @@ export function Navigation({ location }: { location: string }) {
                     const isActive = location.toLowerCase() === item.name.toLowerCase()
                     return (
                       <li key={`nav-${itemIdx}`}>
-                        <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                        <NavItem name={item.name} href={item.href} isActive={isActive} status={item.status} />
                       </li>
                     )
                   })}
@@ -56,13 +56,13 @@ export function Navigation({ location }: { location: string }) {
               <AccordionTrigger className="py-1 text-sm font-bold hover:no-underline hover:opacity-80">
                 <span className="ml-2 text-left whitespace-nowrap">Components</span>
               </AccordionTrigger>
-              <AccordionContent className="pt-0 pb-8">
+              <AccordionContent className="pt-0 pb-16">
                 <ul className="flex w-full flex-col gap-0.5 pl-0">
                   {applicationUiNavFiltered.map((item, itemIdx) => {
                     const isActive = location.toLowerCase() === item.name.toLowerCase()
                     return (
                       <li key={`nav-${itemIdx}`}>
-                        <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                        <NavItem name={item.name} href={item.href} isActive={isActive} status={item.status} />
                       </li>
                     )
                   })}
@@ -84,7 +84,7 @@ export function Navigation({ location }: { location: string }) {
                     const isActive = location.toLowerCase() === item.name.toLowerCase()
                     return (
                       <li key={`nav-${itemIdx}`}>
-                        <NavItem name={item.name} href={item.href} isActive={isActive} isNew={item.new} />
+                        <NavItem name={item.name} href={item.href} isActive={isActive} status={item.status} />
                       </li>
                     )
                   })}
@@ -98,21 +98,28 @@ export function Navigation({ location }: { location: string }) {
   )
 }
 
-function NavItem({ name, href, isActive, isNew }: { name: string; href: string; isActive: boolean; isNew?: boolean }) {
+function NavItem({ name, href, isActive, status }: { name: string; href: string; isActive: boolean; status?: string }) {
   return (
     <Link
       title={name}
       href={href}
       className={cn(
         isActive ? "bg-accent" : "hover:bg-accent/50",
-        "flex h-8 cursor-pointer items-center justify-start gap-2 rounded-md border-0 pl-2 text-sm leading-none transition ease-in-out",
+        "group flex h-8 cursor-pointer items-center justify-start gap-2 rounded-md border-0 pl-2 text-sm leading-none transition ease-in-out",
       )}
     >
-      <div className="relative hidden w-full items-center gap-1.5 pr-4 md:flex lg:pr-16">
+      <div className="relative hidden w-full items-center justify-between gap-1.5 pr-4 md:flex lg:pr-4">
         <span>{name}</span>
-        {isNew && (
-          <span className="absolute top-0 right-2 inline-flex items-center rounded-full bg-linear-to-br from-emerald-500 to-teal-600 px-[5px] py-[3px] text-white">
-            <span className="text-3xs leading-none font-semibold tracking-tight">New</span>
+
+        {status === "new" && (
+          <span className="bg-success/60 group-hover:bg-success text-success-foreground inline-flex items-center rounded-full px-[5px] py-[3px] transition-all duration-300">
+            <span className="text-3xs leading-none font-semibold tracking-tighter">New</span>
+          </span>
+        )}
+
+        {status === "updated" && (
+          <span className="bg-info/60 group-hover:bg-info text-info-foreground inline-flex items-center rounded-full px-[5px] py-[3px] transition-all duration-300">
+            <span className="text-3xs leading-none font-semibold tracking-tighter">Updated</span>
           </span>
         )}
       </div>
