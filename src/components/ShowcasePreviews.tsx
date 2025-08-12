@@ -18,6 +18,7 @@ export const Previews = {
   ProductOverviews: ProductOverviewsPreview,
   Timelines: TimelinesPreview,
   Navbars: NavbarsPreview,
+  Headers: HeadersPreview,
   Alerts: AlertsPreview,
   Badges: BadgesPreview,
   Buttons: ButtonsPreview,
@@ -307,11 +308,9 @@ export function TimelinesPreview() {
 }
 
 export function NavbarsPreview() {
-  return (
-    <div className="flex h-full w-full items-center justify-between">
-      <div className="bg-foreground/40 h-3 w-12 rounded" />
-      <div className="bg-foreground/20 h-2 w-24 rounded" />
-      <div className="bg-foreground/40 h-3 w-16 rounded" />
-    </div>
-  )
+  return null
+}
+
+export function HeadersPreview() {
+  return null
 }

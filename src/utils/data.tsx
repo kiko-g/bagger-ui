@@ -117,7 +117,7 @@ export const snippetsNav: Section[] = [
     },
     status: "updated",
     shown: true,
-    preview: <Previews.Navbars />,
+    preview: <Previews.Headers />,
   },
   {
     name: "KPI Widgets",

@@ -13,11 +13,10 @@ import {
   SidebarFooter,
   SidebarInset,
   SidebarTrigger,
-  SidebarSeparator,
 } from "@/components/ui/sidebar"
-import { Calendar, Users, BarChart3, Wrench, Settings } from "lucide-react"
+import { Home, Folder, Settings } from "lucide-react"
 
-export function SidebarSections() {
+export function SidebarBasic() {
   return (
     <div className="relative w-full overflow-hidden rounded-lg border">
       <SidebarProvider className="h-[420px] min-h-0 rounded-lg">
@@ -26,53 +25,34 @@ export function SidebarSections() {
             <SidebarHeader />
             <SidebarContent>
               <SidebarGroup>
-                <SidebarGroupLabel>Workspace</SidebarGroupLabel>
+                <SidebarGroupLabel>Main</SidebarGroupLabel>
                 <SidebarMenu>
                   <SidebarMenuItem>
                     <SidebarMenuButton>
-                      <Calendar /> <span>Calendar</span>
+                      <Home /> <span>Home</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                   <SidebarMenuItem>
                     <SidebarMenuButton>
-                      <Users /> <span>Team</span>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                </SidebarMenu>
-              </SidebarGroup>
-              <SidebarSeparator />
-              <SidebarGroup>
-                <SidebarGroupLabel>Analytics</SidebarGroupLabel>
-                <SidebarMenu>
-                  <SidebarMenuItem>
-                    <SidebarMenuButton>
-                      <BarChart3 /> <span>Reports</span>
+                      <Folder /> <span>Projects</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                   <SidebarMenuItem>
                     <SidebarMenuButton>
-                      <Wrench /> <span>Integrations</span>
+                      <Settings /> <span>Settings</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 </SidebarMenu>
               </SidebarGroup>
             </SidebarContent>
-            <SidebarFooter>
-              <SidebarMenu>
-                <SidebarMenuItem>
-                  <SidebarMenuButton>
-                    <Settings /> <span>Settings</span>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              </SidebarMenu>
-            </SidebarFooter>
+            <SidebarFooter />
           </Sidebar>
           <SidebarInset>
             <div className="flex items-center justify-between border-b p-3">
               <SidebarTrigger />
               <div className="text-muted-foreground text-sm">Content area</div>
             </div>
-            <div className="text-muted-foreground p-6 text-sm">Sidebar with grouped sections and separator.</div>
+            <div className="text-muted-foreground p-6 text-sm">Your main content goes here.</div>
           </SidebarInset>
         </div>
       </SidebarProvider>
