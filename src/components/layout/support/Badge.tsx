@@ -8,7 +8,7 @@ export function SupportBadge() {
       href="https://github.com/kiko-g/bagger-ui"
       target="_blank"
       rel="noopener noreferrer"
-      className="border-secondary/20 bg-secondary/10 hover:bg-secondary/20 dark:border-secondary/50 dark:bg-secondary/20 dark:hover:bg-secondary/40 flex w-full items-center justify-start gap-1.5 rounded-full border px-2.5 py-1.5 text-xs leading-none font-medium transition md:w-auto"
+      className="border-primary/20 bg-primary/10 hover:bg-primary/20 dark:border-primary/50 dark:bg-primary/20 dark:hover:bg-primary/40 flex w-full items-center justify-start gap-1.5 rounded-full border px-2.5 py-1.5 text-xs leading-none font-medium transition md:w-auto"
     >
       <span className="order-1 flex flex-row gap-1 lg:order-2">
         <span className="font-semibold">Enjoy BaggerUI?</span>
