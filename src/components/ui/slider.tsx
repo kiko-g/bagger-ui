@@ -6,7 +6,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-const trackVariants = cva("relative w-full grow overflow-hidden bg-primary/20", {
+const trackVariants = cva("relative w-full grow overflow-hidden bg-foreground/15 dark:bg-foreground/20", {
   variants: {
     thickness: {
       xs: "h-1",
@@ -28,7 +28,7 @@ const trackVariants = cva("relative w-full grow overflow-hidden bg-primary/20", 
 })
 
 const thumbVariants = cva(
-  "block rounded-full border border-primary/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  "block rounded-full border border-foreground/50 bg-background shadow-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       size: {
@@ -63,7 +63,7 @@ const Slider = React.forwardRef<React.ElementRef<typeof SliderPrimitive.Root>, S
       {...props}
     >
       <SliderPrimitive.Track className={cn(trackVariants({ thickness, roundedness }), trackClassName)}>
-        <SliderPrimitive.Range className={cn("bg-primary absolute h-full", rangeClassName)} />
+        <SliderPrimitive.Range className={cn("bg-foreground absolute h-full", rangeClassName)} />
         {typeof stops === "number" && stops > 0 && stops <= 10 && (
           <div className="pointer-events-none absolute inset-0 flex items-center justify-between">
             {Array.from({ length: stops + 1 }).map((_, i) => (

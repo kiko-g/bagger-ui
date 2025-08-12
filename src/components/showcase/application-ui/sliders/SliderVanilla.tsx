@@ -2,20 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react"
 
-function SliderSimpleDemo() {
-  return (
-    <SliderSimple
-      min={0}
-      max={100}
-      step={1}
-      initialValue={50}
-      onChange={(value) => {
-        console.log(value)
-      }}
-    />
-  )
-}
-
 type Props = {
   min?: number
   max?: number
@@ -24,7 +10,7 @@ type Props = {
   onChange?: (value: number) => void
 }
 
-export function SliderSimple({ min = 0, max = 100, step = 1, initialValue = 0, onChange }: Props) {
+export function SliderVanilla({ min = 0, max = 100, step = 1, initialValue = 0, onChange }: Props) {
   const sliderRef = useRef<HTMLInputElement>(null)
   const [value, setValue] = useState(initialValue)
   const valueOffset = ((value - min) / (max - min)) * 100 + 1
