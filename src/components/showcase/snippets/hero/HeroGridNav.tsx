@@ -3,7 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { ArrowBigUpDash, ArrowRightFromLineIcon, EuroIcon, MapPinIcon, MenuIcon } from "lucide-react"
+import { BookOpen, Headphones, LayoutGrid, Layers, ExternalLinkIcon } from "lucide-react"
 
 type NavAction = {
   title: string
@@ -15,67 +15,63 @@ type NavAction = {
       titleId?: string | undefined
     } & React.RefAttributes<SVGSVGElement>
   >
-  iconClasses: string
 }
 
 export function HeroGridNav() {
   const actions: NavAction[] = [
     {
-      title: "Moscow",
-      text: "Moscow is the capital and most populous city of Russia. Moscow is a major political, economic, cultural, and scientific centre of Russia and Eastern Europe, as well as the largest city (by area) on the European continent.",
+      title: "Product",
+      text: "Explore features, solutions, and use-cases.",
       href: "#",
-      icon: MapPinIcon,
-      iconClasses: "bg-blue-50 group-hover:bg-slate-700 group-hover:text-white text-blue-600",
+      icon: Layers,
     },
     {
-      title: "Prague",
-      text: "Prague is the capital and largest city in the Czech Republic, the 13th largest city in the European Union and the historical capital of Bohemia. Situated on the Vltava river, Prague is home to about 1.3 million people, while its metropolitan area is estimated to have a population of 2.7 million.",
+      title: "Templates",
+      text: "Starter kits and UI patterns to move faster.",
       href: "#",
-      icon: MenuIcon,
-      iconClasses: "bg-orange-50 group-hover:bg-orange-600 group-hover:text-white text-orange-600",
+      icon: LayoutGrid,
     },
     {
-      title: "Paris",
-      text: "Located in France, Paris is the capital and most populous city of the French Republic. Since the 17th century, Paris has been one of Europe's major centres of finance, diplomacy, commerce, fashion, science and arts.",
+      title: "Documentation",
+      text: "Guides, API reference, and best practices.",
       href: "#",
-      icon: EuroIcon,
-      iconClasses: "bg-sky-50 group-hover:bg-sky-600 group-hover:text-white text-sky-600",
+      icon: BookOpen,
     },
     {
-      title: "London",
-      text: "The capital and largest city of England and the United Kingdom. The city stands on the River Thames in the south-east of England, at the head of its 50-mile (80 km) estuary leading to the North Sea, London has been a major settlement for two millennia.",
+      title: "Contact sales",
+      text: "Talk to a specialist about your use-case.",
       href: "#",
-      icon: ArrowBigUpDash,
-      iconClasses: "bg-rose-50 group-hover:bg-rose-600 group-hover:text-white text-rose-600",
+      icon: Headphones,
     },
   ]
 
   return (
-    <div className="flex flex-col divide-y divide-transparent overflow-hidden rounded-lg border border-transparent bg-zinc-200 dark:border-blue-500/40 dark:bg-slate-500/10 md:grid md:grid-cols-2 md:gap-px md:divide-y-0">
+    <div className="grid gap-4 md:grid-cols-2">
       {actions.map((action, actionIdx) => (
         <Link
           href={action.href}
           key={action.title}
           className={cn(
-            actionIdx === 0 ? "rounded-tl-lg rounded-tr-lg sm:rounded-tr-none" : "",
-            actionIdx === 1 ? "sm:rounded-tr-lg" : "",
-            actionIdx === actions.length - 2 ? "sm:rounded-bl-lg" : "",
-            actionIdx === actions.length - 1 ? "rounded-bl-lg rounded-br-lg sm:rounded-bl-none" : "",
-            "group relative bg-white p-6 transition focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 hover:bg-zinc-100 dark:bg-slate-500/5 dark:hover:opacity-90",
+            actionIdx === 0 ? "" : "",
+            "group hover:bg-primary/10 hover:border-primary/20 dark:hover:bg-primary/10 dark:hover:border-primary/20 relative overflow-hidden rounded-xl border border-zinc-200/80 bg-white p-6 shadow-sm ring-1 ring-zinc-200/0 transition hover:shadow-md focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:outline-none motion-safe:transform motion-safe:hover:-translate-y-0.5 dark:border-white/10 dark:bg-white/5 dark:focus-visible:ring-offset-slate-950",
           )}
         >
-          <span className={cn(action.iconClasses, "inline-flex rounded-lg p-4 transition")}>
-            <action.icon className="size-6" aria-hidden="true" />
+          <span
+            className={cn(
+              "inline-flex rounded-md border border-zinc-200 bg-zinc-50 p-2 text-zinc-600 transition dark:border-white/10 dark:bg-white/10 dark:text-zinc-200",
+            )}
+          >
+            <action.icon className="size-5" aria-hidden="true" />
           </span>
-          <span className="mt-3 block text-base font-semibold leading-6 text-zinc-900 dark:text-white">
+          <span className="mt-3 block text-base leading-6 font-semibold tracking-tight text-zinc-900 dark:text-white">
             {action.title}
           </span>
-          <span className="mt-2 text-sm tracking-tight text-zinc-500 dark:text-zinc-200">{action.text}</span>
+          <span className="mt-1 text-sm text-zinc-600 dark:text-zinc-300">{action.text}</span>
           <span
-            className="pointer-events-none absolute right-6 top-6 text-zinc-300 group-hover:text-zinc-500 dark:text-zinc-400 dark:group-hover:text-white"
+            className="text-muted-foreground group-hover:text-foreground pointer-events-none absolute top-6 right-6 transition"
             aria-hidden="true"
           >
-            <ArrowRightFromLineIcon className="size-5 transition group-hover:-rotate-45 md:h-6 md:w-6" />
+            <ExternalLinkIcon className="size-4 md:size-5" />
           </span>
         </Link>
       ))}
