@@ -84,7 +84,7 @@ const Alert = React.forwardRef<
           onClick={closeAlert}
           style={{ padding: "0.125rem" }}
           className={cn(
-            "absolute right-3 top-3 rounded text-zinc-700 transition hover:bg-black/10 dark:text-white dark:hover:bg-white/10",
+            "absolute top-3 right-3 rounded text-zinc-700 transition hover:bg-black/10 dark:text-white dark:hover:bg-white/10",
           )}
         >
           <X className="size-4" />
@@ -97,7 +97,7 @@ Alert.displayName = "Alert"
 
 const AlertTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
   ({ className, ...props }, ref) => (
-    <h5 ref={ref} className={cn("mb-1 font-semibold leading-none tracking-tight", className)} {...props} />
+    <h5 ref={ref} className={cn("mb-1 leading-none font-semibold tracking-tight", className)} {...props} />
   ),
 )
 AlertTitle.displayName = "AlertTitle"

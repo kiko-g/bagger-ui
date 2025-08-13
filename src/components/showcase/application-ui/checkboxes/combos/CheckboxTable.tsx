@@ -50,9 +50,9 @@ export function CheckboxTable() {
   }
 
   return (
-    <div className="w-full max-w-2xl space-y-4 rounded-md bg-background p-6">
+    <div className="bg-background w-full max-w-2xl space-y-4 rounded-md p-6">
       {selectedRows.size > 0 && (
-        <div className="flex items-center justify-between rounded-md bg-muted p-2">
+        <div className="bg-muted flex items-center justify-between rounded-md p-2">
           <span className="text-sm font-medium">
             {selectedRows.size} {selectedRows.size === 1 ? "item" : "items"} selected
           </span>

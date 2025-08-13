@@ -16,12 +16,12 @@ export function HeroMotionMinimal() {
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="text-4xl font-semibold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
+            <h2 className="text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl dark:text-white">
               Minimal motion hero
             </h2>
           </motion.div>
           <motion.p
-            className="mx-auto mt-4 max-w-2xl text-base text-zinc-600 dark:text-zinc-300 sm:text-lg"
+            className="mx-auto mt-4 max-w-2xl text-base text-zinc-600 sm:text-lg dark:text-zinc-300"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
@@ -46,7 +46,7 @@ export function HeroMotionMinimal() {
         </div>
       </div>
       <motion.div
-        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-64 bg-gradient-to-t from-primary/15 to-transparent dark:from-primary/20"
+        className="from-primary/15 dark:from-primary/20 pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-64 bg-gradient-to-t to-transparent"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -55,5 +55,3 @@ export function HeroMotionMinimal() {
     </section>
   )
 }
-
-

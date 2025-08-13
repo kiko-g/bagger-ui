@@ -9,7 +9,7 @@ export function CheckboxDefault() {
       <div className="grid gap-1.5 leading-none">
         <label
           htmlFor="email-marketing"
-          className="mt-px cursor-pointer text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 hover:opacity-80"
+          className="mt-px cursor-pointer text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 hover:opacity-80"
         >
           Email Marketing
         </label>

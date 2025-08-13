@@ -43,7 +43,7 @@ function ProductHorizontal({ product }: { product: ProductType }) {
         />
 
         {/* Status badges */}
-        <div className="absolute left-2 top-2 flex flex-col gap-1">
+        <div className="absolute top-2 left-2 flex flex-col gap-1">
           {product.info.new && (
             <div className="rounded bg-emerald-500 px-1.5 py-0.5 text-xs font-medium text-white">New</div>
           )}
@@ -61,7 +61,7 @@ function ProductHorizontal({ product }: { product: ProductType }) {
       {/* Content */}
       <div className="flex flex-1 flex-col p-4">
         <div className="mb-1 flex items-center justify-between">
-          <span className="text-xs font-medium uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+          <span className="text-xs font-medium tracking-wider text-zinc-500 uppercase dark:text-zinc-400">
             {product.info.brand}
           </span>
 

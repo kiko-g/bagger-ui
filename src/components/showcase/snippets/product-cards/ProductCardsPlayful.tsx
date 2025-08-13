@@ -34,11 +34,11 @@ function ProductPlayful({ product }: { product: ProductType }) {
   return (
     <div
       className={cn(
-        "flex max-h-[80vh] w-full flex-col self-stretch overflow-hidden border-0 border-zinc-900/10 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg dark:border-zinc-700 dark:bg-black/30 md:w-72",
+        "flex max-h-[80vh] w-full flex-col self-stretch overflow-hidden border-0 border-zinc-900/10 bg-white transition-all hover:bg-[#fefefe] hover:shadow-lg md:w-72 dark:border-zinc-700 dark:bg-black/30",
       )}
     >
       <a className="relative min-h-64 overflow-hidden" href="#">
-        <div className="absolute left-0 top-0 m-2 flex flex-col gap-y-1.5">
+        <div className="absolute top-0 left-0 m-2 flex flex-col gap-y-1.5">
           {product.info.new && (
             <span className="z-10 h-full w-full border border-[#00000040] bg-emerald-600/80 px-1 py-1 text-center text-xs font-medium tracking-tighter text-white">
               New
@@ -70,7 +70,7 @@ function ProductPlayful({ product }: { product: ProductType }) {
       <div className="group relative flex flex-1 flex-col justify-between">
         <section className="px-3 pt-3">
           <div className="flex items-center justify-start gap-x-1.5">
-            <span className="inline-flex text-xs font-semibold uppercase tracking-tighter text-zinc-600 group-hover:opacity-100 dark:text-zinc-400">
+            <span className="inline-flex text-xs font-semibold tracking-tighter text-zinc-600 uppercase group-hover:opacity-100 dark:text-zinc-400">
               {product.info.brand}
               {" / "}
               {product.info.sku}
@@ -86,11 +86,11 @@ function ProductPlayful({ product }: { product: ProductType }) {
             </svg>
           </div>
 
-          <a href="#" className="w-min whitespace-nowrap text-xl font-bold hover:underline">
+          <a href="#" className="w-min text-xl font-bold whitespace-nowrap hover:underline">
             {product.info.title}
           </a>
           <p className="line-clamp-3 text-sm tracking-tight">{product.info.description}</p>
-          <div className="mb-5 mt-2 flex w-full flex-col justify-start gap-2">
+          <div className="mt-2 mb-5 flex w-full flex-col justify-start gap-2">
             <div className="flex flex-col items-start text-xs">
               <a href="#" className="flex items-center gap-x-1 tracking-tight hover:underline">
                 <svg
@@ -117,7 +117,7 @@ function ProductPlayful({ product }: { product: ProductType }) {
                 {product.info.price.toFixed(2)}$
               </span>
               {product.info.sale.active && (
-                <a href="#" className="text-lg font-bold leading-none tracking-tight text-rose-600 hover:underline">
+                <a href="#" className="text-lg leading-none font-bold tracking-tight text-rose-600 hover:underline">
                   {priceWithDiscount.toFixed(2)}$
                 </a>
               )}

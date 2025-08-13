@@ -9,11 +9,11 @@ export function ButtonGroupSegmentedControl() {
   const [alignSelected, setAlignSelected] = React.useState("left")
 
   return (
-    <div className="inline-flex gap-1 rounded-md bg-muted p-1" role="radiogroup">
+    <div className="bg-muted inline-flex gap-1 rounded-md p-1" role="radiogroup">
       <Button
         variant="ghost"
         size="sm"
-        className={`rounded-md ${alignSelected === "left" ? "bg-background shadow-xs hover:bg-background/80" : ""}`}
+        className={`rounded-md ${alignSelected === "left" ? "bg-background hover:bg-background/80 shadow-xs" : ""}`}
         onClick={() => setAlignSelected("left")}
         aria-checked={alignSelected === "left"}
         role="radio"
@@ -26,7 +26,7 @@ export function ButtonGroupSegmentedControl() {
         size="sm"
         className={cn(
           "rounded-md",
-          alignSelected === "center" ? "bg-background shadow-xs hover:bg-background/80" : "hover:bg-background/10",
+          alignSelected === "center" ? "bg-background hover:bg-background/80 shadow-xs" : "hover:bg-background/10",
         )}
         onClick={() => setAlignSelected("center")}
         aria-checked={alignSelected === "center"}
@@ -40,7 +40,7 @@ export function ButtonGroupSegmentedControl() {
         size="sm"
         className={cn(
           "rounded-md",
-          alignSelected === "right" ? "bg-background shadow-xs hover:bg-background/80" : "hover:bg-background/10",
+          alignSelected === "right" ? "bg-background hover:bg-background/80 shadow-xs" : "hover:bg-background/10",
         )}
         onClick={() => setAlignSelected("right")}
         aria-checked={alignSelected === "right"}
@@ -54,7 +54,7 @@ export function ButtonGroupSegmentedControl() {
         size="sm"
         className={cn(
           "rounded-md",
-          alignSelected === "justify" ? "bg-background shadow-xs hover:bg-background/80" : "hover:bg-background/10",
+          alignSelected === "justify" ? "bg-background hover:bg-background/80 shadow-xs" : "hover:bg-background/10",
         )}
         onClick={() => setAlignSelected("justify")}
         aria-checked={alignSelected === "justify"}

@@ -33,7 +33,7 @@ export function CheckboxParentChild() {
   }
 
   return (
-    <div className="w-full max-w-md space-y-2 rounded-md border bg-background p-4">
+    <div className="bg-background w-full max-w-md space-y-2 rounded-md border p-4">
       <div className="flex items-center space-x-2">
         <Checkbox
           id="parent"
@@ -47,7 +47,7 @@ export function CheckboxParentChild() {
         </Label>
       </div>
 
-      <div className="ml-4 space-y-3 border-l-2 border-muted pl-4 pt-1">
+      <div className="border-muted ml-4 space-y-3 border-l-2 pt-1 pl-4">
         {items.map((item) => (
           <div key={item.id} className="flex items-center space-x-2">
             <Checkbox

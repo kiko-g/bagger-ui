@@ -147,7 +147,7 @@ export function CheckboxTree({ data, expanded = false, onChange }: CheckboxTreeP
           {hasChildren && (
             <ChevronRight
               className={cn(
-                "mr-1 h-4 w-4 shrink-0 cursor-pointer text-muted-foreground transition-transform",
+                "text-muted-foreground mr-1 h-4 w-4 shrink-0 cursor-pointer transition-transform",
                 isExpanded && "rotate-90 transform",
               )}
               onClick={() => toggleExpand(node.id)}
@@ -173,7 +173,7 @@ export function CheckboxTree({ data, expanded = false, onChange }: CheckboxTreeP
         </div>
 
         {hasChildren && isExpanded && (
-          <div className="ml-4 border-l border-border/50 pl-2">
+          <div className="border-border/50 ml-4 border-l pl-2">
             {node.children!.map((child) => renderNode(child, level + 1))}
           </div>
         )}
@@ -222,7 +222,7 @@ export function CheckboxTreeExample() {
   ]
 
   return (
-    <div className="w-full max-w-xl rounded-md border bg-background p-4">
+    <div className="bg-background w-full max-w-xl rounded-md border p-4">
       <h3 className="mb-3 font-medium">Product Categories</h3>
       <CheckboxTree data={treeData} onChange={(selected) => console.log("Selected:", selected)} expanded />
     </div>

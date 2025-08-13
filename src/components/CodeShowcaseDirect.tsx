@@ -20,7 +20,7 @@ export function CodeShowcaseDirect({ code, language, options, allowDownload }: P
   return (
     <div className="group relative mb-4 max-w-7xl overflow-auto rounded-xl">
       {/* Controls */}
-      <div className="absolute right-3 top-3 z-20 flex items-center justify-end gap-2">
+      <div className="absolute top-3 right-3 z-20 flex items-center justify-end gap-2">
         {canDownload ? <DownloadButton text={code} filename={`code.${language}`} /> : null}
         {canCopy ? <CopyCodeButton text={code} /> : null}
       </div>

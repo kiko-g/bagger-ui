@@ -35,7 +35,7 @@ export default function JumpsellerStoreIdentity() {
       </p>
 
       {isInitialized ? (
-        <article className="mb-16 mt-4 grid grid-cols-1 gap-8 lg:grid-cols-3">
+        <article className="mt-4 mb-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="col-span-1 flex flex-col gap-8 lg:col-span-2">
             {Object.entries(possible).map(([key, values]) => (
               <div key={`possible-${key}`} className="flex flex-col gap-2">
@@ -137,7 +137,7 @@ function Skeleton() {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
-        className="-ml-1 mr-3 h-12 w-12 animate-spin text-teal-600 dark:text-teal-500"
+        className="mr-3 -ml-1 h-12 w-12 animate-spin text-teal-600 dark:text-teal-500"
       >
         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
 

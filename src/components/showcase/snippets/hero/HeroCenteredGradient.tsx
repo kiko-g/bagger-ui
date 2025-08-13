@@ -15,10 +15,10 @@ export function HeroCenteredGradient() {
             <span className="inline-block size-1.5 rounded-full bg-emerald-500" />
             Now with motion and gradients
           </div>
-          <h1 className="mt-6 bg-linear-to-r from-primary to-secondary bg-clip-text text-4xl font-semibold tracking-tight text-transparent sm:text-5xl md:text-6xl">
+          <h1 className="from-primary to-secondary mt-6 bg-linear-to-r bg-clip-text text-4xl font-semibold tracking-tight text-transparent sm:text-5xl md:text-6xl">
             Design modern hero sections
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-pretty text-base text-zinc-600 dark:text-zinc-300 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-2xl text-base text-pretty text-zinc-600 sm:text-lg dark:text-zinc-300">
             Beautiful, accessible, and production-ready hero layouts. Start fast with presets and customize as your
             brand evolves.
           </p>
@@ -35,5 +35,3 @@ export function HeroCenteredGradient() {
     </section>
   )
 }
-
-
