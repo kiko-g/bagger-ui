@@ -6,6 +6,7 @@ import { ProductCardsElegant } from "@/components/showcase/snippets/product-card
 import { ProductCardsHorizontal } from "@/components/showcase/snippets/product-cards/ProductCardsHorizontal"
 import { ProductCardsModern } from "@/components/showcase/snippets/product-cards/ProductCardsModern"
 import { ProductCardsMinimal } from "@/components/showcase/snippets/product-cards/ProductCardsMinimal"
+import { ProductCardsSupermarket } from "@/components/showcase/snippets/product-cards/ProductCardsSupermarket"
 
 export default function ProductLists() {
   const base = "snippets/product-cards"
@@ -39,6 +40,11 @@ export default function ProductLists() {
           name: "Playful",
           path: `${base}/ProductCardsPlayful.tsx`,
           component: <ProductCardsPlayful />,
+        },
+        {
+          name: "Supermarket Listing",
+          path: `${base}/ProductCardsSupermarket.tsx`,
+          component: <ProductCardsSupermarket />,
         },
       ]}
     />

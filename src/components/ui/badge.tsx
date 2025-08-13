@@ -17,7 +17,7 @@ const badgeVariants = cva(
         success:
           "border-transparent bg-emerald-600 text-zinc-50 hover:bg-emerald-600/80 dark:border-transparent dark:bg-emerald-800 dark:text-zinc-50 dark:hover:bg-emerald-800/80 [&_span.bubble]:bg-emerald-600",
         warning:
-          "border-transparent bg-yellow-600 text-zinc-50 hover:bg-yellow-600/80 dark:border-transparent dark:bg-yellow-800 dark:text-zinc-50 dark:hover:bg-yellow-800/80 [&_span.bubble]:bg-yellow-600",
+          "border-transparent bg-amber-500 text-zinc-50 hover:bg-amber-500/80 dark:border-transparent dark:bg-amber-600 dark:text-zinc-50 dark:hover:bg-amber-600/80 [&_span.bubble]:bg-amber-500",
         outline:
           "border-zinc-300 text-zinc-950 dark:border-zinc-300 dark:text-zinc-200 [&_span.bubble]:bg-zinc-300 dark:[&_span.bubble]:bg-zinc-800",
         "outline-success":
@@ -29,6 +29,7 @@ const badgeVariants = cva(
       },
       size: {
         default: `px-3 py-1 [&_span.bubble]:size-2 [&_svg]:size-3`,
+        "2xs": `px-1 py-0.5 text-2xs [&_span.bubble]:size-1 [&_svg]:size-2`,
         xs: `px-1.5 py-0.5 text-xs [&_span.bubble]:size-1.5 [&_svg]:size-2.5`,
         sm: `px-2.5 py-1 [&_span.bubble]:size-2 [&_svg]:size-3`,
         md: `px-3 py-1.5 [&_span.bubble]:size-2 [&_svg]:size-3.5`,

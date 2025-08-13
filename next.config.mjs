@@ -8,6 +8,16 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.continente.pt",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.auchan.pt",
+        pathname: "/**",
+      },
     ],
   },
 }
