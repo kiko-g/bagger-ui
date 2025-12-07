@@ -79,7 +79,7 @@ Return ONLY valid JSON with this exact structure (no explanation text):
       model: openai("gpt-4o"),
       prompt: systemPrompt,
       temperature: 0.7,
-      maxTokens: 2000,
+      maxOutputTokens: 2000,
     })
 
     try {
