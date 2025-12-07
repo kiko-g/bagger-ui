@@ -10,7 +10,7 @@ export function EmailSubscribe() {
 
   return (
     <form
-      className="flex w-full flex-col gap-2 sm:flex-row"
+      className="flex w-full max-w-sm flex-col gap-2 sm:flex-row"
       onSubmit={(e) => {
         e.preventDefault()
         // noop for showcase

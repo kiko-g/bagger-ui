@@ -28,24 +28,26 @@ export function InlineValidation() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex w-full flex-col gap-2">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex w-full flex-col gap-2 md:flex-row">
       <div className="flex w-full flex-col gap-1">
         <label htmlFor={id} className="text-foreground/80 text-sm font-semibold tracking-tight">
           Email
         </label>
-        <Input
-          id={id}
-          type="email"
-          aria-invalid={!!errors.email}
-          className={errors.email ? "border-destructive focus-visible:ring-destructive" : undefined}
-          placeholder="you@company.com"
-          {...register("email")}
-        />
+        <div className="flex items-center gap-2">
+          <Input
+            id={id}
+            type="email"
+            aria-invalid={!!errors.email}
+            className={errors.email ? "border-destructive focus-visible:ring-destructive" : undefined}
+            placeholder="you@company.com"
+            {...register("email")}
+          />
+          <Button type="submit" disabled={isSubmitting}>
+            Save
+          </Button>
+        </div>
         {errors.email && <p className="text-destructive text-xs">{errors.email.message}</p>}
       </div>
-      <Button type="submit" disabled={isSubmitting}>
-        Save
-      </Button>
     </form>
   )
 }

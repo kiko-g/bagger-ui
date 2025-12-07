@@ -39,10 +39,10 @@ export default function Inputs() {
         { name: "Sizes", path: `${base}/InputSizes.tsx`, component: <InputSizes /> },
       ]}
       combos={[
+        { name: "Inline validation ⚡️", path: `${base}/InlineValidation.tsx`, component: <InlineValidation /> },
         { name: "Search input", path: `${base}/SearchInput.tsx`, component: <SearchInput /> },
         { name: "Email subscribe", path: `${base}/EmailSubscribe.tsx`, component: <EmailSubscribe /> },
         { name: "Currency amount", path: `${base}/CurrencyAmount.tsx`, component: <CurrencyAmount /> },
-        { name: "Inline validation", path: `${base}/InlineValidation.tsx`, component: <InlineValidation /> },
       ]}
     />
   )

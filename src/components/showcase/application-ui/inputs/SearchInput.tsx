@@ -21,7 +21,7 @@ export function SearchInput() {
   }, [])
 
   return (
-    <div className="flex w-full flex-col gap-1">
+    <div className="flex w-full max-w-sm flex-col gap-1">
       <label htmlFor={id} className="text-foreground/80 text-sm font-semibold tracking-tight">
         Search
       </label>
@@ -35,8 +35,9 @@ export function SearchInput() {
           placeholder="Search products..."
           className="pr-16 pl-8"
         />
-        <kbd className="text-muted-foreground bg-muted pointer-events-none absolute top-1/2 right-2 -translate-y-1/2 rounded border px-1.5 py-0.5 text-[10px] select-none">
-          ⌘K
+        <kbd className="text-muted-foreground bg-muted pointer-events-none absolute top-1/2 right-2 flex -translate-y-1/2 items-center gap-0.5 rounded border px-1.5 py-0.5 text-[10px] select-none">
+          <span className="text-xs leading-none font-semibold">⌘</span>
+          <span className="text-2xs leading-none font-semibold">K</span>
         </kbd>
         {value && (
           <button
