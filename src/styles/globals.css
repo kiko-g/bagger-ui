@@ -30,6 +30,19 @@
     --primary-950: oklch(0.2846 0.0729 262.52);
     --primary-1000: oklch(0.2214 0.046 264.07);
 
+    --secondary-50: oklch(0.9784 0.0144 166.84);
+    --secondary-100: oklch(0.9495 0.0363 163.94);
+    --secondary-200: oklch(0.9048 0.065 164.96);
+    --secondary-300: oklch(0.8452 0.0997 165.78);
+    --secondary-400: oklch(0.7655 0.1227 164.16);
+    --secondary-500: oklch(0.7127 0.1176 163.48);
+    --secondary-600: oklch(0.5961 0.1003 164.3);
+    --secondary-700: oklch(0.5079 0.0816 166.65);
+    --secondary-800: oklch(0.432 0.0657 167.98);
+    --secondary-900: oklch(0.3782 0.0533 169.91);
+    --secondary-950: oklch(0.2625 0.0355 172.55);
+    --secondary-1000: oklch(0.1877 0.0237 173.86);
+
     --background: var(--color-white);
     --foreground: var(--base-800);
     --card: var(--color-white);
