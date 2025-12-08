@@ -49,7 +49,7 @@ export function AiColorBundleGenerator() {
 
   const generatingWordDisplay = useMemo(() => {
     const words = ["Working", "Crunching", "Cooking", "Mixing", "Blending"]
-    let index = Math.floor(elapsedTime) % words.length
+    const index = Math.floor(elapsedTime) % words.length
     return words[index]
   }, [elapsedTime])
 

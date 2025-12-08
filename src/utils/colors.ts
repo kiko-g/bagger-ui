@@ -16,9 +16,9 @@ export function writeTailwindPalette(colorName: string, combos: TailwindCombo[])
 
 // Improved functions below
 export function hexToRgb(hex: ColorHex): ColorRgb {
-  let r = parseInt(hex.slice(1, 3), 16)
-  let g = parseInt(hex.slice(3, 5), 16)
-  let b = parseInt(hex.slice(5, 7), 16)
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
   return { r, g, b }
 }
 
@@ -27,16 +27,16 @@ export function rgbToHex(rgb: ColorRgb): ColorHex {
 }
 
 export function rgbToHsl(rgb: ColorRgb): ColorHsl {
-  let r = rgb.r / 255
-  let g = rgb.g / 255
-  let b = rgb.b / 255
+  const r = rgb.r / 255
+  const g = rgb.g / 255
+  const b = rgb.b / 255
 
   const max = Math.max(r, g, b)
   const min = Math.min(r, g, b)
 
   let h = 0
   let s = 0
-  let l = (max + min) / 2
+  const l = (max + min) / 2
 
   if (max === min) {
     h = s = 0 // achromatic
@@ -60,9 +60,9 @@ export function rgbToHsl(rgb: ColorRgb): ColorHsl {
 }
 
 export function hslToRgb(hsl: ColorHsl): ColorRgb {
-  let h = hsl.h
-  let s = hsl.s
-  let l = hsl.l
+  const h = hsl.h
+  const s = hsl.s
+  const l = hsl.l
 
   let r, g, b
 
