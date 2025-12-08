@@ -43,7 +43,8 @@ const thumbVariants = cva(
 )
 
 export interface SliderProps
-  extends React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>,
+  extends
+    React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>,
     VariantProps<typeof trackVariants>,
     VariantProps<typeof thumbVariants> {
   stops?: number

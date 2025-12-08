@@ -37,8 +37,7 @@ const thumbSizeClasses: Record<NonNullable<VariantProps<typeof rootVariants>["si
 }
 
 export interface SwitchProps
-  extends React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>,
-    VariantProps<typeof rootVariants> {}
+  extends React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>, VariantProps<typeof rootVariants> {}
 
 const Switch = React.forwardRef<React.ElementRef<typeof SwitchPrimitives.Root>, SwitchProps>(
   ({ className, size, tone, ...props }, ref) => (

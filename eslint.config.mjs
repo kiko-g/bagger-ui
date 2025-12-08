@@ -33,5 +33,5 @@ export default tseslint.config(
   },
   {
     ignores: [".next/", "node_modules/", "*.config.js", "*.config.mjs"],
-  }
+  },
 )

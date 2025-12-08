@@ -26,7 +26,7 @@ export function SectionCard({ section }: { section: Section }) {
       <div className="absolute inset-0 rounded-2xl ring-1 ring-neutral-900/7.5 ring-inset group-hover:ring-neutral-900/10 dark:ring-white/10 dark:group-hover:ring-white/20" />
 
       {section.preview && (
-        <div className="absolute inset-0 max-h-24 scale-80 rounded-2xl pt-5 opacity-80 transition-opacity duration-300 group-hover:opacity-100">
+        <div className="absolute inset-0 max-h-24 scale-80 rounded-2xl pt-5 opacity-100 duration-300">
           {section.preview}
         </div>
       )}

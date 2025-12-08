@@ -99,6 +99,7 @@ export function Navigation({ location }: { location: string }) {
 }
 
 function NavItem({ name, href, isActive, status }: { name: string; href: string; isActive: boolean; status?: string }) {
+  const hasIndicator = status === "new" || status === "updated"
   return (
     <Link
       title={name}
@@ -108,19 +109,17 @@ function NavItem({ name, href, isActive, status }: { name: string; href: string;
         "group flex h-8 cursor-pointer items-center justify-start gap-2 rounded-md border-0 pl-2 text-sm leading-none transition ease-in-out",
       )}
     >
-      <div className="relative hidden w-full items-center justify-between gap-1.5 pr-4 md:flex lg:pr-4">
+      <div className="relative hidden w-full items-center gap-2 pr-3 md:flex lg:pr-3">
         <span>{name}</span>
 
-        {status === "new" && (
-          <span className="bg-success/60 group-hover:bg-success text-success-foreground inline-flex items-center rounded-full px-[5px] py-[3px] transition-all duration-300">
-            <span className="text-3xs leading-none font-semibold tracking-tighter">New</span>
-          </span>
-        )}
-
-        {status === "updated" && (
-          <span className="bg-info/60 group-hover:bg-info text-info-foreground inline-flex items-center rounded-full px-[5px] py-[3px] transition-all duration-300">
-            <span className="text-3xs leading-none font-semibold tracking-tighter">Updated</span>
-          </span>
+        {hasIndicator && (
+          <span
+            className={cn(
+              status === "new" ? "bg-primary" : "",
+              status === "updated" ? "bg-secondary" : "",
+              "inline-flex size-2 items-center rounded-full transition-all duration-300",
+            )}
+          />
         )}
       </div>
     </Link>
