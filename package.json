@@ -11,9 +11,6 @@
     "prettier": "prettier --write . --ignore-path .gitignore",
     "check": "eslint . --max-warnings 100 && pnpm build"
   },
-  "engines": {
-    "node": ">=22.0.0"
-  },
   "dependencies": {
     "@ai-sdk/openai": "^2.0.79",
     "@ai-sdk/react": "^2.0.109",
